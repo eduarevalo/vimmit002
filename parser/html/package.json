@@ -1,0 +1,21 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "digest-stream": "^2.0.0",
+    "grunt": "^1.0.1",
+    "lodash": "^4.17.4",
+    "mkdir-recursive": "^0.3.0",
+    "mkdirp": "^0.5.1",
+    "saxon-stream": "^0.2.3",
+    "tmp": "0.0.33"
+  }
+}
