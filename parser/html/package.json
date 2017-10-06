@@ -12,10 +12,12 @@
     "async": "^2.5.0",
     "digest-stream": "^2.0.0",
     "grunt": "^1.0.1",
+    "inline-css": "^2.2.2",
     "lodash": "^4.17.4",
     "mkdir-recursive": "^0.3.0",
     "mkdirp": "^0.5.1",
     "saxon-stream": "^0.2.3",
     "tmp": "0.0.33"
-  }
+  },
+  "devDependencies": {}
 }

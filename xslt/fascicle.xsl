@@ -8,7 +8,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs db html"
     version="2.0">
-    
+   
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
     
@@ -58,7 +58,7 @@
             
             <xsl:call-template name="toc">
                 <xsl:with-param name="tocEntry" select="$tocStart"/>
-                <xsl:with-param name="tocSet" select="$tocStart/following-sibling::html:*[starts-with(@class, 'TM-')] intersect $indexStart/preceding-sibling::html:*"/>
+                <xsl:with-param name="tocSet" select="$tocStart/following-sibling::html:*[contains(@class, 'TM-')] intersect $indexStart/preceding-sibling::html:*"/>
             </xsl:call-template>
             
             <xsl:call-template name="index">
@@ -110,7 +110,7 @@
             <xsl:value-of select="$titleSet[@class='Fascicule'][1]"/>
         </titleabbrev>
         <title>
-            <xsl:value-of select="$titleSet[@class='Titre-du-fascicule'][1]"/>
+            <xsl:value-of select="$titleSet[contains(@class, 'Titre-du-fascicule')][1]"/>
         </title>
         <info>
             <xsl:for-each select="$titleSet[contains(@class, 'Auteur---Nom')]">
@@ -170,9 +170,9 @@
                 <xsl:value-of select="$tocEntry"/>
             </title>
             <toc>
-                <xsl:for-each select="$tocSet[starts-with(@class, 'TM-I-')]">
+                <xsl:for-each select="$tocSet[contains(@class, 'TM-I-')]">
                     <xsl:variable name="tocLevel1" select="."/>
-                    <xsl:variable name="tocLevel2Set" select="$tocLevel1/following-sibling::html:p[starts-with(@class, 'TM-A-')][self::node()/preceding-sibling::html:p[starts-with(@class, 'TM-I-')][1] = $tocLevel1]"/>
+                    <xsl:variable name="tocLevel2Set" select="$tocLevel1/following-sibling::html:p[contains(@class, 'TM-A-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-I-')][1] = $tocLevel1]"/>
                     <xsl:choose>
                         <xsl:when test="$tocLevel2Set">
                             <tocdiv>
@@ -181,7 +181,7 @@
                                 </title>
                                 <xsl:for-each select="$tocLevel2Set">
                                     <xsl:variable name="tocLevel2" select="."/>
-                                    <xsl:variable name="tocLevel3Set" select="$tocLevel2/following-sibling::html:p[starts-with(@class, 'TM-1-')][self::node()/preceding-sibling::html:p[starts-with(@class, 'TM-A-')][1] = $tocLevel2]"/>
+                                    <xsl:variable name="tocLevel3Set" select="$tocLevel2/following-sibling::html:p[contains(@class, 'TM-1-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-A-')][1] = $tocLevel2]"/>
                                     <xsl:choose>
                                         <xsl:when test="$tocLevel3Set">
                                             <tocdiv>
@@ -190,7 +190,7 @@
                                                 </title>
                                                 <xsl:for-each select="$tocLevel3Set">
                                                     <xsl:variable name="tocLevel3" select="."/>
-                                                    <xsl:variable name="tocLevel4Set" select="$tocLevel3/following-sibling::html:p[starts-with(@class, 'TM-a-')][self::node()/preceding-sibling::html:p[starts-with(@class, 'TM-1-')][1] = $tocLevel3]"/>
+                                                    <xsl:variable name="tocLevel4Set" select="$tocLevel3/following-sibling::html:p[contains(@class, 'TM-a-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-1-')][1] = $tocLevel3]"/>
                                                     <xsl:choose>
                                                         <xsl:when test="$tocLevel4Set">
                                                             <tocdiv>
@@ -199,7 +199,7 @@
                                                                 </title>
                                                                 <xsl:for-each select="$tocLevel4Set">
                                                                     <xsl:variable name="tocLevel4" select="."/>
-                                                                    <xsl:variable name="tocLevel5Set" select="$tocLevel4/following-sibling::html:p[starts-with(@class, 'TM--i-')][self::node()/preceding-sibling::html:p[starts-with(@class, 'TM-a-')][1] = $tocLevel4]"/>
+                                                                    <xsl:variable name="tocLevel5Set" select="$tocLevel4/following-sibling::html:p[contains(@class, 'TM--i-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-a-')][1] = $tocLevel4]"/>
                                                                     <xsl:choose>
                                                                         <xsl:when test="$tocLevel5Set">
                                                                             <tocdiv>

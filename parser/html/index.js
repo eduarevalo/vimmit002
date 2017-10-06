@@ -9,6 +9,7 @@ const fs = require('fs'),
     jing = require('./../jing'),
     fx = require('mkdir-recursive'),
     tmp = require('tmp'),
+    inlineCss = require('inline-css'),
     exec = require('child_process').exec,
     runJsxCommand = '"/Applications/Adobe\ ExtendScript\ Toolkit\ CC/ExtendScript\ Toolkit.app/Contents/MacOS/ExtendScript\ Toolkit" -run ';
 
@@ -23,11 +24,111 @@ saxon.setDefaults({ saxonJarPath : __dirname + '/../../bin/saxon/saxon9he.jar' }
 jing.setDefaults({ jingJarPath : __dirname + '/../../bin/jing-20091111/bin/jing.jar' });
 
 function htmlFilter(input){
-    return /.html$/.test(input);
+    return /.html$/.test(input) && !/.inline.html$/.test(input);
+}
+function htmlInlineFilter(input){
+    return /.inline.html$/.test(input);
 }
 
 function folderFilter(input){
     return /_Version courante$/.test(input);
+}
+
+function removeStyle(array, style){
+    for(var index = array.indexOf(style); index >=0; index = array.indexOf(style)){
+        array.splice(index, 1);
+    }
+}
+
+function inlineHtmlParser(html){
+    var replaces = {
+        // HTML TAGS FIXES
+        //'<meta charset="utf-8">': '<meta charset="utf-8"/>',
+        '<(img|col|meta|hr) ([a-z]*="[^"]*" ?)*>': function(match){ return match.substring(0, match.length - 1) + '/>'; },
+        '<br\s*>': '<br/>',
+        
+        // STYLES REPLACE
+        '-epub-hyphens: (auto|none);': '',
+        'border-collapse: [^;]*;': '',
+        'border-color: ([^;]*);': '',
+        'border-style: [^;]*;': '',
+        'border-width: ([0-9]*)(px|);': '',
+        'color: ([^;]*)*;': '',
+        "font-family: [^;]*;": '',
+        'font-size: ([0-9]*)(px|%);': function(match, p1, p2){ return `FontSize-${p1}${p2}`; },
+        'font-style: (normal|italic|oblique);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'font-variant: ([^;]*);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'font-weight: (bold|normal);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'line-height: ([0-9]*)(\.[0-9]*)?;': function(match, p1, p2){ return `LineHeight-${p1}${p2}`; },
+        'margin: ([0-9]*)(px|);': '',
+        'margin-bottom: -?([0-9]*)(px|auto|);': '',
+        'margin-left: -?([0-9]*)(px|auto|);': '',
+        'margin-right: -?([0-9]*)(px|auto|);': '',
+        'margin-top: -?([0-9]*)(px|auto|);': '',
+        'orphans: ([0-9]*);': '',
+        'padding: ([0-9]*);': '',
+        'page-break-after: auto;': '',
+        'page-break-after: avoid;': 'AvoidPageBreakAfter',
+        'page-break-before: auto;': '',
+        'page-break-before: avoid;': 'AvoidPageBreakBefore',
+        'text-align: (justify|center|right|left);': function(match, p1){ return `Align-${p1}`; },
+        'text-align-last: (justify|center|right|left);': function(match, p1){ return `AlignLast-${p1}`; },
+        'text-decoration: none;': '',
+        'text-indent: -?([0-9]*)(px|);': '',
+        'text-decoration: ([^;]*);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'text-transform: none;': '',
+        'text-transform: uppercase;': 'Upper',
+        'widows: ([0-9]*);': '',
+        'vertical-align: (super|sub);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'display: inline-block;':'',
+        'height: ([0-9]*)(px|);':'',
+        'position: relative;':'',
+        'width: ([0-9]*)(px|);':'',
+        
+        // AFTER FIXES
+        'style="([^"]*)"': function(match, p1){ 
+            var values = p1.replace(/\s\s+/g, ' ').trim().split(' ');
+            if(values.indexOf('Italic')>=0 && values.indexOf('Bold')>=0){
+                removeStyle(values, 'Italic');
+                removeStyle(values, 'Bold');
+                values.push('ib');
+            }else if(values.indexOf('Super')>=0){
+                removeStyle(values, 'Super');
+                values.push('su');    
+            }else if(values.indexOf('Sub')>=0){
+                removeStyle(values, 'Sub');
+                values.push('sb');    
+            }else if(values.indexOf('Bold')>=0){
+                removeStyle(values, 'Bold');
+                values.push('bf');
+            }else if(values.indexOf('Italic')>=0){
+                removeStyle(values, 'Italic');
+                values.push('it');
+            }else if(values.indexOf('Underline')>=0){
+                removeStyle(values, 'Underline');
+                values.push('un');
+            }else if(values.indexOf('Small-caps')>=0){
+                removeStyle(values, 'Small-caps');
+                values.push('smcaps');
+            }else if(values.indexOf('Line-through')>=0){
+                removeStyle(values, 'Line-through');
+                values.push('strike');
+            }
+            
+            removeStyle(values, 'Normal');
+            //console.log(values);
+            if(values.length > 0){
+                return `style="${values.join(' ')}"`;
+            }
+            return '';
+        },
+        'CharOverride-([0-9]*)': ''
+    };
+    var output = html;
+    for(var key in replaces){
+        output = output.replace(new RegExp(key, 'gi'), replaces[key]);
+    }
+    return output;
 }
 
 var conversionQueue = async.queue(function(task, callback) {
@@ -66,16 +167,58 @@ var indd2Html = function(batchFiles) {
 
 };
 
-function processCollection(collectionFolder){
+function processCollection(collectionFolder, filter){
     
     console.log('processCollection()', collectionFolder);
 
+    var collectionPaths = [],
+        emphasis = [];
+
     var outPath = collectionFolder + '/xml';
 
-    return fsReadDir(collectionFolder + '/html')
+    var inlineHtmls = fsReadDir(collectionFolder + '/html')
+        .then( files => {
+
+            return Promise.all(
+                
+                files
+                    .filter(function(file){
+                        return filter.test(file);
+                    })
+                    .filter(htmlFilter)
+                    .map(file => {
+                    
+                var filePath = collectionFolder + '/html/' + file;
+                
+                return new Promise(function(resolve, reject){
+                    
+                    fsReadFile(filePath, 'utf8')
+                        .then(function (htmlData) {
+                            
+                            inlineCss(htmlData, { url: 'file:///' + collectionFolder + '/html/' })
+                                .then(function(html) {
+                                    
+                                    var fileInline = file.replace('.html', '.inline.html');
+                                    var fileInlinePath = collectionFolder + '/html/' + fileInline;
+                      
+                                    fsWriteFile(fileInlinePath, inlineHtmlParser(html), 'utf8')
+                                        .then(() => {
+                                            resolve(fileInline);
+                                        });
+                                }, function(){
+                                    reject(filePath);
+                                });
+
+                        });
+                });
+            }));
+
+        });
+
+    return inlineHtmls
         .then( files => {
             
-            var htmlFiles = files.filter(htmlFilter);
+            var htmlFiles = files.filter(htmlInlineFilter);
             
             var docBook = htmlFiles.map(file => {
                 return docbook.exec(collectionFolder + '/html/' + file)
@@ -84,6 +227,42 @@ function processCollection(collectionFolder){
                         var xmlFilePath = outPath + '/' + file + '.db.xml';
                         return fsWriteFile(xmlFilePath, content)
                             .then(() => xmlFilePath);
+                    })
+                    .then( xmlFilePath => {
+
+                        return saxon
+                            .exec({
+                                xmlPath: xmlFilePath, 
+                                xslPath: __dirname + '/../../xslt/export-paths.xsl'
+                            })
+                            .then( response => response.stdout )
+                            .then( content => {
+                                var lines = content.split(/\r|\n/);
+                                for(var i=0;i<lines.length;i++){
+                                    if(lines[i] && collectionPaths.indexOf(lines[i]) === -1){
+                                        collectionPaths.push(lines[i]);
+                                    }
+                                }
+                                return xmlFilePath;
+                            });
+                    })
+                    .then( xmlFilePath => {
+
+                        return saxon
+                            .exec({
+                                xmlPath: xmlFilePath, 
+                                xslPath: __dirname + '/../../xslt/export-emphasis.xsl'
+                            })
+                            .then( response => response.stdout )
+                            .then( content => {
+                                var lines = content.split(/\r|\n/);
+                                for(var i=0;i<lines.length;i++){
+                                    if(lines[i] && emphasis.indexOf(lines[i]) === -1){
+                                        emphasis.push(lines[i]);
+                                    }
+                                }
+                                return xmlFilePath;
+                            });
                     })
                     .then( xmlFilePath => ({ file, xmlFilePath, type: 'docbook' }) )
                     .then( docBookFile => {
@@ -207,7 +386,13 @@ function processCollection(collectionFolder){
 
                     return fsWriteFile(collectionFolder + '/results.json', JSON.stringify(results), 'utf8')
                         .then(() => {
-                            return fsWriteFile(collectionFolder + '/results.txt', txtResults.join("\r\n"), 'utf8');
+                            return fsWriteFile(collectionFolder + '/results.txt', txtResults.join("\r\n"), 'utf8')
+                                .then(() => {
+                                    fsWriteFile(collectionFolder + '/paths.txt', collectionPaths.join("\r\n"), 'utf8');
+                                })
+                                .then(() => {
+                                    fsWriteFile(collectionFolder + '/emphasis.txt', emphasis.join("\r\n"), 'utf8');
+                                });
                         })
                         .then( () => results );
 
@@ -247,7 +432,7 @@ function copyFile(src, dest) {
     });
 }
     
-function convertPackages(paths){
+function convertPackages(paths, filter){
     return Promise.all(paths
         .map( path => path.replace('/in/', '/out/') )
         .map( path => {
@@ -258,12 +443,12 @@ function convertPackages(paths){
                     var collectionsResults = {};
 
                     return collections
-                        .filter( collection => !_.includes(['.DS_Store', 'results.json', 'results.txt'], collection) )
+                        .filter( collection => !_.includes(['.DS_Store', 'results.json', 'results.txt', 'paths.txt', 'emphasis.txt'], collection) )
                         .reduce( (promise, collection) => {
                                 var collectionPath = path + '/' + collection;
                                 return promise
                                     .then(() => {
-                                        return processCollection(collectionPath) 
+                                        return processCollection(collectionPath, filter) 
                                     })
                                     .then( results => { 
                                         collectionsResults[collectionPath] = results;
@@ -391,6 +576,8 @@ function preparePackages(paths){
     var packages = (args.packages.split(',') || [1,2,3,4]).map( id => {
         return basePath + id;
     });
+
+    var filter = new RegExp(args.filter || '\.html$');
     
     var preparePromise = args.prepare
         ? fsReadFile('./export-single-html.jsx', 'utf8')
@@ -404,7 +591,7 @@ function preparePackages(paths){
         .then(() => {
             
             return args.convert
-                ? convertPackages(packages)
+                ? convertPackages(packages, filter)
                 : Promise.resolve();
                     
         })

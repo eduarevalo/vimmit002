@@ -20,7 +20,7 @@ function prepareCommand(options){
 
 async function exec(options) {
     let cmd = prepareCommand(options);
-    return execChildProcess(cmd, {maxBuffer: options.maxBuffer || 1024 * 5000});
+    return execChildProcess(cmd, {maxBuffer: options.maxBuffer || 1024 * 10000});
 }
 
 exports.exec = exec;

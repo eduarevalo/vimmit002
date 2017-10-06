@@ -12,7 +12,7 @@
     <xsl:template match="html:p">
         <para>   
             <xsl:attribute name="role">
-                <xsl:value-of select="@class"/>
+                <xsl:value-of select="concat(@class, ' ', @style)"/>
             </xsl:attribute>
             <xsl:apply-templates/>            
         </para>
@@ -26,6 +26,19 @@
         </para>
     </xsl:template>
     
+    <xsl:template match="html:p[contains(@class, 'Notes')]">
+        <para>
+            <xsl:attribute name="role">
+                <xsl:value-of select="concat(@class, ' ', @style)"/>
+            </xsl:attribute>
+            <footnote xml:id="{generate-id()}">
+                <para>
+                    <xsl:apply-templates/>    
+                </para>
+            </footnote>      
+        </para>
+    </xsl:template>
+    
     <xsl:template match="html:p[contains(@class, 'Titre')] | html:span[contains(@class, 'Titre')]">
         <title>    
             <xsl:apply-templates/>            
@@ -33,14 +46,26 @@
     </xsl:template>
     
     <xsl:template match="html:span">
-        <emphasis>
-            <xsl:if test="@class">
-                <xsl:attribute name="role">
-                    <xsl:value-of select="@class"/>
-                </xsl:attribute>
-            </xsl:if>
-            <xsl:apply-templates/>            
-        </emphasis>
+        <xsl:variable name="role">
+            <xsl:value-of select="normalize-space(concat(@class, ' ', @style))"/>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="string-length($role) > 0">
+                <emphasis role="{$role}">
+                    <xsl:if test="contains($role, 'su') and text() castable as xs:decimal and ./parent::html:p[not(contains(@class, 'Notes'))]">
+                        <xsl:variable name="reference" select="text()"/>
+                        <xsl:variable name="referencedNode" select="./following::html:p[contains(@class, 'Notes')][starts-with(self::node(), $reference)][1]"/>
+                        <xsl:if test="$reference and $referencedNode">
+                            <footnoteref linkend='{generate-id($referencedNode)}'/>
+                        </xsl:if>
+                    </xsl:if>
+                    <xsl:apply-templates/>
+                </emphasis>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!--<xsl:template match="html:p/text()">
