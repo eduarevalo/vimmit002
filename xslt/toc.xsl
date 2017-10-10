@@ -6,7 +6,6 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs db html"
     version="3.0">
-   
     
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
@@ -112,9 +111,11 @@
         <xsl:param name="fascicle"/>
         <xsl:param name="fascicleSet"/>
         <xsl:apply-templates select="$fascicle"/>
-        <tocdiv>
-            <xsl:apply-templates select="$fascicleSet"/>
-        </tocdiv>
+        <xsl:if test="$fascicleSet">
+            <tocdiv>
+                <xsl:apply-templates select="$fascicleSet"/>
+            </tocdiv>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="html:p[starts-with(@class, 'no-fascicule') or starts-with(@class, 'fascicule') or contains(., 'TDMI')]">
@@ -123,7 +124,7 @@
                 <xsl:value-of select="."/>
             </emphasis>
             <!--<xsl:variable name="text" select="following-sibling::html:p[1][starts-with(@class, 'nom-fascicule') or starts-with(@class, 'texte-fascicule')]"/>-->
-            <xsl:variable name="text" select="following-sibling::html:p[1]"/>
+            <xsl:variable name="text" select="following-sibling::html:p[1][not(contains(@class, '--Titre'))]"/>
             <xsl:if test="$text">
                 <emphasis role="{$text/@class}">
                     <xsl:value-of select="$text"/>

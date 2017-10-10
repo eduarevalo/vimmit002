@@ -26,6 +26,12 @@ jing.setDefaults({ jingJarPath : __dirname + '/../../bin/jing-20091111/bin/jing.
 function htmlFilter(input){
     return /.html$/.test(input) && !/.inline.html$/.test(input);
 }
+
+function fascicleFilter(input){
+    return /-F[0-9]*.*.xml$/.test(input);
+    //6018_JCQ_09-F02_MJ8.indd.inline.html.db.xml
+}
+
 function htmlInlineFilter(input){
     return /.inline.html$/.test(input);
 }
@@ -86,7 +92,7 @@ function inlineHtmlParser(html){
         'width: ([0-9]*)(px|);':'',
         
         // AFTER FIXES
-        'style="([^"]*)"': function(match, p1){ 
+        /*'style="([^"]*)"': function(match, p1){ 
             var values = p1.replace(/\s\s+/g, ' ').trim().split(' ');
             if(values.indexOf('Italic')>=0 && values.indexOf('Bold')>=0){
                 removeStyle(values, 'Italic');
@@ -121,7 +127,7 @@ function inlineHtmlParser(html){
                 return `style="${values.join(' ')}"`;
             }
             return '';
-        },
+        },*/
         'CharOverride-([0-9]*)': ''
     };
     var output = html;
@@ -130,10 +136,6 @@ function inlineHtmlParser(html){
     }
     return output;
 }
-
-var conversionQueue = async.queue(function(task, callback) {
-    processCollection(task.htmlPath, task.xmlPath, callback);
-}, 1);
 
 var indd2Html = function(batchFiles) {
     
@@ -465,6 +467,93 @@ function convertPackages(paths, filter){
     );
 }            
 
+function transformPackages(paths, filter){
+    return Promise.all(paths
+        .map( path => path.replace('/in/', '/out/') )
+        .map( path => {
+                
+            return fsReadDir(path)
+                .then(collections => {
+
+                    var collectionsResults = {};
+
+                    return collections
+                        .filter( collection => !_.includes(['.DS_Store', 'results.json', 'results.txt', 'paths.txt', 'emphasis.txt'], collection) )
+                        .reduce( (promise, collection) => {
+                                var collectionPath = path + '/' + collection;
+                                return promise
+                                    .then(() => {
+                                        return transformCollection(collectionPath, filter) 
+                                    });
+                                }, Promise.resolve() 
+                        );
+
+                });
+        })
+    );
+}
+
+function transformCollection(collectionFolder, filter){
+
+    console.log('transformCollection()', collectionFolder);
+
+    var neptunePath = collectionFolder + '/neptune';
+    
+    return fxMkDir(neptunePath)
+        .then( () => {
+            
+
+        var fascicles = fsReadDir(collectionFolder + '/xml')
+            .then( files => {
+                
+                return Promise.all(
+                    
+                    files
+                        .filter(function(file){
+                            return filter.test(file);
+                        })
+                        .filter(fascicleFilter)
+                        .map( file => {
+
+                            var found = file.match(/([0-9]*)_JCQ_[0-9]*-F([0-9]*)_[^.]*\.indd\.inline\.html\.db\.xml$/);
+                            if(found){
+                                
+                                var pubNum = found[1].padStart(5, "0"),
+                                    chapterNum = found[2].padStart(4, "0");
+
+                                return saxon
+                                    .exec({
+                                        xmlPath: collectionFolder + '/xml/' + file, 
+                                        xslPath: __dirname + '/../../xslt/neptune-fascicle.xsl',
+                                        params: {
+                                            pubNum: pubNum,
+                                            chNum: chapterNum
+                                        }
+                                    })
+                                    .then( response => response.stdout )
+                                    .then( content => {
+
+                                            var newFileName = pubNum + '-ch' + chapterNum + '.xml';
+                                            var xmlFilePath = neptunePath + '/' + newFileName;
+                                            return fsWriteFile(xmlFilePath, content)
+                                                .then(() => xmlFilePath);
+                                        
+                                    });
+                            }else{
+                                return Promise.resolve();
+                            }
+                            
+                        })
+                );
+
+            });
+
+        return fascicles;
+
+    });
+
+}
+
 function preparePackages(paths){
 
     var batchFiles = {};
@@ -488,44 +577,46 @@ function preparePackages(paths){
                         return fsReadDir(collectionPath)
                             .then( renditions => {
 
-                                return Promise.all(
-                                    renditions
-                                        .filter( rendition => rendition != '.DS_Store') 
-                                        .map( rendition => {
-                                            var renditionPath = collectionPath + '/' + rendition;
+                                var htmlOutPath = outPath + '/' + collection + '/html';
+                                return fxMkDir(htmlOutPath)
+                                    .then( () => {
 
-                                            var copyFiles = function(fileType){
-                                            
-                                                var inddOutPath = outPath + '/' + collection + '/' + fileType + '/';
-                                                return fxMkDir(inddOutPath)
-                                                    .then(() => {
-                                                        return fsReadDir(renditionPath)
-                                                            .then(files => {
-                                                                
-                                                                return Promise.all(files
-                                                                    .map(file => {
-                                                                        var inddFilePath = renditionPath + '/' + file;
-                                                                        if((new RegExp(fileType + '$')).test(inddFilePath)){
-                                                                            var inddFinalPath = inddOutPath + '/' + file;
-                                                                            return copyFile(inddFilePath, inddFinalPath);
-                                                                        }
-                                                                        return Promise.resolve();
-                                                                    }));
+                                        return Promise.all(
+                                            renditions
+                                                .filter( rendition => rendition != '.DS_Store') 
+                                                .map( rendition => {
+                                                    var renditionPath = collectionPath + '/' + rendition;
+        
+                                                    var copyFiles = function(fileType){
+                                                    
+                                                        var inddOutPath = outPath + '/' + collection + '/' + fileType + '/';
+                                                        return fxMkDir(inddOutPath)
+                                                            .then(() => {
+                                                                return fsReadDir(renditionPath)
+                                                                    .then(files => {
+                                                                        
+                                                                        return Promise.all(files
+                                                                            .map(file => {
+                                                                                var inddFilePath = renditionPath + '/' + file;
+                                                                                if((new RegExp(fileType + '$')).test(inddFilePath)){
+                                                                                    var inddFinalPath = inddOutPath + '/' + file;
+                                                                                    return copyFile(inddFilePath, inddFinalPath);
+                                                                                }
+                                                                                return Promise.resolve();
+                                                                            }));
+                                                                    });
                                                             });
-                                                    });
-                                                
-                                            };
-
-                                            if(/INDD/.test(rendition) || /InDesign/.test(rendition)){
-                                                return copyFiles('indd')
-                                                    .then(() => {
-                                                        var xmlOutPath = outPath + '/' + collection + '/xml';
-                                                        console.log(xmlOutPath);
-                                                        return fxMkDir(xmlOutPath)
-                                                            .then( () => {
-                                                                var htmlOutPath = outPath + '/' + collection + '/html';
-                                                                return fxMkDir(htmlOutPath)
+                                                        
+                                                    };
+        
+                                                    if(/INDD/.test(rendition) || /InDesign/.test(rendition)){
+                                                        return copyFiles('indd')
+                                                            .then(() => {
+                                                                var xmlOutPath = outPath + '/' + collection + '/xml';
+                                                                console.log(xmlOutPath);
+                                                                return fxMkDir(xmlOutPath)
                                                                     .then( () => {
+                                                                        
                                                                         return fsReadDir(renditionPath)
                                                                             .then( files => {
                                                                                 return Promise.all(files
@@ -538,18 +629,22 @@ function preparePackages(paths){
                                                                                         return Promise.resolve();
                                                                                     }));
                                                                             });
+                                                                            
                                                                     });
+                                                                
                                                             });
-                                                        
-                                                    });
-                                            
-                                            }else if(/PDF/.test(rendition)){
-                                                return copyFiles('pdf');
-                                            }else{
-                                                return Promise.resolve();
-                                            }
-                                        })
-                                );
+                                                    
+                                                    }else if(/PDF/.test(rendition)){
+                                                        return copyFiles('pdf').
+                                                            then( () => {
+
+                                                            });
+                                                    }else{
+                                                        return Promise.resolve();
+                                                    }
+                                                })
+                                        );
+                                    });
                                 
                             });
                     }));
@@ -573,11 +668,11 @@ function preparePackages(paths){
 
     var basePath = "/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/data/in/Package_";
     
-    var packages = (args.packages.split(',') || [1,2,3,4]).map( id => {
+    var packages = (args.packages.split(',') || [1,2,3,4,5]).map( id => {
         return basePath + id;
     });
 
-    var filter = new RegExp(args.filter || '\.html$');
+    var filter = new RegExp(args.filter || '.*');
     
     var preparePromise = args.prepare
         ? fsReadFile('./export-single-html.jsx', 'utf8')
@@ -587,16 +682,26 @@ function preparePackages(paths){
             })
         : Promise.resolve();
     
-    preparePromise
+    var converPromise = preparePromise
         .then(() => {
             
             return args.convert
                 ? convertPackages(packages, filter)
                 : Promise.resolve();
                     
-        })
+        });
+    
+    var neptunePromise = converPromise
+        .then( () => {
+            return args.neptune
+                ? transformPackages(packages, filter)
+                : Promise.resolve();
+        });
+    
+    neptunePromise
         .then(function(){
             console.log('FINISHED');
         });
+    
     
 })();
