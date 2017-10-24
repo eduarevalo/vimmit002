@@ -1,26 +1,32 @@
 <?xml version="1.0"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
-    xmlns:db="http://docbook.org/ns/docbook"
     xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
     xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
     xmlns:fm="http://www.lexisnexis.com/namespace/sslrp/fm"
-    xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core">
+    xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
+    xpath-default-namespace="http://docbook.org/ns/docbook">
     
-    <xsl:template match="db:emphasis">
+    <xsl:template match="emphasis">
         <xsl:variable name="typestyle">
             <xsl:call-template name="getTypeStyle">
                 <xsl:with-param name="node" select="."/>
             </xsl:call-template>
         </xsl:variable>
-        <core:emph>
-            <xsl:if test="$typestyle">
-                <xsl:attribute name="typestyle" select="$typestyle"/>
-            </xsl:if>
-            <xsl:apply-templates/>
-        </core:emph>
+        <xsl:choose>
+            <xsl:when test="$typestyle != ''">
+                <core:emph>
+                    <xsl:attribute name="typestyle" select="$typestyle"/>
+                    <xsl:apply-templates/>
+                </core:emph>
+            </xsl:when>
+            <xsl:otherwise>
+                
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="db:para">
+    <xsl:template match="para">
         <xsl:param name="labelToExtract"/>
         <xsl:variable name="nodes" select="*|text()|processing-instruction()"/>
         <xsl:variable name="validNodes" select="$nodes except $nodes[last()][self::processing-instruction()] except $nodes[1][self::processing-instruction()]"/>
@@ -60,7 +66,7 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="db:para[preceding-sibling::comment()[1] = 'One-Cell-Table START']">
+    <xsl:template match="para[preceding-sibling::comment()[1] = 'One-Cell-Table START']">
         <fm:boxed-text>
             <core:para>
                 <xsl:apply-templates/>
@@ -82,6 +88,10 @@
         <xsl:if test="$firstPI/name() = 'textpage'">
             <xsl:apply-templates select="$firstPI"/>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="printLastPageNumber">
+        <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', count(//processing-instruction())+1 ,'&quot; release-num=&quot;', '&quot;')"/>
     </xsl:template>
     
 </xsl:transform>

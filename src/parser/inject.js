@@ -33,7 +33,7 @@ function hexEncodeChar(input, i){
     return("000"+hex).slice(-4);
 }
 
-var charsToOmit = ['0020', '0009', '00ad', '002d', '000a', '00a0', '2029'];
+var charsToOmit = ['0020', '0009', '00ad', '002d', '000a', '00a0', '2029', '002e'];
 
 function validateStrings(stringA, stringB, iterators){
     var charA = stringA.charAt(iterators.A),
@@ -61,7 +61,7 @@ function validateStrings(stringA, stringB, iterators){
         }
     }
     if(!result){
-        console.log(iterators.A, iterators.B, iterators.page, 'HTML:', stringA.substr(iterators.A, 10), 'Pages:', stringB.substr(iterators.B, 10), charAHex, charBHex, iterators.page, iterators.fileName);
+        console.log(iterators.A, iterators.B, iterators.page, 'HTML:', stringA.substr(iterators.A, 10), 'Pages:', stringB.substr(iterators.B, 10), charAHex, charBHex, 'Page:', iterators.page, iterators.fileName);
         //process.exit();
     }
     return result;
@@ -171,7 +171,7 @@ function inlineCssParser(html){
             var found = content.match(/-webkit-transform: translate\([0-9|\.]*px,([0-9|\.]*)px\)/);
             if(found){
                 var position = parseInt(found[1]), lastPosition;
-                if( position > 650){
+                if( position >= 650){
                     lastPosition = 3;
                 }else if( position < 30){
                     lastPosition = 1;
@@ -230,6 +230,9 @@ function exportEpubFiles(path, collection, collectionPath){
         .then(files => {
             return Promise.all(
                     files
+                    .filter( file => !/Instructions/.test(file) )
+                    //.filter( file => /titre/.test(file) )
+                    //.filter( file => /F17/.test(file) )
                     .filter( createFilter('\.epub$') )
                     //.filter( (value, index) => /F18/.test(value) )
                     .map( epubFile => {
@@ -246,7 +249,7 @@ function exportEpubFiles(path, collection, collectionPath){
                             });
                         })).then( (epubPath) => {
 
-                            console.log(epubPath);
+                            console.log('epubPath:',epubPath);
                             return saxon
                                 .exec({
                                     xmlPath: __dirname + '/../../xslt/empty.xml', 
@@ -257,6 +260,7 @@ function exportEpubFiles(path, collection, collectionPath){
                                 })
                                 .then( response => response.stdout )
                                 .then( (content) => { 
+                                    //console.log(content);
                                     return { content, epubPath };
                                 });
                         }).then( (conversion) => {
@@ -267,7 +271,7 @@ function exportEpubFiles(path, collection, collectionPath){
                                 var htmlFilePath = [path, collection, 'html'].join('/') + fileName + '.html';
                                 injectInlineHtml([path, collection, 'html'].join('/'), fileName + '.html')
                                     .then( htmlData => {
-                                        return injectPages(conversion.content, htmlData, htmlFilePath, resolve);
+                                        return injectPages(conversion.content, htmlData, htmlFilePath, fileName, resolve);
                                     });
                                 
 
@@ -282,6 +286,38 @@ function exportEpubFiles(path, collection, collectionPath){
                     })
                 );
     });
+}
+
+function compileTexts(pages, filename){
+    var file = _.first(_.split(_.last(_.split(filename, '/')), '.'));
+    var order = {
+        '6018_JCQ_02-Page de titre et catalogage_MJ9' : { '1': [2,1,3,0] },
+        '6018_JCQ_28-F06_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F07_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F08_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F10_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F13_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F14_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F15_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F18_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F20_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F22_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F24_MJ9': { '1': [0,2,1]},
+        '6018_JCQ_28-F26_MJ9': { '1': [0,2,1]}
+    };
+    for(var key in pages){
+        if(order[file] && order[file][key]){
+            
+            var texts = _.compact(pages[key].contents);   
+            for(var it=0; it<order[file][key].length; it++){
+                pages[key].text += texts[order[file][key][it]];
+            }
+            
+        }else{
+            pages[key].text = _.join(pages[key].contents, '');
+        }
+        delete pages[key].contents;
+    }
 }
 
 function injectPageNumbers(htmlData, pages, fileName, resolve){
@@ -311,6 +347,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             iterators.out += `>`;
         },
         ontext: function(text){
+            
             if(error){
                 iterators.out += encodeXmlEntities(text);
                 return;
@@ -318,7 +355,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
 
             var evaluatePageChange = function(){
                 if(pages[iterators.page] && pages[iterators.page].text.length === iterators.B){
-                    var release = pages[iterators.page].footer,
+                    var release = pages[iterators.page].footer.trim(),
                         pageNo,
                         ofPages;
                     var match = release.match(/^[\r\n ]*\([0-9]*\)([A-Z0-9])*\s\/\s([0-9]*)\s*(\D*\s[0-9]{4})[\r\n ]*$/);
@@ -328,6 +365,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         ofPages = match[2];
                         release = match[3];
                     }
+                    //console.log('----------------------------------->', pageNo, ofPages, release, pages[iterators.page].footer);
                     if(pageNo && ofPages){
                         //console.log(`<?textpage page-num="${page}" release-num="Août 2017"?>`);
                         if(pages[iterators.page] && pages[iterators.page].header){
@@ -339,6 +377,8 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         }else{
                             iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${iterators.page}" release-num="${release}" />`;
                         }
+                    }else{
+                        iterators.out += `<br injected="true" extracted-page="${iterators.page}" release-num="${release}" />`;
                     }
                     iterators.page++;
                     iterators.B = 0;
@@ -377,7 +417,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
     parser.end();
 };
 
-function injectPages(content, htmlData, fileName, callback){
+function injectPages(content, htmlData, filePath, fileName, callback){
     var pages = {},
         lastNodeName,
         it = 0,
@@ -392,15 +432,17 @@ function injectPages(content, htmlData, fileName, callback){
                 var found = attribs.filename.match(/-([0-9]*).xhtml$/);
                 if(found){
                     lastP = found[1];
-                    pages[lastP] = {text: '', footer: '', header: {}};
+                    pages[lastP] = {contents: [], text: '',footer: '', header: {}};
                 }
                 it++;
+            }else if(name === "content"){
+                pages[lastP].contents.push('');
             }
         },
         ontext: function(text){
             switch(lastNodeName){
                 case "content":
-                    pages[lastP].text += text;
+                    pages[lastP].contents[pages[lastP].contents.length - 1] += text;
                     break;
 
                 case "header":
@@ -418,7 +460,8 @@ function injectPages(content, htmlData, fileName, callback){
             }          
         },
         onend: function(){
-            injectPageNumbers(htmlData, pages, fileName, callback);
+            compileTexts(pages, fileName);
+            injectPageNumbers(htmlData, pages, filePath, callback);
         }
     }, { decodeEntities: true });
     parser.write(content);

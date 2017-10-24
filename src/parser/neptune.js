@@ -32,9 +32,104 @@ function transformCollection(collectionFolder, filter){
         
         return fxMkDir(neptunePath)
             .then( () => {
-                
+            
+
+            var frontMatterTitle= fsReadDir(collectionFolder + '/xml')
+                .then( files => {
+                    
+                    return Promise.all(
+                        
+                        files
+                            .filter(function(file){
+                                return filter.test(file);
+                            })
+                            .filter(function(file){
+                                return /Page de titre/.test(file);
+                            })
+                            .map( file => {
+                                console.log(file);
+        
+                                var found = file.match(/([0-9]*)_JCQ_/);
+                                if(found){
+                                    //console.log(found);
+                                    var pubNum = found[1].padStart(5, "0");
+        
+                                    return saxon
+                                        .exec({
+                                            xmlPath: collectionFolder + '/xml/' + file, 
+                                            xslPath: __dirname + '/../../xslt/neptune-frontmatter-title.xsl',
+                                            params: {
+                                                pubNum: pubNum
+                                            }
+                                        })
+                                        .then( response => response.stdout )
+                                        .then( content => {
+        
+                                                var newFileName = pubNum + '-fmvol001titre.xml';
+                                                var xmlFilePath = neptunePath + '/' + newFileName;
+                                                return fsWriteFile(xmlFilePath, content)
+                                                    .then(() => xmlFilePath);
+                                            
+                                        });
+                                }else{
+                                    return Promise.resolve();
+                                }
+                                
+                            })
+                    );
+        
+                });
+            
+            var frontMatterPreface = fsReadDir(collectionFolder + '/xml')
+                .then( files => {
+                    
+                    return Promise.all(
+                        
+                        files
+                            .filter(function(file){
+                                return filter.test(file);
+                            })
+                            .filter(function(file){
+                                return /Préface/.test(file);
+                            })
+                            .map( file => {
+                                console.log(file);
+        
+                                var found = file.match(/([0-9]*)_JCQ_/);
+                                if(found){
+                                    //console.log(found);
+                                    var pubNum = found[1].padStart(5, "0");
+        
+                                    return saxon
+                                        .exec({
+                                            xmlPath: collectionFolder + '/xml/' + file, 
+                                            xslPath: __dirname + '/../../xslt/neptune-frontmatter-preface.xsl',
+                                            params: {
+                                                pubNum: pubNum
+                                            }
+                                        })
+                                        .then( response => response.stdout )
+                                        .then( content => {
+        
+                                                var newFileName = pubNum + '-fmvol001preface.xml';
+                                                var xmlFilePath = neptunePath + '/' + newFileName;
+                                                return fsWriteFile(xmlFilePath, content)
+                                                    .then(() => xmlFilePath);
+                                            
+                                        });
+                                }else{
+                                    return Promise.resolve();
+                                }
+                                
+                            })
+                    );
+        
+                });
+            
+            
+                            
     
-            var fascicles = fsReadDir(collectionFolder + '/xml')
+                /*var fascicles = fsReadDir(collectionFolder + '/xml')
                 .then( files => {
                     
                     return Promise.all(
@@ -48,7 +143,7 @@ function transformCollection(collectionFolder, filter){
     
                                 var found = file.match(/([0-9]*)_JCQ_[0-9]*-F([0-9]*)_[^.]*\.inline\.html\.db\.xml$/);
                                 if(found){
-                                    console.log(found);
+                                    //console.log(found);
                                     var pubNum = found[1].padStart(5, "0"),
                                         chapterNum = found[2].padStart(4, "0");
     
@@ -78,8 +173,8 @@ function transformCollection(collectionFolder, filter){
                     );
     
                 });
-        
-            var frontMatter = fsReadDir(collectionFolder + '/xml')
+            
+                /*var frontMatter = fsReadDir(collectionFolder + '/xml')
             .then( files => {
                 
                 return Promise.all(
@@ -96,7 +191,7 @@ function transformCollection(collectionFolder, filter){
     
                             var found = file.match(/([0-9]*)_JCQ_/);
                             if(found){
-                                console.log(found);
+                                //console.log(found);
                                 var pubNum = found[1].padStart(5, "0");
     
                                 return saxon
@@ -146,7 +241,7 @@ function transformCollection(collectionFolder, filter){
     
                         var found = file.match(/([0-9]+)_JCQ_[0-9]+-TDM([I|V|X]+)_/);
                             if(found){
-                                console.log(found);
+                                //console.log(found);
                                 var tocValues = {'I': "1", 'II': "2", 'III':"3", 'IV':"4", 'V':"5", "VI": "6", "VII": "7", "VIII": "8", "IX":9, "X":10};
                                 var pubNum = found[1].padStart(5, "0"),
                                     tocNumber = tocValues[found[2]].padStart(2, "0");
@@ -195,7 +290,7 @@ function transformCollection(collectionFolder, filter){
     
                         var found = file.match(/([0-9]+)_JCQ_[0-9]+-Index de la /);
                             if(found){
-                                console.log(found);
+                                //console.log(found);
                                 var pubNum = found[1].padStart(5, "0");
                                 
                                 return saxon
@@ -241,7 +336,7 @@ function transformCollection(collectionFolder, filter){
     
                         var found = file.match(/([0-9]+)_JCQ_[0-9]+-Index a/);
                             if(found){
-                                console.log(found);
+                                //console.log(found);
                                 var pubNum = found[1].padStart(5, "0");
                                 
                                 return saxon
@@ -268,9 +363,9 @@ function transformCollection(collectionFolder, filter){
                         })
                 );
     
-            });
+            });*/
 
-            return Promise.all([fascicles, frontMatter, detailedToc, legisIndex, index]);
+            return Promise.all([frontMatterTitle, frontMatterPreface, /*, fascicles, detailedToc, legisIndex, index*/]);
     
         });
     

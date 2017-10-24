@@ -16,6 +16,8 @@
         <part version="5.1">    
             <info>
                 <title><xsl:apply-templates select="./html:html/html:head/html:title" /></title>
+                <xsl:processing-instruction name="leftHeader" select="(//html:br[@left-header][@left-header!='undefined'])[1]/@left-header"/>
+                <xsl:processing-instruction name="rightHeader" select="(//html:br[@right-header][@right-header!='undefined'])[1]/@right-header"/>
                 <cover>
                     <xsl:apply-templates select="./html:html/html:body/*"/>
                 </cover>

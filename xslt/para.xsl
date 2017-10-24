@@ -9,6 +9,10 @@
     exclude-result-prefixes="xs db html"
     version="2.0">
     
+    <xsl:template match="html:p[contains(@class,'N1') or contains(@class,'N2') or contains(@class,'N3') or contains(@class,'N4')]">
+        <xsl:apply-templates/>            
+    </xsl:template>
+    
     <xsl:template match="html:p">
         <para>   
             <xsl:attribute name="role">
@@ -74,7 +78,14 @@
     </xsl:template>
     
     <xsl:template match="html:br[@injected]">
-        <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+        <xsl:choose>
+            <xsl:when test="@page-num ">
+                <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @extracted-page ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>
