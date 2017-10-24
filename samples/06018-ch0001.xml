@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="2015">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=ch0001 -->
+    <?textpage page-num="1-1" release-num="Septembre 2016"?>
+    <core:desig value="1">FASCICULE 1</core:desig>
+    <core:title>Droit international de l’environnement</core:title>
+    <core:title-alt use4="l-running-hd"><core:emph typestyle="smcaps">Fasc. 1 – Droit international
+            de l’environnement</core:emph></core:title-alt>
+    <core:title-alt use4="r-running-hd"><core:emph typestyle="smcaps">I. Aspects
+            généraux</core:emph></core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="it">Sophie LAVALLÉE</core:emph></core:name.text>
+            <core:name.detail>
+                <core:role>Professeure titulaire, Faculté de droit, Université Laval et membre du
+                    Barreau du Québec</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:comment-prelim type="currentness">
+        <core:para>À jour au 30 mai 2016</core:para>
+    </core:comment-prelim>
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>POINTS-CLÉS</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:enum>1.</core:enum>
+                    <core:para><core:emph typestyle="bf">Enraciné dans le droit international
+                            public</core:emph>, le droit international de l’environnement se fonde
+                        sur le socle de ses règles générales issues du droit coutumier, du droit des
+                        traités et du droit de la responsabilité. Il n’en est pas moins une branche
+                        spécifique par ses concepts, ses principes et les institutions et mécanismes
+                        conventionnels novateurs inspirés par la nécessité de trouver des consensus
+                        en matière de protection de l’environnement (V. n<core:emph typestyle="su"
+                            >os</core:emph> 1 à 4).</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>2.</core:enum>
+                    <core:para>Suivant le rythme de l’apparition des problèmes environnementaux, le
+                            <core:emph typestyle="bf">droit international de l’environnement s’est
+                            développé en trois temps</core:emph> : l’époque pré-Stockholm qui
+                        correspond à la <core:emph typestyle="bf">préhistoire</core:emph> du droit
+                        international de l’environnement et qui est une étape de conservation des
+                        ressources naturelles; l’époque post-Stockholm qui marque véritablement la
+                            <core:emph typestyle="bf">naissance</core:emph> du droit international
+                        de l’environnement avec l’adoption de grandes conventions multilatérales; et
+                        l’époque post-Rio qui s’étend de la Conférence de Rio de 1992 à celle de
+                        Rio+20 de 2012, et qui est une période d’intense <core:emph typestyle="bf"
+                            >conceptualisation</core:emph> de la discipline (V. n<core:emph
+                            typestyle="su">os</core:emph> 5 à 18).</core:para>
+                </core:listitem>
+                <!--  -->
+                <?textpage page-num="1-3" release-num="Septembre 2016"?>
+                <!--  -->
+            </core:list>
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>TABLE DES MATIÈRES</core:title>
+            <core:toc>
+                <core:toc-entry lev="ch-pt">
+                    <core:entry-num>I.</core:entry-num>
+                    <core:entry-title>Contexte : 1</core:entry-title>
+                </core:toc-entry>
+                <!--  -->
+                <core:toc-entry lev="ch-pt">
+                    <core:entry-num>V.</core:entry-num>
+                    <core:entry-title>Évolution du droit international de l’environnement :
+                        8-18</core:entry-title>
+                    <core:toc-entry lev="ch-ptsub1">
+                        <core:entry-num>A.</core:entry-num>
+                        <core:entry-title>Préhistoire du droit international de l’environnement : la
+                            phase pré-Stockholm : 9</core:entry-title>
+                    </core:toc-entry>
+                    <core:toc-entry lev="ch-ptsub1">
+                        <core:entry-num>B.</core:entry-num>
+                        <core:entry-title>Naissance du droit international de l’environnement : le
+                            développement spectaculaire des années post-Stockholm (1972-1992) :
+                            10-12</core:entry-title>
+                        <core:toc-entry lev="ch-ptsub2">
+                            <core:entry-num>1.</core:entry-num>
+                            <core:entry-title>Déclaration des Nations Unies sur l’environnement
+                                (Stockholm, 1972) : 11</core:entry-title>
+                        </core:toc-entry>
+                        <core:toc-entry lev="ch-ptsub2">
+                            <core:entry-num>2.</core:entry-num>
+                            <core:entry-title>Programme des Nations Unies pour l’environnement
+                                (PNUE) : 12</core:entry-title>
+                        </core:toc-entry>
+                    </core:toc-entry>
+                </core:toc-entry>
+                <!--  -->
+                <?textpage page-num="1-5" release-num="Septembre 2016"?>
+                <!--  -->
+            </core:toc>
+            <core:para/>
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>INDEX ANALYTIQUE</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:para>Atmosphère</core:para>
+                    <core:list>
+                        <core:listitem>
+                            <core:para>Définition, 119</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Statut juridique, 120</core:para>
+                        </core:listitem>
+                    </core:list>
+                </core:listitem>
+                <core:listitem>
+                    <core:para>Biodiversité biologique</core:para>
+                    <core:list>
+                        <core:listitem>
+                            <core:para>Instruments de protection, 145, 153</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Notion, 146</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Obligations, 147</core:para>
+                            <core:list>
+                                <core:listitem>
+                                    <core:para>Conservation, 148</core:para>
+                                </core:listitem>
+                                <core:listitem>
+                                    <core:para>Partage des avantages de l’exploitation des
+                                        ressources génétiques, 151</core:para>
+                                </core:listitem>
+                                <core:listitem>
+                                    <core:para>Utilisation durable des composantes, 149,
+                                        150</core:para>
+                                </core:listitem>
+                            </core:list>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Sanctions, 152</core:para>
+                        </core:listitem>
+                    </core:list>
+                </core:listitem>
+                <!--  -->
+                <?textpage page-num="1-7" release-num="Septembre 2016"?>
+                <!--  -->
+            </core:list>
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <tr:ch-pt volnum="1">
+        <core:desig value="I">I.</core:desig>
+        <core:title>CONTEXTE</core:title>
+        <tr:secmain-dummy volnum="1">
+            <core:blockquote>
+                <core:blockquote-para>Défendre et améliorer l’environnement pour les générations
+                    présentes et à venir est devenu pour l’humanité un objectif primordial, une
+                    tâche dont il faudra coordonner et harmoniser la réalisation avec celle des
+                    objectifs fondamentaux déjà fixés de paix et de développement économique et
+                    social dans le monde entier.</core:blockquote-para>
+                <core:credit>
+                    <core:credit-origin><core:emph typestyle="it">Déclaration sur
+                            l’environnement</core:emph>, Stockholm, 1972,
+                        préambule.</core:credit-origin>
+                </core:credit>
+            </core:blockquote>
+        </tr:secmain-dummy>
+        <tr:secmain volnum="1">
+            <core:desig value="1">1.</core:desig>
+            <core:title runin="1">Une discipline récente mais distincte</core:title>
+            <core:para runin="1"> – En 1945, la <core:emph typestyle="it">Charte des Nations
+                    Unies</core:emph><fn:endnote-id er="1"/> n’énumérait pas la protection de
+                l’environnement parmi les objectifs qu’elle visait à favoriser pour le maintien de
+                la paix dans le monde. Vingt ans plus tard, dans son célèbre ouvrage <core:emph
+                    typestyle="it">The Changing Structure of International
+                    Law</core:emph><fn:endnote-id er="2"/>, le regretté Morgan Friedmann n’évoquait
+                pas la protection de l’environnement lorsqu’il passait en revue les champs du droit
+                international public qui lui semblaient nouveaux. Alexandre-Charles Kiss se
+                demandait encore, au début de la décennie 1980, si le droit de l’environnement était
+                « un aspect du droit international de l’avenir »<fn:endnote-id er="3"/>. Il faut
+                dire que ce n’est que quelques années plus tôt, en 1972, qu’un programme des Nations
+                Unies avait enfin été créé pour se consacrer aux problèmes environnementaux : le
+                Programme des Nations Unies pour l’environnement (PNUE), un organe subsidiaire des
+                Nations Unies<fn:endnote-id er="4"/>.</core:para>
+            <core:para>Reposant sur une multitude de conventions multilatérales, régionales et
+                bilatérales, cette spécialité du droit international public se compose de plusieurs
+                sous-spécialités qui se sont développées avec le temps : droit des ressources en eau
+                douce, de la biodiversité, de la pollution marine, des changements climatiques, des
+                produits chimiques et des déchets dangereux, pour ne nommer que celles-là. Ceci peut
+                d’ailleurs sembler <core:emph typestyle="it">a priori</core:emph> surprenant dans le
+                contexte où aucune organisation internationale de l’environnement n’a été créée, à
+                ce jour, pour envoyer le signal que les problèmes environnementaux sont à considérer
+                sur le même plan que les problèmes qui se posent dans les domaines du commerce
+                international, des droits de l’homme, du droit humanitaire, du droit du travail et
+                du droit de la culture, pour lesquels des organisations internationales spécialisées
+                existent.</core:para>
+            <!--  -->
+            <fn:endnotes>
+                <fn:endnote er="1">
+                    <fn:para><core:emph typestyle="it">Charte des Nations Unies (et Statut de la
+                            Cour internationale de justice)</core:emph>, 26 juin 1945, C.N.U.O.I.,
+                        [1945] R.T. Can. n<core:emph typestyle="su">o</core:emph> 7.</fn:para>
+                </fn:endnote>
+                <fn:endnote er="2">
+                    <fn:para>Morgan FRIEDMANN, <core:emph typestyle="it">The Changing Structure of
+                            International Law</core:emph>, New York, Columbia University Press,
+                        1964.</fn:para>
+                </fn:endnote>
+                <fn:endnote er="3">
+                    <fn:para>Alexandre-Charles KISS, <core:emph typestyle="it">L’avenir du droit
+                            international de l’environnement</core:emph>, Colloque de l’Académie de
+                        droit international de La Haye, 1984, p. 471-484.</fn:para>
+                </fn:endnote>
+                <fn:endnote er="4">
+                    <fn:para>Thomaïs DOURAKI, « In memoriam – Hommage au professeur
+                        Alexandre-Charles KISS », Bulletin du CREDHO, no 17, décembre 2007
+                        (Addendum), p. 2, disponible en ligne : &lt;http://
+                        www.credho.org/credho/travaux/douraki172007.pdf&gt; (site consulté le 11
+                        juin 2013).</fn:para>
+                </fn:endnote>
+                <!--  -->
+            </fn:endnotes>
+        </tr:secmain>
+    </tr:ch-pt>
+    <tr:ch-pt volnum="1">
+        <core:desig value="II">II.</core:desig>
+        <core:title>DÉFINITION</core:title>
+        <tr:secmain volnum="1">
+            <core:desig value="2">2.</core:desig>
+            <core:title runin="1">Difficultés conceptuelles</core:title>
+            <core:para runin="1">– Tout effort pour définir cette sphère du droit international
+                public se heurte à des difficultés conceptuelles.</core:para>
+        </tr:secmain>
+        <tr:secmain volnum="1">
+            <core:desig value="2.1">2.1</core:desig>
+            <core:title runin="1">Environnement</core:title>
+            <core:para runin="1">– La première difficulté est de circonscrire adéquatement les
+                contours du concept d’environnement. Les définitions de ce terme sont rares dans les
+                accords environnementaux qui se concentrent sur des problématiques environnementales
+                ciblées, plutôt que d’embrasser la protection de l’environnement dans son ensemble.
+                Les traités, déclarations et la plupart des manuels évitent généralement de définir
+                ce terme. Une définition a été avancée, en 1993, dans la <core:emph typestyle="it"
+                    >Convention sur la responsabilité civile des dommages résultant d’activités
+                    dangereuses pour l’environnement</core:emph><fn:endnote-id er="1"/> du Conseil
+                de l’Europe, à son article 2(12) : « L’“environnement” comprend : les ressources
+                naturelles abiotiques et biotiques, telles que l’air, l’eau, le sol, la faune et la
+                flore, et l’interaction entre les mêmes facteurs; les biens qui composent l’héritage
+                culturel; et les aspects caractéristiques du paysage. » En 1996, dans son <core:emph
+                    typestyle="it">Avis consultatif sur la licéité de la menace ou de l’emploi
+                    d’armes nucléaires</core:emph><fn:endnote-id er="2"/>, la Cour internationale de
+                justice affirme que « l’environnement n’est pas une abstraction, mais bien l’espace
+                où vivent les êtres humains et dont dépendent la qualité de leur vie et leur santé,
+                y compris pour les générations à venir ».</core:para>
+            <!--  -->
+            <?textpage page-num="1-9" release-num="Septembre 2016"?>
+            <!--  -->
+            <fn:endnotes>
+                <fn:endnote er="1">
+                    <fn:para>21 juin 1993, S.T.C.E., n<core:emph typestyle="su">o</core:emph>
+                        150.</fn:para>
+                </fn:endnote>
+                <fn:endnote er="2">
+                    <fn:para><core:emph typestyle="it">Licéité de la menace ou de l’emploi d’armes
+                            nucléaires</core:emph>, avis consultatif, 8 juillet 1996, [1996] C.I.J.
+                        Rec. 226, par. 29 (Cour internationale de justice).</fn:para>
+                </fn:endnote>
+                <!--  -->
+            </fn:endnotes>
+        </tr:secmain>
+        <!--  -->
+    </tr:ch-pt>
+    <!--  -->
+    <?textpage page-num="1-11" release-num="Septembre 2016"?>
+    <!-- -->
+    <?textpage page-num="1-13" release-num="Septembre 2016"?>
+    <!--  -->
+    <tr:ch-pt volnum="1">
+        <core:desig value="V">V.</core:desig>
+        <core:title>ÉVOLUTION DU DROIT INTERNATIONAL DE L’ENVIRONNEMENT</core:title>
+        <tr:ch-ptsub1-dummy volnum="1">
+            <tr:secmain volnum="1">
+                <core:desig value="8">8.</core:desig>
+                <core:title runin="1">De la coexistence à la coopération</core:title>
+                <core:para runin="1">– Le droit international de l’environnement a véritablement
+                    émergé au cours de la deuxième grande période de développement du droit
+                    international public. Au cours de cette période, ce dernier ne visait plus
+                    seulement à s’assurer de la <core:emph typestyle="it">coexistence</core:emph>
+                    paisible des États par la formulation de règles sur les relations diplomatiques,
+                    les immunités étatiques, la guerre et les relations conventionnelles
+                    interétatiques, mais à encadrer plus largement la <core:emph typestyle="it"
+                        >coopération</core:emph> des États pour atteindre des fins communes de
+                    développement économique, de bien-être social et de protection de
+                        l’environnement<fn:endnote-id er="1"/>.</core:para>
+                <core:para>Suivant l’apparition des problèmes environnementaux qu’il a eu à
+                    solutionner, le droit international de l’environnement s’est, quant à lui,
+                    développé en trois temps. L’époque pré- Stockholm correspond à la préhistoire du
+                    droit international de l’environnement. Il s’agit d’une étape de conservation
+                    des ressources (eau et faune, surtout), particulièrement celles qui sont utiles
+                    à l’homme. L’époque post-Stockholm marque véritablement la naissance du droit
+                    international de l’environnement, avec l’adoption de grandes conventions
+                    multilatérales de protection de l’environnement applicables surtout aux
+                    pollutions. L’époque post-Rio, qui s’étend de la Conférence de Rio de 1992 à
+                    celle de Rio+20 de 2012, est une période d’intense conceptualisation de la
+                    discipline, en même temps qu’une phase de consolidation des traités adoptés
+                    entre Stockholm et Rio<fn:endnote-id er="2"/>.</core:para>
+                <core:para>Chacune de ces étapes n’a toutefois pas fait table rase des précédentes,
+                    de sorte que le droit international de l’environnement contemporain est le
+                    résultat des avancées que chacune d’elles lui a imprimées.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>Morgan FRIEDMANN, <core:emph typestyle="it">The Changing Structure
+                                of International Law</core:emph>, New York, Columbia University
+                            Press, 1964.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para>Ulrich BEYERLIN et Thilo MARAUHN, <core:emph typestyle="it"
+                                >International Environmental Law</core:emph>, Oxford and Portland,
+                            Hart Publishing, 2011, p. 1-30.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+            <?textpage page-num="1-15" release-num="Septembre 2016"?>
+        </tr:ch-ptsub1-dummy>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Préhistoire du droit international de l’environnement : la phase
+                pré-Stockholm</core:title>
+            <tr:secmain volnum="1">
+                <core:desig value="9">9.</core:desig>
+                <core:title runin="1">Conservation des ressources utiles et des ressources
+                    transfrontalières</core:title>
+                <core:para runin="1">– La préhistoire du droit international de l’environnement va
+                    de la fin des années 1800 jusqu’au milieu des années 1900. Il s’agit d’une
+                    époque centrée sur la conservation de la <core:emph typestyle="it"
+                        >ressource</core:emph> faunique ou de la <core:emph typestyle="it"
+                        >ressource</core:emph> en eau, au bénéfice de l’homme, plutôt que sur la
+                    protection de <core:emph typestyle="it">l’environnement</core:emph>. Cette étape
+                    est finalisée par un utilitarisme qui conduit à se préoccuper principalement de
+                    la conservation d’espèces de la faune sauvage qui sont utiles à l’homme –
+                    oiseaux, phoques, baleines – et non à les protéger dans un but strictement
+                    écologique ou éthique. En effet, à cette époque, ces questions n’ont pas été
+                    traitées comme des problèmes « environnementaux ». Le fardeau anthropocentrique
+                    qui pèse encore de nos jours sur le droit international de l’environnement ne
+                    date pas d’hier.</core:para>
+                <!--  -->
+                <?textpage page-num="1-17" release-num="Septembre 2016"?>
+                <!--  -->
+            </tr:secmain>
+        </tr:ch-ptsub1>
+        <?textpage page-num="1-19" release-num="Septembre 2016"?>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="B">B.</core:desig>
+            <core:title>Naissance du droit international de l’environnement : le développement
+                spectaculaire des années post-Stockholm (1972-1992)</core:title>
+            <tr:ch-ptsub2-dummy volnum="1">
+                <tr:secmain volnum="1">
+                    <core:desig value="10">10.</core:desig>
+                    <core:title runin="1">Conférence de Stockholm comme point de départ</core:title>
+                    <core:para runin="1">– La naissance du droit international de l’environnement,
+                        qui a débuté par la « révolution environnementale » dite « ère écologique »
+                        des années 1960, a trouvé son point culminant à la Conférence de Stockholm,
+                        en 1972, avec la création du Programme des Nations Unies pour
+                        l’environnement (PNUE) et l’adoption de la <core:emph typestyle="it"
+                            >Déclaration de Stockholm sur l’environnement
+                            humain</core:emph><fn:endnote-id er="1"/>. Il s’agit de la véritable
+                        naissance du droit international de l’environnement, car cette étape est
+                        suivie par la négociation de nombreux accords environnementaux multilatéraux
+                        (AME).</core:para>
+                    <!--  -->
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para>ORGANISATION DES NATIONS UNIES, <core:emph typestyle="it"
+                                    >Déclaration de Stockholm sur l’environnement humain, Rapport de
+                                    la Conférence des Nations Unies sur l’Environnement, Stockholm,
+                                    5-16 juin 1972</core:emph>, New York, NU, 1973 (Doc.
+                                A/CONF.48/14/Rev.1).</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                    <!--  -->
+                </tr:secmain>
+            </tr:ch-ptsub2-dummy>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="1">1.</core:desig>
+                <core:title>Déclaration des Nations Unies sur l’environnement (Stockholm,
+                    1972)</core:title>
+                <tr:secmain volnum="1">
+                    <core:desig value="11">11.</core:desig>
+                    <core:title runin="1">Déclaration de Stockholm sur l’environnement</core:title>
+                    <core:para>– La Déclaration sur l’environnement<fn:endnote-id er="1"/> qui a
+                        émergé de cette conférence et qui a été approuvée par l’Assemblée générale
+                        des Nations Unies, en 1972, traite de l’intégration des questions
+                        économiques, environnementales et de justice sociale.</core:para>
+                    <?textpage page-num="1-21" release-num="Septembre 2016"?>
+                    <core:para>En effet, lorsque s’est ouverte la Conférence des Nations Unies sur
+                        l’environnement, l’objectif était de développer une structure cohérente pour
+                        organiser la réponse de la communauté internationale aux problèmes
+                        environnementaux, en identifiant notamment les questions qui ne pouvaient
+                        être résolues que par la coopération internationale<fn:endnote-id er="2"/>.
+                        La participation des pays en développement à cette Conférence n’était
+                        toutefois pas jouée d’avance. En effet, ces pays insistaient sur le fait que
+                        la responsabilité historique dans la dégradation de l’environnement et la
+                        surexploitation des ressources incombait aux pays développés et que leur
+                        imposer les mêmes obligations environnementales qu’à ces derniers viendrait
+                        limiter leurs possibilités de développement économique.</core:para>
+                    <!--  -->
+                    <core:para>Conséquemment, la « structure » du droit international de
+                        l’environnement a changé à partir de la Déclaration de Stockholm, passant
+                        d’un cadre transfrontalier et bilatéral à un cadre global, qui prend en
+                        considération la recherche de l’équité entre les générations actuelles des
+                        pays riches et pauvres, et les générations futures<fn:endnote-id er="7"/>.
+                        Déjà, lors du Sommet de Stockholm, en 1972, la communauté internationale
+                        reconnaissait que l’environnement pouvait difficilement être protégé dans
+                        des pays où la pauvreté est endémique (Principe 9 de la Déclaration de
+                        Stockholm), notamment les pays les moins avancés (PMA), qui dépendent
+                        davantage de l’environnement pour la satisfaction de leurs besoins et qui se
+                        retrouvent souvent dans des zones écologiquement plus fragiles.</core:para>
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para>ORGANISATION DES NATIONS UNIES, <core:emph typestyle="it"
+                                    >Déclaration de Stockholm sur l’environnement humain, Rapport de
+                                    la Conférence des Nations Unies sur l’Environnement, Stockholm,
+                                    5-16 juin 1972</core:emph>, New York, NU, 1973 (Doc.
+                                A/CONF.48/14/Rev.1).</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="2">
+                            <fn:para>ORGANISATION DES NATIONS UNIES, Draft Resolution 2398
+                                (XXIII).</fn:para>
+                        </fn:endnote>
+                        <!--  -->
+                        <fn:endnote er="7">
+                            <fn:para>Jutta BRUNNÉE, « The Stockholm Declaration and the Structure
+                                and Processes of International Environmental Law », dans Aldo
+                                CHIRCOP, Ted L. McDORMAN et Susan J. ROLSTON (dir.), <core:emph
+                                    typestyle="it">The Future of Ocean Regime Building: Essays in
+                                    Tribute to Douglas M. Johnston</core:emph>, La Haye, Kluwer Law,
+                                2008, p. 41-62.</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+            </tr:ch-ptsub2>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="2">2.</core:desig>
+                <core:title>Programme des Nations Unies pour l’environnement (PNUE)</core:title>
+                <tr:secmain volnum="1">
+                    <core:desig value="12">12.</core:desig>
+                    <core:title runin="1">Programme des Nations Unies pour
+                        l’environnement</core:title>
+                    <core:para>– La création du premier programme environnemental multilatéral, le
+                        Programme des Nations Unies pour l’environnement (PNUE), autre résultat
+                        important de Stockholm, n’est sans doute pas étranger à cette progression.
+                        En effet, lorsqu’en 1972, l’Assemblée générale des Nations Unies créait le
+                        PNUE, dont le siège est à Nairobi, au Kenya, elle lui assignait le mandat de
+                        catalyseur, de défenseur et de facilitateur de la protection de
+                        l’environnement à l’échelle mondiale.</core:para>
+                    <core:para>Le PNUE est un organe subsidiaire de l’ONU, dont il obtient
+                        d’ailleurs son budget. Son rôle consiste à favoriser l’action d’autres
+                        institutions en matière d’environnement, en donnant une orientation aux
+                        programmes de protection de l’environnement de différentes institutions et
+                        agences de l’ONU indirectement impliquées dans la protection de
+                        l’environnement, comme l’Organisation météorologique mondiale,
+                        l’Organisation maritime internationale, l’Organisation mondiale de la santé,
+                        l’Organisation pour l’alimentation et l’agriculture, l’Organisation pour
+                        l’éducation, la science et la culture et la Banque mondiale. Le PNUE a connu
+                        un certain nombre de succès au fil des ans, en particulier en favorisant
+                        l’adoption de nouveaux accords multilatéraux en environnement, tels que la
+                            <core:emph typestyle="it">Convention de Vienne pour la protection de la
+                            couche d’ozone</core:emph><fn:endnote-id er="1"/>, la <core:emph
+                            typestyle="it">Convention-cadre des Nations Unies sur les changements
+                            climatiques</core:emph>2 et la <core:emph typestyle="it">Convention sur
+                            la diversité biologique</core:emph>3. Au cours des
+                        der<?textpage page-num="1-23" release-num="Septembre 2016"?>nières années,
+                        de nouveaux AME importants ont été négociés avec son concours, notamment sur
+                        la biosécurité, les polluants organiques persistants, les produits chimiques
+                        et les pesticides. Le PNUE abrite également les secrétariats de plusieurs
+                        conventions environnementales internationales : le secrétariat de l’ozone et
+                        le Fonds multilatéral de l’ozone; les secrétariats de la <core:emph
+                            typestyle="it">Convention sur le commerce international des espèces de
+                            la faune et de la flore sauvages menacées d’extinction</core:emph>
+                        (CITES); la <core:emph typestyle="it">Convention sur la diversité
+                            biologique, la Convention sur les espèces migratoires</core:emph>
+                        (Bonn); la <core:emph typestyle="it">Convention de Bâle sur le contrôle des
+                            mouvements transfrontières de déchets dangereux</core:emph>, la
+                            <core:emph typestyle="it">Convention de Stockholm sur les polluants
+                            organiques persistants</core:emph>, la <core:emph typestyle="it"
+                            >Convention de Rotterdam sur la procédure de consentement préalable de
+                            cause applicable à certains produits chimiques et pesticides dangereux
+                            qui font l’objet d’un commerce international</core:emph> (ce dernier
+                        secrétariat est abrité par le PNUE, conjointement avec la FAO).</core:para>
+                    <!--  -->
+                    <core:para>Le texte de la déclaration de Rio+20, à son paragraphe 88, appelle
+                        l’Assemblée générale des Nations Unies à renforcer les pouvoirs et moyens du
+                        PNUE, de différentes manières :</core:para>
+                    <core:list>
+                        <core:listitem>
+                            <core:enum>1)</core:enum>
+                            <core:para>en instaurant le principe de l’adhésion universelle à son
+                                Conseil d’administration et en le dotant de ressources financières
+                                stables et accrues provenant du budget ordinaire de l’ONU et de
+                                contributions volontaires, afin de lui assurer un financement
+                                adéquat pour qu’il s’acquitte de son mandat. Par la résolution
+                                67/213 de 2012, l’Assemblée générale a établi la participation
+                                universelle au Conseil d’administration du PNUE, et a déterminé que
+                                la réunion 2013 du Conseil sera sa première session « universelle
+                                ».</core:para>
+                            <core:para>Étant, comme on l’a mentionné, un organe subsidiaire du
+                                Conseil économique et social de l’ONU, dont il reçoit son budget, le
+                                financement du fonctionnement PNUE dépend du budget général de l’ONU
+                                et le financement de certaines de ses actions plus ciblées,
+                                notamment pour des actions de renforcement des capacités, dépend
+                                d’un Fonds pour l’environnement qui a été créé par une résolution de
+                                    l’AGNU<fn:endnote-id er="6"/>, et qui est devenu effectif en
+                                1973. Ce fonds est financé par des contributions volontaires. C’est
+                                dire que le nombre et le montant de ces contributions variaient
+                                d’une année à l’autre, et que le PNUE faisait face à des problèmes
+                                de prévisibilité de son financement. Une des réformes potentielles
+                                de la gouvernance internationale de l’environnement que la
+                                Déclaration de Rio+20 prévoit est d’assurer un financement provenant
+                                de sources sûres, stables et suffisantes au PNUE, provenant de
+                                contributions obligatoires. En ligne avec le résultat de Rio+20,
+                                l’Assemblée générale a approuvé, en décembre 2013, une augmentation
+                                du budget pour le PNUE d’environ 21 millions de dollars pour
+                                l’exercice biennal 2014-2015 (Résolution AG 67/213 de décembre
+                                2012);</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:enum>2)</core:enum>
+                            <core:para>en renforçant sa présence dans les principaux organes de
+                                coordination des Nations Unies; et</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:enum>3)</core:enum>
+                            <core:para>en rationalisant progressivement les fonctions de son siège à
+                                Nairobi afin d’augmenter sa présence régionale dans le but de
+                                renforcer les capacités des pays en développement dans la mise en
+                                oeuvre de leurs politiques environnementales nationales, avec l’aide
+                                d’autres organes et institutions spécialisées des Nations Unies,
+                                tels que le PNUD et le FEM.</core:para>
+                        </core:listitem>
+                    </core:list>
+                    <core:para>Ces moyens de « renforcement » du PNUE correspondent, en réalité, à
+                        la proposition de réforme de la gouvernance internationale de
+                        l’environnement la moins exigeante, avec le regroupement (« <core:emph
+                            typestyle="it">clustering</core:emph> »). Il ne s’agit pas d’une
+                        révolution mais bien d’une évolution qui conduira peut-être un jour le PNUE
+                        à devenir une agence spécialisée de l’ONU. L’organe directeur du PNUE a été
+                        rebaptisé « Assemblée des Nations Unies pour l’environnement du Programme
+                        des Nations Unies pour l’environnement » et a tenu sa première session du 23
+                        au 27 juin 2014.</core:para>
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para>22 mars 1985, [1988] R.T. Can. n<core:emph typestyle="su"
+                                    >o</core:emph> 23.</fn:para>
+                        </fn:endnote>
+                        <!--  -->
+                        <fn:endnote er="6">
+                            <fn:para>Résolution 2997 (XXVII), <core:emph typestyle="it"
+                                    >Institutional and financial arrangements for international
+                                    environmental cooperation</core:emph>, art. III : « 1. Decides
+                                that, in order to provide for additional financing for environmental
+                                programmes, a voluntary fund shall be established, with effect from
+                                1 January 1973, in accordance with existing United Nations financial
+                                procedures ».</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+            </tr:ch-ptsub2>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <!--  -->
+    </tr:ch-pt>
+    <!--  -->
+    <?textpage page-num="1-89" release-num="Février 2015"?>
+    <tr:ch-pt volnum="1">
+        <core:desig value="VIII">VIII.</core:desig>
+        <core:title>PRINCIPES DU DROIT INTERNATIONAL DE L’ENVIRONNEMENT</core:title>
+        <!--  -->
+        <?textpage page-num="1-93" release-num="Février 2015"?>
+        <!--  -->
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="B">B.</core:desig>
+            <core:title>Développement durable : concept ou « méta-principe »</core:title>
+            <!--  -->
+            <?textpage page-num="1-95" release-num="Février 2015"?>
+            <!--  -->
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="2">2.</core:desig>
+                <core:title>Signification</core:title>
+                <tr:secmain volnum="1">
+                    <core:desig value="63">63.</core:desig>
+                    <core:title runin="1">Principes structurants et principes opérants du
+                        développement durable</core:title>
+                    <core:para runin="1">– Le consensus international autour du concept du
+                        développement durable s’est construit en référence aux 27 principes formulés
+                        dans la <core:emph typestyle="it">Déclaration de Rio sur l’environnement et
+                            le développement</core:emph><fn:endnote-id er="1"/>. Une lecture
+                        attentive de la Déclaration permet d’y distinguer deux catégories de
+                            principes<fn:endnote-id er="2"/>.</core:para>
+                    <table typesize="small" colsep="0" frame="all" rowsep="0">
+                        <tgroup cols="3">
+                            <colspec colname="col1" colnum="1" colwidth="25pt" colsep="0"
+                                align="right"/>
+                            <colspec colname="col2" colnum="2" colwidth="25pt" colsep="0"
+                                align="left"/>
+                            <colspec colname="col3" colnum="3" colwidth="250pt" colsep="0"
+                                align="left"/>
+                            <thead>
+                                <row rowsep="1">
+                                    <entry colname="col1" namest="col1" nameend="col3"
+                                        align="center"><core:emph typestyle="bf">PRINCIPES DU
+                                            DÉVELOPPEMENT DURABLE</core:emph><fn:endnote-id er="3"
+                                        /></entry>
+                                </row>
+                            </thead>
+                            <tbody>
+                                <row>
+                                    <entry colname="col1"><core:emph typestyle="bf"
+                                        >1-</core:emph></entry>
+                                    <entry colname="col2" namest="col2" nameend="col3">Les principes
+                                        structurants du développement durable</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe d’intégration de l’environnement et
+                                        du développement (Principe 4)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe d’équité intragénérationnelle
+                                        (Principe 3)</entry>
+                                </row>
+                                <row rowsep="1">
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe d’équité intergénérationnelle
+                                        (Principe 3)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="col1"><core:emph typestyle="bf"
+                                        >2-</core:emph></entry>
+                                    <entry colname="col2" namest="col2" nameend="col3">Les principes
+                                        opérants du développement durable</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe d’utilisation non dommageable du
+                                        territoire (Principe 2)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe de précaution (Principe 15)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe du pollueur-payeur (Principe
+                                        16)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Bon voisinage et coopération internationale
+                                        (Principes 5, 7, 9, 12)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe des responsabilités communes mais
+                                        différenciées (Principe 7)</entry>
+                                </row>
+                                <row>
+                                    <entry colname="1"/>
+                                    <entry colname="2">•</entry>
+                                    <entry colname="3">Principe de participation publique (Principe
+                                        10)</entry>
+                                </row>
+                            </tbody>
+                        </tgroup>
+                    </table>
+                    <core:para>La première catégorie comprend les principes structurants du concept
+                        du développement durable. Il s’agit des principes d’intégration de
+                        l’environnement dans le développement socio-économique, de l’équité
+                        intragénérationnelle et de l’équité intergénérationnelle.</core:para>
+                    <core:para>La deuxième catégorie de principes permet d’opérationnaliser les
+                        principes structurants précédents. Ce sont les principes d’utilisation non
+                        dommageable du territoire, de précaution, du pollueur-payeur, de bon
+                        voisinage et de coopération, des responsabilités communes mais différenciées
+                        et de participation publique.</core:para>
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para><core:emph typestyle="it">Déclaration de Rio sur
+                                    l’environnement et le développement</core:emph>, Rapport de la
+                                Conférence des Nations Unies sur l’environnement et le
+                                développement, Doc. off. AG NU, 1992, Doc. NU A/CONF.151/26/Rev.1
+                                (vol. I) (1993) 3.</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="2">
+                            <fn:para>Philippe SANDS, « International Law in the Field of Sustainable
+                                Development », (1995) 65 <core:emph typestyle="it">Brit. Y.B. Int.
+                                    L.</core:emph> 303, 338; Patricia BIRNIE, Alan BOYLE et
+                                Catherine REDGWELL, <core:emph typestyle="it">International Law and
+                                    the Environment</core:emph>, 3e éd., Oxford, Oxford University
+                                Press, 2009, p. 85-96.</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="3">
+                            <fn:para>Philippe SANDS, « International Law in the Field of Sustainable
+                                Development », (1995) 65 <core:emph typestyle="it">Brit. 5 Y.B.
+                                    Int’l L.</core:emph> 303, 338; Sophie LAVALLÉE, « Le principe
+                                des responsabilités communes mais différenciées à Rio, Kyoto et
+                                Copenhague. Essai sur la responsabilité de protéger le climat »,
+                                (2010) 41:1 Études internationales 51, 56.</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+                <tr:secmain volnum="1">
+                    <core:desig value="64">64.</core:desig>
+                    <core:title runin="1">Principes structurants ou inhérents du développement
+                        durable</core:title>
+                    <core:para runin="1">– Les principes suivants forment l’armature du
+                        développement durable :</core:para>
+                    <core:list>
+                        <core:listitem>
+                            <core:enum>–</core:enum>
+                            <core:para>les politiques économiques, sociales et environnementales
+                                doivent être intégrées (<core:emph typestyle="it"
+                                    >intégration</core:emph>);</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:enum>–</core:enum>
+                            <core:para>les besoins des pauvres doivent avoir la priorité, et
+                                l’extrême pauvreté doit être éliminée (<core:emph typestyle="it"
+                                    >équité intragénérationnelle</core:emph>);</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:enum>–</core:enum>
+                            <core:para>les besoins des générations présentes et futures doivent être
+                                pris en compte (<core:emph typestyle="it">équité
+                                    intergénérationnelle</core:emph>).</core:para>
+                        </core:listitem>
+                    </core:list>
+                </tr:secmain>
+                <?textpage page-num="1-97" release-num="Février 2015"?>
+                <tr:secmain volnum="1">
+                    <core:desig value="65">65.</core:desig>
+                    <core:title>Principe d’intégration</core:title>
+                    <core:para>– Le principe d’intégration est le substrat du développement durable.
+                        Dans sa décision dans l’<core:emph typestyle="it">Affaire relative au Projet
+                            Gabcikovo-Nagymaros (Hongrie/Slovaquie)</core:emph><fn:endnote-id er="1"
+                        />, la CIJ, après avoir fait référence à « des nouvelles normes et standards
+                        » qui ont été développés pour faire face à la relation entre les activités
+                        économiques et la protection de l’environnement, a déclaré que « [l]e
+                        concept de développement durable traduit bien cette nécessité de concilier
+                        développement économique et protection de l’environnement » (par.
+                        140).</core:para>
+                    <!--  -->
+                    <core:para>Le développement durable est fondé sur l’interdépendance de la
+                        biosphère, constituée de la terre, de l’eau et de l’air, et des activités
+                        humaines. La nécessité d’intégrer les politiques économiques, sociales et
+                        environnementales est une conséquence logique de ces interdépendances. En
+                        tant que principe structurant du développement durable, le principe
+                        d’intégration énoncé dans le principe 4 de la Déclaration de
+                            Rio<fn:endnote-id er="7"/>, a été réitéré de nombreuses fois, par la
+                        suite, dans des instruments internationaux.</core:para>
+                    <core:generic-hd typestyle="bf">Exemples</core:generic-hd>
+                    <core:para><core:emph typestyle="it">Déclaration de Copenhague sur le
+                            développement social</core:emph><fn:endnote-id er="8"/>, paragraphe 6
+                        :</core:para>
+                    <core:blockquote>
+                        <core:blockquote-para>Nous sommes profondément convaincus que le
+                            développement économique, le développement social et la protection de
+                            l’environnement constituent des éléments interdépendants et qui se
+                            renforcent mutuellement dans le processus de développement durable, qui
+                            est le cadre de nos efforts pour assurer à tous une vie meilleure. Un
+                            développement social équitable mettant l’accent sur le renforcement de
+                            la capacité des pauvres d’utiliser d’une manière viable les ressources
+                            de l’environnement est un fondement essentiel du développement durable.
+                            Nous reconnaissons en outre qu’une croissance économique générale et
+                            soutenue, dans le contexte d’un développement durable, est indispensable
+                            à la continuité du développement social et de la justice
+                            sociale.</core:blockquote-para>
+                    </core:blockquote>
+                    <core:para><core:emph typestyle="it">Déclaration de Johannesburg sur le
+                            développement durable</core:emph><fn:endnote-id er="9"/>, paragraphe 5
+                        :</core:para>
+                    <!--  -->
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para><core:emph typestyle="it">Affaire relative au Projet
+                                    Gabcikovo-Nagymaros (Hongrie / Slovaquie)</core:emph>, [1997]
+                                C.I.J. Rec. 7, 77.</fn:para>
+                        </fn:endnote>
+                        <!--  -->
+                        <fn:endnote er="7">
+                            <fn:para><core:emph typestyle="it">Déclaration de Rio sur
+                                    l’environnement et le développement</core:emph>, Rapport de la
+                                Conférence des Nations Unies sur l’environnement et le
+                                développement, Doc. off. AG NU, 1992, Doc. NU A/CONF.151/26/Rev.1
+                                (vol. I) (1993) 3.</fn:para>
+                        </fn:endnote>
+                        <?textpage page-num="1-99" release-num="Février 2015"?>
+                        <fn:endnote er="8">
+                            <fn:para><core:emph typestyle="it">Déclaration de Copenhague sur le
+                                    développement social</core:emph>, Sommet mondial pour le
+                                développement social, Copenhague, 6-12 mars 1995, ONU, A/CONF.166/9
+                                (1995).</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="9">
+                            <fn:para><core:emph typestyle="it">Déclaration de Johannesburg sur le
+                                    développement durable et Plan de mise en oeuvre du Sommet
+                                    mondial sur le développement durable du 4 septembre
+                                    2002</core:emph>, dans NU, <core:emph typestyle="it">Rapport du
+                                    Sommet mondial pour le développement durable,</core:emph>
+                                A/CONF.199/20.</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+                <!--  -->
+            </tr:ch-ptsub2>
+            <!--  -->
+            <?textpage page-num="1-105" release-num="Février 2015"?>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="C">C.</core:desig>
+            <core:title>Principe d’utilisation non dommageable du territoire</core:title>
+            <!--  -->
+            <?textpage page-num="1-111" release-num="Février 2015"?>
+            <!--  -->
+            <tr:secmain volnum="1">
+                <core:desig value="72">72.</core:desig>
+                <core:title>Volet procédural</core:title>
+                <core:para>– Même s’il bénéficie d’une discrétion dans le choix des moyens pour y
+                    parvenir, l’État doit tout de même respecter un faisceau de normes procédurales
+                    pour respecter la règle coutumière d’utilisation non dommageable du
+                    territoire.</core:para>
+                <core:generic-hd typestyle="ib">La réalisation d’une étude d’impact sur
+                    l’environnement (EIE)</core:generic-hd>
+                <core:para>Une obligation qui découle de la règle coutumière énoncée dans le
+                    principe 2 de la Déclaration de Rio<fn:endnote-id er="1"/> est celle qu’ont les
+                    États d’exiger la réalisation d’une étude d’impact environnemental (EIE) avant
+                    le début de toute activité sur leur territoire qui risque de provoquer de graves
+                    atteintes transfrontières à l’environnement. Cette norme est formulée dans le
+                    principe 17 de la Déclaration de Rio, comme suit : « Une étude d’impact sur
+                    l’environnement, en tant qu’instrument national, doit être entreprise dans le
+                    cas des activités envisagées qui risquent d’avoir des effets nocifs importants
+                    sur l’environnement et dépendent de la décision d’une autorité nationale
+                    compétente. »</core:para>
+                <!--  -->
+                <core:generic-hd typestyle="ib">La notification et la consultation</core:generic-hd>
+                <core:para>L’obligation de notification et de consultation est-elle une norme
+                    obligatoire découlant de la règle coutumière de prévention des dommages
+                    transfrontières? Le principe 19 de la Déclaration de Rio prévoit que « [l]es
+                    États doivent prévenir suffisamment à l’avance les États susceptibles d’être
+                    affectés et leur communiquer toutes informations pertinentes sur les activités
+                    qui peuvent avoir des effets transfrontières sérieusement nocifs sur
+                    l’environnement et mener des consultations avec ces États rapidement et de bonne
+                    foi ».</core:para>
+                <!--  -->
+                <?textpage page-num="1-113" release-num="Février 2015"?>
+                <core:generic-hd typestyle="bf">Exemple</core:generic-hd>
+                <core:para>Dans l’<core:emph typestyle="it">Affaire des Usines de pâte à
+                        papier</core:emph><fn:endnote-id er="6"/>, la CIJ reconnaît les obligations
+                    de nature procédurale d’informer, de notifier et de négocier qu’a l’État, en
+                    vertu d’un traité bilatéral, mais juge que le défaut par un État de les
+                    respecter n’entraîne pas automatiquement la violation de son obligation de
+                    prévention des dommages transfrontières :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para>78. La Cour note que le statut de 1975 a créé la CARU et
+                        mis en place des procédures en liaison avec cette institution, afin que les
+                        parties puissent s’acquitter de leurs obligations de fond. Mais le statut
+                        n’indique nulle part qu’une partie pourrait s’acquitter de ses obligations
+                        de fond en respectant seulement ses obligations de nature procédurale, ni
+                        qu’une violation des obligations de nature procédurale emporterait
+                        automatiquement celle des obligations de fond. De même, ce n’est pas parce
+                        que les parties auraient respecté leurs obligations de fond qu’elles
+                        seraient censées avoir respecté ipso facto leurs obligations de nature
+                        procédurale, ou qu’elles seraient dispensées de le faire. D’ailleurs, le
+                        lien entre ces deux catégories d’obligations peut être rompu, dans les
+                        faits, lorsqu’une partie qui n’aurait pas respecté ses obligations de nature
+                        procédurale renoncerait ensuite à la réalisation de l’activité
+                        projetée.</core:blockquote-para>
+                    <core:blockquote-para>79. La Cour considère, en conséquence de ce qui précède,
+                        qu’il existe certes un lien fonctionnel, relatif à la prévention, entre les
+                        deux catégories d’obligations prévues par le statut de 1975, mais que ce
+                        lien n’empêche pas que les États parties soient appelés à répondre
+                        séparément des unes et des autres, selon leur contenu propre, et à assumer,
+                        s’il y a lieu, la responsabilité qui découlerait, selon le cas, de leur
+                        violation.</core:blockquote-para>
+                </core:blockquote>
+                <core:para>L’obligation de notifier, d’informer, de consulter et négocier avec les
+                    autres États susceptibles d’être affectés avant de permettre le début d’une
+                    activité ou d’un projet susceptible d’entraîner des dommages transfrontières «
+                    significatifs » ou « sensibles » est-elle une norme coutumière découlant de
+                    l’obligation de prévention et de l’obligation plus générale de coopération
+                    interétatique? En l’absence de pratique étatique constante ou de pratique
+                    judiciaire suffisante qui nous permettrait de constater l’existence d’une telle
+                    règle coutumière, en dehors du contexte de traités qui prévoient ces
+                    obligations, il est difficile d’affirmer qu’une telle règle coutumière existe,
+                    malgré de nombreux partisans doctrinaux<fn:endnote-id er="7"/>.</core:para>
+                <!--  -->
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para><core:emph typestyle="it">Déclaration de Rio sur l’environnement et
+                                le développement</core:emph>, Rapport de la Conférence des Nations
+                            Unies sur l’environnement et le développement, Doc. off. AG NU, 1992,
+                            Doc. NU A/CONF.151/26/Rev.1 (vol. I) (1993) 3.</fn:para>
+                    </fn:endnote>
+                    <!--  -->
+                    <fn:endnote er="6">
+                        <fn:para><core:emph typestyle="it">Affaire relative à des usines de pâte à
+                                papier sur le fleuve Uruguay (Argentine c. Uruguay)</core:emph>,
+                            [2010] C.I.J. Rec. 1.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="7">
+                        <fn:para>Günther HANDL, « Transboundary Impacts », dans Daniel BODANSKY,
+                            Jutta BRUNNÉE et Ellen HEY (dir.), <core:emph typestyle="it">The Oxford
+                                Handbook of International Environmental Law</core:emph>, Oxford,
+                            Oxford University Press, 2008, p. 532, à la page 541; Patricia BIRNIE,
+                            Alan BOYLE et Catherine REDGWELL, <core:emph typestyle="it"
+                                >International Law &amp; The Environment</core:emph>, 3e éd.,
+                            Oxford, Oxford University Press, 2009, p. 177-180; Ian BROWNLIE,
+                            Principles of Public International Law, 5<core:emph typestyle="su"
+                                >e</core:emph> éd., Oxford, Clarendon Press, 1998, p. 286. Voir
+                            aussi, sur la nature variable de l’obligation de notifier, l’article de
+                            Phoebe N. OKOWA, « Procedural Obligations in International Environmental
+                            Agreements », (1996) 67 Brit. Y.B. Int. L. 275, 289.</fn:para>
+                    </fn:endnote>
+                    <!--  -->
+                </fn:endnotes>
+            </tr:secmain>
+        </tr:ch-ptsub1>
+    </tr:ch-pt>
+    <!--  -->
+    <?textpage page-num="1-231" release-num="Septembre 2016"?>
+    <!--  -->
+    <tr:ch-pt volnum="1">
+        <core:no-desig/>
+        <core:title>Conclusion</core:title>
+        <tr:secmain volnum="1">
+            <core:desig value="168">168.</core:desig>
+            <core:title runin="1">Avancées du droit international de l’environnement</core:title>
+            <core:para runin="1">– Le droit international de l’environnement n’est certes pas la
+                solution à tous les problèmes environnementaux internationaux, mais il a favorisé le
+                développement de régimes environnementaux grâce à :</core:para>
+            <core:list>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des consensus fondés sur des évaluations scientifiques, révélant
+                        parfois des risques certains, parfois incertains;</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des instruments de la <core:emph typestyle="it">soft law</core:emph>,
+                        tels que des déclarations et des lignes directrices qui ont ensuite
+                        influencé le développement et l’évolution du droit ainsi que les
+                        comportements étatiques;</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des conventions-cadres complétées par des protocoles, qui ont permis
+                        de faire avancer progressivement l’adhésion des États autour de ces
+                        régimes;</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des responsabilités communes mais différenciées qui ont permis
+                        d’adopter une dualité de normes, afin de tenir compte de la différence entre
+                        les États en termes de capacités et de besoins;</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des procédures d’amendement souples, fondées sur le consentement
+                        tacite, par exemple la procédure simplifiée des ajustements au <core:emph
+                            typestyle="it">Protocole de Montréal relatif à des substances qui
+                            appauvrissent la couche d’ozone</core:emph> qui a permis de faire
+                        évoluer la réglementation internationale des substances appauvrissant la
+                        couche d’ozone d’une manière plus rapide, parce que plus souple;</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des Conférences des parties qui institutionnalisent la coopération
+                        environnementale interétatique grâce, entre autres, à la prise de décisions
+                        qui, si elles ont le défaut de ne pas être formellement contraignantes,
+                        sont, dans la pratique, acceptées par les États parties comme faisant
+                        autorité;</core:para>
+                </core:listitem>
+                <core:listitem>
+                    <core:enum>–</core:enum>
+                    <core:para>des procédures de conformité des États qui pallient, en partie, les
+                        faiblesses de l’application des règles de la responsabilité internationale
+                        lorsqu’il y a des dommages causés à l’environnement.</core:para>
+                </core:listitem>
+            </core:list>
+            <core:para>Le droit international de l’environnement est perfectible. Il appelle les
+                juristes actuels et en devenir à se dépasser en imaginant des principes et des
+                mécanismes innovateurs. Il ne peut toutefois se passer d’une volonté politique qui
+                ne peut évoluer que grâce à une large mobilisation publique, soit celle de tous et
+                chacun d’entre nous.</core:para>
+        </tr:secmain>
+    </tr:ch-pt>
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>BIBLIOGRAPHIE</core:title>
+            <core:para>ARBOUR, J.-M, S. LAVALLÉE et H. TRUDEAU, <core:emph typestyle="it">Droit
+                    international de l’environnement</core:emph>, 2e éd., Cowansville, Éditions Yvon
+                Blais, 2012.</core:para>
+            <core:para>BENEDICK, R.E., <core:emph typestyle="it">Ozone Diplomacy: New Directions in
+                    Safeguarding the Planet</core:emph>, Cambridge, Harvard University Press,
+                1998.</core:para>
+            <core:para>BEYERLIN, U., « Bridging the North-South Divide in International
+                Environmental Law », (2006) 66 <core:emph typestyle="it">ZaöRV</core:emph>
+                259.</core:para>
+            <?textpage page-num="1-233" release-num="Septembre 2016"?>
+            <core:para>BOISSON DE CHAZOURNES, L., <core:emph typestyle="it">La Convention sur la
+                    diversité biologique et son protocole sur la biosécurité</core:emph>, United
+                Nations Audiovisual Library of International Law, 2009.</core:para>
+            <!--  -->
+            <core:para>YOSHIDA, O., <core:emph typestyle="it">The International Legal Regime for the Protection of the Stratospheric
+                Ozone Layer: International Law, International Regimes and Sustainable Development</core:emph>,
+                Boston, Kluwer Law International, 2001.</core:para>
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <!--  -->
+    <?xpp XppPI nextpageref="2-1"?>
+</tr:ch>

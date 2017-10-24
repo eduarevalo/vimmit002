@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">
+<fm:vol-fm pub-num="06081" volnum="1">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=fmvol001 -->
+    <?textpage page-num="i" release-num="Août 2017"?>
+    <fm:body>
+        <fm:title-pg>
+            <fm:pub-series>
+                <fm:center>
+                    <core:emph typestyle="smcaps">JurisClasseur Québec</core:emph>
+                </fm:center>
+                <core:nl/>
+                <fm:center><core:emph typestyle="smcaps">collection droit
+                    public</core:emph></fm:center>
+            </fm:pub-series>
+            <fm:pub-title><fm:center>DROIT DE L’ENVIRONNEMENT</fm:center></fm:pub-title>
+            <fm:byline>
+                <core:role><core:emph typestyle="it">Directeurs de
+                    collection</core:emph></core:role>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeur Stéphane
+                            Beaulac</core:emph></core:name.text>
+                </core:person>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeur Jean-François
+                            Gaudreault-Desbiens</core:emph></core:name.text>
+                </core:person>
+            </fm:byline>
+            <fm:byline>
+                <core:role><core:emph typestyle="it">Conseillers éditoriaux</core:emph></core:role>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeure Paule
+                            Halley</core:emph></core:name.text>
+                </core:person>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeur Hugo
+                            Tremblay</core:emph></core:name.text>
+                </core:person>
+            </fm:byline>
+            <fm:issued-date>mise à jour 9 — août 2017</fm:issued-date>
+            <fm:publisher-id>
+                <fm:publisher-logo name="other"><!--LexisNexis Logo--></fm:publisher-logo>
+            </fm:publisher-id>
+        </fm:title-pg>
+        <fm:copyright-pg use4template="CAN">
+            <fm:copyright-info>
+                <fm:copyright-info.content>
+                    <core:para>
+                        <core:emph typestyle="bf">JurisClasseur Québec – Collection Droit
+                            public<core:nl/>Droit de l’environnement</core:emph>
+                    </core:para>
+                    <fm:copyright-year-and-holder>© LexisNexis Canada Inc. 2012<core:nl/>Décembre
+                        2012</fm:copyright-year-and-holder>
+                    <core:para><core:emph typestyle="bf">Tous droits réservés.</core:emph> Il est
+                        interdit, sauf en conformité avec les dispositions de la <core:emph
+                            typestyle="it">Loi sur le droit d’auteur</core:emph>, de reproduire ou
+                        sauvegarder ce document sous quelque support (incluant la photocopie ou la
+                        sauvegarde électronique, soit de façon transitoire ou accidentelle, de ce
+                        document) sans la permission expresse du titulaire de son droit d’auteur.
+                        Toute demande de permission pour reproduction du document, en tout ou en
+                        partie, peut être adressée à la maison d’édition.</core:para>
+                    <core:para><core:emph typestyle="bf">Avertissement.</core:emph> Quiconque commet
+                        une infraction aux droits d’auteur d’une oeuvre peut s’exposer à des recours
+                        civils en dommages-intérêts et aussi à des poursuites
+                        criminelles.</core:para>
+                    <core:para><core:emph typestyle="bf">Mise en garde et exonération de
+                            responsabilité.</core:emph> L’éditeur, les auteurs et quiconque a
+                        participé à la production de la présente publication ne sont pas
+                        responsables des pertes, des préjudices, des réclamations, des obligations
+                        ou des dommages découlant de l’utilisation ou de la consultation de tout
+                        renseignement ou matériel contenu dans cette publication. Même si tous les
+                        efforts possibles ont été faits pour assurer l’exactitude du contenu de la
+                        publication, il s’agit d’un document d’information seulement. Dans la
+                        production de cette publication, ni l’éditeur, ni les auteurs ou les
+                        contributeurs n’ont voulu donner de conseils juridiques ou professionnels.
+                        Il ne faut pas compter sur cette publication comme si elle présentait de
+                        tels conseils. Quiconque a besoin de conseils juridiques ou d’aide d’experts
+                        doit retenir les services d’un professionnel compétent. L’éditeur et
+                        quiconque a participé à la création de cette publication rejettent toute
+                        responsabilité à l’égard des résultats de toute poursuite intentée parce que
+                        l’on s’est fié aux renseignements contenus dans cette publication et de
+                        toute erreur ou omission contenue dans l’ouvrage. Ils rejettent expressément
+                        toute responsabilité à l’égard de tout usager de l’ouvrage.</core:para>
+                    <core:para><core:emph typestyle="bf">LexisNexis Canada Inc.</core:emph> 1200,
+                        avenue McGill College, bureau 1100, Montréal, Québec H3B
+                            4G7<core:nl/><core:emph typestyle="bf">Service à la
+                            clientèle</core:emph> 1-800-668-6481 / commandes@lexisnexis.ca /
+                        www.lexisnexis.ca/fr</core:para>
+                </fm:copyright-info.content>
+            </fm:copyright-info>
+            <fm:boxed-text>
+                <core:para>Les ouvrages publiés dans le <core:emph typestyle="it">JurisClasseur
+                        Québec</core:emph> sont développés par l’Éditeur avec l’indispensable apport
+                    des directeurs de collection et des conseillers éditoriaux. Veuillez toutefois
+                    noter que le contenu des fascicules relève de la responsabilité de chacun des
+                    auteurs.</core:para>
+            </fm:boxed-text>
+            <core:para indent="none">
+                <core:emph typestyle="bf">Catalogage avant publication de Bibliothèque et Archives
+                    nationales du Québec et Bibliothèque et Archives Canada</core:emph>
+            </core:para>
+            <core:para>Vedette principale au titre :</core:para>
+            <core:para indent="1st-line">Droit de l’environnement</core:para>
+            <core:para indent="1st-line">(JurisClasseur Québec. Collection Droit civil)</core:para>
+            <core:para indent="1st-line">Comprend des références bibliographiques.</core:para>
+            <fm:isbn>ISBN 978-0-433-47085-4</fm:isbn>
+            <core:para indent="1st-line">1. Environnement - Droit - Québec (Province). I.
+                Titre.</core:para>
+            <core:para>KEQ885.D76&#x2003;344.71404’6&#x2003;C2012-942547-8</core:para>
+        </fm:copyright-pg>
+        <?textpage page-num="P-1" release-num="Août 2017"?>
+        <fm:preface>
+            <core:title>PRÉFACE</core:title>
+            <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
+            <core:title-alt use4="r-running-hd">Préface</core:title-alt>
+            <core:para>La métaphore de « l’arbre vivant », qui assimile la Constitution à un «
+                living tree capable of growth and expansion within its natural limits », constitue
+                peut-être l’allégorie la plus significative qui existe dans le droit
+                constitutionnel, voire dans le droit public, du Canada et du Québec. Bien
+                qu’exprimée à l’origine dans l’affaire Edwards (1930) pour affirmer le principe de
+                l’interprétation dynamique des textes constitutionnels, cette idée saisit l’essence
+                même de ce qui, aujourd’hui, distingue sans doute le plus notre droit public, à
+                savoir son caractère évolutif et adaptable aux besoins d’une société en constante
+                transformation. La diversification ethnoculturelle de cette société, liée au
+                multiculturalisme et à l’immigration, la régulation efficiente des marchés
+                financiers en contexte de gouvernance à paliers multiples ou l’identification de
+                stratégies permettant de mieux saisir juridiquement la complexité des enjeux
+                environnementaux contemporains ne sont que des exemples parmi les plus évidents de
+                défis qui doivent être relevés. Pour demeurer vivant et surtout en prise avec la
+                société au sein de laquelle il s’inscrit, le droit public au Canada et au Québec
+                doit continuer de s’adapter et de se remettre en question.</core:para>
+            <core:para>Peut-on à cet égard imaginer meilleur véhicule que celui du <core:emph
+                    typestyle="it">JurisClasseur</core:emph> pour permettre aux membres de la
+                communauté juridique de suivre les développements dans des domaines du droit public
+                en continuelle mouvance ? Cette formule, qui a fait ses preuves en France et qui
+                existe au Québec depuis un certain temps, convient en effet autant à la praticienne
+                (avocate, notaire) qui souhaite être au fait des plus récents développements dans sa
+                spécialisation qu’au professeur de droit ou d’une discipline connexe (en sciences
+                politiques, par exemple) qui désire avoir des instruments didactiques à la fine
+                pointe du droit contemporain.</core:para>
+            <core:para>Les <core:emph typestyle="it">JurisClasseurs</core:emph> ont été conçus afin
+                de faciliter l’identification rapide et efficace des questions juridiques,
+                lesquelles sont traitées de la manière la plus claire possible, en en faisant
+                ressortir les points importants. Dans cette optique, depuis le découpage des Droit
+                de l’environnement (6018) P / 2 Août 2017 différentes matières jusqu’au traitement
+                des thèmes composant chacun des fascicules des divers volumes de la collection, le
+                    <core:emph typestyle="it">JurisClasseur Québec – Droit</core:emph> public veut
+                innover et, surtout, faire preuve de rigueur dans l’analyse du droit substantiel
+                pour que, rapidement, il se taille une place de choix parmi les références
+                incontournables en langue française dans ce champ du droit.</core:para>
+            <fm:signed>
+                <fm:signed-line><fm:right><core:emph typestyle="bf">Stéphane
+                        Beaulac</core:emph><core:nl/>Codirecteur de collection – Droit
+                            public<core:nl/><core:emph typestyle="it">JurisClasseur
+                            Québec</core:emph><core:nl/><core:nl/>Professeur titulaire et
+                        spécialiste de droit public national et comparé<core:nl/>Faculté de droit,
+                        Université de Montréal</fm:right></fm:signed-line>
+                <fm:signed-line><fm:right><core:emph typestyle="bf">Jean-François
+                            Gaudreault-DesBiens</core:emph><core:nl/>Codirecteur de collection –
+                        Droit public<core:nl/><core:emph typestyle="it">JurisClasseur
+                            Québec</core:emph><core:nl/><core:nl/>Professeur titulaire et
+                        doyen<core:nl/>Faculté de droit, Université de
+                    Montréal</fm:right></fm:signed-line>
+            </fm:signed>
+        </fm:preface>
+        <?textpage page-num="AP-1" release-num="Août 2017"?>
+        <fm:foreword>
+            <core:title>AVANT-PROPOS</core:title>
+            <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
+            <core:title-alt use4="r-running-hd">Avant-propos</core:title-alt>
+            <core:para>La complexité croissante des problèmes environnementaux, leur
+                internationalisation, la montée en force des exigences individuelles et collectives
+                en matière de qualité environnementale, de développement économique et de progrès
+                social sont irrémédiablement liées au développement du droit de l’environnement et
+                commandent aux juristes une attention soutenue. De la protection de la nature à la
+                lutte contre la pollution, en passant par la reconnaissance de droits fondamentaux
+                et l’adaptation au changement climatique, les objets du droit de l’environnement
+                sont nombreux et situent ce dernier au carrefour des droits constitutionnel,
+                administratif, civil, pénal, économique, des sociétés, de l’urbanisme, de la
+                consommation, etc. Ce mouvement continu de développement des normes juridiques
+                protectrices de l’environnement et d’intégration de cette préoccupation dans le
+                système juridique canadien en disent long sur le caractère volumineux de ce droit
+                qui s’étend à pratiquement tous les domaines, sans être pour autant dépourvu de
+                règles et d’institutions autonomes.</core:para>
+            <core:para>Qu’il s’agisse d’aborder pour une première fois le volumineux et complexe
+                droit de l’environnement ou d’en assurer un suivi continu, la tâche commande un
+                effort considérable de compréhension et d’actualisation des nombreux développements
+                statutaires, en droit provincial, fédéral et jurisprudentiels. Présenter une vision
+                à la fois synthétique, analytique et accessible de ce domaine riche, diversifié et
+                évolutif du droit, voilà le défi qu’ont accepté de relever plus de vingt auteurs
+                dans leur contribution à ce volume du <core:emph typestyle="it">JurisClasseur
+                    Québec</core:emph> consacré au droit de l’environnement. Préparé à l’intention
+                des étudiants, mais aussi des praticiens du droit, des magistrats et de
+                l’administration publique, la réalisation de cet ouvrage collectif participe aussi
+                de l’intention commune des auteurs de contribuer à combler la rareté des ouvrages
+                consacrés au droit de l’environnement au Québec. La formule du <core:emph
+                    typestyle="it">JurisClasseur Québec</core:emph> se prête bien à cet exercice;
+                elle nous a permis aisément de travailler ensemble et, dans ce secteur dynamique du
+                droit, les mises à jour annuelles offrent l’avantage d’éviter de voir les
+                contributions devenir rapidement obsolètes.</core:para>
+            <core:para>L’ouvrage <core:emph typestyle="it">Droit de l’environnement</core:emph>
+                présente, à travers plus de 20 fascicules, les principaux aspects et régimes
+                juridiques protecteurs de l’environnement issus des droits international, fédéral,
+                provincial et municipal. Le premier titre est consacré aux aspects généraux du droit
+                de l’environnement. Il couvre, tout d’abord, le droit international, le partage des
+                compétences législatives au Canada en la matière, le rôle des municipalités, les
+                droits substantifs et procéduraux accordés au public en matière de protection de
+                l’environnement et la mise en oeuvre du développement durable. Par la suite, le
+                premier titre présente certains des plus importants régimes juridiques qui
+                permettent le contrôle de la pollution, ainsi que les moyens retenus pour assurer la
+                sanction des contraventions à la loi. Le deuxième titre regroupe des fascicules
+                abordant les principaux régimes sectoriels du droit de l’environnement, à savoir les
+                sols contaminés, le bruit, les matières résiduelles et dangereuses, la qualité de
+                l’air, des sujets émergents tels le marché du carbone, la protection de la
+                biodiversité, la gestion des ressources en eau et l’aménagement du
+                territoire.</core:para>
+            <core:para>Le développement d’un tel ouvrage ne va pas sans la complicité d’auteurs
+                remarquables. Nous les remercions vivement d’avoir mis leur expertise et leur
+                rigueur au service d’une meilleure connaissance du droit de l’environnement et d’un
+                accès plus facile à celle-ci. Nous remercions tout particulièrement Michel Bélanger
+                qui avait déjà réuni plusieurs professeurs, qui enseignent le droit de
+                l’environnement au Québec, dans un projet d’ouvrage collectif et qui a accepté de le
+                joindre au nôtre. Mue par la même volonté de contribuer au développement et au
+                rayonnement du droit de l’environnement, cette association nous a permis de couvrir
+                l’ensemble du sujet, d’ajouter plusieurs contributions d’universitaires, et
+                d’inviter des praticiens reconnus pour leur expertise et de jeunes auteurs à
+                participer à l’ouvrage. Nous nous réjouissons de réunir ainsi autour de ce projet la
+                majorité des juristes qui écrivent dans le secteur du droit de l’environnement au
+                Québec et, par la même occasion, d’offrir un espace commun à cette communauté de
+                juristes. Nous exprimons aussi nos remerciements à notre partenaire financier
+                commun, la Fondation du Barreau du Québec, qui nous a permis de publier cet ouvrage
+                dans d’excellentes conditions, de joindre notre projet à celui de Michel Bélanger et
+                d’élargir ainsi le nombre de contributions.</core:para>
+            <core:para>Nos remerciements s’adressent aussi à l’éditeur, LexisNexis Canada, et à son
+                équipe de production, et tout particulièrement à M<core:emph typestyle="su"
+                    >e</core:emph> Jannick Bouthillette, M<core:emph typestyle="su">e</core:emph>
+                Gaëlle Bodin et M<core:emph typestyle="su">e</core:emph> Lise Viau pour avoir si
+                bien veillé au bon déroulement de toutes les étapes de la production.</core:para>
+            <fm:signed>
+                <fm:signed-line><fm:right><core:emph typestyle="bf">Paule
+                        Halley</core:emph><core:nl/>Conseillère éditoriale<core:nl/><core:emph
+                            typestyle="it">JurisClasseur Québec – Droit de
+                            l’environnement</core:emph><core:nl/><core:nl/>Avocate et professeure
+                        titulaire, Faculté de droit, Université Laval<core:nl/>Titulaire de la
+                        Chaire de recherche du Canada en droit de
+                    l’environnement</fm:right></fm:signed-line>
+                <fm:signed-line><fm:right><core:emph typestyle="bf">Hugo
+                        Tremblay</core:emph><core:nl/>Conseillère éditoriale<core:nl/><core:emph
+                            typestyle="it">JurisClasseur Québec – Droit de
+                            l’environnement</core:emph><core:nl/><core:nl/>Avocat et professeur
+                        adjoint, Faculté de droit, Université de
+                    Montréal</fm:right></fm:signed-line>
+            </fm:signed>
+        </fm:foreword>
+        <?textpage page-num="NB-1" release-num="Août 2017"?>
+        <fm:feature>
+            <core:title>NOTICES BIOGRAPHIQUES</core:title>
+            <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
+            <core:title-alt use4="r-running-hd">Notices biographiques</core:title-alt>
+            <core:generic-hd typestyle="bf">DIRECTEURS DE COLLECTION</core:generic-hd>
+            <core:para><core:emph typestyle="bf">Stéphane Beaulac</core:emph></core:para>
+            <core:para>M<core:emph typestyle="su">e</core:emph> Stéphane Beaulac, Ph.D. (<core:emph
+                    typestyle="it">Cantab.</core:emph>), est professeur titulaire à la Faculté de
+                droit de l’Université de Montréal. Il a débuté sa carrière à Dalhousie Law School,
+                en 1998. Il enseigne notamment le droit international public, le droit international
+                des droits humains et l’interprétation des lois. Il est docteur en droit public
+                international de l’Université de Cambridge, en Angleterre; il possède par ailleurs
+                une maîtrise en droit public comparé et un diplôme spécialisé en rédaction
+                législative et interprétation des lois. Sa formation est bijuridique : droit civil à
+                l’Université d’Ottawa (<core:emph typestyle="it">summa cum laude</core:emph>) et
+                common law à l’Université Dalhousie (premier du programme). Il fut clerc à la Cour
+                suprême du Canada, auprès du juge Claire L’Heureux-Dubé. À titre de <core:emph
+                    typestyle="it">fellow</core:emph> Max Weber en 2006-2007, le professeur Beaulac
+                était en congé sabbatique à l’Institut universitaire européen de Florence, en
+                Italie. À l’hiver 2010, comme <core:emph typestyle="it">fellow</core:emph> Neil
+                MacCormick, il a effectué un séjour de recherche à l’Université d’Édimbourg, en
+                Écosse. Il est aussi associé au Amsterdam Center for International Law, aux
+                Pays-Bas, et est professeur invité à l’Université de Trente, en Italie. Stéphane
+                Beaulac est l’auteur (ou coauteur) ou le codirecteur d’une dizaine de livres, dont
+                    <core:emph typestyle="it">The Power of Language in the Making of International
+                    Law</core:emph> (2004), <core:emph typestyle="it">International Human Rights and
+                    Canadian Law</core:emph> (2007), <core:emph typestyle="it">Précis
+                    d’interprétation législative</core:emph> (2008) et <core:emph typestyle="it"
+                    >Interpretatio non cessat</core:emph> (2011). Il a aussi publié un grand nombre
+                d’articles de doctrine dans des revues savantes (quelque 60 textes), principalement
+                en droit public et en droit international. Il est membre du Barreau de
+                l’Ontario.</core:para>
+            <core:para><core:emph typestyle="bf">Jean-François
+                Gaudreault-DesBiens</core:emph></core:para>
+            <core:para>M<core:emph typestyle="su">e</core:emph> Jean-François Gaudreault-DesBiens
+                est doyen à la Faculté de droit de l’Université de Montréal. Ses principaux champs
+                de recherche et d’enseignement sont le droit constitutionnel et le fédéralisme
+                (canadien et comparé), les libertés publiques, la théorie du droit et la sociologie
+                des cultures juridiques. Ses plus récents travaux s’intéressent à la liberté de
+                religion, à l’intégration du contexte social dans la pratique juridique, au
+                fédéralisme et à la concurrence économique entre systèmes juridiques. Il a publié
+                quatre ouvrages individuels : <core:emph typestyle="it">Le contexte social du droit
+                    dans le Québec contemporain. L’intelligence culturelle dans la pratique des
+                    juristes</core:emph> (2009) (avec Diane Labrèche); <core:emph typestyle="it">Les
+                    solitudes du bijuridisme canadien. Essai sur les rapports de pouvoir entre les
+                    traditions juridiques et sur la résilience des atavismes
+                    identitaires</core:emph> (2007) (publié en portugais sous le titre <core:emph
+                    typestyle="it">A Relações de Poder entre as Tradições Juridicas. O Caso do
+                    Bijuridisme Canadense</core:emph> (2011)); <core:emph typestyle="it">Le sexe et
+                    le droit. Sur le féminisme juridique de Catharine MacKinnon</core:emph> (2001);
+                    <core:emph typestyle="it">La liberté d’expression entre l’art et le
+                    droit</core:emph> (1996). Le professeur Gaudreault-DesBiens a également dirigé
+                ou codirigé six ouvrages collectifs et publié une cinquantaine d’articles. Admis aux
+                Barreaux du Québec et de l’Ontario, il a pratiqué le droit commercial et le droit
+                public avant de devenir universitaire.</core:para>
+            <core:generic-hd typestyle="bf">CONSEILLERS ÉDITORIAUX</core:generic-hd>
+            <core:para><core:emph typestyle="bf">Paule Halley</core:emph></core:para>
+            <core:para>M<core:emph typestyle="su">e</core:emph> Paule Halley, LL.D. (Montréal),
+                LL.M., LL.B., est professeure titulaire à la Faculté de droit de l’Université Laval,
+                depuis 1994, où elle enseigne le droit de l’environnement. Elle est titulaire de la
+                Chaire de recherche du Canada en droit de l’environnement (2002- ) et de la Chaire
+                C.D. Howe en droit de l’environnement et développement de l’Arctique (2009-2012).
+                Elle est membre du Barreau du Québec depuis 1988. La professeure Halley est
+                l’auteure de nombreux articles publiés dans des revues scientifiques et des ouvrages
+                collectifs dans le secteur du droit de l’environnement et du développement durable
+                et participe aux activités de plusieurs organismes, dont le Comité consultatif de
+                l’environnement Kativik (Nunavik) et l’Institut Environnement, Développement et
+                Société. Ses travaux et réalisations furent honorés, en 2015, du Prix Michel-Jurdant
+                en sciences de l’environnement de l’Association francophone pour le savoir (ACFAS),
+                en 2005, du Prix scientifique de la Francophonie attribué par le Conseil
+                scientifique de l’Agence Universitaire de la Francophonie (AUF) et son ouvrage
+                intitulé <core:emph typestyle="it">Le droit pénal de l’environnement</core:emph> a
+                obtenu, en 2003, le prix « Meilleure monographie » de la Fondation du Barreau du
+                Québec.</core:para>
+        </fm:feature>
+        <!--  -->
+        <?textpage page-num="TDM-1" release-num="Février 2017"?>
+        <fm:toc>
+            <core:title>TABLE DES MATIÈRES GÉNÉRALE</core:title>
+            <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
+            <core:title-alt use4="r-running-hd">Table des matières générale</core:title-alt>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">PRÉFACE</core:emph><core:leaders
+                        blank-leader="dot" blank-use="fill"/>P / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">AVANT-PROPOS</core:emph><core:leaders
+                        blank-leader="dot" blank-use="fill"/>AP / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">NOTICES
+                        BIOGRAPHIQUES</core:emph><core:leaders blank-leader="dot" blank-use="fill"
+                    />NB / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="pub-pt">
+                <core:entry-title><fm:center><core:emph typestyle="bf">PARTIE I – ASPECTS
+                            GÉNÉRAUX</core:emph></fm:center></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">Table des matières détaillée de la
+                        Partie I</core:emph><core:leaders blank-leader="dot" blank-use="fill"/>TDMI
+                    / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="pub-ptsub1">
+                <core:entry-title><core:emph typestyle="bf">A. Encadrement
+                    juridique</core:emph></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="ch">
+                <core:entry-title>Fascicule 1<core:nl/><core:emph typestyle="it">Droit international
+                        de l’environnement</core:emph><core:nl/>Sophie Lavallée<core:leaders
+                        blank-leader="dot" blank-use="fill"/>1 / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="ch">
+                <core:entry-title>Fascicule 2<core:nl/><core:emph typestyle="it">Partage des
+                        compétences sur l’environnement, l’eau et les ressources
+                        naturelles</core:emph><core:nl/>Paule Halley et Hélène Trudeau<core:leaders
+                        blank-leader="dot" blank-use="fill"/>2 / 1</core:entry-title>
+            </fm:toc-entry>
+            <!--  -->
+            <?textpage page-num="TDM-3" release-num="Août 2017"?>
+            <!--  -->
+            <fm:toc-entry lev="pub-pt">
+                <core:entry-title><fm:center><core:emph typestyle="bf">PARTIE II – ASPECTS
+                            PARTICULIERS</core:emph></fm:center></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">Table des matières détaillée de la
+                        Partie II</core:emph><core:leaders blank-leader="dot" blank-use="fill"
+                    />TDMII / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="pub-ptsub1">
+                <core:entry-title><core:emph typestyle="bf">A.
+                    Biodiversité</core:emph></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="ch">
+                <core:entry-title>Fascicule 17<core:nl/><core:emph typestyle="it">Biodiversité et
+                        aires protégées</core:emph><core:nl/>Sophie Lavallée et Jean-Pierre
+                        Veilleux<core:leaders blank-leader="dot" blank-use="fill"/>17 /
+                    1</core:entry-title>
+            </fm:toc-entry>
+            <!--  -->
+        </fm:toc>
+    </fm:body>
+</fm:vol-fm>
+<?Pub Caret 0?>
