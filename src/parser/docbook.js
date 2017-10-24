@@ -8,7 +8,7 @@ function exec(filePath){
         xslPath = __dirname + '/../../xslt/cover.xsl';
     }else if(/.*-TDM.*/.test(filePath)){
         xslPath = __dirname + '/../../xslt/toc.xsl';    
-    }else if(/.*-F[0-9]*_.*/.test(filePath)){
+    }else if(/.*-F[0-9]+/.test(filePath)){
         xslPath = __dirname + '/../../xslt/fascicle.xsl';
     }
     return saxon

@@ -6,12 +6,19 @@ const fs = require('fs'),
     _ = require('lodash'),
     async = require('async'),
     saxon = require('./../saxon'),
+    pdfbox = require('./../pdfbox'),
     jing = require('./../jing'),
     fx = require('mkdir-recursive'),
     tmp = require('tmp'),
+    htmlparser = require("htmlparser2"),
     inlineCss = require('inline-css'),
     exec = require('child_process').exec,
-    runJsxCommand = '"/Applications/Adobe\ ExtendScript\ Toolkit\ CC/ExtendScript\ Toolkit.app/Contents/MacOS/ExtendScript\ Toolkit" -run ';
+    runJsxCommand = '"/Applications/Adobe\ ExtendScript\ Toolkit\ CC/ExtendScript\ Toolkit.app/Contents/MacOS/ExtendScript\ Toolkit" -run '
+    prepare = require('./prepare'),
+    exportAdobe = require('./export'),
+    inject = require('./inject'),
+    convert = require('./convert'),
+    neptune = require('./neptune');
 
 var jsxScript = '';
 
@@ -22,9 +29,15 @@ const fxMkDir = util.promisify(fx.mkdir),
      
 saxon.setDefaults({ saxonJarPath : __dirname + '/../../bin/saxon/saxon9he.jar' });
 jing.setDefaults({ jingJarPath : __dirname + '/../../bin/jing-20091111/bin/jing.jar' });
+pdfbox.setDefaults({ pdfBoxJarPath : __dirname + '/../../bin/pdfbox/pdfbox-app-2.0.7.jar' });
+
+function hexEncodeChar(input, i){
+    var hex = input.charCodeAt(i).toString(16);
+    return("000"+hex).slice(-4);
+}
 
 function htmlFilter(input){
-    return /.html$/.test(input) && !/.inline.html$/.test(input);
+    return /.html$/.test(input) && !/.inline.html$/.test(input) && !/.pages.html$/.test(input);
 }
 
 function fascicleFilter(input){
@@ -547,14 +560,64 @@ function transformCollection(collectionFolder, filter){
                 );
 
             });
+    
+        var frontMatter = fsReadDir(collectionFolder + '/xml')
+        .then( files => {
+            
+            return Promise.all(
+                
+                files
+                    .filter(function(file){
+                        return filter.test(file);
+                    })
+                    .filter(function(file){
+                        return /Page de titre/.test(file);
+                    })
+                    .map( file => {
+                        console.log(file);
 
-        return fascicles;
+                        var found = file.match(/([0-9]*)_JCQ_/);
+                        if(found){
+                            
+                            var pubNum = found[1].padStart(5, "0");
+
+                            return saxon
+                                .exec({
+                                    xmlPath: collectionFolder + '/xml/' + file, 
+                                    xslPath: __dirname + '/../../xslt/neptune-frontmatter.xsl',
+                                    params: {
+                                        pubNum: pubNum, 
+                                        prefaceFile: collectionFolder + '/xml/' + files.find( file => /Préface/.test(file)),
+                                        forewordFile: collectionFolder + '/xml/' + files.find( file => /Avant-propos/.test(file)),
+                                        featureFile: collectionFolder + '/xml/' + files.find( file => /Notices_biographiques/.test(file)),
+                                        tocFile: collectionFolder + '/xml/' + files.find( file => /TDMG/.test(file))
+                                    }
+                                })
+                                .then( response => response.stdout )
+                                .then( content => {
+
+                                        var newFileName = pubNum + '_fmvol001.xml';
+                                        var xmlFilePath = neptunePath + '/' + newFileName;
+                                        return fsWriteFile(xmlFilePath, content)
+                                            .then(() => xmlFilePath);
+                                    
+                                });
+                        }else{
+                            return Promise.resolve();
+                        }
+                        
+                    })
+            );
+
+        });
+
+        return Promise.all([fascicles, frontMatter]);
 
     });
 
 }
 
-function preparePackages(paths){
+function preparePackages(paths, ind2Html, filter){
 
     var batchFiles = {};
     return Promise.all(paths.map( path  => {
@@ -638,12 +701,176 @@ function preparePackages(paths){
                                                         return copyFiles('pdf').
                                                             then( () => {
 
+                                                                var pdfOutPath = outPath + '/' + collection + '/pdf/';
+                                                                var htmlOutPath = outPath + '/' + collection + '/html/';
+                                                                return fsReadDir(pdfOutPath)
+                                                                    .then( files => {
+                                                                        return Promise.all(
+                                                                            files.map( file => {
+                                                                                
+                                                                                var pdfFilePath = pdfOutPath + file,
+                                                                                    htmlFilePath = htmlOutPath + file + '.pages.html';
+
+                                                                                return pdfbox.extractText({
+                                                                                        input: pdfFilePath,
+                                                                                        output: htmlFilePath,
+                                                                                        params: {
+                                                                                            html: ''
+                                                                                        }
+                                                                                    })/*
+                                                                                    .then(() => {
+
+                                                                                    })*/;
+                                                                            })
+                                                                        );
+                                                                    });
+
+
+                                                                
                                                             });
                                                     }else{
                                                         return Promise.resolve();
                                                     }
                                                 })
                                         );
+
+                                    }).then( () => {
+
+                                        return fsReadDir(htmlOutPath)
+                                            .then( files => {
+
+                                                return Promise.all(files
+                                                    .filter( file => /pdf.pages.html$/.test(file) )
+                                                    .filter(function(file){
+                                                        return filter.test(file);
+                                                    })
+                                                    .map( file => {
+console.log(htmlOutPath + '/' + file);
+                                                        return fsReadFile(htmlOutPath + '/' + file, 'utf8')
+                                                            .then(function (htmlData) {
+                                                                
+                                                                return new Promise(function(resolve, reject){
+                                                                    var injectPageNumbers = function(fileName, pages, resolve){
+console.log(htmlOutPath + '/' + fileName);
+                                                                        return fsReadFile(htmlOutPath + '/' + fileName, 'utf8')
+                                                                         .then(function (htmlData) {
+                                                                            
+                                                                            var page = 0,
+                                                                                iterator = 0,
+                                                                                onBody = false,
+                                                                                insertPageNumber = false;
+
+                                                                            var parser = new htmlparser.Parser({
+                                                                                onopentag: function(name, attribs){
+                                                                                    if(name === "body"){
+                                                                                        onBody = true;
+                                                                                    }
+                                                                                },
+                                                                                ontext: function(text){
+                                                                                    var cleanText = text.replace(/\u00AD/g,'').replace(/\t/g, '').replace(/\r?\n/g, '');
+                                                                                    if(onBody && cleanText.length > 0){
+//console.log(text, cleanText);
+                                                                                        for(var textIterator=0; textIterator<cleanText.length; textIterator++){
+                                                                                            if(cleanText.charAt(textIterator) === pages[page].text.charAt(iterator)){
+                                                                                                iterator++;
+                                                                                            }else{
+                                                                                                /*while(textIterator < text.length && text.charAt(textIterator) != pages[page].text.charAt(iterator)){
+                                                                                                    switch(hexEncodeChar(text, textIterator)){
+                                                                                                        case '000a':
+                                                                                                        case '0009':
+                                                                                                        case '00ad':
+                                                                                                            textIterator++;
+                                                                                                            break;
+                                                                                                        default:*/
+                                                                                                            console.log(textIterator, iterator, hexEncodeChar(cleanText, textIterator), hexEncodeChar(pages[page].text, iterator), cleanText, pages[page].text);
+                                                                                                            process.exit();
+                                                                                                /*    }
+                                                                                                }*/
+                                                                                            }
+                                                                                        }
+
+                                                                                        if(pages[page].text.length - 1 === iterator){
+                                                                                            insertPageNumber = true;
+                                                                                        }
+
+                                                                                        /*while(pages[page].text.length === 0){
+                                                                                            page++;
+                                                                                        }
+                                                                                        console.log(iterator, pages[iterator].text.substring(0, text.length), '...', text);
+                                                                                        if(pages[iterator].text.substring(0, text.length) == text){
+                                                                                            pages[iterator].text = pages[iterator].text.substring(text.length);
+                                                                                        }else{
+                                                                                            console.log(text, text.hexEncode());
+                                                                                            process.exit();
+                                                                                        }
+                                                                                        if(pages[iterator].text.length === 0){
+                                                                                            console.log('PageBreak');
+                                                                                        }*/
+                                                                                    }
+                                                                                    
+                                                                                },
+                                                                                onclosetag: function(name){
+                                                                                    if(name === "body"){
+                                                                                        onBody = false;
+                                                                                    }
+                                                                                },
+                                                                                onend: function(){
+                                                                                    resolve(true);
+                                                                                }
+                                                                            }, { decodeEntities: true });
+                                                                            parser.write(htmlData);
+                                                                            parser.end();
+
+                                                                        });
+                                                                    };
+
+                                                                    var pages = [],
+                                                                        lastNodeName,
+                                                                        lastText,
+                                                                        lastP,
+                                                                        pubNum = '6018',
+                                                                        pubNumRegExp = new RegExp('\(6018\)'),
+                                                                        leftHeader = "I. Aspects généraux",
+                                                                        rightHeader = "Fasc. 1 – Droit international de l’environnement";
+
+                                                                    var parser = new htmlparser.Parser({
+                                                                        onopentag: function(name, attribs){
+                                                                            lastNodeName = name;
+                                                                            if(name === "div" && attribs.style === "page-break-before:always; page-break-after:always"){
+                                                                                pages.push({ number: pages.length+1, text: '', headers: []});
+                                                                            }else if(name === "p"){
+                                                                                lastText = '';
+                                                                            }
+                                                                        },
+                                                                        ontext: function(text){
+                                                                            lastText += text;
+                                                                        },
+                                                                        onclosetag: function(tagname){
+                                                                            if(tagname === "p" && lastText.length > 0 && pages[pages.length - 1]){
+                                                                                    
+                                                                                if( pubNumRegExp.test(lastText) || lastText === leftHeader || lastText === rightHeader){
+                                                                                    pages[pages.length - 1].headers.push(lastText);
+                                                                                }else{
+                                                                                    pages[pages.length - 1].text += lastText;
+                                                                                }
+
+                                                                                lastText = '';
+                                                                            }
+                                                                        },
+                                                                        onend: function(){
+                                                                            var inlineHtmlFile = file.replace('.pdf.pages', '.indd.inline');
+                                                                            injectPageNumbers(inlineHtmlFile, pages, resolve);
+                                                                        }
+                                                                    }, { decodeEntities: true });
+                                                                    parser.write(htmlData.replace(/\r?\n/g, ''));
+                                                                    parser.end();
+                                                                });
+                                                            });
+                                                    })
+                                                );
+
+                                            });
+
                                     });
                                 
                             });
@@ -654,7 +881,9 @@ function preparePackages(paths){
         });
     }))
     .then( () => {
-        return indd2Html(batchFiles);
+        return ind2Html
+            ? indd2Html(batchFiles)
+            : Promise.resolve();
     });
 }
 
@@ -666,7 +895,7 @@ function preparePackages(paths){
         args[parts[0]] = parts[1] || true;
     });
 
-    var basePath = "/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/data/in/Package_";
+    var basePath = __dirname + "/../../data/in/Package_";
     
     var packages = (args.packages.split(',') || [1,2,3,4,5]).map( id => {
         return basePath + id;
@@ -675,33 +904,24 @@ function preparePackages(paths){
     var filter = new RegExp(args.filter || '.*');
     
     var preparePromise = args.prepare
-        ? fsReadFile('./export-single-html.jsx', 'utf8')
-            .then(function (data) {
-                jsxScript = data;
-                return preparePackages(packages)
-            })
+        ? prepare.preparePackages(packages, filter)
         : Promise.resolve();
     
-    var converPromise = preparePromise
-        .then(() => {
-            
-            return args.convert
-                ? convertPackages(packages, filter)
-                : Promise.resolve();
-                    
-        });
-    
-    var neptunePromise = converPromise
-        .then( () => {
-            return args.neptune
-                ? transformPackages(packages, filter)
-                : Promise.resolve();
-        });
-    
-    neptunePromise
-        .then(function(){
-            console.log('FINISHED');
-        });
+    var exportAdobePromise = args.export
+        ? exportAdobe.exportPackages(packages, filter)
+        : Promise.resolve();
+
+    var injectPromise = args.inject
+        ? inject.injectPackages(packages, filter)
+        : Promise.resolve();
+
+    var convertPromise = args.convert
+        ? convert.convertPackages(packages, filter)
+        : Promise.resolve();
+
+    var neptunePromise = args.neptune
+        ? neptune.transformPackages(packages, filter)
+        : Promise.resolve();
     
     
 })();

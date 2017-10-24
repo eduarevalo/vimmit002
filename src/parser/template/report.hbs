@@ -1,0 +1,92 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Invoice {{invoiceNumber}}</title>
+    <link rel="stylesheet" href="./style.css" media="all" />
+  </head>
+  <body>
+    <header class="clearfix">
+      <div id="logo">
+      </div>
+      <div id="company">
+        <h2 class="name">Technologie Vimmit</h2>
+        <div>841, Rue Cardinal, St-Eustache, J7R 6N6</div>
+        <div>+1 (438) 830-4556</div>
+        <div><a href="mailto:info@vimmit.com">info@vimmit.com</a></div>
+      </div>
+      </div>
+    </header>
+    <main>
+      <h1>Packages conversion report</h1>
+      {{#each packages}}
+        <table border="0" cellspacing="0" cellpadding="0">
+          <thead>
+            <tr>
+              <th class="desc">Package</th>
+              <th class="desc">Collection Count</th>
+              <th class="desc">Interchange %</th>
+              <th class="desc">Neptune %</th>
+              <th class="desc">Test Coverage %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="desc">{{ path }}</td>
+              <td class="desc">{{ collectionCount }}</td>
+              <td class="desc"></td>
+              <td class="desc"></td>
+              <td class="desc"></td>
+            </tr>
+          </tbody>
+        </table>
+        {{#each json}}
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th class="desc">Collection</th>
+                <th class="desc">File</th>
+                <th class="desc">MD5 Check</th>
+                <th class="desc">Coverage</th>
+                <th class="desc">Neptune</th>
+                <th class="desc">Test Coverage %</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each this}}
+                <tr>
+                  <td class="desc">{{lastPath @../key}}</td>
+                  <td class="desc">{{firstExtensionPart @key}}</td>
+                  <td class="desc">{{ integrity }}</td>
+                  <td class="desc">{{ coverage}}%</td>
+                  <td class="desc"></td>
+                  <td class="desc"></td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        {{/each}}
+      {{/each}}
+    </main>
+    <main>
+      <h1>Activities</h1>
+      <ul>
+        {{#each tasks}}
+          <li class="{{doneClass done}}{{acceptedClass accepted}}">{{ description }}</li>
+        {{/each}}
+      </ul>
+    </main>
+    <main>
+      <h1>Validations / Manual fixes</h1>
+      <ul>
+        {{#each validations}}
+          <li class="{{doneClass done}}{{acceptedClass accepted}}">{{document}}: {{ description }}<br/>Fix: {{fix}}</li>
+        {{/each}}
+      </ul>
+    </main>
+    <!--<footer>
+      Invoice was created on a computer and is valid without the signature and seal.
+    </footer>-->
+  </body>
+</html>
+<!DOCTYPE html>

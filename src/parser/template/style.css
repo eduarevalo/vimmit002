@@ -1,0 +1,254 @@
+@font-face {
+  font-family: VillerayRounded-Thin;
+  src: url(fonts/VillerayRounded-Thin.ttf);
+}
+@font-face {
+  font-family: VillerayRounded-Regular;
+  src: url(fonts/VillerayRounded-Regular.ttf);
+}
+
+@page {
+    size: 8.5in 11in;
+    margin: 0.5in 1in;
+}
+@media print {
+    .page {
+        margin: 1.5in;
+        border: initial;
+        width: initial;
+        min-height: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  width: 100%;  
+  height: 29.7cm; 
+  margin: 0 auto; 
+  color: #555555;
+  font-family: Arial, sans-serif; 
+  font-size: 12px; 
+  font-family: VillerayRounded-Thin;
+}
+
+header {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+#logo {
+  float: left;
+  margin-top: 8px;
+  background-image: url(blanco.jpg);
+  width: 300px;
+  height: 100px;
+  border: 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -15px -110px;
+}
+
+#company {
+  float: right;
+  text-align: right;
+}
+
+
+#details {
+  margin-bottom: 30px;
+}
+
+thead {
+  font-family: VillerayRounded-Regular;
+}
+
+#client {
+  padding-left: 6px;
+  border-left: 6px solid #0087C3;
+  float: left;
+}
+
+#client .to {
+  color: #777777;
+}
+
+h3.name {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2.contact-name {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+}
+
+#invoice {
+  float: right;
+  text-align: right;
+}
+
+#invoice h1 {
+  color: #0087C3;
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: normal;
+  margin: 0  0 10px 0;
+}
+
+#invoice .date {
+  font-size: 1.1em;
+  color: #777777;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  /*padding: 10px;*/
+  padding: 2px;
+  background: #EEEEEE;
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+table th {
+  white-space: nowrap;        
+  font-weight: normal;
+  font-size: 10px;
+}
+
+table td {
+  text-align: right;
+}
+
+table td{
+  color: #0795e0;
+  /*font-size: 1.0em;*/
+  font-size: 10px;
+  font-weight: normal;
+  margin: 0 0 0.2em 0;
+}
+
+table .no {
+  color: #FFFFFF;
+  font-size: 1.2em;
+  background: #0795e0;
+}
+
+table .desc {
+  text-align: left;
+}
+
+table .unit {
+  background: #DDDDDD;
+}
+
+table .qty {
+}
+
+table .total {
+  background: #0795e0;
+  color: #FFFFFF;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.0em;
+}
+
+table tbody tr:last-child td {
+  border: none;
+}
+
+table tfoot td {
+  padding: 10px 20px;
+  background: #FFFFFF;
+  border-bottom: none;
+  font-size: 1.0em;
+  white-space: nowrap; 
+  border-top: 1px solid #AAAAAA; 
+}
+
+table tfoot tr:first-child td {
+  border-top: none; 
+}
+
+table tfoot tr:last-child td {
+  color: #0795e0;
+  font-size: 1.4em;
+  border-top: 1px solid #0795e0; 
+
+}
+
+table tfoot tr td:first-child {
+  border: none;
+}
+
+#thanks{
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#notices{
+  padding-left: 6px;
+  border-left: 6px solid #0087C3;  
+}
+
+#notices .notice {
+  font-size: 1.0em;
+}
+
+.content{
+  text-align: justify;
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #AAAAAA;
+  padding: 8px 0;
+  text-align: center;
+}
+
+@page {
+  @bottom-center {
+      content: "Page " counter(page) " / " counter(pages);
+      text-align: center;
+      color: #555555;
+      font-family: Arial, sans-serif; 
+      font-size: 12px; 
+      font-family: VillerayRounded-Thin;
+  }
+}
+
+.strikeout {
+  text-decoration: line-through;
+  color: green;
+}
+.accepted {
+  color: green;
+}

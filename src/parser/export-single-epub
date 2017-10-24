@@ -9,24 +9,17 @@ var currentAppSettings = {
 //Set the value to false to prevent the dialog from showing.
 app.linkingPreferences.checkLinksAtOpen = false;
 app.scriptPreferences.userInteractionLevel = UserInteractionLevels.NEVER_INTERACT;  
-app.findGrepPreferences.appliedLanguage = 'Arabic';
-app.changeTextPreferences.changeTo = 'language: [No Language]';
 
 var batchFiles = {$batchFiles};
 
 for (var key in batchFiles) { 
     
     var inddFile = new File(key);
-    var htmlFile = new File(batchFiles[key]);
+    var epubFile = new File(batchFiles[key]);
 
     var document = app.open(inddFile);
 
-    app.activeDocument.htmlExportPreferences.viewDocumentAfterExport = false;
-    app.activeDocument.htmlExportPreferences.preserveLayoutAppearence = true;
-
-    //document.changeText();
-
-    app.activeDocument.exportFile(ExportFormat.HTML, htmlFile, false);
+    app.activeDocument.exportFile(ExportFormat.EPUB, epubFile, false);
     document.close(SaveOptions.NO);
 }
 

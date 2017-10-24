@@ -1,0 +1,121 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quotation {{quotationNumber}}</title>
+    <link rel="stylesheet" href="../../template/style.css" media="all" />
+  </head>
+  <body>
+    <header class="clearfix">
+      <div id="logo">
+      </div>
+      <div id="company">
+        <h2 class="name">Technologie Vimmit</h2>
+        <div>841, Rue Cardinal, St-Eustache, J7R 6N6</div>
+        <div>+1 (438) 830-4556</div>
+        <div><a href="mailto:info@vimmit.com">info@vimmit.com</a></div>
+      </div>
+      </div>
+    </header>
+    <main>
+      <div id="details" class="clearfix">
+        <div id="client">
+          <div class="to">À:</div>
+          <h2 class="contact-name">{{customer.contactName}}</h2>
+          <h2 class="contact-name">{{customer.contactTitle}}</h2>
+          <h3 class="name">{{customer.companyName}}</h3>
+	        {{#each customer.address}}
+          <div class="address">{{this}}</div>
+          {{/each}}
+	      <div class="email"><a href="mailto:{{customer.companyEmail}}">{{customer.companyEmail}}</a></div>
+        </div>
+        <div id="invoice">
+          <h1>Num&eacute;ro de devis: {{quotationNumber}}</h1>
+        </div>
+      </div>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="desc">Vendeur</th>
+            <th class="desc">Mandat</th>
+            <th class="desc">Date d'émission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="desc">{{representative}}</td>
+            <td class="desc">{{contract}}</td>
+            <td class="desc">{{quotationDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+      {{#each documentParts}}
+      <h1>{{title}}</h1>
+      <div class="content">{{content}}</div>
+        {{#each paragraphs}}
+	        <div class="content">{{this}}</div>
+	      {{/each}}
+      {{/each}}
+      <br/>
+      <h1>Tableau des prix</h1>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="desc">#</th>
+            <th class="desc">TOTAL D'HEURES</th>
+            <th class="desc">DESCRIPTION</th>
+            <th class="qty">PRIX</th>
+            <th class="total">GRAND TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each items}}
+          <tr>
+            <td class="desc">{{add @index 1}}</td>
+            <td class="desc">{{qty}}</td>
+            <td class="desc">{{description}}</td>
+            <td class="qty">{{currency unitPrice}}</td>
+            <td class="total">{{currency total}}</td>
+          </tr>
+          {{/each}}       
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">SOUSTOTAL</td>
+            <td>{{currency subTotal}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">TPS</td>
+            <td>{{currency tps}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">TVQ</td>
+            <td>{{currency tvq}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">GRAND TOTAL</td>
+            <td>{{formatNumber grandTotal style="currency" currency="CAD"}}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div>Ce devis est valable {{validTerms}} à compter de sa date d'émission</div>
+      <div id="thanks">Merci de votre confiance!</div>
+      {{#each annexes}}
+        <div style='page-break-before: always;'>
+          <h1>{{title}}</h1>
+          {{#each paragraphs}}
+	          <div class="content">{{this}}</div>
+	        {{/each}}
+        </div>
+      {{/each}}
+    </main>
+    <footer>
+      <!--Invoice was created on a computer and is valid without the signature and seal.-->
+    </footer>
+  </body>
+</html>
+<!DOCTYPE html>

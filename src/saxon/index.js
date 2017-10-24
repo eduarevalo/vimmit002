@@ -16,7 +16,7 @@ function prepareCommand(options){
     if(options.xslPath)     command.push(util.format('"-xsl:%s"', options.xslPath));
     if(options.xsdPath)     command.push(util.format('"-xsd:%s"', options.xsdPath));
     for(var key in options.params){
-        command.push(`${key}=${options.params[key]}`);
+        command.push(`${key}="${options.params[key]}"`);
     }
     return command.join(' ');
 }

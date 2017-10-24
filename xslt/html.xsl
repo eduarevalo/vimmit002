@@ -53,15 +53,4 @@
         </mediaobject>
     </xsl:template>
     
-    <!--<xsl:template match="html:div[normalize-space()='']"/>-->
-    <!--<xsl:template match="text()[normalize-space()='']"/>-->
-    
-    <!--<xsl:template match="html:p/text()">
-        <xsl:if test="string-length(.)>0">
-            <emphasis>
-                <xsl:value-of select="."/>
-            </emphasis>
-        </xsl:if>
-    </xsl:template>-->
-    
 </xsl:stylesheet>

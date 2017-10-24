@@ -51,16 +51,21 @@
         </xsl:variable>
         <xsl:choose>
             <xsl:when test="string-length($role) > 0">
-                <emphasis role="{$role}">
-                    <xsl:if test="contains($role, 'su') and text() castable as xs:decimal and ./parent::html:p[not(contains(@class, 'Notes'))]">
-                        <xsl:variable name="reference" select="text()"/>
-                        <xsl:variable name="referencedNode" select="./following::html:p[contains(@class, 'Notes')][starts-with(self::node(), $reference)][1]"/>
-                        <xsl:if test="$reference and $referencedNode">
+                <xsl:variable name="reference" select="normalize-space()"/>
+                <xsl:variable name="referencedNode" select="./following::html:p[contains(@class, 'Notes')][starts-with(self::node(), $reference)][1]"/>
+                <xsl:choose>
+                    <xsl:when test="contains($role, 'Super') and text() castable as xs:decimal and ./parent::html:p[not(contains(@class, 'Notes'))] and $reference and $referencedNode">
+                        <emphasis role="footnoteref">
                             <footnoteref linkend='{generate-id($referencedNode)}'/>
-                        </xsl:if>
-                    </xsl:if>
-                    <xsl:apply-templates/>
-                </emphasis>
+                            <xsl:apply-templates/>
+                        </emphasis>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <emphasis role="{$role}">
+                            <xsl:apply-templates/>
+                        </emphasis>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:apply-templates/>
@@ -68,10 +73,8 @@
         </xsl:choose>
     </xsl:template>
     
-    <!--<xsl:template match="html:p/text()">
-        <emphasis>
-            <xsl:apply-templates/>
-        </emphasis>
-    </xsl:template>-->
+    <xsl:template match="html:br[@injected]">
+        <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+    </xsl:template>
     
 </xsl:stylesheet>
