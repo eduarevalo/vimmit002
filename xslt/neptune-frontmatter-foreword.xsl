@@ -17,24 +17,24 @@
         
         <fm:vol-fm pub-num="{$pubNum}" volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
-            <xsl:comment select="'ch-num=fmvol001pre'"/>
+            <xsl:comment select="'ch-num=fmvol001ap'"/>
             <fm:body>
                 <fm:no-title-pg/>
-                <xsl:call-template name="preface"/>
+                <xsl:call-template name="foreword"/>
             </fm:body>
         </fm:vol-fm>
         
     </xsl:template>
     
-    <xsl:template name="preface">
-        <fm:preface>
-            <xsl:variable name="firstSignature" select="part/partintro/para[string-length(normalize-space(.)) &lt; 50]"/>
+    <xsl:template name="foreword">
+        <xsl:variable name="firstSignature" select="part/partintro/para[string-length(normalize-space(.)) &lt; 50]"/>
+        <fm:foreword>
             <xsl:apply-templates select="part/partintro/title"/>
             <xsl:apply-templates select="part/partintro/title/following-sibling::* except $firstSignature except $firstSignature/following-sibling::*"/>
             <xsl:call-template name="signed">
                 <xsl:with-param name="set" select="part/partintro/title/following-sibling::* intersect ($firstSignature | $firstSignature/following-sibling::*)"/>
             </xsl:call-template>
-        </fm:preface>
+        </fm:foreword>
     </xsl:template>
     
     <xsl:template name="signed">

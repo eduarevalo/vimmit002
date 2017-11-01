@@ -5,21 +5,21 @@
     xmlns:fm="http://www.lexisnexis.com/namespace/sslrp/fm"
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
-    
-    <xsl:output indent="yes" doctype-system="frontmatterV015-0000.dtd" doctype-public="-//LEXISNEXIS//DTD Front Matter v015//EN//XML"/>
-            
-    <xsl:include href="neptune.xsl"/>
+           
+    <xsl:include href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="collectionTitle" select="'DROIT DE L’ENVIRONNEMENT'"/>
     
     <xsl:variable name="mediaobject" select="part/info/cover/mediaobject[1] "/>
+    <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
+    <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
     
     <xsl:template match="/">
         
         <fm:vol-fm pub-num="{$pubNum}" volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
-            <xsl:comment select="'ch-num=fmvol001titre'"/>
+            <xsl:comment select="'ch-num=fmvol001'"/>
             <fm:body>
                 <xsl:call-template name="title"/>
                 <xsl:call-template name="copyright"/>
@@ -133,8 +133,12 @@
         <core:title>
             <xsl:apply-templates/>
         </core:title>
-        <core:title-alt use4="l-running-hd">TODO</core:title-alt>
-        <core:title-alt use4="r-running-hd">TODO</core:title-alt>
+        <core:title-alt use4="l-running-hd">
+            <core:emph typestyle="smcaps"><xsl:value-of select="$leftHeader"/></core:emph>
+        </core:title-alt>
+        <core:title-alt use4="r-running-hd">
+            <core:emph typestyle="smcaps"><xsl:value-of select="$rightHeader"/></core:emph>
+        </core:title-alt>
     </xsl:template>
     
     <xsl:template match="tocentry">

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="1">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=ch0014 -->
+    <?textpage page-num="14-1" release-num="Février 2017"?>
+    <core:desig value="1">FASCICULE 14</core:desig>
+    <core:title>Sanctions administratives, recours devant le Tribunal administratif du Québec et
+        révision judiciaire</core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 14 – Sanctions administratives, recours devant le
+        Tribunal administratif du Québec</core:title-alt>
+    <core:title-alt use4="l-running-hd">I. Aspects généraux</core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="bf">Suzanne COMTOIS</core:emph><fn:footnote fr="*">
+                    <fn:para>Les auteures tiennent à remercier M<core:emph typestyle="su"
+                            >e</core:emph> Julie Fortier et M<core:emph typestyle="su"
+                            >me</core:emph> Geneviève Gadoury pour leur contribution lors de la
+                        rédaction de la version initiale du présent fascicule, de même que M.
+                        Francis Lussier et M<core:emph typestyle="su">me</core:emph> Louise Huet
+                        pour leur contribution à la présente mise à jour, dans les deux cas en ce
+                        qui a trait au travail effectué relativement aux sanctions administratives
+                        et la procédure applicable aux décisions contestées devant le Tribunal
+                        administratif du Québec. Elles remercient aussi M<core:emph typestyle="su"
+                            >me</core:emph> Chantal Racette, étudiante à la faculté de droit de
+                        l’Université de Sherbrooke, pour sa contribution à la présente mise à jour
+                        ainsi que M<core:emph typestyle="su">e</core:emph> Charles Guay et
+                            M<core:emph typestyle="su">e</core:emph> Lindsay Lamothe-Lafrenière,
+                        pour le travail de recherche effectué lors des versions précédentes de ce
+                        fascicule en ce qui a trait aux pouvoirs du TAQ et à la révision
+                        judiciaire.</fn:para>
+                </fn:footnote></core:name.text>
+            <core:name.detail>
+                <core:role>Professeure, Université de Sherbrooke</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:byline><core:person>
+            <core:name.text>Marie-Claude BELLEMARE<fn:footnote-id fr="*"/></core:name.text>
+            <core:name.detail>
+                <core:role>Avocate, Borden Ladner Gervais</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:comment-prelim type="currentness">
+        <core:para>À jour au 20 juillet 2016</core:para>
+    </core:comment-prelim>
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>POINTS-CLÉS</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:enum>1.</core:enum>
+                    <core:para>Lorsqu’ils constatent une contravention aux normes environnementales
+                        ou aux autres conditions prescrites, le ministre ou, le cas échéant, le
+                        gouvernement du Québec, peuvent, dans les cas prévus par la <core:emph
+                            typestyle="it">Loi sur la qualité de l’environnement</core:emph>,
+                        réprimer eux-mêmes l’inconduite en imposant des sanctions administratives
+                        (V. n<core:emph typestyle="su">o</core:emph> 2).</core:para>
+                </core:listitem>
+                <!--  -->
+            </core:list>
+            <!--  -->
+            <?textpage page-num="14-3" release-num="Février 2017"?>
+            <!--  -->
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <!--  -->
+    <?textpage page-num="14-5" release-num="Février 2017"?>
+    <!--  -->
+    <?textpage page-num="14-7" release-num="Février 2017"?>
+    <!--  -->
+    <?textpage page-num="14-9" release-num="Février 2017"?>
+    <!--  -->
+    <tr:ch-pt volnum="1">
+        <core:no-desig/>
+        <core:title>INTRODUCTION</core:title>
+        <tr:secmain volnum="1">
+            <core:desig value="1">1.</core:desig>
+            <core:title runin="1">Objet de la loi</core:title>
+            <core:para runin="1"> – La <core:emph typestyle="it">Loi sur la qualité de
+                    l’environnement</core:emph><fn:endnote-id er="1"/> dont l’objet est d’assurer la
+                protection de l’environnement institue, à cette fin, divers mécanismes juridiques et
+                économiques en vue de prévenir ou de corriger les atteintes illégales à la qualité
+                de l’environnement. Parmi ces mécanismes on retrouve, entre autres, l’interdiction
+                de polluer, la gestion des matières dangereuses, le principe pollueur-payeur, les
+                autorisations administratives préalables et le régime d’évaluation et d’examen des
+                impacts environnementaux, etc.</core:para>
+            <fn:endnotes>
+                <fn:endnote er="1">
+                    <fn:para>RLRQ, c. Q-2 (ci-après « L.q.e. »).</fn:para>
+                </fn:endnote>
+            </fn:endnotes>
+            <!--  -->
+        </tr:secmain>
+        <!--  -->
+    </tr:ch-pt>
+    <!--  -->
+    <tr:ch-pt volnum="1">
+        <core:desig value="I">I.</core:desig>
+        <core:title>SANCTIONS ADMINISTRATIVES EN VERTU DE LA <core:emph typestyle="it">LOI SUR LA
+                QUALITÉ DE L’ENVIRONNEMENT</core:emph></core:title>
+        <tr:ch-ptsub1-dummy volnum="1">
+            <tr:secmain volnum="1">
+                <core:desig value="4">4.</core:desig>
+                <core:title runin="1">Mise en oeuvre</core:title>
+                <core:para runin="1"> – Le ministre est chargé d’assurer la protection de
+                        l’environnement<fn:endnote-id er="1"/> et, à ce titre, il veille à
+                    l’application de la <core:emph typestyle="it">Loi sur la qualité de
+                        l’environnement</core:emph>. À cet égard, la <core:emph typestyle="it">Loi
+                        sur la qualité de l’environnement</core:emph> prévoit diverses sanctions
+                    administratives afin de protéger l’environnement et d’assurer le respect de
+                    cette loi. La <core:emph typestyle="it">Loi sur la qualité de
+                        l’environnement</core:emph> confie au ministre<fn:endnote-id er="2"/> et, en
+                    certaines circonstances, au gouvernement du Québec, le pouvoir de mettre en
+                    oeuvre ces sanctions administratives. Parmi ces mesures, mentionnons
+                        notamment<fn:endnote-id er="3"/> :</core:para>
+                <?textpage page-num="14-11" release-num="Février 2017"?>
+                <core:list>
+                    <core:listitem>
+                        <core:enum>–</core:enum>
+                        <core:para>les ordonnances;</core:para>
+                    </core:listitem>
+                    <core:listitem>
+                        <core:enum>–</core:enum>
+                        <core:para>la révocation, la suspension ou la modification
+                                d’autorisation<fn:endnote-id er="4"/>;</core:para>
+                    </core:listitem>
+                    <core:listitem>
+                        <core:enum>–</core:enum>
+                        <core:para>les sanctions administratives pécuniaires.</core:para>
+                    </core:listitem>
+                </core:list>
+                <core:para>La mise en oeuvre de ces sanctions administratives relève pour la plupart
+                    de l’exercice d’un pouvoir discrétionnaire du ministre ou, le cas échéant, du
+                    gouvernement du Québec. La décision d’exercer une sanction administrative peut,
+                    selon le cas, être contestée devant le Tribunal administratif du Québec ou
+                    devant la Cour supérieure du Québec dans le cadre de son pouvoir de surveillance
+                    et contrôle. Ces sanctions administratives sont présentées dans la présente
+                    partie.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>Art. 10 de la <core:emph typestyle="it">Loi sur le ministère du
+                                Développement durable, de l’Environnement et des Parcs</core:emph>,
+                            RLRQ, c. M-30.001, <core:emph typestyle="it">Décret 374-2014 du 24 avril
+                                2014</core:emph>, (2014) 146 G.O. II, 1878 et art. 2 à 2.2 et 122
+                            L.q.e.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para>Ce pouvoir peut, dans certains cas, être délégué à un
+                            sous-ministre, un membre du personnel du ministère du Développement
+                            durable, de l’Environnement et de la Lutte contre les changements
+                            climatiques ou à un titulaire d’un emploi, dans ces deux derniers cas,
+                            dans la mesure déterminée par le gouvernement du Québec. Voir à titre
+                            d’exemple l’article 7 de la <core:emph typestyle="it">Loi sur le
+                                ministère du Développement durable, de l’Environnement et des
+                                Parcs</core:emph>, RLRQ, c. M-30.001, et art. 115.2(3)
+                            L.q.e.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="3">
+                        <fn:para>Sur la gradation des sanctions administratives, voir notamment
+                            Pierre ISSALYS et Denis LEMIEUX, <core:emph typestyle="it">L’action
+                                gouvernementale : précis de droit des institutions
+                                administratives</core:emph>, 3<core:emph typestyle="su"
+                                >e</core:emph> éd., Cowansville, Éditions Yvon Blais, 2009, p. 987;
+                                <core:emph typestyle="it">Enviro-Experts inc.</core:emph> c.
+                                <core:emph typestyle="it">Tribunal administratif du
+                                Québec</core:emph>, J.E. 2001-894 (C.S.), où la Cour supérieure du
+                            Québec constate qu’aux yeux d’un exploitant, la révocation ou d’une
+                            autorisation pourrait être qualifiée comme étant une réponse excessive,
+                            c’est-à-dire une forme de peine capitale qui n’est pas proportionnelle
+                            au geste reproché; 2332-4197 <core:emph typestyle="it">Québec
+                                inc.</core:emph> c. <core:emph typestyle="it">Québec (Ministre du
+                                Développement durable, de l’Environnement et des Parcs)</core:emph>,
+                            2007 QCTAQ 10347 (requête en révision rejetée, 2008 QCTAQ 0761; requête
+                            en révision judiciaire rejetée, 2009 QCCS 1059), où le Tribunal
+                            administratif du Québec n’a pas retenu le principe de la gradation des
+                            sanctions et où la Cour supérieure du Québec a émis un doute sur
+                            l’applicabilité de ce principe aux sanctions administratives. Voir par
+                            ailleurs <core:emph typestyle="it">Northex Environnement
+                                inc.</core:emph> c. <core:emph typestyle="it">Blanchet</core:emph>,
+                            2013 QCCA 872, par. 43, où la Cour d’appel rappelle que les sanctions
+                            administratives imposées par l’État le sont selon un principe de
+                            gradation, mais précise que ce principe n’est pas absolu et les
+                            dispositions de la loi tout autant que les circonstances peuvent
+                            justifier d’y passer outre.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="4">
+                        <fn:para>Pour les fins du présent titre, la notion d’« autorisation » fait
+                            référence à toute autorisation, approbation, permission ou attestation
+                            ainsi qu’à tout certificat ou permis accordé en vertu de la <core:emph
+                                typestyle="it">Loi sur la qualité de l’environnement</core:emph> ou
+                            de ses règlements.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+        </tr:ch-ptsub1-dummy>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Ordonnances administratives</core:title>
+            <tr:secmain volnum="1">
+                <core:desig value="5">5.</core:desig>
+                <core:title runin="1" typestyle="ib">Objet</core:title>
+                <core:para> – En vertu de la <core:emph typestyle="it">Loi sur la qualité de
+                        l’environnement</core:emph>, le ministre est doté de divers pouvoirs
+                    d’ordonnance relatifs<fn:endnote-id er="1"/> :</core:para>
+                <!--  -->
+            </tr:secmain>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <!--  -->
+        <?textpage page-num="14-71" release-num="Février 2017"?>
+        <!--  -->
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="C">C.</core:desig>
+            <core:title>Sanctions administratives pécuniaires</core:title>
+            <tr:secmain volnum="1">
+                <core:desig value="104">104.</core:desig>
+                <core:title runin="1">Généralités</core:title>
+                <core:para runin="1">– Le 5 octobre 2011, le projet de loi 89 intitulé <core:emph
+                        typestyle="it">Loi modifiant la Loi sur la qualité de
+                        l’environnement</core:emph> afin d’en renforcer le respect a été
+                        sanctionné<fn:endnote-id er="1"/>. Cette loi a modifié la <core:emph
+                        typestyle="it">Loi sur la qualité de l’environnement</core:emph> afin
+                    d’établir des sanctions administratives pécuniaires (SAP), qui peuvent être
+                    imposées par les personnes désignées par le ministre aux personnes et aux
+                        municipalités<fn:endnote-id er="2"/> qui sont en défaut de respecter
+                    certaines dispositions de la <core:emph typestyle="it">Loi sur la qualité de
+                        l’environnement</core:emph> ou des règlements adoptés en vertu de celle-ci,
+                    et ce, par le biais d’un avis de réclamation<fn:endnote-id er="3"/>. Le nouveau
+                    régime de SAP ne crée pas d’obligation additionnelle mais cherche plutôt à
+                    renforcer le respect des obligations déjà prévues par la <core:emph
+                        typestyle="it">Loi sur la qualité de l’environnement</core:emph>. Ce nouveau
+                    régime de SAP est entré en vigueur le 1<core:emph typestyle="su">er</core:emph>
+                    février 2012 et a rapidement pris une ampleur considérable, au point de devenir
+                    un mode d’intervention privilégié du ministère.</core:para>
+                <!-- -->
+            </tr:secmain>
+            <!--  -->
+            <?textpage page-num="14-73" release-num="Février 2017"?>
+            <!--  -->
+            <?textpage page-num="14-75" release-num="Février 2017"?>
+            <!--  -->
+            <?textpage page-num="14-77" release-num="Février 2017"?>
+            <!--  -->
+            <?textpage page-num="14-79" release-num="Février 2017"?>
+            <!--  -->
+            <?textpage page-num="14-81" release-num="Février 2017"?>
+            <!--  -->
+            <tr:secmain volnum="1">
+                <core:desig value="104">109.</core:desig>
+                <core:title runin="1">Montant de la pénalité</core:title>
+                <core:para runin="1"> – Le montant de la pénalité variera, selon la nature du
+                    manquement, entre 250 $ et 2 500 $ par jour pour une personne physique et entre
+                    1 000 $ et 10 000 $ par jour pour dans les autres cas<fn:endnote-id er="1"
+                    />.</core:para>
+                <core:para>Le montant applicable est spécifique à un manquement donné et il existe
+                    huit catégories de manquement<fn:endnote-id er="2"/> fondées sur la nature des
+                    obligations prévues à la <core:emph typestyle="it">Loi sur la qualité de
+                        l’environnement</core:emph> et à ses règlements d’application, de même que
+                    sur la gravité objective des manquements à ces obligations.</core:para>
+                <core:para>Les huit catégories sont les suivantes<fn:endnote-id er="3"/>
+                    :</core:para>
+                <table colsep="1" frame="all" rowsep="1">
+                    <tgroup cols="3">
+                        <colspec colname="col1" colwidth="180pt" colnum="1" align="center"/>
+                        <colspec colname="col2" colwidth="90pt" colnum="2" align="center"/>
+                        <colspec colname="col3" colwidth="90pt" colnum="3" align="center"/>
+                        <thead>
+                            <row>
+                                <entry colname="col1" grayshading="50"><core:emph typestyle="bf"
+                                        >Catégories</core:emph></entry>
+                                <entry colname="col2" grayshading="50"><core:emph typestyle="bf"
+                                        >Personne physique</core:emph></entry>
+                                <entry colname="col3" grayshading="50"><core:emph typestyle="bf"
+                                        >Autres cas<core:nl/> (ex. : personne morale, société de
+                                        personnes, municipalité, etc.)</core:emph></entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >A+</core:emph><core:nl/>Certains manquements relatifs au
+                                        <core:emph typestyle="it">Règlement concernant le système de
+                                        plafonnement et d’échange de droits d’émission de gaz à
+                                        effet de serre</core:emph><fn:endnote-id er="4"/></entry>
+                                <entry colname="col2">2 500 $</entry>
+                                <entry colname="col3">10 000 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >A</core:emph><core:nl/>Manquements relatifs à l’émission de
+                                    contaminants susceptibles de porter atteinte à l’environnement
+                                    ou à l’être humain, au non-respect d’une ordonnance ou d’une
+                                    décision rendue en vertu de la <core:emph typestyle="it">Loi sur
+                                        la qualité de l’environnement</core:emph> ou de ses
+                                    règlements et autres dispositions de même nature</entry>
+                                <entry colname="col2">2 000 $</entry>
+                                <entry colname="col3">10 000 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >B+</core:emph><core:nl/>Manquements relatifs aux interdictions
+                                    absolues déterminées dans les règlements et autres dispositions
+                                    de même nature</entry>
+                                <entry colname="col2">1 500 $</entry>
+                                <entry colname="col3">7 500 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >B</core:emph><core:nl/>Manquements relatifs à la réalisation
+                                    d’activités ou de travaux sans les autorisations requises par la
+                                        <core:emph typestyle="it">Loi sur la qualité de
+                                        l’environnement</core:emph> ou ses règlements ou liés au
+                                    non-respect de certaines obligations spécifiques et autres
+                                    dispositions de même nature;<core:nl/>Déclarations,
+                                    renseignements ou documents faux ou trompeurs</entry>
+                                <entry colname="col2">1 000 $</entry>
+                                <entry colname="col3">5 000 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >C+</core:emph><core:nl/>Manquements relatifs à des conditions
+                                    liées à des autorisations accordées en vertu des règlements,
+                                    s’il y a des conséquences appréhendées importantes sur
+                                    l’environnement ou l’être humain ou sur le bon fonctionnement
+                                    d’instruments économiques mis en place afin de protéger
+                                    l’environnement, et autres dispositions de même nature</entry>
+                                <entry colname="col2">750 $</entry>
+                                <entry colname="col3">3 500 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >C</core:emph><core:nl/>Manquements relatifs à des conditions
+                                    liées à des autorisations accordées en vertu de la <core:emph
+                                        typestyle="it">Loi sur la qualité de
+                                        l’environnement</core:emph> ou de ses règlements ou liées
+                                    aux instruments économiques mis en place afin de protéger
+                                    l’environnement</entry>
+                                <entry colname="col2">500 $</entry>
+                                <entry colname="col3">2 500 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >D+</core:emph><core:nl/>Manquements relatifs au refus ou défaut
+                                    de fournir dans les délais prévus des avis, renseignements,
+                                    rapports, études, évaluations, attestations, plans ou devis
+                                    prévus aux règlements, s’il y a des conséquences appréhendées
+                                    importantes sur l’environnement ou l’être humain ou sur le bon
+                                    fonctionnement d’un instrument économique mis en place afin de
+                                    protéger de l’environnement, et autres dispositions de même
+                                    nature</entry>
+                                <entry colname="col2">350 $</entry>
+                                <entry colname="col3">1 500 $</entry>
+                            </row>
+                            <row>
+                                <entry colname="col1"><core:emph typestyle="bf"
+                                    >D</core:emph><core:nl/>Manquements de nature administrative,
+                                    tels la tenue de registre, l’affichage ou la publication d’une
+                                    information, d’un avis ou d’un document ou la transmission de
+                                    rapports et autres dispositions de même nature</entry>
+                                <entry colname="col2">250 $</entry>
+                                <entry colname="col3">1 000 $</entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </table>
+                <core:para>Soulignons que ces manquements peuvent aussi résulter en une poursuite
+                        pénale<fn:endnote-id er="5"/>. Cependant, une SAP ne peut être notifiée à
+                    une personne ou une municipalité lorsqu’un constat d’infraction lui a été
+                    antérieurement signifié en raison d’une contravention à la même disposition,
+                    survenue le même jour et fondée sur les mêmes faits. L’inverse est toutefois
+                    possible.</core:para>
+                <core:para>Le ministère, contrairement aux tribunaux dans le cadre d’une poursuite
+                    pénale, ne jouit pas d’un pouvoir discrétionnaire quant au montant de la
+                    pénalité applicable. Son pouvoir discrétionnaire se limite à la décision
+                    d’imposer ou non une SAP<fn:endnote-id er="6"/>.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>Art. 115.23 à 115.26 L.q.e. et ses règlements adoptés en vertu de
+                            la <core:emph typestyle="it">Loi sur la qualité de
+                                l’environnement</core:emph>. Voir aussi l’article 199 de la
+                                <core:emph typestyle="it">Loi concernant principalement la mise en
+                                oeuvre de certaines dispositions du discours sur le budget du 20
+                                novembre 2012</core:emph>, L.Q. 2013, chapitre 16, où la référence à
+                            « une personne morale » dans les articles 115.23 à 115.26 L.q.e.
+                            <?textpage page-num="14-81" release-num="Février 2017"?>a été remplacée
+                            par l’expression « dans les autres cas ». Ces modifications auraient
+                            vraisemblablement pour but de permettre l’émission d’une SAP tant à
+                            l’encontre d’une entreprise exerçant ses activités en tant que personne
+                            morale ou sous une autre forme d’organisation corporative (ex. : une
+                            société de personnes) qu’à l’encontre d’une municipalité. De fait, avant
+                            l’amendement législatif, le Bureau de réexamen refusait d’appliquer aux
+                            sociétés de personnes les peines plus onéreuses prévues pour les
+                            personnes morales : Décision du Bureau de réexamen n<core:emph
+                                typestyle="su">o</core:emph> 0010 du 19 novembre 2012 (SAP
+                                n<core:emph typestyle="su">o</core:emph> 400910295) (Coentreprise
+                            Sintra Grandmont).</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para>Art. 115.28 L.q.e.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="3">
+                        <fn:para>QUÉBEC (Ministère du Développement durable, de l’Environnement et
+                            de la Lutte contre les changements climatiques), <core:emph
+                                typestyle="it">Cadre général d’application des sanctions
+                                administratives pécuniaires</core:emph>, juillet 2013, p. 8, en
+                            ligne :
+                            &lt;http://www.mddelcc.gouv.qc.ca/lqe/renforcement/cadre-application-SAP.pdf&gt;
+                            (site consulté le 18 août 2016)..</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="4">
+                        <fn:para>RLRQ, c. Q-2, r. 46.1.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="5">
+                        <fn:para>Art. 115.14 L.q.e.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="6">
+                        <fn:para>Voir à cet effet : <core:emph typestyle="it">Excavation René
+                                St-Pierre Inc.</core:emph> c. <core:emph typestyle="it">Québec
+                                (Ministère du Développement durable, de l’Environnement et de la
+                                Lutte contre les changements climatiques)</core:emph>, 2015 QCTAQ
+                            02386; <core:emph typestyle="it">Soylutions inc.</core:emph> c.
+                                <core:emph typestyle="it">Québec (Développement durable,
+                                Environnement, Faune et Parcs)</core:emph>, 2014 QCTAQ 05620;
+                                <core:emph typestyle="it">9041-4848 Québec inc.</core:emph> c.
+                                <core:emph typestyle="it">Québec (Développement durable,
+                                Environnement, Faune et Parcs)</core:emph>, 2013 QCTAQ
+                            11111.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+            <!-- -->
+        </tr:ch-ptsub1>
+        <!-- -->
+    </tr:ch-pt>
+    <!--  -->
+    <?xpp XppPI nextpageref="15-1"?>
+</tr:ch>

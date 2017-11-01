@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="2">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=ch0026 -->
+    <?textpage page-num="26-1" release-num="Septembre 2016"?>
+    <core:desig value="1">FASCICULE 26</core:desig>
+    <core:title>Bruit</core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 26 – Bruit</core:title-alt>
+    <core:title-alt use4="l-running-hd">II. Aspects particuliers</core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="bf">Julie-Anne PARISEAU</core:emph><fn:footnote
+                    fr="*">
+                    <fn:para>Les auteurs tiennent à remercier chaleureusement Jules Champagne du
+                        Centre québécois du droit de l’environnement (CQDE) pour son aide dans
+                        l’élaboration des recherches pour la présente mise à jour du
+                        texte.</fn:para>
+                </fn:footnote></core:name.text>
+            <core:name.detail>
+                <core:role>Avocate et candidate à la maîtrise en droit de la faculté Osgoode Hall
+                    Law School, York University, Toronto</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:byline><core:person>
+            <core:name.text>Michel BÉLANGER<fn:footnote-id fr="*"/></core:name.text>
+            <core:name.detail>
+                <core:role>Avocat, Michel Bélanger Avocats inc.</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:comment-prelim type="currentness">
+        <core:para>À jour au 15 mai 2016</core:para>
+    </core:comment-prelim>
+    <se:epigraph>
+        <core:para>« L’enfer, c’est les autres »</core:para>
+        <core:credit>
+            <core:credit-name>– Jean-Paul Sartre, <core:emph typestyle="it">Huis
+                clos</core:emph></core:credit-name>
+        </core:credit>
+    </se:epigraph>
+    <tr:ch-pt-dummy volnum="2">
+        <tr:secmain volnum="2">
+            <core:no-desig/>
+            <core:title>POINTS-CLÉS</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:enum>1.</core:enum>
+                    <core:para>Étant donné qu’il n’existe ni loi ni règlement établissant un niveau
+                        de bruit acceptable au Québec sans égard à l’activité qui en est à
+                        l’origine, la norme de référence en la matière a été fixée par une note
+                        d’instructions interne du ministère du Développement durable, de
+                        l’Environnement et de la Lutte aux changements climatiques, qui a reçu
+                        l’aval des tribunaux (V. n<core:emph typestyle="it">os</core:emph> 5 à
+                        14).</core:para>
+                </core:listitem>
+                <!--  -->
+            </core:list>
+            <!--  -->
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <!--  -->
+    <?textpage page-num="26-3" release-num="Septembre 2016"?>
+    <!--  -->
+    <tr:ch-pt volnum="2">
+        <core:no-desig/>
+        <core:title>INTRODUCTION</core:title>
+        <tr:secmain volnum="2">
+            <core:desig value="1">1.</core:desig>
+            <core:title runin="1">Le bruit au coeur de nombreux recours civils</core:title>
+            <core:para runin="1"> – Le bruit à titre de nuisance environnementale a suscité de
+                nombreux litiges au Québec notamment en vertu du véhicule procédural du recours
+                collectif. À défaut de législation provinciale d’application générale portant sur le
+                bruit, les tribunaux se sont référés en particulier aux différents règlements
+                municipaux mis à leur disposition pour mesurer quantitativement ou qualitativement
+                l’ampleur du caractère nuisible de celui-ci.</core:para>
+            <!--  -->
+        </tr:secmain>
+        <!--  -->
+    </tr:ch-pt>
+    <!--  -->
+    <tr:ch-pt volnum="2">
+        <core:desig value="I">I.</core:desig>
+        <core:title>NOTIONS GÉNÉRALES : QU’EST-CE QUE LE BRUIT ?</core:title>
+        <tr:ch-ptsub1 volnum="2">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Bruit et sons : quelques notions d’acoustique</core:title>
+            <tr:secmain volnum="2">
+                <core:desig value="2">2.</core:desig>
+                <core:title runin="1">Distinctions terminologiques</core:title>
+                <core:para runin="1"> – Physiquement parlant, le bruit est constitué d’un ensemble
+                    de sons. Le son quant à lui constitue à la fois un phénomène physique et un
+                    phénomène psychologique. Le phénomène physique du son est causé par
+                    l’oscillation des particules d’un milieu :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para>Cette oscillation produira des variations de pression du
+                        milieu qui entoure immédiatement le corps en vibration (l’air le plus
+                        souvent); ces variations seront transmises de proche en proche pour
+                        éventuellement entraîner la membrane du tympan. Le son nécessite donc un
+                        milieu (gaz, liquide, solide). Il ne peut pas se propager dans le vide
+                        (exemple : dans l’espace).<fn:endnote-id er="1"/></core:blockquote-para>
+                </core:blockquote>
+
+                <!-- -->
+            </tr:secmain>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <!--  -->
+    </tr:ch-pt>
+    <!--  -->
+    <?xpp XppPI nextpageref="IN-1-1"?>
+</tr:ch>

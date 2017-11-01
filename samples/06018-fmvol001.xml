@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">
+<fm:vol-fm pub-num="06081" volnum="1">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=fmvol001 -->
+    <?textpage page-num="i" release-num="Août 2017"?>
+    <fm:body>
+        <fm:title-pg>
+            <fm:pub-series>
+                <fm:center>
+                    <core:emph typestyle="smcaps">JurisClasseur Québec</core:emph>
+                </fm:center>
+                <core:nl/>
+                <fm:center><core:emph typestyle="smcaps">collection droit
+                    public</core:emph></fm:center>
+            </fm:pub-series>
+            <fm:pub-title><fm:center>DROIT DE L’ENVIRONNEMENT</fm:center></fm:pub-title>
+            <fm:byline>
+                <core:role><core:emph typestyle="it">Directeurs de
+                    collection</core:emph></core:role>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeur Stéphane
+                            Beaulac</core:emph></core:name.text>
+                </core:person>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeur Jean-François
+                            Gaudreault-Desbiens</core:emph></core:name.text>
+                </core:person>
+            </fm:byline>
+            <fm:byline>
+                <core:role><core:emph typestyle="it">Conseillers éditoriaux</core:emph></core:role>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeure Paule
+                            Halley</core:emph></core:name.text>
+                </core:person>
+                <core:person>
+                    <core:name.text><core:emph typestyle="smcaps">Professeur Hugo
+                            Tremblay</core:emph></core:name.text>
+                </core:person>
+            </fm:byline>
+            <fm:issued-date>mise à jour 9 — août 2017</fm:issued-date>
+            <fm:publisher-id>
+                <fm:publisher-logo name="other"><!--LexisNexis Logo--></fm:publisher-logo>
+            </fm:publisher-id>
+        </fm:title-pg>
+        <fm:copyright-pg use4template="CAN">
+            <fm:copyright-info>
+                <fm:copyright-info.content>
+                    <core:para>
+                        <core:emph typestyle="bf">JurisClasseur Québec – Collection Droit
+                            public<core:nl/>Droit de l’environnement</core:emph>
+                    </core:para>
+                    <fm:copyright-year-and-holder>© LexisNexis Canada Inc. 2012<core:nl/>Décembre
+                        2012</fm:copyright-year-and-holder>
+                    <core:para><core:emph typestyle="bf">Tous droits réservés.</core:emph> Il est
+                        interdit, sauf en conformité avec les dispositions de la <core:emph
+                            typestyle="it">Loi sur le droit d’auteur</core:emph>, de reproduire ou
+                        sauvegarder ce document sous quelque support (incluant la photocopie ou la
+                        sauvegarde électronique, soit de façon transitoire ou accidentelle, de ce
+                        document) sans la permission expresse du titulaire de son droit d’auteur.
+                        Toute demande de permission pour reproduction du document, en tout ou en
+                        partie, peut être adressée à la maison d’édition.</core:para>
+                    <core:para><core:emph typestyle="bf">Avertissement.</core:emph> Quiconque commet
+                        une infraction aux droits d’auteur d’une oeuvre peut s’exposer à des recours
+                        civils en dommages-intérêts et aussi à des poursuites
+                        criminelles.</core:para>
+                    <core:para><core:emph typestyle="bf">Mise en garde et exonération de
+                            responsabilité.</core:emph> L’éditeur, les auteurs et quiconque a
+                        participé à la production de la présente publication ne sont pas
+                        responsables des pertes, des préjudices, des réclamations, des obligations
+                        ou des dommages découlant de l’utilisation ou de la consultation de tout
+                        renseignement ou matériel contenu dans cette publication. Même si tous les
+                        efforts possibles ont été faits pour assurer l’exactitude du contenu de la
+                        publication, il s’agit d’un document d’information seulement. Dans la
+                        production de cette publication, ni l’éditeur, ni les auteurs ou les
+                        contributeurs n’ont voulu donner de conseils juridiques ou professionnels.
+                        Il ne faut pas compter sur cette publication comme si elle présentait de
+                        tels conseils. Quiconque a besoin de conseils juridiques ou d’aide d’experts
+                        doit retenir les services d’un professionnel compétent. L’éditeur et
+                        quiconque a participé à la création de cette publication rejettent toute
+                        responsabilité à l’égard des résultats de toute poursuite intentée parce que
+                        l’on s’est fié aux renseignements contenus dans cette publication et de
+                        toute erreur ou omission contenue dans l’ouvrage. Ils rejettent expressément
+                        toute responsabilité à l’égard de tout usager de l’ouvrage.</core:para>
+                    <core:para><core:emph typestyle="bf">LexisNexis Canada Inc.</core:emph> 1200,
+                        avenue McGill College, bureau 1100, Montréal, Québec H3B
+                            4G7<core:nl/><core:emph typestyle="bf">Service à la
+                            clientèle</core:emph> 1-800-668-6481 / commandes@lexisnexis.ca /
+                        www.lexisnexis.ca/fr</core:para>
+                </fm:copyright-info.content>
+            </fm:copyright-info>
+            <fm:boxed-text>
+                <core:para>Les ouvrages publiés dans le <core:emph typestyle="it">JurisClasseur
+                        Québec</core:emph> sont développés par l’Éditeur avec l’indispensable apport
+                    des directeurs de collection et des conseillers éditoriaux. Veuillez toutefois
+                    noter que le contenu des fascicules relève de la responsabilité de chacun des
+                    auteurs.</core:para>
+            </fm:boxed-text>
+            <core:para indent="none">
+                <core:emph typestyle="bf">Catalogage avant publication de Bibliothèque et Archives
+                    nationales du Québec et Bibliothèque et Archives Canada</core:emph>
+            </core:para>
+            <core:para>Vedette principale au titre :</core:para>
+            <core:para indent="1st-line">Droit de l’environnement</core:para>
+            <core:para indent="1st-line">(JurisClasseur Québec. Collection Droit civil)</core:para>
+            <core:para indent="1st-line">Comprend des références bibliographiques.</core:para>
+            <fm:isbn>ISBN 978-0-433-47085-4</fm:isbn>
+            <core:para indent="1st-line">1. Environnement - Droit - Québec (Province). I.
+                Titre.</core:para>
+            <core:para>KEQ885.D76&#x2003;344.71404’6&#x2003;C2012-942547-8</core:para>
+        </fm:copyright-pg>
+    </fm:body>
+</fm:vol-fm>

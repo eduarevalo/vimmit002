@@ -13,6 +13,16 @@
         <xsl:apply-templates/>            
     </xsl:template>
     
+    <xsl:template match="html:span[contains(@class, 'locuspara')]">
+        <emphasis role="label" xreflabel="{.}">
+            <xsl:apply-templates/>
+            <xsl:variable name="punctuation" select="(following-sibling::*|following-sibling::text())[1][self::text()]"/>
+            <xsl:value-of select="$punctuation"/>
+        </emphasis>
+    </xsl:template>
+    
+    <xsl:template match="text()[preceding-sibling::*[1][contains(@class, 'locuspara')]]"/>
+    
     <xsl:template match="html:p">
         <para>   
             <xsl:attribute name="role">
@@ -43,7 +53,7 @@
         </para>
     </xsl:template>
     
-    <xsl:template match="html:p[contains(@class, 'Titre')] | html:span[contains(@class, 'Titre')]">
+    <xsl:template match="html:p[contains(lower-case(@class), 'titre')] | html:span[contains(lower-case(@class), 'titre')]">
         <title>    
             <xsl:apply-templates/>            
         </title>

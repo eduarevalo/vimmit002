@@ -21,11 +21,35 @@ function createFilter(filter){
 }
 
 function encodeXmlEntities(input){
-    return input.replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&apos;');
+    return input.replace(/\&/g, '&amp;')
+        .replace(/\</g, '&lt;')
+        .replace(/\>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/\'/g, '&apos;');
+}
+
+function decodeXmlEntities(input){
+    return input.replace(/&amp;/g, '&')
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, "\"")
+        .replace(/&apos;/g, "'");
+}
+
+function encodeXmlVimmitEntities(input){
+    return input.replace(/&amp;/g, '--vimmit-trap--amp;')
+        .replace(/&lt;/g, '--vimmit-trap--lt;')
+        .replace(/&gt;/g, '--vimmit-trap--gt;')
+        .replace(/&quot;/g, '--vimmit-trap--quot;')
+        .replace(/&apos;/g, '--vimmit-trap--apos;');
+}
+
+function decodeXmlVimmitEntities(input){
+    return input.replace(/--vimmit-trap--amp;/g, '&amp;')
+        .replace(/--vimmit-trap--lt;/g, '&lt;')
+        .replace(/--vimmit-trap--gt;/g, '&gt;')
+        .replace(/--vimmit-trap--quot;/g, '&quot;')
+        .replace(/--vimmit-trap--apos;/g,'&apos;');
 }
 
 function hexEncodeChar(input, i){
@@ -33,10 +57,22 @@ function hexEncodeChar(input, i){
     return("000"+hex).slice(-4);
 }
 
+//.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\x2029|\x2e/g, '')
 var charsToOmit = ['0020', '0009', '00ad', '002d', '000a', '00a0', '2029', '002e'];
 
-function validateStrings(stringA, stringB, iterators){
+/*function validateStrings(stringA, stringB, iterators){
     var charA = stringA.charAt(iterators.A),
+        charB = stringB.charAt(iterators.B);
+    if(charA === charB){
+        iterators.A++;
+        iterators.B++;
+        return true;
+    }
+    console.log(iterators.A, iterators.B, iterators.page, 'HTML:', stringA.substr(iterators.A, 10), 'Pages:', stringB.substr(iterators.B, 10), 'Page:', iterators.page, iterators.fileName);
+    return false;
+}*/
+function validateStrings(stringB, iterators){
+    var charA = iterators.text.charAt(0),
         charB = stringB.charAt(iterators.B),
         charAHex,
         charBHex
@@ -44,24 +80,24 @@ function validateStrings(stringA, stringB, iterators){
 
     if(charA === charB){
         iterators.out += encodeXmlEntities(charA);
-        iterators.A++;
+        iterators.text = iterators.text.substr(1);
         iterators.B++;
         result = true;
     }else{
-        charAHex = hexEncodeChar(stringA, iterators.A);
+        charAHex = hexEncodeChar(iterators.text, 0);
         if(charsToOmit.indexOf(charAHex) >= 0){
             iterators.out += encodeXmlEntities(charA);
-            iterators.A++;
+            iterators.text = iterators.text.substr(1);
             result = true;
         }
-        charBHex = hexEncodeChar(stringB, iterators.B);
+        /*charBHex = hexEncodeChar(stringB, iterators.B);
         if(charsToOmit.indexOf(charBHex) >= 0){
             iterators.B++;
             result = true;
-        }
+        }*/
     }
     if(!result){
-        console.log(iterators.A, iterators.B, iterators.page, 'HTML:', stringA.substr(iterators.A, 10), 'Pages:', stringB.substr(iterators.B, 10), charAHex, charBHex, 'Page:', iterators.page, iterators.fileName);
+        console.log(iterators.B, iterators.page, 'HTML:', iterators.text.substr(0, 10), 'Pages:', stringB.substr(iterators.B, 10), charAHex, charBHex, 'Page:', iterators.page, iterators.fileName);
         //process.exit();
     }
     return result;
@@ -231,25 +267,33 @@ function exportEpubFiles(path, collection, collectionPath){
             return Promise.all(
                     files
                     .filter( file => !/Instructions/.test(file) )
+                    //.filter( file => /Page/.test(file)  )//f14, f17, f18
+                    //.filter( file => !/F17/.test(file)  )//f14, f17, f18
+                    //.filter( file => /F24/.test(file) )//f14, f17, f18
                     //.filter( file => /titre/.test(file) )
                     //.filter( file => /F17/.test(file) )
                     .filter( createFilter('\.epub$') )
                     //.filter( (value, index) => /F18/.test(value) )
-                    .map( epubFile => {
+                    .map( (epubFile, index) => {
                         
                         return (new Promise(function(resolve, reject){
                             tmp.dir({ prefix: epubFile + "_" }, function(err, path) {
                                 if (err) reject(err);
                                 
-                                fs
+                                //setTimeout(function(){
+
+                                    fs
                                     .createReadStream([collectionPath, epubFile].join('/'))
                                         .pipe(unzip.Extract({ path: path }))
                                         .on('finish', injectXhtmlFiles(path, resolve) );
+
+                                //}, index * 3000);
+                                
                                 
                             });
                         })).then( (epubPath) => {
 
-                            console.log('epubPath:',epubPath);
+                            //console.log('epubPath:',epubPath);
                             return saxon
                                 .exec({
                                     xmlPath: __dirname + '/../../xslt/empty.xml', 
@@ -271,14 +315,18 @@ function exportEpubFiles(path, collection, collectionPath){
                                 var htmlFilePath = [path, collection, 'html'].join('/') + fileName + '.html';
                                 injectInlineHtml([path, collection, 'html'].join('/'), fileName + '.html')
                                     .then( htmlData => {
-                                        return injectPages(conversion.content, htmlData, htmlFilePath, fileName, resolve);
+                                        //console.log('Processing: '+fileName);
+                                        //setTimeout(function(){ 
+                                            injectPages(conversion.content, htmlData, htmlFilePath, fileName, resolve);
+                                        //}, index * 3000);
                                     });
                                 
 
-                            }).then( content => {
+                            }).then( injectProcess => {
                                 var outFilePath = [path, collection, 'html', fileName + '.inline.html'].join('/');
-                                console.log(outFilePath);
-                                return fsWriteFile(outFilePath, content, 'utf8');
+                                var error = injectProcess.error ? 'Error: ' + injectProcess.error : '';
+                                console.log('File:', _.last(outFilePath.split('/')), 'Pages:', injectProcess.pageCount, error);
+                                return fsWriteFile(outFilePath, injectProcess.content, 'utf8');
                             });
 
                         });
@@ -291,7 +339,7 @@ function exportEpubFiles(path, collection, collectionPath){
 function compileTexts(pages, filename){
     var file = _.first(_.split(_.last(_.split(filename, '/')), '.'));
     var order = {
-        '6018_JCQ_02-Page de titre et catalogage_MJ9' : { '1': [2,1,3,0] },
+        /*'6018_JCQ_02-Page de titre et catalogage_MJ9' : { '1': [2,1,3,0] },
         '6018_JCQ_28-F06_MJ9': { '1': [0,2,1]},
         '6018_JCQ_28-F07_MJ9': { '1': [0,2,1]},
         '6018_JCQ_28-F08_MJ9': { '1': [0,2,1]},
@@ -303,7 +351,7 @@ function compileTexts(pages, filename){
         '6018_JCQ_28-F20_MJ9': { '1': [0,2,1]},
         '6018_JCQ_28-F22_MJ9': { '1': [0,2,1]},
         '6018_JCQ_28-F24_MJ9': { '1': [0,2,1]},
-        '6018_JCQ_28-F26_MJ9': { '1': [0,2,1]}
+        '6018_JCQ_28-F26_MJ9': { '1': [0,2,1]}*/
     };
     for(var key in pages){
         if(order[file] && order[file][key]){
@@ -325,6 +373,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
     var iterators = {
         A: 0,
         B: 0,
+        text: undefined,
         fileName: fileName,
         html: htmlData,
         pages: pages,
@@ -333,12 +382,23 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
     };
 
     var onBody = false,
-        error = false;
+        onTable = false,
+        onTHead = false,
+        tHeadText = "",
+        currentContent,
+        hasMoreContents,
+        error = false,
+        insertFirst = true,
+        insertNextPageBreak = true;
 
     var parser = new htmlparser.Parser({
         onopentag: function(name, attribs){
             if(name === "body"){
                 onBody = true;
+            }else if(name === "table"){
+                onTable = true;
+            }else if(name === "thead"){
+                onTHead = true;
             }
             iterators.out += `<${name}`;
             for(var key in attribs){
@@ -348,17 +408,22 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
         },
         ontext: function(text){
             
-            if(error){
+            if(onTHead){
+                tHeadText += text;
+            }
+
+            if(text.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '') == "" || error || _.get(currentContent, 'lastPage')){
                 iterators.out += encodeXmlEntities(text);
                 return;
             }
 
-            var evaluatePageChange = function(){
-                if(pages[iterators.page] && pages[iterators.page].text.length === iterators.B){
-                    var release = pages[iterators.page].footer.trim(),
+            var insertPageBreak = function(page){
+                if(pages[page]){
+                    //console.log("CHANGE", page);
+                    var release = pages[page].footer.trim(),
                         pageNo,
                         ofPages;
-                    var match = release.match(/^[\r\n ]*\([0-9]*\)([A-Z0-9])*\s\/\s([0-9]*)\s*(\D*\s[0-9]{4})[\r\n ]*$/);
+                    var match = release.match(/^\([0-9]*\)([A-Z0-9])+\s\/\s([0-9]*)(\D*\s[0-9]{4})$/);
                     //var match = release.match(/^[\r\n ]*\([0-9]*\)[A-Z0-9]*\s\/\s[0-9]*\s*(\D*\s[0-9]{4})[\r\n ]*$/);
                     if(match){
                         pageNo = match[1];
@@ -368,35 +433,106 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                     //console.log('----------------------------------->', pageNo, ofPages, release, pages[iterators.page].footer);
                     if(pageNo && ofPages){
                         //console.log(`<?textpage page-num="${page}" release-num="Août 2017"?>`);
-                        if(pages[iterators.page] && pages[iterators.page].header){
-                            if(pages[iterators.page].header.right){
-                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" right-header="${pages[iterators.page].header.right}" extracted-page="${iterators.page}" release-num="${release}" />`;
+                        if(pages[page] && pages[page].header){
+                            if(pages[page].header.right){
+                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" right-header="${pages[page].header.right}" extracted-page="${page}" release-num="${release}" />`;
+                            }else if(pages[page].header.left){
+                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" left-header="${pages[page].header.left}" extracted-page="${page}" release-num="${release}" />`;
                             }else{
-                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" left-header="${pages[iterators.page].header.left}" extracted-page="${iterators.page}" release-num="${release}" />`;
+                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
                             }
                         }else{
-                            iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${iterators.page}" release-num="${release}" />`;
+                            iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
                         }
                     }else{
-                        iterators.out += `<br injected="true" extracted-page="${iterators.page}" release-num="${release}" />`;
+                        iterators.out += `<br injected="true" extracted-page="${page}" release-num="${release}" />`;
                     }
-                    iterators.page++;
-                    iterators.B = 0;
+                }
+                iterators.page = page;
+                iterators.B = 0;
+                insertNextPageBreak = false;
+            }
+
+            var evaluatePageChange = function(){
+                if(pages[iterators.page] && currentContent.text.length === iterators.B){
+                    insertNextPageBreak = true;
                 }
             }
 
-            if(onBody && text.length > 0){
-                
-                iterators.A = 0;
-                while(!error && pages[iterators.page] && iterators.A < text.length && iterators.B < pages[iterators.page].text.length){
-                    if(!validateStrings(text, pages[iterators.page].text, iterators)){
-                        error = true;
-                        iterators.out += encodeXmlEntities(text);
-                    }
-                    if(!error) evaluatePageChange();
-                }
+            if(onBody){
 
-                if(!error) evaluatePageChange();
+                if(insertFirst){
+                    insertPageBreak(1);
+                    insertFirst = false;
+                }
+                
+                function pickCurrentContent(text){
+                    if(iterators.B === 0){
+                        while(pages[iterators.page] && pages[iterators.page].contents.length === 0){
+                            insertPageBreak(iterators.page + 1);
+                        }
+                        if(pages[iterators.page]){
+                            var availableContents = _.filter(pages[iterators.page].contents, { visited: false });
+                            
+                            hasMoreContents = _.size(availableContents) > 1;
+                            if(_.size(availableContents) > 0){    
+                                currentContent = _.find(availableContents, function(content){ 
+                                    if(onTable){
+                                        var thead = tHeadText.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '');
+                                        if(_.startsWith(content.text, thead)){
+                                            content.text = content.text.substr(_.size(thead));
+                                        }
+                                    }
+                                    return _.startsWith(content.text, text.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '')); 
+                                });
+                                if(currentContent == undefined){
+                                    currentContent = {error: true, page: iterators.page, text: text};
+                                    return;
+                                }
+                                currentContent.visited = true;
+                                return;
+                            }
+                        }
+                        currentContent = {lastPage: true};
+                    }
+                }
+                
+                for(var it=0;  it<text.length; it++){
+                    if(text.substr(it).replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '') == "" || _.get(currentContent, 'error') || _.get(currentContent, 'lastPage')){
+                        iterators.out += encodeXmlEntities(text.substr(it));
+                        break;
+                    }
+                    var char = text.charAt(it);
+                    if(char.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '') == ""){
+                        iterators.out += encodeXmlEntities(char);
+                    }else{
+                        if(insertNextPageBreak){
+                            insertPageBreak(iterators.page + 1);
+                        }
+                        pickCurrentContent(text.substr(it));
+                        if(currentContent.error){
+                            iterators.out += encodeXmlEntities(char);
+                            error = true;
+                        }else if(currentContent.lastPage){
+                            iterators.out += encodeXmlEntities(char);
+                            iterators.B++;
+                        }else{
+                            var charB = currentContent.text.charAt(iterators.B);
+                            if(char === charB){
+                                iterators.out += encodeXmlEntities(char);
+                                iterators.B++;
+                            }
+                        }
+                    }
+                    if(!currentContent.lastPage){
+                        if(!error && !hasMoreContents){
+                            evaluatePageChange();
+                        }
+                        if(currentContent.text.length === iterators.B){
+                            iterators.B = 0;
+                        }
+                    }
+                }
                 
             }else{
                 iterators.out += encodeXmlEntities(text);
@@ -406,11 +542,15 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
         onclosetag: function(name){
             if(name === "body"){
                 onBody = false;
+            }else if(name === "table"){
+                onTable = false;
+            }else if(name === "thead"){
+                onTHead = false;
             }
             iterators.out += `</${name}>`;
         },
         onend: function(){
-            resolve(iterators.out);
+            resolve({ content: iterators.out, pageCount: iterators.page, error: error});
         }
     }, { decodeEntities: true });
     parser.write(htmlData);
@@ -435,36 +575,38 @@ function injectPages(content, htmlData, filePath, fileName, callback){
                     pages[lastP] = {contents: [], text: '',footer: '', header: {}};
                 }
                 it++;
-            }else if(name === "content"){
-                pages[lastP].contents.push('');
             }
         },
-        ontext: function(text){
-            switch(lastNodeName){
-                case "content":
-                    pages[lastP].contents[pages[lastP].contents.length - 1] += text;
-                    break;
+        ontext: function(originalText){
+            var text = decodeXmlEntities(decodeXmlVimmitEntities(originalText).replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, ''));
+            if(text!=''){
+                switch(lastNodeName){
+                    case "content":
+                        pages[lastP].contents.push({ text, visited: false});
+                        break;
 
-                case "header":
-                    if( rightHeaderExp.test(text) ){
-                        pages[lastP].header.right = text;
-
-                    }else{
-                        pages[lastP].header.left = text;
-                    }
+                    case "header":
+                        if( rightHeaderExp.test(originalText) ){
+                            pages[lastP].header.right = originalText;
+                        }else{
+                            pages[lastP].header.left = originalText;
+                        }
+                        break;
+                    
+                    case "footer":
+                        pages[lastP].footer += originalText;
                     break;
-                
-                case "footer":
-                    pages[lastP].footer += text;
-                break;
+                }
             }          
         },
         onend: function(){
-            compileTexts(pages, fileName);
+            
+            //compileTexts(pages, fileName);
+            
             injectPageNumbers(htmlData, pages, filePath, callback);
         }
     }, { decodeEntities: true });
-    parser.write(content);
+    parser.write(encodeXmlVimmitEntities(content));
     parser.end();
 }
 

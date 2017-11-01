@@ -6,6 +6,8 @@
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
+    <xsl:output indent="yes"></xsl:output>
+    
     <xsl:include href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
@@ -17,24 +19,23 @@
         
         <fm:vol-fm pub-num="{$pubNum}" volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
-            <xsl:comment select="'ch-num=fmvol001pre'"/>
-            <fm:body>
-                <fm:no-title-pg/>
-                <xsl:call-template name="preface"/>
-            </fm:body>
+            <xsl:comment select="'ch-num=fmvol001bio'"/>
+            <fm:no-title-pg/>
+            <xsl:call-template name="feature"/>
         </fm:vol-fm>
         
     </xsl:template>
     
-    <xsl:template name="preface">
-        <fm:preface>
-            <xsl:variable name="firstSignature" select="part/partintro/para[string-length(normalize-space(.)) &lt; 50]"/>
-            <xsl:apply-templates select="part/partintro/title"/>
-            <xsl:apply-templates select="part/partintro/title/following-sibling::* except $firstSignature except $firstSignature/following-sibling::*"/>
-            <xsl:call-template name="signed">
-                <xsl:with-param name="set" select="part/partintro/title/following-sibling::* intersect ($firstSignature | $firstSignature/following-sibling::*)"/>
-            </xsl:call-template>
-        </fm:preface>
+    <xsl:template name="feature">
+        <fm:feature>
+            <xsl:apply-templates select="part/partintro"/>
+        </fm:feature>
+    </xsl:template>
+    
+    <xsl:template match="sect1/title">
+        <core:generic-hd typestyle="bf">
+            <xsl:apply-templates/>
+        </core:generic-hd>
     </xsl:template>
     
     <xsl:template name="signed">

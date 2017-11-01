@@ -155,7 +155,7 @@
     </xsl:template>
     
     <xsl:template match="html:p[contains(@class, 'TM-')]" >
-        <tocentry>
+        <tocentry role="{@class}">
             <xsl:apply-templates/>
         </tocentry>
     </xsl:template>

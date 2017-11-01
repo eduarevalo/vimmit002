@@ -10,6 +10,8 @@
     exclude-result-prefixes="xs db html"
     version="2.0">
     
+    <!--<xsl:output indent="yes"></xsl:output>-->
+    
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
     <xsl:variable name="mainContainer" select="/html:html/html:body/html:div[.//html:*[contains(@class,'Fascicule')]][1]"/>
@@ -40,8 +42,6 @@
                 </xsl:choose>
             
             </xsl:for-each>
-                
-    
             
         </part>
     </xsl:template>
@@ -62,7 +62,7 @@
         <chapter>
             
             <xsl:call-template name="title">
-                <xsl:with-param name="titleSet" select="$lastUpdateDate/preceding-sibling::html:* | $lastUpdateDate"/>
+                <xsl:with-param name="titleSet" select="$lastUpdateDate/preceding-sibling::* | $lastUpdateDate"/>
             </xsl:call-template>
             
             <xsl:call-template name="epigraph">
@@ -125,8 +125,10 @@
     <xsl:template name="title">
         <xsl:param name="titleSet"/>
         <xsl:variable name="this" select="."/>
+        <xsl:variable name="titleabbrev" select="$titleSet[contains(@class,'Fascicule')][1]"/>
+        <xsl:apply-templates select="$titleabbrev/html:br"/>
         <titleabbrev>
-            <xsl:value-of select="$titleSet[contains(@class,'Fascicule')][1]"/>
+            <xsl:value-of select="$titleabbrev"/>
         </titleabbrev>
         <title>
             <xsl:value-of select="$titleSet[contains(@class, 'Titre-du-fascicule')][1]"/>
@@ -197,6 +199,7 @@
     <xsl:template name="keyPoints">
         <xsl:param name="keyPointsEntry"/>
         <xsl:param name="keyPointsSet"/>
+        <xsl:apply-templates select="$keyPointsEntry/html:*[1][self::node()/name()='br']"/>
         <sect1>
            <title>
                <xsl:value-of select="$keyPointsEntry"/>
@@ -208,6 +211,7 @@
     <xsl:template name="toc">
         <xsl:param name="tocEntry"/>
         <xsl:param name="tocSet"/>
+        <xsl:apply-templates select="$tocEntry/html:*[1][self::node()/name()='br']"/>
         <sect1>
             <title>
                 <xsl:value-of select="$tocEntry"/>
@@ -299,6 +303,7 @@
         <xsl:param name="indexEntry"/>
         <xsl:param name="indexSet"/>
         <xsl:param name="startOfNextSection"></xsl:param>
+        <xsl:apply-templates select="$indexEntry/html:*[1][self::node()/name()='br']"/>
         <sect1>
             <title>
                 <xsl:value-of select="$indexEntry"/>
@@ -323,13 +328,13 @@
                                     <secondaryie>
                                         <xsl:apply-templates select="."/>
                                     </secondaryie>
-                                    <xsl:apply-templates select="html:br"/>
+                                    <!--<xsl:apply-templates select="html:br"/>-->
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <tertiaryie>
                                         <xsl:apply-templates select="."/>
                                     </tertiaryie>
-                                    <xsl:apply-templates select="html:br"/>
+                                    <!--<xsl:apply-templates select="html:br"/>-->
                                 </xsl:otherwise>
                             </xsl:choose>
                         </xsl:for-each>
@@ -366,6 +371,7 @@
         <xsl:param name="bibliographyEntry"/>
         <xsl:param name="bibliographySet"/>
         <xsl:if test="$bibliographyEntry">
+            <xsl:apply-templates select="$bibliographyEntry/html:*[1][self::node()/name()='br']"/>
             <sect1>
                 <title>
                     <xsl:value-of select="$bibliographyEntry"/>
@@ -379,6 +385,7 @@
         <xsl:param name="section1Entry"/>
         <xsl:param name="section1Set"/>
         <xsl:variable name="section2Set" select="$section1Set[contains(@class, 'Titres_A--Titre') or contains(@class, 'Titres_Titre-de-section')]"/>
+        <xsl:apply-templates select="$section1Entry/html:*[1][self::node()/name()='br']"/>
         <sect1>
             <title>
                 <xsl:value-of select="$section1Entry"/>
@@ -408,6 +415,7 @@
         <xsl:param name="section2Entry"/>
         <xsl:param name="section2Set"/>
         <xsl:variable name="section3Set" select="$section2Set[contains(@class, 'Titres_1--Titre')]"/>
+        <xsl:apply-templates select="$section2Entry/child::*[self::node()/name()='br'][1]"/>
         <sect2>
             <title>
                 <xsl:value-of select="$section2Entry"/>
@@ -437,6 +445,7 @@
         <xsl:param name="section3Entry"/>
         <xsl:param name="section3Set"/>
         <xsl:variable name="section4Set" select="$section3Set[contains(lower-case(@class), 'titres_a--titre')]"/>
+        <xsl:apply-templates select="$section3Entry/child::*[self::node()/name()='br'][1]"/>
         <sect3>
             <title>
                 <xsl:value-of select="$section3Entry"/>
@@ -466,6 +475,7 @@
         <xsl:param name="section4Entry"/>
         <xsl:param name="section4Set"/>
         <xsl:variable name="section5Set" select="$section4Set[contains(lower-case(@class), 'titres_-i--titre')]"/>
+        <xsl:apply-templates select="$section4Entry/child::*[self::node()/name()='br'][1]"/>
         <sect4>
             <title>
                 <xsl:value-of select="$section4Entry"/>
@@ -494,6 +504,7 @@
     <xsl:template name="section5">
         <xsl:param name="section5Entry"/>
         <xsl:param name="section5Set"/>
+        <xsl:apply-templates select="$section5Entry/child::*[self::node()/name()='br'][1]"/>
         <sect5>
             <title>
                 <xsl:value-of select="$section5Entry"/>

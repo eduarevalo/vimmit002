@@ -4,6 +4,8 @@ function exec(filePath){
     var xslPath = __dirname + '/../../xslt/part.xsl';
     if(/.*-Instructions.*/.test(filePath)){
         //xslPath = __dirname + '/../../xslt/instructions.xsl'
+    }else if(/biographiques/.test(filePath)){
+        xslPath = __dirname + '/../../xslt/notice-bio.xsl'
     }else if(/.*-Page de titre.*/.test(filePath)){
         xslPath = __dirname + '/../../xslt/cover.xsl';
     }else if(/.*-TDM.*/.test(filePath)){

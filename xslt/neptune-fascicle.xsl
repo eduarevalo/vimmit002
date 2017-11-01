@@ -1,61 +1,65 @@
 <?xml version="1.0"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
-    xmlns:db="http://docbook.org/ns/docbook"
     xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
     xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
-    xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core">
+    xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
+    xpath-default-namespace="http://docbook.org/ns/docbook">
     
-    <xsl:output indent="yes"></xsl:output>
+    <xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" doctype-system="treatiseV021-0000.dtd"></xsl:output>
+    
+    <xsl:import href="neptune.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="chNum" select="'--CH-NUM--'"/>
     <xsl:param name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:param name="leftHeader" select="//processing-instruction('leftHeader')"/>
     
-    <xsl:variable name="keyPoints" select="/db:part/db:chapter/db:sect1[db:title/text() = 'POINTS-CLÉS']"/>
-    <xsl:variable name="tocNode" select="/db:part/db:chapter/db:sect1[db:title/text() = 'TABLE DES MATIÈRES']"/>
-    <xsl:variable name="indexNode" select="/db:part/db:chapter/db:sect1[db:title/text() = 'INDEX ANALYTIQUE']"/>
-    <xsl:variable name="chapterNodes" select="/db:part/db:chapter/db:sect1 except $keyPoints except $tocNode except $indexNode"/>
+    <xsl:variable name="keyPoints" select="/part/chapter/sect1[title/text() = 'POINTS-CLÉS']"/>
+    <xsl:variable name="tocNode" select="/part/chapter/sect1[title/text() = 'TABLE DES MATIÈRES']"/>
+    <xsl:variable name="indexNode" select="/part/chapter/sect1[title/text() = 'INDEX ANALYTIQUE']"/>
+    <xsl:variable name="chapterNodes" select="/part/chapter/sect1 except $keyPoints except $tocNode except $indexNode"/>
     
     <xsl:template match="/">
         
-        <tr:ch volnum="2015">
+        <tr:ch volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="concat('ch-num=', $chNum)"/>
             <xsl:call-template name="title"/>
             <xsl:call-template name="keyPoints"/>
             <xsl:call-template name="toc"/>
             <xsl:call-template name="index"/>
-            <xsl:call-template name="chapters"/>
+            <xsl:apply-templates select="$chapterNodes"/>
         </tr:ch>
         
     </xsl:template>
     
     <xsl:template name="title">
         <xsl:variable name="design">
-            <xsl:value-of select="/db:part/db:chapter/db:titleabbrev"/>
+            <xsl:value-of select="/part/chapter/titleabbrev"/>
         </xsl:variable>
+        <xsl:variable name="title" select="/part/chapter/title"/>
+        <xsl:apply-templates select="$title/preceding-sibling::processing-instruction()"></xsl:apply-templates>
         <core:desig value="{substring-after($design, 'FASCICULE ')}"><xsl:value-of select="$design"/></core:desig>
         <core:title>
-            <xsl:value-of select="/db:part/db:chapter/db:title"/>
+            <xsl:value-of select="$title"/>
         </core:title>
-        <core:title-alt use4="l-running-hd">
-            <core:emph typestyle="smcaps"><xsl:value-of select="$leftHeader"/></core:emph>
-        </core:title-alt>
         <core:title-alt use4="r-running-hd">
-            <core:emph typestyle="smcaps"><xsl:value-of select="$rightHeader"/></core:emph>
+            <xsl:value-of select="$rightHeader"/>
+        </core:title-alt>
+        <core:title-alt use4="l-running-hd">
+            <xsl:value-of select="$leftHeader"/>
         </core:title-alt>
         <core:byline>
-            <xsl:for-each select="/db:part/db:chapter/db:info/db:author">
+            <xsl:for-each select="/part/chapter/info/author">
                 <core:person>
                     <core:name.text>
                         <core:emph typestyle="it">
-                            <xsl:value-of select="db:personname"/>
+                            <xsl:value-of select="personname"/>
                         </core:emph>
                     </core:name.text>
                     <core:name.detail>
                         <core:role>
-                            <xsl:value-of select="db:affiliation/db:jobtitle"/>
+                            <xsl:value-of select="affiliation/jobtitle"/>
                         </core:role>
                     </core:name.detail>
                 </core:person>
@@ -63,7 +67,7 @@
         </core:byline>
         <core:comment-prelim type="currentness">
             <core:para>
-                <xsl:value-of select="/db:part/db:chapter/db:info/db:date"/>
+                <xsl:value-of select="/part/chapter/info/date"/>
             </core:para>
         </core:comment-prelim>
     </xsl:template>
@@ -74,22 +78,25 @@
                 <tr:secmain volnum="1">
                     <core:no-desig/>
                     <core:title>
-                        <xsl:value-of select="$keyPoints/db:title"/>
+                        <xsl:value-of select="$keyPoints/title"/>
                     </core:title>
                     <core:list>
-                        <xsl:for-each select="$keyPoints/db:para">
+                        <xsl:for-each select="$keyPoints/para">
                             <xsl:variable name="firstNode" select="(*|text())[1]"/>
                             <xsl:variable name="label">
                                 <xsl:call-template name="extractLabel">
                                     <xsl:with-param name="text" select="$firstNode"/>
                                 </xsl:call-template>
                             </xsl:variable>
+                            <xsl:variable name="firstPageNumberPI" select="(*|text()|processing-instruction())[1][self::processing-instruction()]"/>
+                            <xsl:apply-templates select="$firstPageNumberPI"/>
                             <core:listitem>
                                 <core:enum>
                                     <xsl:value-of select="$label"/>
                                 </core:enum>
                                 <xsl:apply-templates select=".">
                                     <xsl:with-param name="labelToExtract" select="$label"/>
+                                    <xsl:with-param name="printFirstTextPageNumber" select="false()"/>
                                 </xsl:apply-templates>  
                             </core:listitem>
                         </xsl:for-each>
@@ -105,11 +112,12 @@
                 <tr:secmain volnum="1">
                     <core:no-desig/>
                     <core:title>
-                        <xsl:value-of select="$tocNode/db:title"/>
+                        <xsl:value-of select="$tocNode/title"/>
                     </core:title>
                     <core:toc>
-                        <xsl:apply-templates select="$tocNode/db:toc"/>
+                        <xsl:apply-templates select="$tocNode/toc"/>
                     </core:toc>
+                    <core:para/>
                 </tr:secmain>
             </tr:ch-pt-dummy>
         </xsl:if>
@@ -121,10 +129,10 @@
                 <tr:secmain volnum="1">
                     <core:no-desig/>
                     <core:title>
-                        <xsl:value-of select="$indexNode/db:title"/>
+                        <xsl:value-of select="$indexNode/title"/>
                     </core:title>
                     <core:list>
-                        <xsl:for-each select="$indexNode/db:index">
+                        <xsl:for-each select="$indexNode/index">
                             <xsl:apply-templates/>
                         </xsl:for-each>
                     </core:list>
@@ -133,60 +141,187 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template name="chapters">
-        <xsl:if test="$chapterNodes">
-            <xsl:for-each select="$chapterNodes">
-                <xsl:variable name="firstNode" select="./db:title[1]"/>
-                <xsl:variable name="label">
-                    <xsl:call-template name="extractLabel">
-                        <xsl:with-param name="text" select="$firstNode"/>
-                    </xsl:call-template>
-                </xsl:variable>
-                <tr:ch-pt volnum="1">
-                    
-                    <core:desig value="{substring-before($label, '.')}">
-                        <xsl:value-of select="$label"/>
-                    </core:desig>
-                    <core:title>
-                        <xsl:value-of select="substring-after($firstNode, $label)"/>
-                    </core:title>
-                    <!--<tr:secmain-dummy volnum="1">
-                        <core:blockquote>
-                            <core:blockquote-para>Défendre et améliorer l’environnement pour les générations
-                                présentes et à venir est devenu pour l’humanité un objectif primordial, une
-                                tâche dont il faudra coordonner et harmoniser la réalisation avec celle des
-                                objectifs fondamentaux déjà fixés de paix et de développement économique et
-                                social dans le monde entier.</core:blockquote-para>
-                            <core:credit>
-                                <core:credit-origin><core:emph typestyle="it">Déclaration sur
-                                    l’environnement</core:emph>, Stockholm, 1972,
-                                    préambule.</core:credit-origin>
-                            </core:credit>
-                        </core:blockquote>
-                    </tr:secmain-dummy>-->
-                    <tr:secmain volnum="1">
-                        <xsl:apply-templates select="./db:* except $firstNode | ./processing-instruction()"/>
-                    </tr:secmain>
-                </tr:ch-pt>
-            </xsl:for-each>
-        </xsl:if>
+    <xsl:template match="sect1|sect2|sect3|sect4|sect5">
+        <xsl:variable name="runin" select="para[emphasis[@role='label'][@xreflabel]]"/>
+        <xsl:variable name="chapterNodeName">
+            <xsl:choose>
+                <xsl:when test="name()='sect1' and not($runin)">tr:ch-pt-dummy</xsl:when>
+                <xsl:when test="name()='sect1'">tr:ch-pt</xsl:when>
+                <xsl:when test="name()='sect2'">tr:ch-ptsub1</xsl:when>
+                <xsl:when test="name()='sect3'">tr:ch-ptsub2</xsl:when>
+                <xsl:when test="name()='sect4'">tr:ch-ptsub3</xsl:when>
+                <xsl:when test="name()='sect5'">tr:ch-ptsub4</xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="previousPageNumber" select="(./(preceding-sibling::*|preceding-sibling::processing-instruction()))[last()][self::processing-instruction()]"/>
+        <xsl:apply-templates select="$previousPageNumber"/>
+        <xsl:variable name="firstNode" select="./title[1]"/>
+        <xsl:variable name="label">
+            <xsl:call-template name="extractLabel">
+                <xsl:with-param name="text" select="$firstNode"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:element name="{$chapterNodeName}">
+            <xsl:attribute name="volnum" select="'1'"/>
+            <xsl:variable name="desig">
+                <xsl:choose>
+                    <xsl:when test="contains($label, '.')">
+                        <xsl:value-of select="substring-before($label, '.')"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="substring-before($label, ')')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:if test="not(name()='sect1' and not($runin))">
+                <xsl:choose>
+                    <xsl:when test="$desig != ''">
+                        <core:desig value="{$desig}">
+                            <xsl:value-of select="$label"/>
+                        </core:desig>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <core:no-desig/>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <core:title>
+                    <xsl:value-of select="substring-after($firstNode, $label)"/>
+                </core:title>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="sect2">
+                    <xsl:variable name="sect2Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect2)]"/>
+                    <xsl:if test="$sect2Nodes">
+                        <tr:ch-ptsub1-dummy volnum="1">
+                            <xsl:apply-templates select="$sect2Nodes"/>
+                        </tr:ch-ptsub1-dummy>
+                    </xsl:if>
+                    <xsl:apply-templates select="sect2"/>
+                </xsl:when>
+                <xsl:when test="sect3">
+                    <xsl:variable name="sect3Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect3)]"/>
+                    <xsl:if test="$sect3Nodes">
+                        <tr:ch-ptsub2-dummy volnum="1">
+                            <xsl:apply-templates select="$sect3Nodes"/>
+                        </tr:ch-ptsub2-dummy>
+                    </xsl:if>
+                    <xsl:apply-templates select="sect3"/>
+                </xsl:when>
+                <xsl:when test="sect4">
+                    <xsl:variable name="sect4Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect4)]"/>
+                    <xsl:if test="$sect4Nodes">
+                        <tr:ch-ptsub3-dummy volnum="1">
+                            <xsl:apply-templates select="$sect4Nodes"/>
+                        </tr:ch-ptsub3-dummy>
+                    </xsl:if>
+                    <xsl:apply-templates select="sect4"/>
+                </xsl:when>
+                <xsl:when test="sect5">
+                    <xsl:variable name="sect5Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect5)]"/>
+                    <xsl:if test="$sect5Nodes">
+                        <tr:ch-ptsub4-dummy volnum="1">
+                            <xsl:apply-templates select="$sect5Nodes"/>
+                        </tr:ch-ptsub4-dummy>
+                    </xsl:if>
+                    <xsl:apply-templates select="sect5"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:choose>
+                        <xsl:when test="$runin">
+                            <xsl:apply-templates select="$runin"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <tr:secmain volnum="1">
+                                <xsl:choose>
+                                    <xsl:when test="$desig != ''">
+                                        <core:desig value="{$desig}">
+                                            <xsl:value-of select="$label"/>
+                                        </core:desig>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <core:no-desig/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <core:title>
+                                    <xsl:value-of select="substring-after($firstNode, $label)"/>
+                                </core:title>
+                                <xsl:apply-templates select="(*|processing-instruction()) except $firstNode"/>
+                            </tr:secmain>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:element>
     </xsl:template>
     
-    <xsl:template match="db:indexentry">
-        <xsl:variable name="primary" select="db:primaryie"/>
+    <xsl:template match="para[emphasis[@role='label'][@xreflabel]]">
+        <xsl:variable name="thisPara" select="."/>
+        <xsl:variable name="emphasisLabel" select="emphasis[@role='label']"/>
+        <xsl:variable name="label" select="$emphasisLabel/@xreflabel"/>
+        <xsl:variable name="title" select="$emphasisLabel/following-sibling::emphasis[./following-sibling::text()[1][contains(.,'–')]]"/>
+        <xsl:apply-templates select="($emphasisLabel/* | $emphasisLabel/processing-instruction())[1][self::processing-instruction()][1]"/>
+        <tr:secmain volnum="1">
+            <core:desig value="{$label}">
+                <xsl:value-of select="$emphasisLabel"/>
+            </core:desig>
+            <core:title runin="1">
+                <xsl:apply-templates select="$title"/>
+            </core:title>
+            <core:para runin="1">
+                <xsl:apply-templates select="./(*|text()|processing-instruction()) except $emphasisLabel except $title"/>
+            </core:para>
+            <xsl:variable name="nextXrefLabel" select="(following-sibling::para[emphasis[@role='label'][@xreflabel]])[1]"/>
+            <xsl:choose>
+                <xsl:when test="$nextXrefLabel">
+                    <xsl:variable name="nextNodes" select="$nextXrefLabel/(preceding-sibling::*|preceding-sibling::processing-instruction()) intersect (following-sibling::*|preceding-sibling::processing-instruction())"/>
+                    <xsl:apply-templates select="$nextNodes[not(footnote)]"/>
+                    <xsl:if test="$nextNodes[footnote]">
+                        <fn:endnotes>
+                            <xsl:apply-templates select="$nextNodes[footnote]"/>
+                        </fn:endnotes>
+                    </xsl:if>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:variable name="nextNodes" select="following-sibling::* except following-sibling::sect1 except following-sibling::sect2 except following-sibling::sect3 except following-sibling::sect4 except following-sibling::sect5"/>
+                    <xsl:apply-templates select="$nextNodes[not(footnote)]"/>
+                    <xsl:if test="$nextNodes[footnote]">
+                        <fn:endnotes>
+                            <xsl:apply-templates select="$nextNodes[footnote]"/>
+                        </fn:endnotes>
+                    </xsl:if>
+                </xsl:otherwise>
+            </xsl:choose>
+        </tr:secmain>
+    </xsl:template>
+    
+    <xsl:template match="indexentry">
+        <xsl:variable name="primary" select="primaryie"/>
         <core:listitem>
             <core:para>
                 <xsl:apply-templates select="$primary"/>
             </core:para>
-            <xsl:apply-templates select="$primary/following-sibling::processing-instruction()[1][self::processing-instruction()/preceding-sibling::db:primaryie[1] = $primary]"/>
-            <xsl:variable name="nodes" select="db:secondaryie|db:tertiaryie"/>
+            <xsl:apply-templates select="$primary/following-sibling::processing-instruction()[1][self::processing-instruction()/preceding-sibling::primaryie[1] = $primary]"/>
+            <xsl:variable name="nodes" select="secondaryie"/>
             <xsl:if test="$nodes">
                 <core:list>
                     <xsl:for-each select="$nodes">
+                        <xsl:variable name="secondaryIndex" select="."/>
                         <core:listitem>
                             <core:para>
                                 <xsl:apply-templates/>
                             </core:para>
+                            <xsl:variable name="nodesTertiary" select="$secondaryIndex/following-sibling::tertiaryie[preceding-sibling::secondaryie[1] = $secondaryIndex]"/>
+                            <xsl:if test="$nodesTertiary">
+                                <core:list>
+                                    <xsl:for-each select="$nodesTertiary">
+                                        <core:listitem>
+                                            <core:para>
+                                                <xsl:apply-templates/>
+                                            </core:para>
+                                        </core:listitem>
+                                    </xsl:for-each>
+                                </core:list>
+                            </xsl:if>
                         </core:listitem>
                     </xsl:for-each>
                 </core:list>
@@ -194,17 +329,20 @@
         </core:listitem>
     </xsl:template>
     
-    <xsl:template match="db:para">
+    <xsl:template match="para">
         <xsl:param name="labelToExtract"/>
+        <xsl:param name="printFirstTextPageNumber" select="true()"/>
         <xsl:variable name="nodes" select="*|text()|processing-instruction()"/>
         <xsl:variable name="validNodes" select="$nodes except $nodes[last()][self::processing-instruction()] except $nodes[1][self::processing-instruction()]"/>
-        <xsl:call-template name="printFirstTextPagePI">
-            <xsl:with-param name="scope" select="."/>
-        </xsl:call-template>
+        <xsl:if test="$printFirstTextPageNumber">
+            <xsl:call-template name="printFirstTextPagePI">
+                <xsl:with-param name="scope" select="."/>
+            </xsl:call-template>
+        </xsl:if>
         <xsl:choose>
             <xsl:when test="$labelToExtract">
                 <core:para>
-                    <xsl:apply-templates select="normalize-space(substring-after($validNodes[1], $labelToExtract))"/>
+                    <xsl:apply-templates select="substring-after($validNodes[1], $labelToExtract)"/>
                     <xsl:apply-templates select="$validNodes[position()>1]"/>
                 </core:para>
             </xsl:when>
@@ -219,29 +357,21 @@
         </xsl:call-template>
     </xsl:template>
     
-    <xsl:template match="db:emphasis[@role='footnoteref']">
+    <xsl:template match="emphasis[@role='footnoteref']">
         <fn:endnote-id er="{normalize-space()}" />
     </xsl:template>
     
-    <xsl:template match="db:para[db:footnote]">
+    <xsl:template match="para[footnote]">
         <xsl:call-template name="printFirstTextPagePI">
             <xsl:with-param name="scope" select="."/>
         </xsl:call-template>
-        <fn:endnotes>
-            <xsl:apply-templates select="*|text()|processing-instruction()"/>
-        </fn:endnotes>
+        <xsl:apply-templates select="*|text()|processing-instruction()"/>
         <xsl:call-template name="printLastTextPagePI">
             <xsl:with-param name="scope" select="."/>
         </xsl:call-template>
     </xsl:template>
     
-    <xsl:template match="db:para[db:markup]">
-        <xsl:call-template name="printLastTextPagePI">
-            <xsl:with-param name="scope" select="."/>
-        </xsl:call-template>
-    </xsl:template>
-    
-    <xsl:template match="db:para[parent::db:footnote]">
+    <xsl:template match="para[parent::footnote]">
         <xsl:param name="labelToExtract"/>
         <xsl:variable name="nodes" select="*|text()|processing-instruction()"/>
         <xsl:variable name="lastPI" select="$nodes[last()]/name()"/>
@@ -266,10 +396,10 @@
         </xsl:if>-->
     </xsl:template>
     
-    <xsl:template match="db:footnote">
+    <xsl:template match="footnote">
         <xsl:variable name="label">
             <xsl:call-template name="extractLabel">
-                <xsl:with-param name="text" select="./db:para[1]"/>
+                <xsl:with-param name="text" select="./para[1]"/>
             </xsl:call-template>
         </xsl:variable>
         <fn:endnote er="{substring-before($label, '.')}">
@@ -279,7 +409,7 @@
         </fn:endnote>
     </xsl:template>
     
-    <xsl:template match="db:tocentry">
+    <xsl:template match="tocentry">
         <xsl:variable name="nodes" select="*|text()|processing-instruction()"/>
         <xsl:variable name="lastPI" select="$nodes[last()]/name()"/>
         <xsl:variable name="firstNode" select="$nodes[1]"/>
@@ -294,9 +424,14 @@
                 <xsl:when test="$ancestorsCount = 4">ch-pt</xsl:when>
                 <xsl:when test="$ancestorsCount = 5">ch-ptsub1</xsl:when>
                 <xsl:when test="$ancestorsCount = 6">ch-ptsub2</xsl:when>
+                <xsl:when test="$ancestorsCount = 7">ch-ptsub3</xsl:when>
+                <xsl:when test="$ancestorsCount = 8">ch-ptsub4</xsl:when>
+                <xsl:when test="$ancestorsCount = 9">ch-ptsub5</xsl:when>
+                <xsl:when test="$ancestorsCount = 10">ch-ptsub6</xsl:when>
                 <xsl:otherwise><xsl:value-of select="concat('undefined--', $ancestorsCount)"/></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:apply-templates select="$firstNode/processing-instruction()"/>
         <core:toc-entry lev="{$tocLevel}">
             <core:entry-num>
                 <xsl:value-of select="$label"/>
@@ -304,7 +439,7 @@
             <core:entry-title>
                 <xsl:choose>
                     <xsl:when test="$label != ''">
-                        <xsl:apply-templates select="normalize-space(substring-after($nodes[1], $label))"/>
+                        <xsl:apply-templates select="substring-after($nodes[1], $label)"/>
                         <xsl:apply-templates select="$nodes[position()>1][$lastPI='' or position()&lt;last()]"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -312,17 +447,16 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </core:entry-title>
-            <xsl:apply-templates select="db:tocdiv"/>
+            <xsl:apply-templates select="tocdiv"/>
         </core:toc-entry>
         <xsl:if test="$lastPI = 'textpage'">
             <xsl:apply-templates select="$nodes[last()]"/>
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="db:tocdiv">
-        <xsl:variable name="nodes" select="db:title/(*|text()|processing-instruction())"/>
-        <xsl:variable name="lastPI" select="$nodes[last()]/name()"/>
-        <xsl:variable name="firstNode" select="db:title/(*|text())[1]"/>
+    <xsl:template match="tocdiv">
+        <xsl:variable name="nodes" select="title/(*|text()|processing-instruction())"/>
+        <xsl:variable name="firstNode" select="title/(*|text())[1]"/>
         <xsl:variable name="label">
             <xsl:call-template name="extractLabel">
                 <xsl:with-param name="text" select="$firstNode"/>
@@ -334,9 +468,15 @@
                 <xsl:when test="$ancestorsCount = 4">ch-pt</xsl:when>
                 <xsl:when test="$ancestorsCount = 5">ch-ptsub1</xsl:when>
                 <xsl:when test="$ancestorsCount = 6">ch-ptsub2</xsl:when>
+                <xsl:when test="$ancestorsCount = 7">ch-ptsub3</xsl:when>
+                <xsl:when test="$ancestorsCount = 8">ch-ptsub4</xsl:when>
+                <xsl:when test="$ancestorsCount = 9">ch-ptsub5</xsl:when>
+                <xsl:when test="$ancestorsCount = 10">ch-ptsub6</xsl:when>
                 <xsl:otherwise><xsl:value-of select="concat('undefined--', $ancestorsCount)"/></xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:variable name="firstPageNumberPI" select="(.//(text()|processing-instruction()))[1][self::processing-instruction()]"/>
+        <xsl:apply-templates select="$firstPageNumberPI"/>
         <core:toc-entry lev="{$tocLevel}">
             <core:entry-num>
                 <xsl:value-of select="$label"/>
@@ -344,39 +484,24 @@
             <core:entry-title>
                 <xsl:choose>
                     <xsl:when test="$label != ''">
-                        <xsl:apply-templates select="normalize-space(substring-after($nodes[1], $label))"/>
-                        <xsl:apply-templates select="$nodes[position()>1][$lastPI='' or position()&lt;last()]"/>
+                        <xsl:choose>
+                            <xsl:when test="$firstPageNumberPI">
+                                <xsl:apply-templates select="normalize-space(substring-after($nodes[2], $label))"/>
+                                <xsl:apply-templates select="$nodes[position()>2]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="normalize-space(substring-after($nodes[1], $label))"/>
+                                <xsl:apply-templates select="$nodes[position()>1]"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:apply-templates select="$nodes[$lastPI='' or position()&lt;last()]"/>    
+                        <xsl:apply-templates select="$nodes"/>    
                     </xsl:otherwise>
                 </xsl:choose>
             </core:entry-title>
-            <xsl:if test="$lastPI = 'textpage'">
-                <xsl:apply-templates select="$nodes[last()]"/>
-            </xsl:if>
-            <xsl:apply-templates select="db:tocentry|db:tocdiv"/>
+            <xsl:apply-templates select="tocentry|tocdiv"/>
         </core:toc-entry>
-    </xsl:template>
-    
-    <xsl:template name="extractLabel">
-        <xsl:param name="text"/>
-        <xsl:analyze-string select="normalize-space($text)" 
-            regex="^([0-9]*[a-z]*[A-Z]*){{1,2}}\.">
-            <xsl:matching-substring>
-                <xsl:copy>
-                    <xsl:value-of select="regex-group(1)"/>
-                </xsl:copy>
-            </xsl:matching-substring>
-        </xsl:analyze-string>
-    </xsl:template>
-    
-    <xsl:template match="processing-instruction()">
-        <xsl:copy-of select="."></xsl:copy-of>
-    </xsl:template>
-    
-    <xsl:template match="*">
-        <xsl:apply-templates select="*|text()|processing-instruction()"/>
     </xsl:template>
     
     <xsl:template name="printLastTextPagePI">
@@ -393,6 +518,26 @@
         <xsl:if test="$firstPI/name() = 'textpage'">
             <xsl:apply-templates select="$firstPI"/>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="para[markup]">
+        <xsl:apply-templates select=".//processing-instruction()"/>
+    </xsl:template>
+    
+    <xsl:template match="para[mediaobject]">
+        <xsl:variable name="path" select="mediaobject/imageobject/imagedata/@fileref"/>
+        <xsl:choose>
+            <xsl:when test="$path = '6018_JCQ_26-F18_MJ7-web-resources/image/Bassin.jpg'">
+                <xsl:comment select="'GRAPHIC ch0018_001'"></xsl:comment>
+            </xsl:when>
+            <xsl:when test="$path = '6018_JCQ_26-F18_MJ7-web-resources/image/Carte.jpg'">
+                <xsl:comment select="'GRAPHIC ch0018_002'"></xsl:comment>
+            </xsl:when>
+            <xsl:when test="$path = '6018_JCQ_26-F18_MJ7-web-resources/image/ENV_F18_Par53.png'">
+                <xsl:comment select="'GRAPHIC ch0018_003'"></xsl:comment>
+            </xsl:when>
+            <xsl:otherwise></xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:transform>

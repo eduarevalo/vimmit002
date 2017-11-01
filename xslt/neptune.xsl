@@ -2,11 +2,11 @@
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
     xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
     xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
-    xmlns:fm="http://www.lexisnexis.com/namespace/sslrp/fm"
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
     <xsl:template match="emphasis">
+        <xsl:param name="labelToExtract"/>
         <xsl:variable name="typestyle">
             <xsl:call-template name="getTypeStyle">
                 <xsl:with-param name="node" select="."/>
@@ -16,12 +16,25 @@
             <xsl:when test="$typestyle != ''">
                 <core:emph>
                     <xsl:attribute name="typestyle" select="$typestyle"/>
-                    <xsl:apply-templates/>
+                    <xsl:choose>
+                        <xsl:when test="$labelToExtract != ''">
+                            <xsl:value-of select="substring-after(., $labelToExtract)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="text()|processing-instruction()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </core:emph>
             </xsl:when>
             <xsl:otherwise>
-                
-                <xsl:apply-templates/>
+                <xsl:choose>
+                    <xsl:when test="$labelToExtract">
+                        <xsl:value-of select="substring-after(., $labelToExtract)"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="text()|processing-instruction()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -65,15 +78,6 @@
             <xsl:when test="contains($node/@role, 'SUb')">sb</xsl:when>
         </xsl:choose>
     </xsl:template>
-    
-    <xsl:template match="para[preceding-sibling::comment()[1] = 'One-Cell-Table START']">
-        <fm:boxed-text>
-            <core:para>
-                <xsl:apply-templates/>
-            </core:para>
-        </fm:boxed-text>
-    </xsl:template>
-    
     <xsl:template name="printLastTextPagePI">
         <xsl:param name="scope"/>
         <xsl:variable name="lastPI" select="($scope//(*|text()|processing-instruction()))[last()]"/>
@@ -92,6 +96,82 @@
     
     <xsl:template name="printLastPageNumber">
         <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', count(//processing-instruction())+1 ,'&quot; release-num=&quot;', '&quot;')"/>
+    </xsl:template>
+    
+    <xsl:template match="*">
+        <xsl:apply-templates select="*|text()|processing-instruction()"/>
+    </xsl:template>
+    
+    <xsl:template match="processing-instruction()">
+        <xsl:copy-of select="."></xsl:copy-of>
+    </xsl:template>
+    
+    <xsl:template match="para[markup]">
+        <xsl:apply-templates select=".//processing-instruction()"/>
+    </xsl:template>
+    
+    <xsl:template match="table">
+        <table>
+            <tgroup cols="{count(colgroup/col)}">
+                <xsl:apply-templates/>
+            </tgroup>
+        </table>
+    </xsl:template>
+    
+    <xsl:template match="col">
+        <colspec colname="col{position()}" colnum="{position()}" colsep="0"/>
+    </xsl:template>
+    
+    <xsl:template match="thead">
+        <thead>
+            <xsl:apply-templates/>
+        </thead>
+    </xsl:template>
+    
+    <xsl:template match="thead/tr/td">
+        <row rowsep="1">
+            <entry colname="col{position()}" namest="col{position()}" nameend="col{position()}" align="center">
+                <xsl:apply-templates/>
+            </entry>
+        </row>
+    </xsl:template>
+    
+    <xsl:template match="tbody">
+        <tbody>
+            <xsl:apply-templates/>
+        </tbody>
+    </xsl:template>
+    
+    <xsl:template match="tbody/tr/td">
+        <row rowsep="1">
+            <entry colname="col{position()}">
+                <xsl:apply-templates/>
+            </entry>
+        </row>
+    </xsl:template>
+    
+    <xsl:template name="extractLabel">
+        <xsl:param name="text"/>
+        <xsl:analyze-string select="normalize-space($text)" 
+            regex="^\(?([0-9]*[a-z]*[A-Z]*){{1,2}}[\.|\)]">
+            <xsl:matching-substring>
+                <xsl:copy>
+                    <xsl:value-of select="regex-group(1)"/>
+                </xsl:copy>
+            </xsl:matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+    
+    <xsl:template name="extractPageNumber">
+        <xsl:param name="text"/>
+        <xsl:analyze-string select="normalize-space($text)" 
+            regex="([0-9]+ / [0-9]+)$">
+            <xsl:matching-substring>
+                <xsl:copy>
+                    <xsl:value-of select="regex-group(1)"/>
+                </xsl:copy>
+            </xsl:matching-substring>
+        </xsl:analyze-string>
     </xsl:template>
     
 </xsl:transform>

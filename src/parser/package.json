@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.5.0",
+    "diff": "^3.4.0",
     "digest-stream": "^2.0.0",
     "grunt": "^1.0.1",
     "handlebars": "^4.0.11",

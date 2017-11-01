@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">
+<fm:vol-fm pub-num="06081" volnum="1">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=ptoc01a -->
+    <?textpage page-num="TDM-1" release-num="Février 2017"?>
+    <fm:pub-toc>
+        <fm:toc>
+            <core:title>TABLE DES MATIÈRES GÉNÉRALE</core:title>
+            <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
+            <core:title-alt use4="r-running-hd">Table des matières générale</core:title-alt>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">PRÉFACE</core:emph><core:leaders
+                        blank-leader="dot" blank-use="fill"/>P / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">AVANT-PROPOS</core:emph><core:leaders
+                        blank-leader="dot" blank-use="fill"/>AP / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">NOTICES
+                        BIOGRAPHIQUES</core:emph><core:leaders blank-leader="dot" blank-use="fill"
+                    />NB / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="pub-pt">
+                <core:entry-title><fm:center><core:emph typestyle="bf">PARTIE I – ASPECTS
+                            GÉNÉRAUX</core:emph></fm:center></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">Table des matières détaillée de la
+                        Partie I</core:emph><core:leaders blank-leader="dot" blank-use="fill"/>TDMI
+                    / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="pub-ptsub1">
+                <core:entry-title><core:emph typestyle="bf">A. Encadrement
+                    juridique</core:emph></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="ch">
+                <core:entry-title>Fascicule 1<core:nl/><core:emph typestyle="it">Droit international
+                        de l’environnement</core:emph><core:nl/>Sophie Lavallée<core:leaders
+                        blank-leader="dot" blank-use="fill"/>1 / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="ch">
+                <core:entry-title>Fascicule 2<core:nl/><core:emph typestyle="it">Partage des
+                        compétences sur l’environnement, l’eau et les ressources
+                        naturelles</core:emph><core:nl/>Paule Halley et Hélène Trudeau<core:leaders
+                        blank-leader="dot" blank-use="fill"/>2 / 1</core:entry-title>
+            </fm:toc-entry>
+            <!--  -->
+            <?textpage page-num="TDM-3" release-num="Août 2017"?>
+            <!--  -->
+            <fm:toc-entry lev="pub-pt">
+                <core:entry-title><fm:center><core:emph typestyle="bf">PARTIE II – ASPECTS
+                            PARTICULIERS</core:emph></fm:center></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="unclassified">
+                <core:entry-title><core:emph typestyle="bf">Table des matières détaillée de la
+                        Partie II</core:emph><core:leaders blank-leader="dot" blank-use="fill"
+                    />TDMII / 1</core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="pub-ptsub1">
+                <core:entry-title><core:emph typestyle="bf">A.
+                    Biodiversité</core:emph></core:entry-title>
+            </fm:toc-entry>
+            <fm:toc-entry lev="ch">
+                <core:entry-title>Fascicule 17<core:nl/><core:emph typestyle="it">Biodiversité et
+                        aires protégées</core:emph><core:nl/>Sophie Lavallée et Jean-Pierre
+                        Veilleux<core:leaders blank-leader="dot" blank-use="fill"/>17 /
+                    1</core:entry-title>
+            </fm:toc-entry>
+            <!--  -->
+        </fm:toc>
+    </fm:pub-toc>
+</fm:vol-fm>
