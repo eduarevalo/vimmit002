@@ -325,7 +325,8 @@ function transformCollection(collectionFolder, filter){
                                     
                                     var tocValues = {'I': "1", 'II': "2", 'III':"3", 'IV':"4", 'V':"5", "VI": "6", "VII": "7", "VIII": "8", "IX":9, "X":10};
                                     var pubNum = found[1].padStart(5, "0"),
-                                        tocNumber = tocValues[found[2]].padStart(2, "0");
+                                        volNum = tocValues[found[2]],
+                                        tocNumber = volNum.padStart(2, "0");
                                     
                                     return saxon
                                         .exec({
@@ -333,7 +334,8 @@ function transformCollection(collectionFolder, filter){
                                             xslPath: __dirname + '/../../xslt/neptune-frontmatter-toc.xsl',
                                             params: {
                                                 pubNum: pubNum,
-                                                tocNumber: tocNumber
+                                                tocNumber: tocNumber,
+                                                volNum: volNum
                                             }
                                         })
                                         .then( response => response.stdout )

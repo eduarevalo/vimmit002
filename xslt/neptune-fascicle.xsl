@@ -19,9 +19,15 @@
     <xsl:variable name="indexNode" select="/part/chapter/sect1[title/text() = 'INDEX ANALYTIQUE']"/>
     <xsl:variable name="chapterNodes" select="/part/chapter/sect1 except $keyPoints except $tocNode except $indexNode"/>
     
+    <xsl:variable name="volnum">
+        <xsl:call-template name="extractVolnum">
+            <xsl:with-param name="text" select="$leftHeader"/>
+        </xsl:call-template>
+    </xsl:variable>
+    
     <xsl:template match="/">
         
-        <tr:ch volnum="1">
+        <tr:ch volnum="{$volnum}">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="concat('ch-num=', $chNum)"/>
             <xsl:call-template name="title"/>
@@ -74,8 +80,8 @@
     
     <xsl:template name="keyPoints">
         <xsl:if test="$keyPoints">
-            <tr:ch-pt-dummy volnum="1">
-                <tr:secmain volnum="1">
+            <tr:ch-pt-dummy volnum="{$volnum}">
+                <tr:secmain volnum="{$volnum}">
                     <core:no-desig/>
                     <core:title>
                         <xsl:value-of select="$keyPoints/title"/>
@@ -108,8 +114,8 @@
     
     <xsl:template name="toc">
         <xsl:if test="$tocNode">
-            <tr:ch-pt-dummy volnum="1">
-                <tr:secmain volnum="1">
+            <tr:ch-pt-dummy volnum="{$volnum}">
+                <tr:secmain volnum="{$volnum}">
                     <core:no-desig/>
                     <core:title>
                         <xsl:value-of select="$tocNode/title"/>
@@ -125,8 +131,8 @@
     
     <xsl:template name="index">
         <xsl:if test="$indexNode">
-            <tr:ch-pt-dummy volnum="1">
-                <tr:secmain volnum="1">
+            <tr:ch-pt-dummy volnum="{$volnum}">
+                <tr:secmain volnum="{$volnum}">
                     <core:no-desig/>
                     <core:title>
                         <xsl:value-of select="$indexNode/title"/>
@@ -162,7 +168,7 @@
             </xsl:call-template>
         </xsl:variable>
         <xsl:element name="{$chapterNodeName}">
-            <xsl:attribute name="volnum" select="'1'"/>
+            <xsl:attribute name="volnum" select="$volnum"/>
             <xsl:variable name="desig">
                 <xsl:choose>
                     <xsl:when test="contains($label, '.')">
@@ -192,7 +198,7 @@
                 <xsl:when test="sect2">
                     <xsl:variable name="sect2Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect2)]"/>
                     <xsl:if test="$sect2Nodes">
-                        <tr:ch-ptsub1-dummy volnum="1">
+                        <tr:ch-ptsub1-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect2Nodes"/>
                         </tr:ch-ptsub1-dummy>
                     </xsl:if>
@@ -201,7 +207,7 @@
                 <xsl:when test="sect3">
                     <xsl:variable name="sect3Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect3)]"/>
                     <xsl:if test="$sect3Nodes">
-                        <tr:ch-ptsub2-dummy volnum="1">
+                        <tr:ch-ptsub2-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect3Nodes"/>
                         </tr:ch-ptsub2-dummy>
                     </xsl:if>
@@ -210,7 +216,7 @@
                 <xsl:when test="sect4">
                     <xsl:variable name="sect4Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect4)]"/>
                     <xsl:if test="$sect4Nodes">
-                        <tr:ch-ptsub3-dummy volnum="1">
+                        <tr:ch-ptsub3-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect4Nodes"/>
                         </tr:ch-ptsub3-dummy>
                     </xsl:if>
@@ -219,7 +225,7 @@
                 <xsl:when test="sect5">
                     <xsl:variable name="sect5Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect5)]"/>
                     <xsl:if test="$sect5Nodes">
-                        <tr:ch-ptsub4-dummy volnum="1">
+                        <tr:ch-ptsub4-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect5Nodes"/>
                         </tr:ch-ptsub4-dummy>
                     </xsl:if>
@@ -231,7 +237,7 @@
                             <xsl:apply-templates select="$runin"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <tr:secmain volnum="1">
+                            <tr:secmain volnum="{$volnum}">
                                 <xsl:choose>
                                     <xsl:when test="$desig != ''">
                                         <core:desig value="{$desig}">
@@ -260,7 +266,7 @@
         <xsl:variable name="label" select="$emphasisLabel/@xreflabel"/>
         <xsl:variable name="title" select="$emphasisLabel/following-sibling::emphasis[./following-sibling::text()[1][contains(.,'–')]]"/>
         <xsl:apply-templates select="($emphasisLabel/* | $emphasisLabel/processing-instruction())[1][self::processing-instruction()][1]"/>
-        <tr:secmain volnum="1">
+        <tr:secmain volnum="{$volnum}">
             <core:desig value="{$label}">
                 <xsl:value-of select="$emphasisLabel"/>
             </core:desig>

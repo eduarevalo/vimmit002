@@ -12,6 +12,8 @@
                 <xsl:with-param name="node" select="."/>
             </xsl:call-template>
         </xsl:variable>
+        <xsl:variable name="nodes" select="text()|processing-instruction()"/>
+        <xsl:variable name="righTrimmed" select="normalize-space($nodes[last()])"/>
         <xsl:choose>
             <xsl:when test="$typestyle != ''">
                 <core:emph>
@@ -21,10 +23,16 @@
                             <xsl:value-of select="substring-after(., $labelToExtract)"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:apply-templates select="text()|processing-instruction()"/>
+                            <xsl:for-each select="$nodes">
+                                <xsl:choose>
+                                    <xsl:when test="position()=last()"><xsl:value-of select="concat(substring-before(., $righTrimmed), $righTrimmed)"/></xsl:when>
+                                    <xsl:otherwise><xsl:apply-templates select="."/></xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each>
                         </xsl:otherwise>
                     </xsl:choose>
                 </core:emph>
+                <xsl:value-of select="substring-after($nodes[last()], $righTrimmed)"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
@@ -92,10 +100,6 @@
         <xsl:if test="$firstPI/name() = 'textpage'">
             <xsl:apply-templates select="$firstPI"/>
         </xsl:if>
-    </xsl:template>
-    
-    <xsl:template name="printLastPageNumber">
-        <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', count(//processing-instruction())+1 ,'&quot; release-num=&quot;', '&quot;')"/>
     </xsl:template>
     
     <xsl:template match="*">
@@ -172,6 +176,32 @@
                 </xsl:copy>
             </xsl:matching-substring>
         </xsl:analyze-string>
+    </xsl:template>
+    
+    <xsl:template name="extractVolnum">
+        <xsl:param name="text"/>
+        <xsl:variable name="volnum">
+            <xsl:analyze-string select="normalize-space($text)" 
+                regex="(I|V|X)+\.">
+                <xsl:matching-substring>
+                    <xsl:copy>                    
+                        <xsl:value-of select="regex-group(1)"/>
+                    </xsl:copy>
+                </xsl:matching-substring>
+            </xsl:analyze-string>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="$volnum='I.'">1</xsl:when>
+            <xsl:when test="$volnum='II.'">2</xsl:when>
+            <xsl:when test="$volnum='III.'">3</xsl:when>
+            <xsl:when test="$volnum='IV.'">4</xsl:when>
+            <xsl:when test="$volnum='V.'">5</xsl:when>
+            <xsl:when test="$volnum='VI.'">6</xsl:when>
+            <xsl:when test="$volnum='VII.'">7</xsl:when>
+            <xsl:when test="$volnum='VIII.'">8</xsl:when>
+            <xsl:when test="$volnum='IX.'">9</xsl:when>
+            <xsl:when test="$volnum='X.'">10</xsl:when>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:transform>

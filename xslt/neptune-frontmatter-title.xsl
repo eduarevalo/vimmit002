@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
     xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
     xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
@@ -6,31 +6,41 @@
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
            
-    <xsl:include href="neptune-frontmatter.xsl"/>
+    <xsl:import href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="collectionTitle" select="'DROIT DE L’ENVIRONNEMENT'"/>
+    <xsl:param name="nextPageRef"></xsl:param>
     
     <xsl:variable name="mediaobject" select="part/info/cover/mediaobject[1] "/>
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
+    
+    <xsl:variable name="releaseNum">
+        <xsl:call-template name="extractReleaseNum"/>
+    </xsl:variable>
     
     <xsl:template match="/">
         
         <fm:vol-fm pub-num="{$pubNum}" volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=fmvol001'"/>
+            <xsl:processing-instruction name="textpage">
+                <xsl:value-of select="concat('page-num=&quot;i&quot; release-num=&quot;', $releaseNum,'&quot;')"/>
+            </xsl:processing-instruction>
             <fm:body>
                 <xsl:call-template name="title"/>
                 <xsl:call-template name="copyright"/>
-                <xsl:call-template name="printLastPageNumber"/>
             </fm:body>
+            <xsl:processing-instruction name="xpp">
+                <xsl:value-of select="concat('nextpageref=&quot;', $nextPageRef, '&quot;')"/>
+            </xsl:processing-instruction>
         </fm:vol-fm>
         
     </xsl:template>
     
     <xsl:template name="title" >
-        <xsl:variable name="firstPageMark" select="processing-instruction()[1]"/>
+        <xsl:variable name="firstPageMark" select="//mediaobject[1]"/>
         <xsl:variable name="jurisClasseur" select="part/info/cover/para[contains(normalize-space(), 'JurisClasseur')] intersect $firstPageMark/preceding-sibling::para"/>
         <xsl:variable name="collection" select="part/info/cover/para[contains(normalize-space(), 'collection droit')] intersect $firstPageMark/preceding-sibling::para"/>
         <xsl:variable name="lastUpdate" select="part/info/cover/para[contains(normalize-space(), 'mise ')] intersect $firstPageMark/preceding-sibling::para"/>
@@ -78,8 +88,11 @@
                 <xsl:value-of select="$lastUpdate"/>
             </fm:issued-date>
             <fm:publisher-id>
-                <fm:publisher-logo name="other"><!--LexisNexis Logo--></fm:publisher-logo>
+                <fm:publisher-logo name="other">
+                    <xsl:comment>LexisNexis Logo</xsl:comment>
+                </fm:publisher-logo>
             </fm:publisher-id>
+            
         </fm:title-pg>
     </xsl:template>
     
@@ -133,12 +146,8 @@
         <core:title>
             <xsl:apply-templates/>
         </core:title>
-        <core:title-alt use4="l-running-hd">
-            <core:emph typestyle="smcaps"><xsl:value-of select="$leftHeader"/></core:emph>
-        </core:title-alt>
-        <core:title-alt use4="r-running-hd">
-            <core:emph typestyle="smcaps"><xsl:value-of select="$rightHeader"/></core:emph>
-        </core:title-alt>
+        <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
+        <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
     </xsl:template>
     
     <xsl:template match="tocentry">
@@ -158,5 +167,13 @@
             </core:entry-title>
         </fm:toc-entry>
     </xsl:template>
+    
+    <xsl:template name="extractReleaseNum">
+        <xsl:variable name="updateDate" select="//para[contains(., 'mise à jour')]"/>
+        <xsl:variable name="releaseNum" select="normalize-space(substring-after($updateDate, '—'))"/>
+        <xsl:value-of select="concat( upper-case(substring($releaseNum,1,1)), substring($releaseNum, 2))"/>
+    </xsl:template>
+    
+    <xsl:template match="processing-instruction()"/>
     
 </xsl:transform>

@@ -431,21 +431,23 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         release = match[3];
                     }
                     //console.log('----------------------------------->', pageNo, ofPages, release, pages[iterators.page].footer);
-                    if(pageNo && ofPages){
-                        //console.log(`<?textpage page-num="${page}" release-num="Août 2017"?>`);
-                        if(pages[page] && pages[page].header){
-                            if(pages[page].header.right){
-                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" right-header="${pages[page].header.right}" extracted-page="${page}" release-num="${release}" />`;
-                            }else if(pages[page].header.left){
-                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" left-header="${pages[page].header.left}" extracted-page="${page}" release-num="${release}" />`;
+                    if(page % 2 === 1){
+                        if(pageNo && ofPages){
+                            //console.log(`<?textpage page-num="${page}" release-num="Août 2017"?>`);
+                            if(pages[page] && pages[page].header){
+                                if(pages[page].header.right){
+                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" right-header="${pages[page].header.right}" extracted-page="${page}" release-num="${release}" />`;
+                                }else if(pages[page].header.left){
+                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" left-header="${pages[page].header.left}" extracted-page="${page}" release-num="${release}" />`;
+                                }else{
+                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
+                                }
                             }else{
                                 iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
                             }
                         }else{
-                            iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
+                            iterators.out += `<br injected="true" extracted-page="${page}" release-num="${release}" />`;
                         }
-                    }else{
-                        iterators.out += `<br injected="true" extracted-page="${page}" release-num="${release}" />`;
                     }
                 }
                 iterators.page = page;
