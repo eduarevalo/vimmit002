@@ -420,10 +420,10 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             var insertPageBreak = function(page){
                 if(pages[page]){
                     //console.log("CHANGE", page);
-                    var release = pages[page].footer.trim(),
+                    var footer = pages[page].footer.trim(),
                         pageNo,
                         ofPages;
-                    var match = release.match(/^\([0-9]*\)([A-Z0-9])+\s\/\s([0-9]*)(\D*\s[0-9]{4})$/);
+                    var match = footer.match(/^\([0-9]*\)([A-Z0-9]+)\s\/\s([0-9]*)(\D*\s[0-9]{4})$/);
                     //var match = release.match(/^[\r\n ]*\([0-9]*\)[A-Z0-9]*\s\/\s[0-9]*\s*(\D*\s[0-9]{4})[\r\n ]*$/);
                     if(match){
                         pageNo = match[1];
@@ -436,17 +436,17 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                             //console.log(`<?textpage page-num="${page}" release-num="Août 2017"?>`);
                             if(pages[page] && pages[page].header){
                                 if(pages[page].header.right){
-                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" right-header="${pages[page].header.right}" extracted-page="${page}" release-num="${release}" />`;
+                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" right-header="${pages[page].header.right}" extracted-page="${page}" release-num="${release}" footer="${footer}" />`;
                                 }else if(pages[page].header.left){
-                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" left-header="${pages[page].header.left}" extracted-page="${page}" release-num="${release}" />`;
+                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" left-header="${pages[page].header.left}" extracted-page="${page}" release-num="${release}" footer="${footer}" />`;
                                 }else{
-                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
+                                    iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" footer="${footer}" />`;
                                 }
                             }else{
-                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" />`;
+                                iterators.out += `<br injected="true" page-num="${pageNo}-${ofPages}" extracted-page="${page}" release-num="${release}" footer="${footer}" />`;
                             }
                         }else{
-                            iterators.out += `<br injected="true" extracted-page="${page}" release-num="${release}" />`;
+                            iterators.out += `<br injected="true" extracted-page="${page}" release-num="${release}" footer="${footer}" />`;
                         }
                     }
                 }

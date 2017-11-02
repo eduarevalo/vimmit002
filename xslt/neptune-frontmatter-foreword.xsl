@@ -9,6 +9,7 @@
     <xsl:include href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
+    <xsl:param name="nextPageRef"></xsl:param>
     
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
@@ -18,10 +19,14 @@
         <fm:vol-fm pub-num="{$pubNum}" volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=fmvol001ap'"/>
+            <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
             <fm:body>
                 <fm:no-title-pg/>
                 <xsl:call-template name="foreword"/>
             </fm:body>
+            <xsl:processing-instruction name="xpp">
+                <xsl:value-of select="concat('nextpageref=&quot;', $nextPageRef, '&quot;')"/>
+            </xsl:processing-instruction>
         </fm:vol-fm>
         
     </xsl:template>
@@ -104,5 +109,7 @@
             </core:entry-title>
         </fm:toc-entry>
     </xsl:template>
+    
+    <xsl:template match="processing-instruction('textpage')[1]"/>
     
 </xsl:transform>

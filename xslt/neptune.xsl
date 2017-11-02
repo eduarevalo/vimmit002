@@ -49,6 +49,11 @@
     
     <xsl:template match="para">
         <xsl:param name="labelToExtract"/>
+        <xsl:variable name="typestyle">
+            <xsl:call-template name="getTypeStyle">
+                <xsl:with-param name="node" select="."/>
+            </xsl:call-template>
+        </xsl:variable>
         <xsl:variable name="nodes" select="*|text()|processing-instruction()"/>
         <xsl:variable name="validNodes" select="$nodes except $nodes[last()][self::processing-instruction()] except $nodes[1][self::processing-instruction()]"/>
         <xsl:call-template name="printFirstTextPagePI">
@@ -59,6 +64,14 @@
                 <core:para>
                     <xsl:apply-templates select="normalize-space(substring-after($validNodes[1], $labelToExtract))"/>
                     <xsl:apply-templates select="$validNodes[position()>1]"/>
+                </core:para>
+            </xsl:when>
+            <xsl:when test="$typestyle != ''">
+                <core:para>
+                    <core:emph>
+                        <xsl:attribute name="typestyle" select="$typestyle"/>
+                        <xsl:apply-templates select="$validNodes"/>
+                    </core:emph>
                 </core:para>
             </xsl:when>
             <xsl:otherwise>
