@@ -35,7 +35,9 @@ function processCollection(collectionFolder, filter){
     return fsReadDir(collectionFolder + '/html')
         .then( files => {
             
-            var htmlFiles = files.filter( file => /\.inline\.html$/.test(file) );
+            var htmlFiles = files
+                .filter( file => /\.inline\.html$/.test(file) )
+                .filter( file => filter.test(file) );
             
             var docBook = htmlFiles      
                 .map(file => {
