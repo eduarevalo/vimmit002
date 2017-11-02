@@ -10,7 +10,6 @@
     exclude-result-prefixes="xs db html"
     version="2.0">
     
-    <!--<xsl:output indent="yes"></xsl:output>-->
     
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
@@ -56,7 +55,7 @@
         <xsl:variable name="keyPointsStart" select="$mainContainer/html:*[contains(@class,'Titres_Titre-de-section')][1]"/>
         <xsl:variable name="tocStart" select="$mainContainer/html:*[contains(@class, 'Titres_TdM') or contains(@class, 'TdM') or normalize-space()='TABLE DES MATIÈRES']"/>
         <xsl:variable name="indexStart" select="$mainContainer/html:*[contains(@class, 'Titres_Titre-index') or normalize-space()='INDEX ANALYTIQUE']"/>
-        <xsl:variable name="bodyStart" select="$mainContainer/html:*[((normalize-space()!='INDEX ANALYTIQUE') and (normalize-space()!='POINTS--CLÉS') and (normalize-space()!='POINTS-CLÉS') and (normalize-space()!='POINTCLÉS') and (normalize-space()!='POINT-CLÉS')) and (contains(@class,'Titres_Titre-de-section-Markup') or contains(@class,'Titres_Titre-de-section'))][1]"/>
+        <xsl:variable name="bodyStart" select="$mainContainer/html:*[((normalize-space()!='INDEX ANALYTIQUE') and (normalize-space()!='POINTS-­CLÉS') and (normalize-space()!='POINTS--CLÉS') and (normalize-space()!='TABLE DES MATIÈRES') and (normalize-space()!='POINTS-CLÉS') and (normalize-space()!='POINTCLÉS') and (normalize-space()!='POINT-CLÉS') and (normalize-space()!='POINT-­CLÉS')) and (contains(@class,'Titres_Titre-de-section-Markup') or contains(@class,'Titres_Titre-de-section'))][1]"/>
         <xsl:variable name="bibliographyStart" select="$mainContainer/html:*[normalize-space()='BIBLIOGRAPHIE']"/>
         
         <chapter>
@@ -84,7 +83,7 @@
                 <xsl:with-param name="indexSet" select="$indexStart/following-sibling::html:*[starts-with(@class, 'N') or starts-with(@class, 'Index--') or starts-with(@class,'Index_N') or starts-with(@class,'TM-et-index') or contains(@class,'n4')] intersect $bodyStart/preceding-sibling::html:*"/>
                 <xsl:with-param name="startOfNextSection" select="$bodyStart"/>
             </xsl:call-template>
-            
+       
             <xsl:call-template name="body">
                 <xsl:with-param name="bodySet" select="$bodyStart union ($bodyStart/following-sibling::html:* except $bibliographyStart/following-sibling::html:* except $bibliographyStart)"/>
             </xsl:call-template>
@@ -217,9 +216,9 @@
                 <xsl:value-of select="$tocEntry"/>
             </title>
             <toc>
-                <xsl:for-each select="$tocSet[contains(@class, 'TM-I-') or contains(@class, '---I--')]">
+                <xsl:for-each select="$tocSet[contains(@class, 'TM-I-') or contains(@class, '---I--') or contains(@class,'TM--5-niveaux-_TM-I-') or contains(@class,'TDM_TM-I-')]">
                     <xsl:variable name="tocLevel1" select="."/>
-                    <xsl:variable name="tocLevel2Set" select="$tocLevel1/following-sibling::html:p[contains(@class, 'TM-A-') or contains(@class, '---A--')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-I-') or contains(@class, '---I--')][1] = $tocLevel1]"/>
+                    <xsl:variable name="tocLevel2Set" select="$tocLevel1/following-sibling::html:p[contains(@class, 'TM-A-') or contains(@class, '---A--') or contains(@class,'TM--5-niveaux-_TM-A-') or contains(@class,'TDM_TM-A-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-I-') or contains(@class, '---I--') or contains(@class,'TM--5-niveaux-_TM-I-')][1] = $tocLevel1]"/>
                     <xsl:choose>
                         <xsl:when test="$tocLevel2Set">
                             <tocdiv>
@@ -228,7 +227,7 @@
                                 </title>
                                 <xsl:for-each select="$tocLevel2Set">
                                     <xsl:variable name="tocLevel2" select="."/>
-                                    <xsl:variable name="tocLevel3Set" select="$tocLevel2/following-sibling::html:p[contains(@class, 'TM-1-') or contains(@class,'---1--')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-A-') or contains(@class, '---A--')][1] = $tocLevel2]"/>
+                                    <xsl:variable name="tocLevel3Set" select="$tocLevel2/following-sibling::html:p[contains(@class, 'TM-1-') or contains(@class,'---1--') or contains(@class,'TDM_TM-1-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-A-') or contains(@class, '---A--') or contains(@class,'TDM_TM-A-')][1] = $tocLevel2]"/>
                                     <xsl:choose>
                                         <xsl:when test="$tocLevel3Set">
                                             <tocdiv>
@@ -237,7 +236,7 @@
                                                 </title>
                                                 <xsl:for-each select="$tocLevel3Set">
                                                     <xsl:variable name="tocLevel3" select="."/>
-                                                    <xsl:variable name="tocLevel4Set" select="$tocLevel3/following-sibling::html:p[contains(@class, 'TM-a-') or contains(@class,'---a--')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-1-') or contains(@class,'---1--')][1] = $tocLevel3]"/>
+                                                    <xsl:variable name="tocLevel4Set" select="$tocLevel3/following-sibling::html:p[contains(@class, 'TM-a-') or contains(@class,'---a--') or contains(@class,'TDM_TM-a-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-1-') or contains(@class,'---1--') or contains(@class,'TDM_TM-1-')][1] = $tocLevel3]"/>
                                                     <xsl:choose>
                                                         <xsl:when test="$tocLevel4Set">
                                                             <tocdiv>
@@ -246,7 +245,7 @@
                                                                 </title>
                                                                 <xsl:for-each select="$tocLevel4Set">
                                                                     <xsl:variable name="tocLevel4" select="."/>
-                                                                    <xsl:variable name="tocLevel5Set" select="$tocLevel4/following-sibling::html:p[contains(@class, 'TM--i-') or contains(@class,'---i--')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-a-') or contains(@class,'---a--')][1] = $tocLevel4]"/>
+                                                                    <xsl:variable name="tocLevel5Set" select="$tocLevel4/following-sibling::html:p[contains(@class, 'TM--i-') or contains(@class,'---i--') or contains(@class,'TDM_TM-i-')][self::node()/preceding-sibling::html:p[contains(@class, 'TM-a-') or contains(@class,'---a--') or contains(@class,'TDM_TM-a-')][1] = $tocLevel4]"/>
                                                                     <xsl:choose>
                                                                         <xsl:when test="$tocLevel5Set">
                                                                             <tocdiv>
@@ -341,8 +340,10 @@
                     </indexentry>    
                 </xsl:for-each>
             </index>
+            <xsl:apply-templates select="$indexEntry/following-sibling::html:*[contains(@class, 'Texte ParaOverride-2') or contains(@class, 'Note-de-remerciements') ] intersect $startOfNextSection/preceding-sibling::html:*"/>      
+            
             <xsl:apply-templates select="$indexSet[last()]/following-sibling::html:* intersect $startOfNextSection/preceding-sibling::html:*"/>
-        </sect1>
+                   </sect1>
     </xsl:template>
     
     <xsl:template name="body">
