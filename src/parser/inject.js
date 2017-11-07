@@ -2,11 +2,12 @@ const fs = require('fs'),
     tmp = require('tmp'),
     saxon = require('./../saxon'),
     _ = require('lodash'),
-    unzip = require('unzip'),
     exec = require('child_process').exec,
     inlineCss = require('inline-css'),
     util = require('util'),
-    htmlparser = require("htmlparser2");
+    htmlparser = require("htmlparser2"),
+    Entities = require('html-entities').XmlEntities,
+    entities = new Entities();
 
 const runJsxCommand = '"/Applications/Adobe\ ExtendScript\ Toolkit\ CC/ExtendScript\ Toolkit.app/Contents/MacOS/ExtendScript\ Toolkit" -run ';
 
@@ -21,6 +22,7 @@ function createFilter(filter){
 }
 
 function encodeXmlEntities(input){
+    return entities.encode(input);
     return input.replace(/\&/g, '&amp;')
         .replace(/\</g, '&lt;')
         .replace(/\>/g, '&gt;')
@@ -36,8 +38,14 @@ function decodeXmlEntities(input){
         .replace(/&apos;/g, "'");
 }
 
+function normalizePath(path){
+    return path;
+    return path.replace(' ', '_', '\'', '');
+}
+
 function encodeXmlVimmitEntities(input){
-    return input.replace(/&amp;/g, '--vimmit-trap--amp;')
+    return input
+        .replace(/&amp;/g, '--vimmit-trap--amp;')
         .replace(/&lt;/g, '--vimmit-trap--lt;')
         .replace(/&gt;/g, '--vimmit-trap--gt;')
         .replace(/&quot;/g, '--vimmit-trap--quot;')
@@ -228,111 +236,91 @@ function inlineCssParser(html){
 }
 
 function createInlineCSSFile(path, fileIn, fileOut){
-    return new Promise(function(resolve, reject){
-        fsReadFile(path + fileIn, 'utf8')
-            .then(function (htmlData) {
-                inlineCss(htmlData, { url: 'file:///' + path })
-                    .then(inlineCss => {
-                        fsWriteFile(path + fileOut, inlineCssParser(inlineCss), 'utf8')
-                            .then(() => {
-                                resolve(path + fileOut);
-                            });
-                    })
-            });
-    });
+    return fsReadFile(path + fileIn, 'utf8')
+        .then(function (htmlData) {
+            return inlineCss(htmlData, { url: 'file:///' + path })
+                .then(inlineCss => {
+                    return fsWriteFile(path + fileOut, inlineCssParser(inlineCss), 'utf8')
+                        .then(() => {
+                            return path + fileOut;
+                        });
+                })
+        });
 }
 
 function injectXhtmlFiles(path, resolve){
-    return function(){
-        fsReadDir(path + '/OEBPS')
-            .then( files => {
-                return Promise.all(
-                    files
-                        .filter( file => /\.xhtml$/.test(file) )
-                        //.filter( file => /F01/.test(file) )
-                        .filter( file => file != 'toc.xhtml' )
-                        .map( file => {
-                            return createInlineCSSFile(path + '/OEBPS/', file, 'xInline.' + file) 
-                        })
-                );
-            }).then( () => {
-                resolve(path);
-            } );
-    };
+    return fsReadDir(path + '/OEBPS')
+        .then( files => {
+            return Promise.all(
+                files
+                    .filter( file => /\.xhtml$/.test(file) )
+                    .filter( file => !/^xInline\./.test(file) )
+                    .filter( file => file != 'toc.xhtml' )
+                    .map( file => {
+                        return createInlineCSSFile(path + '/OEBPS/', file, 'xInline.' + file) 
+                    })
+            );
+        });
 };
 
-function exportEpubFiles(path, collection, collectionPath){
+function injectEpubFiles(path, collection, collectionPath){
     return fsReadDir(collectionPath)
         .then(files => {
-            return Promise.all(
-                    files
-                    .filter( file => !/Instructions/.test(file) )
-                    //.filter( file => /Page/.test(file)  )//f14, f17, f18
-                    //.filter( file => !/F17/.test(file)  )//f14, f17, f18
-                    //.filter( file => /F24/.test(file) )//f14, f17, f18
-                    //.filter( file => /titre/.test(file) )
+
+            return _.reduce(
+                
+                files
                     //.filter( file => /F17/.test(file) )
-                    .filter( createFilter('\.epub$') )
-                    //.filter( (value, index) => /F18/.test(value) )
-                    .map( (epubFile, index) => {
-                        
-                        return (new Promise(function(resolve, reject){
-                            tmp.dir({ prefix: epubFile + "_" }, function(err, path) {
-                                if (err) reject(err);
-                                
-                                //setTimeout(function(){
+                    .filter( createFilter('^folder_') ), 
 
-                                    fs
-                                    .createReadStream([collectionPath, epubFile].join('/'))
-                                        .pipe(unzip.Extract({ path: path }))
-                                        .on('finish', injectXhtmlFiles(path, resolve) );
+                ( promise, epubFolder ) => {
+                    return promise.then(() => {
+                        var epubFolderPath = collectionPath + '/' + epubFolder;
+                        return processFile(path, collection, epubFolderPath);
+                    });
+                }, 
+                Promise.resolve()
+            );
 
-                                //}, index * 3000);
-                                
-                                
-                            });
-                        })).then( (epubPath) => {
+    });
+}
 
-                            //console.log('epubPath:',epubPath);
-                            return saxon
-                                .exec({
-                                    xmlPath: __dirname + '/../../xslt/empty.xml', 
-                                    xslPath: __dirname + '/../../xslt/pages.xsl',
-                                    params: {
-                                        "exportFolder": epubPath + '/OEBPS'
-                                    }
-                                })
-                                .then( response => response.stdout )
-                                .then( (content) => { 
-                                    //console.log(content);
-                                    return { content, epubPath };
-                                });
-                        }).then( (conversion) => {
-                            var fileName = _.last(conversion.epubPath.split('/')).split('.')[0];
-                            
-                            return new Promise(function(resolve, reject){
+function processFile(path, collection, epubFolderPath){
+    return injectXhtmlFiles(epubFolderPath)
+    .then( () => {
+        return saxon
+            .exec({
+                xmlPath: __dirname + '/../../xslt/empty.xml', 
+                xslPath: __dirname + '/../../xslt/pages.xsl',
+                params: {
+                    "exportFolder": epubFolderPath + '/OEBPS'
+                }
+            })
+            .then( response => response.stdout )
+            .then( (content) => { 
+                return { content, epubFolderPath };
+            });
+    }).then( (conversion) => {;
+        var fileName = _.last(conversion.epubFolderPath.split('/')).split('.')[0].replace('folder_', '');
+        
+        return new Promise(function(resolve, reject){
 
-                                var htmlFilePath = [path, collection, 'html'].join('/') + fileName + '.html';
-                                injectInlineHtml([path, collection, 'html'].join('/'), fileName + '.html')
-                                    .then( htmlData => {
-                                        //console.log('Processing: '+fileName);
-                                        //setTimeout(function(){ 
-                                            injectPages(conversion.content, htmlData, htmlFilePath, fileName, resolve);
-                                        //}, index * 3000);
-                                    });
-                                
+            var htmlFilePath = [path, collection, 'html/'].join('/') + fileName + '.html';
+            injectInlineHtml([path, collection, 'html/'].join('/'), fileName + '.html')
+                .then( htmlData => {
+                    
+                    injectPages(conversion.content, htmlData, htmlFilePath, fileName, resolve);
+                    
+                });
+            
 
-                            }).then( injectProcess => {
-                                var outFilePath = [path, collection, 'html', fileName + '.inline.html'].join('/');
-                                var error = injectProcess.error ? 'Error: ' + injectProcess.error : '';
-                                console.log('File:', _.last(outFilePath.split('/')), 'Pages:', injectProcess.pageCount, error);
-                                return fsWriteFile(outFilePath, injectProcess.content, 'utf8');
-                            });
+        }).then( injectProcess => {
+            var outFilePath = [path, collection, 'html', fileName + '.inline.html'].join('/');
+            var error = injectProcess.error ? 'Error: ' + injectProcess.error : '';
+            console.log('File:', _.last(outFilePath.split('/')), 'Pages:', injectProcess.pageCount, error);
+            return fsWriteFile(outFilePath, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + injectProcess.content, 'utf8');
+        });
 
-                        });
-
-                    })
-                );
     });
 }
 
@@ -407,7 +395,6 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             iterators.out += `>`;
         },
         ontext: function(text){
-            
             if(onTHead){
                 tHeadText += text;
             }
@@ -424,7 +411,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         pageNo,
                         ofPages,
                         release;
-                    var match = footer.match(/^\([0-9]*\)([A-Z0-9]+)\s\/\s([0-9]*)(\D*\s[0-9]{4})$/);
+                    var match = footer.match(/^\([0-9]*\)([A-ZÉ0-9\-]+)\s\/\s([0-9]*)(\D*\s[0-9]{4})$/);
                     //var match = release.match(/^[\r\n ]*\([0-9]*\)[A-Z0-9]*\s\/\s[0-9]*\s*(\D*\s[0-9]{4})[\r\n ]*$/);
                     if(match){
                         pageNo = match[1];
@@ -432,7 +419,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         release = match[3];
                     }
                     //console.log('----------------------------------->', pageNo, ofPages, release, pages[iterators.page].footer);
-                    if(page % 2 === 1){
+                    //if(page % 2 === 1){
                         if(pageNo && ofPages){
                             //console.log(`<?textpage page-num="${page}" release-num="Août 2017"?>`);
                             if(pages[page] && pages[page].header){
@@ -449,7 +436,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         }else{
                             iterators.out += `<br injected="true" extracted-page="${page}" release-num="${release}" footer="${footer}" />`;
                         }
-                    }
+                    //}
                 }
                 iterators.page = page;
                 iterators.B = 0;
@@ -556,7 +543,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             resolve({ content: iterators.out, pageCount: iterators.page, error: error});
         }
     }, { decodeEntities: true });
-    parser.write(htmlData);
+    parser.write(htmlData.replace(/&#173;/g, ''));
     parser.end();
 };
 
@@ -565,8 +552,7 @@ function injectPages(content, htmlData, filePath, fileName, callback){
         lastNodeName,
         it = 0,
         lastP,
-        footerRegExp = /^\([0-9]+\)[0-9A-Za-z]+\s\/\s[0-9]+[a-zA-Z]+\s*[0-9]*/,
-        rightHeaderExp = /^[\r\n ]*Fasc\./;
+        rightHeaderExp = /(Fasc|Table|Notices|Index)/;
 
     var parser = new htmlparser.Parser({
         onopentag: function(name, attribs){
@@ -590,9 +576,9 @@ function injectPages(content, htmlData, filePath, fileName, callback){
 
                     case "header":
                         if( rightHeaderExp.test(originalText) ){
-                            pages[lastP].header.right = originalText;
+                            pages[lastP].header.right = originalText.trim().replace(/\r\n/g, "");
                         }else{
-                            pages[lastP].header.left = originalText;
+                            pages[lastP].header.left = originalText.trim().replace(/\r\n/g, "");
                         }
                         break;
                     
@@ -640,7 +626,7 @@ function injectCollection(path, filter){
                     .filter( createFilter(filter) )
                     .map( collection => {
 
-                        return exportEpubFiles(path, collection, [path, collection, 'temp'].join('/'));
+                        return injectEpubFiles(path, collection, [path, collection, 'temp'].join('/'));
 
                     })      
             );

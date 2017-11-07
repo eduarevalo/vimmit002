@@ -24,10 +24,20 @@
     <xsl:template match="text()[preceding-sibling::*[1][contains(@class, 'locuspara')]]"/>
     
     <xsl:template match="html:p">
-        <para>   
-            <xsl:attribute name="role">
-                <xsl:value-of select="concat(@class, ' ', @style)"/>
-            </xsl:attribute>
+        <xsl:variable name="indent" select="starts-with(., '&#9;')"/>
+        <para>
+            <xsl:choose>
+                <xsl:when test="$indent">
+                    <xsl:attribute name="role">
+                        <xsl:value-of select="concat('VimmitIndent ', @class, ' ', @style)"/>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="role">
+                        <xsl:value-of select="concat(@class, ' ', @style)"/>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates/>            
         </para>
     </xsl:template>
@@ -54,7 +64,7 @@
     </xsl:template>
     
     <xsl:template match="html:p[contains(lower-case(@class), 'titre')] | html:span[contains(lower-case(@class), 'titre')]">
-        <title>    
+        <title role="{@style}">    
             <xsl:apply-templates/>            
         </title>
     </xsl:template>
@@ -88,14 +98,16 @@
     </xsl:template>
     
     <xsl:template match="html:br[@injected]">
-        <xsl:choose>
-            <xsl:when test="@page-num ">
-                <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @extracted-page ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:if test="not(@left-header)">
+            <xsl:choose>
+                <xsl:when test="@page-num ">
+                    <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @extracted-page ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
     </xsl:template>
     
 </xsl:stylesheet>

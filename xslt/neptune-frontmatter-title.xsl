@@ -135,12 +135,27 @@
             <xsl:value-of select="normalize-space()"/>
         </fm:isbn>
     </xsl:template>
-
+    
+    <xsl:template match="para[contains(@role,'text-align: center')]">
+        <fm:center>
+            <xsl:apply-templates/>
+        </fm:center>
+    </xsl:template>
+    
     <xsl:template match="para">
+        <xsl:variable name="indent" select="contains(@role, 'VimmitIndent')"/>
         <core:para>
+            <xsl:if test="$indent">
+                <xsl:attribute name="indent">1st-line</xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>
         </core:para>
     </xsl:template>
+    
+    <xsl:template match="emphasis[parent::para[contains(@role, 'VimmitIndent')]]">
+        <xsl:value-of select="normalize-space(.)"/>
+    </xsl:template>
+    
     
     <xsl:template match="title[parent::partintro or parent::toc]">
         <core:title>

@@ -19,6 +19,7 @@
         <fm:vol-fm pub-num="{$pubNum}" volnum="1">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=fmvol001pre'"/>
+            <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
             <fm:body>
                 <fm:no-title-pg/>
                 <xsl:call-template name="preface"/>
@@ -49,6 +50,7 @@
                 <xsl:for-each select="$names">
                     <fm:right>
                         <xsl:apply-templates/>
+                        <core:nl/>
                         <xsl:for-each select="following-sibling::*[position() &lt; 5]">
                             <xsl:apply-templates/>
                             <xsl:if test="position() != last()">
@@ -83,12 +85,8 @@
         <core:title>
             <xsl:apply-templates/>
         </core:title>
-        <core:title-alt use4="l-running-hd">
-            <core:emph typestyle="smcaps"><xsl:value-of select="$leftHeader"/></core:emph>
-        </core:title-alt>
-        <core:title-alt use4="r-running-hd">
-            <core:emph typestyle="smcaps"><xsl:value-of select="$rightHeader"/></core:emph>
-        </core:title-alt>
+        <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
+        <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
     </xsl:template>
     
     <xsl:template match="tocentry">
@@ -108,5 +106,8 @@
             </core:entry-title>
         </fm:toc-entry>
     </xsl:template>
+    
+    
+    <xsl:template match="processing-instruction('textpage')[1]"/>
     
 </xsl:transform>

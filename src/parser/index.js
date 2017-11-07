@@ -4,7 +4,8 @@ const prepare = require('./prepare'),
     inject = require('./inject'),
     convert = require('./convert'),
     neptune = require('./neptune'),
-    report = require('./report');
+    report = require('./report'),
+    unzip = require('./unzip');
 
 (function main(){
     
@@ -28,6 +29,10 @@ const prepare = require('./prepare'),
     
     var exportAdobePromise = args.export
         ? exportAdobe.exportPackages(packages, filter)
+        : Promise.resolve();
+
+    var unzipPromise = args.unzip
+        ? unzip.unzipPackages(packages, filter)
         : Promise.resolve();
 
     var injectPromise = args.inject

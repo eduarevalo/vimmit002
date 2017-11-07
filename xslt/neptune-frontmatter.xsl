@@ -6,7 +6,7 @@
     
     <xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Front Matter v015//EN//XML" doctype-system="frontmatterV015-0000.dtd"/>
     
-    <xsl:include href="neptune.xsl"/>
+    <xsl:import href="neptune.xsl"/>
     
     <xsl:template match="para[preceding-sibling::comment()[1] = 'One-Cell-Table START']">
         <fm:boxed-text>
@@ -14,6 +14,12 @@
                 <xsl:apply-templates/>
             </core:para>
         </fm:boxed-text>
+    </xsl:template>
+    
+    <xsl:template match="para[contains(@role,'text-align: center')]">
+        <fm:center>
+            <xsl:apply-templates/>
+        </fm:center>
     </xsl:template>
     
 </xsl:transform>

@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd"><!-- pub-num=06018 --><!-- ch-num=tos001 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">
 <em:table>
+    <!-- pub-num=06018 -->
+    <!-- ch-num=tos001 -->
     <?textpage page-num="IN-1-1" release-num="Août 2017"?>
     <core:title>INDEX DE LA LÉGISLATION</core:title>
     <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
@@ -10,10 +13,10 @@
             renvois aux paragraphes de ce fascicule (ex. <core:emph typestyle="bf">F2</core:emph> :
             24-27).</core:para>
     </core:comment>
-    <table typesize="small" colsep="0" frame="none" rowsep="0">
+    <table typesize="reg" colsep="0" frame="none" rowsep="0">
         <tgroup cols="1">
-            <colspec align="left" colname="col0" colnum="1" colwidth="336.00pt"/>
-            <tbody valign="bottom">
+            <colspec align="left" colname="col0" colnum="1" colwidth="336pt"/>
+            <tbody valign="top">
                 <row>
                     <entry colname="col0"><core:emph typestyle="bf">LOIS
                             CONSTITUTIONNELLES</core:emph></entry>
@@ -173,4 +176,5 @@
             </tbody>
         </tgroup>
     </table>
+    <?xpp XppPI nextpageref="IN-2-1"?>
 </em:table>

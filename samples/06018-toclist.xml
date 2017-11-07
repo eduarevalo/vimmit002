@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">
+<em:table>
+    <!-- pub-num=06018 -->
+    <!-- ch-num=toclist -->
+    <?textpage page-num="EP-1-1" release-num="Août 2017"?>
+    <core:title>ÉTAT DE LA PUBLICATION</core:title>
+    <core:title-alt use4="l-running-hd">Droit de l’environnement</core:title-alt>
+    <core:title-alt use4="r-running-hd">État de la publication</core:title-alt>
+    <core:comment type="other">
+        <core:para>La présente section permet de vérifier si votre ouvrage est complet et à jour.
+            Elle énumère toutes les pages de l’ouvrage et indique, s’il y a lieu, la date qui doit
+            apparaître en bas des pages qui ont été modifiées à la suite d’une mise à
+            jour.</core:para>
+    </core:comment>
+    <table typesize="small" colsep="0" frame="none" rowsep="0">
+        <tgroup cols="1">
+            <colspec align="left" colname="col0" colnum="1" colwidth="162.00pt"/>
+            <tbody>
+                <row>
+                    <entry colname="col0">Page titre (Août 2017)</entry>
+                </row>
+                <row>
+                    <entry colname="col0"> </entry>
+                </row>
+                <row>
+                    <entry colname="col0" align="center"><core:emph typestyle="bf"
+                            >Préface</core:emph></entry>
+                </row>
+                <row>
+                    <entry colname="col0">P / 1 et 2<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Août 2017</entry>
+                </row>
+                <row>
+                    <entry colname="col0"> </entry>
+                </row>
+                <row>
+                    <entry colname="col0" align="center"><core:emph typestyle="bf"
+                            >Avant-propos</core:emph></entry>
+                </row>
+                <row>
+                    <entry colname="col0">AP / 1 et 2<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Août 2017</entry>
+                </row>
+                <row>
+                    <entry colname="col0"> </entry>
+                </row>
+                <row>
+                    <entry colname="col0" align="center"><core:emph typestyle="bf">Notices
+                            biographiques</core:emph></entry>
+                </row>
+                <row>
+                    <entry colname="col0">NB / 1 à 14<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Août 2017</entry>
+                </row>
+                <row>
+                    <entry colname="col0"> </entry>
+                </row>
+                <row>
+                    <entry colname="col0" align="center"><core:emph typestyle="bf">Table des
+                            matières</core:emph></entry>
+                </row>
+                <row>
+                    <entry colname="col0">TDM / 1 et 2<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Février 2017</entry>
+                </row>
+                <row>
+                    <entry colname="col0">TDM / 3 et 4<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Août 2017</entry>
+                </row>
+                <row>
+                    <entry colname="col0"> </entry>
+                </row>
+                <row>
+                    <entry colname="col0" align="center"><core:emph typestyle="bf">Partie I –
+                            Aspects généraux</core:emph></entry>
+                </row>
+                <row>
+                    <entry colname="col0">TDMI / 1 et 2<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Février 2017</entry>
+                </row>
+                <row>
+                    <entry colname="col0">TDMI / 3 et 4<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Septembre 2016</entry>
+                </row>
+                <row>
+                    <entry colname="col0">TDMI / 5 et 6<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Septembre 2013</entry>
+                </row>
+                <row>
+                    <entry colname="col0">TDMI / 7 à 8<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Février 2016</entry>
+                </row>
+                <!--  -->
+                <row>
+                    <entry colname="col0"> </entry>
+                </row>
+                <row>
+                    <entry colname="col0" align="center"><core:emph typestyle="bf">État de la
+                            publication</core:emph></entry>
+                </row>
+                <row>
+                    <entry colname="col0">ÉP / 1 et 2<core:leaders blank-leader="dot"
+                            blank-use="fill"/>Août 2017</entry>
+                </row>
+            </tbody>
+        </tgroup>
+    </table>
+</em:table>

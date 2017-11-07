@@ -31,6 +31,7 @@ function exportCollection(path, filter){
                             return fsReadDir(collectionPath)
                                 .then(files => {
                                         return files
+                                            .filter( file => !/Instructions/.test(file) )
                                             .filter( createFilter('\.indd$') )
                                             .map( inddFile => {
                                                 return {

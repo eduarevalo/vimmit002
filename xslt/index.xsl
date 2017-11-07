@@ -8,9 +8,9 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs db html"
     version="2.0">
-   
-    <xsl:include href="para.xsl"/>
-    <xsl:include href="html.xsl"/>
+    
+    <xsl:import href="para.xsl"/>
+    <xsl:import href="html.xsl"/>
   
     <xsl:template match="/">
         <part version="5.1">
@@ -23,6 +23,18 @@
                 <xsl:apply-templates select="./html:html/html:body/*"/>
             </partintro>
         </part>
+    </xsl:template>
+    
+    <xsl:template match="p[contains(@class, 'Index')]" priority="150">
+        <index role="{@class} {@style}">
+            <xsl:apply-templates/>
+        </index>
+    </xsl:template>
+    
+    <xsl:template match="html:p[contains(@class,'N1') or contains(@class,'N2') or contains(@class,'N3') or contains(@class,'N4')]">
+        <index role="{@class} {@style}">
+            <xsl:apply-templates/>
+        </index>            
     </xsl:template>
     
 </xsl:stylesheet>

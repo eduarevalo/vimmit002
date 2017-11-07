@@ -13,6 +13,7 @@
     <xsl:param name="chNum" select="'--CH-NUM--'"/>
     <xsl:param name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:param name="leftHeader" select="//processing-instruction('leftHeader')"/>
+    <xsl:param name="nextPageRef"/>
     
     <xsl:variable name="keyPoints" select="/part/chapter/sect1[title/text() = 'POINTS-CLÉS']"/>
     <xsl:variable name="tocNode" select="/part/chapter/sect1[title/text() = 'TABLE DES MATIÈRES']"/>
@@ -35,6 +36,9 @@
             <xsl:call-template name="toc"/>
             <xsl:call-template name="index"/>
             <xsl:apply-templates select="$chapterNodes"/>
+            <xsl:processing-instruction name="xpp">
+                <xsl:value-of select="concat('nextpageref=&quot;', $nextPageRef, '&quot;')"/>
+            </xsl:processing-instruction>
         </tr:ch>
         
     </xsl:template>
@@ -335,6 +339,9 @@
         </core:listitem>
     </xsl:template>
     
+    <xsl:template match="para[contains(@role,'Citation')][preceding-sibling::para[1][contains(@role,'Citation')]]">
+    </xsl:template>
+    
     <xsl:template match="para">
         <xsl:param name="labelToExtract"/>
         <xsl:param name="printFirstTextPageNumber" select="true()"/>
@@ -346,6 +353,19 @@
             </xsl:call-template>
         </xsl:if>
         <xsl:choose>
+            <xsl:when test="contains(@role,'Citation')">
+                <core:blockquote>
+                    <core:blockquote-para>
+                        <xsl:apply-templates select="$validNodes"/>
+                    </core:blockquote-para>
+                    <xsl:variable name="limit" select="(following-sibling::*[not(contains(@role, 'Citation'))])[1]"/>
+                    <xsl:for-each select="$limit/preceding-sibling::para intersect ./following-sibling::para[contains(@role,'Citation')]">
+                        <core:blockquote-para>
+                            <xsl:apply-templates/>
+                        </core:blockquote-para>
+                    </xsl:for-each>
+                </core:blockquote>
+            </xsl:when>
             <xsl:when test="$labelToExtract">
                 <core:para>
                     <xsl:apply-templates select="substring-after($validNodes[1], $labelToExtract)"/>
@@ -358,9 +378,6 @@
                 </core:para>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:call-template name="printLastTextPagePI">
-            <xsl:with-param name="scope" select="."/>
-        </xsl:call-template>
     </xsl:template>
     
     <xsl:template match="emphasis[@role='footnoteref']">

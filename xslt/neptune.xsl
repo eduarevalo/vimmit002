@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
-    xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
-    xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
@@ -59,15 +57,22 @@
         <xsl:call-template name="printFirstTextPagePI">
             <xsl:with-param name="scope" select="."/>
         </xsl:call-template>
+        <xsl:variable name="indent" select="contains(@role, 'VimmitIndent')"/> 
         <xsl:choose>
             <xsl:when test="$labelToExtract">
                 <core:para>
+                    <xsl:if test="$indent">
+                        <xsl:attribute name="role">1st-line</xsl:attribute>
+                    </xsl:if>
                     <xsl:apply-templates select="normalize-space(substring-after($validNodes[1], $labelToExtract))"/>
                     <xsl:apply-templates select="$validNodes[position()>1]"/>
                 </core:para>
             </xsl:when>
             <xsl:when test="$typestyle != ''">
                 <core:para>
+                    <xsl:if test="$indent">
+                        <xsl:attribute name="role">1st-line</xsl:attribute>
+                    </xsl:if>
                     <core:emph>
                         <xsl:attribute name="typestyle" select="$typestyle"/>
                         <xsl:apply-templates select="$validNodes"/>
@@ -76,6 +81,9 @@
             </xsl:when>
             <xsl:otherwise>
                 <core:para>
+                    <xsl:if test="$indent">
+                        <xsl:attribute name="role">1st-line</xsl:attribute>
+                    </xsl:if>
                     <xsl:apply-templates select="$validNodes"/>
                 </core:para>
             </xsl:otherwise>
@@ -182,7 +190,7 @@
     <xsl:template name="extractPageNumber">
         <xsl:param name="text"/>
         <xsl:analyze-string select="normalize-space($text)" 
-            regex="([0-9]+ / [0-9]+)$">
+            regex="([0-9A-ZÉ]+ / [0-9]+)$">
             <xsl:matching-substring>
                 <xsl:copy>
                     <xsl:value-of select="regex-group(1)"/>

@@ -6,6 +6,8 @@ function exec(filePath){
         //xslPath = __dirname + '/../../xslt/instructions.xsl'
     }else if(/biographiques/.test(filePath)){
         xslPath = __dirname + '/../../xslt/notice-bio.xsl'
+    }else if(/Index analytique/.test(filePath)){
+        xslPath = __dirname + '/../../xslt/index.xsl'
     }else if(/.*-Page de titre.*/.test(filePath)){
         xslPath = __dirname + '/../../xslt/cover.xsl';
     }else if(/.*-TDM.*/.test(filePath)){

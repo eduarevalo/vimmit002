@@ -10,7 +10,7 @@
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="volNum" select="'--volNum--'"/>
-    <xsl:param name="tocNumber" select="'--tocNumber--'"/>
+    <xsl:param name="tocNumber" select="'01a'"/>
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
     
@@ -19,6 +19,7 @@
         <fm:vol-fm pub-num="{$pubNum}" volnum="{$volNum}">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="concat('ch-num=ptoc', $tocNumber)"/>
+            <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
             <fm:pub-toc>
                 <xsl:call-template name="toc"/>
             </fm:pub-toc>
@@ -184,5 +185,8 @@
         </xsl:if>
         <xsl:apply-templates select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv"/>
     </xsl:template>
+    
+    <xsl:template match="processing-instruction('textpage')[1]"/>
+    
     
 </xsl:transform>
