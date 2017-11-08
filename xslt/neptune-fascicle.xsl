@@ -5,7 +5,7 @@
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
-    <xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" doctype-system="treatiseV021-0000.dtd"></xsl:output>
+    <!--<xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" doctype-system="treatiseV021-0000.dtd"></xsl:output>-->
     
     <xsl:import href="neptune.xsl"/>
     
@@ -200,7 +200,7 @@
             </xsl:if>
             <xsl:choose>
                 <xsl:when test="sect2">
-                    <xsl:variable name="sect2Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect2)]"/>
+                    <xsl:variable name="sect2Nodes" select="$runin[not(preceding-sibling::sect2)]"/>
                     <xsl:if test="$sect2Nodes">
                         <tr:ch-ptsub1-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect2Nodes"/>
@@ -209,7 +209,7 @@
                     <xsl:apply-templates select="sect2"/>
                 </xsl:when>
                 <xsl:when test="sect3">
-                    <xsl:variable name="sect3Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect3)]"/>
+                    <xsl:variable name="sect3Nodes" select="$runin[not(preceding-sibling::sect3)]"/>
                     <xsl:if test="$sect3Nodes">
                         <tr:ch-ptsub2-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect3Nodes"/>
@@ -218,7 +218,7 @@
                     <xsl:apply-templates select="sect3"/>
                 </xsl:when>
                 <xsl:when test="sect4">
-                    <xsl:variable name="sect4Nodes" select="para[emphasis[@role='label'][@xreflabel]][not(preceding-sibling::sect4)]"/>
+                    <xsl:variable name="sect4Nodes" select="$runin[not(preceding-sibling::sect4)]"/>
                     <xsl:if test="$sect4Nodes">
                         <tr:ch-ptsub3-dummy volnum="{$volnum}">
                             <xsl:apply-templates select="$sect4Nodes"/>
@@ -238,6 +238,12 @@
                 <xsl:otherwise>
                     <xsl:choose>
                         <xsl:when test="$runin">
+                            <xsl:variable name="dummy" select="$runin[1]/preceding-sibling::para"/>
+                            <xsl:if test="$dummy">
+                                <tr:secmain-dummy volnum="1">
+                                    <xsl:apply-templates select="$dummy"/>
+                                </tr:secmain-dummy>
+                            </xsl:if>
                             <xsl:apply-templates select="$runin"/>
                         </xsl:when>
                         <xsl:otherwise>
@@ -266,9 +272,9 @@
     
     <xsl:template match="para[emphasis[@role='label'][@xreflabel]]">
         <xsl:variable name="thisPara" select="."/>
-        <xsl:variable name="emphasisLabel" select="emphasis[@role='label']"/>
+        <xsl:variable name="emphasisLabel" select="$thisPara/emphasis[@role='label']"/>
         <xsl:variable name="label" select="$emphasisLabel/@xreflabel"/>
-        <xsl:variable name="title" select="$emphasisLabel/following-sibling::emphasis[./following-sibling::text()[1][contains(.,'–')]]"/>
+        <xsl:variable name="title" select="($emphasisLabel/following-sibling::emphasis[following-sibling::text()[1][contains(.,'–')]])[1]"/>
         <xsl:apply-templates select="($emphasisLabel/* | $emphasisLabel/processing-instruction())[1][self::processing-instruction()][1]"/>
         <tr:secmain volnum="{$volnum}">
             <core:desig value="{$label}">
@@ -278,7 +284,7 @@
                 <xsl:apply-templates select="$title"/>
             </core:title>
             <core:para runin="1">
-                <xsl:apply-templates select="./(*|text()|processing-instruction()) except $emphasisLabel except $title"/>
+                <xsl:apply-templates select="$thisPara/(*|text()|processing-instruction()) except $emphasisLabel except $title"/>
             </core:para>
             <xsl:variable name="nextXrefLabel" select="(following-sibling::para[emphasis[@role='label'][@xreflabel]])[1]"/>
             <xsl:choose>
@@ -404,7 +410,7 @@
         <xsl:choose>
             <xsl:when test="$labelToExtract">
                 <fn:para>
-                    <xsl:apply-templates select="normalize-space(substring-after($nodes[1], $labelToExtract))"/>
+                    <xsl:apply-templates select="substring-after($nodes[1], $labelToExtract)"/>
                     <xsl:apply-templates select="$nodes[position()>1][$lastPI='' or position()&lt;last()]"/>
                 </fn:para>
             </xsl:when>
@@ -509,11 +515,11 @@
                     <xsl:when test="$label != ''">
                         <xsl:choose>
                             <xsl:when test="$firstPageNumberPI">
-                                <xsl:apply-templates select="normalize-space(substring-after($nodes[2], $label))"/>
+                                <xsl:apply-templates select="substring-after($nodes[2], $label)"/>
                                 <xsl:apply-templates select="$nodes[position()>2]"/>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:apply-templates select="normalize-space(substring-after($nodes[1], $label))"/>
+                                <xsl:apply-templates select="substring-after($nodes[1], $label)"/>
                                 <xsl:apply-templates select="$nodes[position()>1]"/>
                             </xsl:otherwise>
                         </xsl:choose>

@@ -2,7 +2,7 @@
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
-    
+   
     <xsl:template match="emphasis">
         <xsl:param name="labelToExtract"/>
         <xsl:variable name="typestyle">
@@ -14,23 +14,32 @@
         <xsl:variable name="righTrimmed" select="normalize-space($nodes[last()])"/>
         <xsl:choose>
             <xsl:when test="$typestyle != ''">
-                <core:emph>
-                    <xsl:attribute name="typestyle" select="$typestyle"/>
-                    <xsl:choose>
-                        <xsl:when test="$labelToExtract != ''">
-                            <xsl:value-of select="substring-after(., $labelToExtract)"/>
-                        </xsl:when>
-                        <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test="$labelToExtract != ''">
+                        <xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">
+                            <core:emph>
+                                <xsl:attribute name="typestyle" select="$typestyle"/>
+                                <xsl:value-of select="substring-after(., $labelToExtract)"/>
+                            </core:emph>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <core:emph>
+                            <xsl:attribute name="typestyle" select="$typestyle"/>
                             <xsl:for-each select="$nodes">
                                 <xsl:choose>
-                                    <xsl:when test="position()=last()"><xsl:value-of select="concat(substring-before(., $righTrimmed), $righTrimmed)"/></xsl:when>
-                                    <xsl:otherwise><xsl:apply-templates select="."/></xsl:otherwise>
+                                    <xsl:when test="position()=last()">
+                                        <xsl:value-of select="concat(substring-before(., $righTrimmed), $righTrimmed)"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:apply-templates select="."/>
+                                    </xsl:otherwise>
                                 </xsl:choose>
                             </xsl:for-each>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </core:emph>
-                <xsl:value-of select="substring-after($nodes[last()], $righTrimmed)"/>
+                        </core:emph>
+                        <xsl:value-of select="substring-after($nodes[last()], $righTrimmed)"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
@@ -64,7 +73,7 @@
                     <xsl:if test="$indent">
                         <xsl:attribute name="role">1st-line</xsl:attribute>
                     </xsl:if>
-                    <xsl:apply-templates select="normalize-space(substring-after($validNodes[1], $labelToExtract))"/>
+                    <xsl:apply-templates select="substring-after($validNodes[1], $labelToExtract)"/>
                     <xsl:apply-templates select="$validNodes[position()>1]"/>
                 </core:para>
             </xsl:when>

@@ -145,6 +145,15 @@
         </tocentry>
     </xsl:template>
     
+    <xsl:template match="html:p[starts-with(@class, 'nom-fascicule')]">
+        <xsl:apply-templates select=".//html:br"/>
+        <tocentry>
+            <emphasis role="{@class} {@style} {html:span/@style}">
+                <xsl:value-of select="."/>
+            </emphasis>
+        </tocentry>
+    </xsl:template>
+    
     <xsl:template match="html:p[contains(@class, 'Gros-titre') or contains(@class, 'Grand-titre')]" >
         <xsl:apply-templates select=".//html:br"/>
         <xsl:choose>

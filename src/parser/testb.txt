@@ -1,0 +1,3236 @@
+   FASCICULE 26
+   Bruit
+   Fasc. 26 – Bruit
+   II. Aspects particuliers
+   
+      
+         
+            Julie-Anne PARISEAU*
+         
+         
+            Avocate et candidate à la maîtrise en droit de la faculté
+                            Osgoode Hall Law School, York University, Toronto
+         
+      
+      
+         
+            Michel BÉLANGER*
+         
+         
+            Avocat, Michel Bélanger Avocats inc.
+         
+      
+   
+   
+      À jour au 15 mai 2016
+   
+   
+      
+         
+         POINTS-CLÉS
+         
+            
+               1.
+                Étant donné qu’il n’existe ni loi ni règlement établissant un niveau de bruit
+                acceptable au Québec sans égard à l’activité qui en est à l’origine, la norme de
+                référence en la matière a été fixée par une note d’instructions interne du ministère
+                du Développement durable, de l’Environnement et de la Lutte aux changements
+                climatiques, qui a reçu l’aval des tribunaux (V. nos 5 à 14).
+            
+            
+               2.
+                Pour faire cesser une nuisance par le bruit, la Loi sur la qualité de l’environnement prévoit le droit à
+                l’injonction, dont les critères ont été allégés par les tribunaux, rendant ainsi
+                l’interdiction de polluer par le bruit plus vaste et la réparation de l’injonction
+                plus accessible aux citoyens (V. no 19).
+            
+            
+               3.
+                Même si le gouvernement du Québec a tous les pouvoirs pour réglementer le bruit,
+                il s’est limité à l’adoption de règlements et politiques pour encadrer les carrières
+                et sablières, certaines usines et les voies de circulation sous compétence
+                provinciale (V. nos 21 et 22).
+            
+            
+               4.
+                Les municipalités disposent d’une grande marge de manœuvre pour exercer leur
+                compétence en matière de réglementation du bruit en fonction de la réalité de leur
+                territoire, ce qu’elles peuvent faire par l’utilisation d’expressions générales,
+                pourvu que les règlements ne soient pas déraisonnables (V. nos 23 à 28).
+            
+            
+               5.
+                Le gouvernement fédéral a compétence en matière de bruit émis par le transport
+                ferroviaire et aérien, en plus d’être habilité à émettre des directives quant à la
+                construction d’immeubles résidentiels par l’intermédiaire de la Société canadienne
+                d’hypothèques et de logement (V. nos 30 à 32).
+            
+            
+               6.
+                Le bruit constitue une nuisance parmi d’autres qui a entraîné de nombreux
+                litiges civils dont notamment plusieurs recours collectifs au cours des dernières
+                années. Cette responsabilité civile repose principalement sur la faute découlant du
+                non-respect des normes de conduite (art. 1457 C.c.Q.) ou sur l’exposition à des
+                inconvénients anormaux de voisinage (art. 976 C.c.Q.) (V. nos 33 et 34).
+            
+         
+      
+   
+   
+      
+         
+         TABLE DES MATIÈRES
+         
+                
+               
+               
+                  Introduction : 1
+            
+                
+               I.
+               Notions générales : qu’est-ce que le bruit ? : 2-16
+               
+                  A.
+                   Bruit et sons : quelques notions d’acoustique : 2-3
+               
+               
+                  B.
+                   Effets du bruit sur la santé : 4
+               
+               
+                  C.
+                   Normes reconnues au Canada et à l’international : 5-16
+               
+            
+                
+               II.
+               Contrôle du bruit par les autorités publiques : 17-32
+               
+                  A.
+                   Autorités provinciales : 17-22
+               
+               
+                  B.
+                   Autorités municipales : 23-29
+               
+               
+                  C.
+                   Autorités fédérales : 30-32
+               
+            
+                
+               III.
+                Recours civils liés au bruit
+                        : 33-34
+            
+                
+               
+               
+                  Conclusion : 35
+            
+            
+         
+      
+   
+   
+      
+         
+         INDEX ANALYTIQUE
+         
+                
+               Certificat d’autorisation, 14, 19, 21, 35
+            
+                
+               Contaminant, 1, 14, 17, 18
+               
+                  
+                     Prohibition, 17
+                  
+               
+            
+                
+               Définition, 2
+            
+                
+               Lois applicables, voir
+                        Normes applicables
+            
+                
+               Niveau de bruit acceptable, 13
+               
+                  
+                     Carrières et sablières, 21
+                  
+                  
+                     Nocturne, 15
+                  
+                  
+                     Sources fixes, 10
+                  
+                  
+                     Usine de béton bitumineux, 21
+                  
+               
+            
+                
+               Nocivité, voir Nuisance
+                        environnementale
+            
+                
+               Normes applicables, 1, 7, 13, 15, 16, voir aussi Niveau de bruit acceptable
+               
+                  
+                     Note d’instructions 98-01 sur le bruit, 7
+                     
+                        
+                           Limites de son, 10
+                        
+                        
+                           Objectifs, 8
+                        
+                        
+                           Reconnaissance judiciaire, 11, 12
+                        
+                        
+                           Sources visées, 9
+                        
+                     
+                  
+                  
+                     Objectivité, 3, 5
+                  
+                  
+                     Réglementation fédérale, 30-32
+                     
+                        
+                           
+                              Règlement de l’aviation canadien sur le bruit, 30
+                        
+                     
+                  
+                  
+                     Réglementation municipale, 23
+                     
+                        
+                           
+                              Règlement sur le bruit,
+                        25, 26
+                        
+                     
+                  
+                  
+                     Réglementation provinciale
+                     
+                        
+                           
+                              Politique sur le bruit routier, 22
+                        
+                        
+                           
+                              Règlement sur les carrières et sablières, 21
+                        
+                        
+                           
+                              Règlement sur les usines de béton bitumineux, 21
+                        
+                     
+                  
+               
+            
+                
+               Nuisance environnementale, 1, 2
+               
+                  
+                     Autorisation préalable, 14
+                  
+                  
+                     Effets du bruit, 4, 6
+                  
+                  
+                     Mesure du bruit, 6
+                  
+                  
+                     Normes objectives, 3, 5, voir aussi Normes applicables
+                  
+                  
+                     Pouvoir de réglementation municipal, 23-29, voir aussi Pouvoir de
+                        réglementation
+                  
+                  
+                     Recours, voir
+                        Recours
+                  
+               
+            
+                
+               Pouvoir de réglementation
+               
+                  
+                     Fédéral, 30-32
+                  
+                  
+                     Municipal, 23-28
+                     
+                        
+                           Préséance, 23
+                        
+                     
+                  
+                  
+                     Provincial, 20, 22
+                  
+               
+            
+                
+               Recours
+               
+                  
+                     Collectifs, 1, 3, 33, 34
+                  
+                  
+                     Injonction, 1, 19
+                  
+                  
+                     Responsabilité civile, 33
+                  
+               
+            
+            
+      
+   
+   
+      
+      INTRODUCTION
+      
+         1.  
+         
+            Le bruit au cœur de nombreux recours civils
+         
+          – Le
+                bruit à titre de nuisance environnementale a suscité de nombreux litiges au Québec
+                notamment en vertu du véhicule procédural du recours collectif. À défaut de
+                législation provinciale d’application générale portant sur le bruit, les tribunaux
+                se sont référés en particulier aux différents règlements municipaux mis à leur
+                disposition pour mesurer quantitativement ou qualitativement l’ampleur du caractère
+                nuisible de celui-ci.
+         Le bruit n’est pas une simple question de tolérance. Il est considéré comme un
+                véritable contaminant pouvant avoir des impacts néfastes sur la santé humaine et sur
+                l’environnement en général. De multiples exemples dans l’actualité récente nous
+                démontrent comment le bruit à titre de nuisance environnementale préoccupe les
+                citoyens, au point d’engendrer des poursuites en dommages contre les auteurs du
+                bruit ou encore des requêtes en injonction pour faire cesser cette nuisance.
+         Citons, à titre d’exemples, les citoyens de Saint-Ferdinand qui vivent près du parc
+                Éoliennes de l’Érable qui ont déposé un recours collectif contre le promoteur afin
+                d’obtenir compensation pour la perte de leur qualité de vie; les citoyens de
+                Longueuil regroupés au sein du Comité antipollution des avions de Longueuil (CAPA-L)
+                qui ont intenté un recours collectif de 380 millions de dollars contre le
+                gouvernement du Canada (Nav Canada), des écoles de pilotage, et la Ville de
+                Longueuil afin d’obtenir compensation pour les nuisances subies; le regroupement
+                de citoyens qui ont poursuivi la Ville de Shawinigan, Aviation Mauricie et Bel-Air
+                Laurentien Aviation pour faire cesser les vols touristiques au Lac à la
+                    Tortue;
+                les voisins de l’autoroute Laurentienne dans l’arrondissement Charlesbourg de la
+                Ville de Québec qui ont intenté un recours collectif concernant le bruit ; le recours qui
+                ciblait le bruit provenant de la piste de course automobile du
+                    Mont-Tremblant ou encore le récent recours dont il sera question dans le présent
+                texte qui a été entrepris par la Ville de Saint-Lambert pour le bruit généré par les
+                concerts tenus au Parc Jean-Drapeau.
+         Bref, une multitude de recours exercés par des citoyens ou encore par des
+                municipalités qui veulent faire cesser les nuisances affectant leur qualité de vie.
+                L’actualité nous démontre comment les nuisances environnementales sont un sujet «
+                bruyant » par les temps qui courent au Québec. Pour comprendre l’encadrement du
+                bruit au Québec, nous résumerons dans le présent chapitre l’état du droit sur la
+                question, tant au niveau du droit public que privé.
+         
+            
+                    
+                  Rivard c. Éoliennes de l’Érable inc., 2014 QCCS
+                        5189. Voir également le recours collectif suivant ciblant aussi la
+                        construction d’un parc éolien : Labranche c. Énergie éolienne des Moulins, s.e.c., 2016 QCCS 1479.
+                
+            
+                    C.S. Longueuil, no 505-06-000015-110.
+                
+            
+                    C.S. Saint-Maurice, no 410-06-000005-114.
+                
+            
+                    La Cour d’appel du Québec a cassé une décision de la Cour supérieure en leur accordant la permission d’intenter un recours collectif :Carrier c. Québec (Procureur général), 2010 QCCS
+                        2235, [2010] J.Q. no 4939, inf. par 2011 QCCA 1231, [2011] J.Q. no
+                        8278.
+                
+            
+                    
+                  Courses automobiles Mont-Tremblant inc.
+                        c. Iredale, 2013 QCCA
+                        1348 (autorisation de pourvoi à la Cour suprême du Canada refusée,
+                            no 35575, 3 avril 2014);
+                            Iredale c. Stroll, 2008 QCCS 3008; Association des résidents de Mont-Tremblant pour la qualité de viec. Courses automobiles Mont-Tremblant inc., 2013 QCCS 5308.
+                
+            
+                    
+                  St-Lambert (Ville de) c.
+                            Montréal (Ville de), 2016 QCCS
+                        121. Voir également le jugement sur l’ordonnance de sauvegarde : St-Lambert (Ville de) c. Montréal (Ville de), 2015 QCCS
+                        3245.
+                
+         
+      
+   
+   
+      
+         A.
+          Bruit et sons : quelques notions d’acoustique
+         
+            2.  
+            
+               Distinctions terminologiques
+            
+             – Physiquement
+                    parlant, le bruit est constitué d’un ensemble de sons. Le son quant à lui
+                    constitue à la fois un phénomène physique et un phénomène psychologique. Le
+                    phénomène physique du son est causé par l’oscillation des particules d’un milieu
+                    :
+            
+               Cette oscillation produira des variations de pression du milieu qui entoure
+                    immédiatement le corps en vibration (l’air le plus souvent); ces variations
+                    seront transmises de proche en proche pour éventuellement entraîner la membrane
+                    du tympan. Le son nécessite donc un milieu (gaz, liquide, solide). Il ne peut
+                    pas se propager dans le vide (exemple : dans l’espace).
+               
+            
+            Denis Langlois, dans son texte intitulé « Le bruit et la fureur : les
+                    réglementations municipale et provinciale en matière de bruit », définissait
+                    ainsi le bruit :
+            
+               Du point de vue purement physique, le bruit est un ensemble de sons dont les
+                    caractéristiques principales sont : le niveau d’intensité sonore, la fréquence (pour les sons purs) et le spectre (pour les bruits complexes).
+               [C’est notamment l’amplitude de la variation de la pression atmosphérique qui
+                    créera la sensation d’intensité du son c’est-à-dire la force du son qui sera
+                    perçu par nos oreilles]. Le niveau d’intensité sonore, qui correspond à l’énergie
+                    transmise à l’oreille par la vibration aérienne, peut être évalué quant à lui en
+                    « pression acoustique » ou en « puissance acoustique ».
+               
+            
+            Le décibel constitue l’unité de niveau sonore exprimant la puissance avec
+                    laquelle une source émet un son. La fréquence du son est caractérisée par
+                    le nombre de cycles complets effectués en une unité de temps soit par
+                        seconde. La fréquence du son quant à elle se
+                    calcule selon le nombre
+                    de vibrations doubles par secondes et elle s’exprime en hertz (Hz). Comme le
+                    définit Lamarque dans son traité :
+            
+               Un son pur est constitué par une fréquence unique. Mais la plupart des bruits
+                    résultent de la combinaison d’un grand nombre de sons qui composent globalement
+                    un bruit complexe. L’élaboration de celui-ci aboutit à la détermination du
+                    spectre ou composition du bruit, beaucoup plus intéressant pour la lutte contre
+                    les nuisances que la mesure du niveau sonore global (c’est-à-dire toutes
+                    fréquences mélangées).
+               
+            
+            Premièrement, le bruit devient donc nocif lorsque sa fréquence atteint un certain seuil. En effet,
+                    « les sons aigus sont plus nuisibles que les sons graves, et un son pur est plus
+                    dangereux pour l’oreille qu’un bruit complexe ». Deuxièmement, le bruit
+                    devient aussi nocif en fonction de sa durée par exemple selon le nombre d’heures d’exposition au bruit
+                    en question. Troisièmement, la nocivité d’un bruit peut également se rapporter à
+                    sa répétition. Un bruit discontinu
+                    pourra avoir des incidences néfastes plus importantes qu’un bruit continu. Et,
+                    quatrièmement, l’intensité du bruit
+                    constitue la dernière composante à évaluer quant à sa nocivité.
+            Sur le plan psychologique, un autre phénomène se crée. En effet, le son
+                    constitue une sensation. Comme l’explique le professeur Caroline
+                    Traube, « les vibrations du tympan, transmises à l’oreille interne,
+                    provoqueront, si elles présentent les caractéristiques nécessaires, le départ
+                    d’influx nerveux que le cerveau reconnaîtra comme “son” et dont il tirera toute
+                    l’information utile : origine, distance, signification, annonce d’un danger,
+                    plaisir musical […] ».
+            La définition objective du bruit s’avère donc difficile puisque la perception
+                    du bruit pourra varier d’un individu à un autre, selon l’état de ces individus,
+                    mais également en vertu des circonstances ou encore des conditions de son
+                    émission.
+            
+               
+                        Voir : Caroline TRAUBE,Notes du cours Psychoacoustique musicale, Université de Montréal,
+                            hiver 2010, chap. 1, p. 5, en ligne :
+                            &lt;http://cours.musique.umontreal.ca/MUS3321/&gt;.
+                    
+               
+                        Voir : Caroline TRAUBE,Notes du cours Psychoacoustique musicale, Université de Montréal,
+                            hiver 2010, chap. 1, p. 6, en ligne :
+                            &lt;http://cours.musique.umontreal.ca/MUS3321/&gt;.
+                    
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163,
+                            aux pages 173 et 174, reprenant des extraits de l’ouvrage de Jean
+                            LAMARQUE, Le droit contre le bruit, Parais, Librairie générale de droit et de
+                            jurisprudence, 1974, p. 12-13.
+                    
+               
+                        Définition du Larousse en ligne : &lt;http://www.larousse.fr/encyclopedie/medical/d%C3%A9cibel/12386&gt; (site consulté le 4 novembre 2012).
+                    
+               
+                        René CHOCHOLLE,Le bruit,
+                            coll. « Que sais-je », Paris, Presses universitaires de France, 1984, p.
+                            11.
+                    
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163, à
+                            la page 174, reprenant des extraits de l’ouvrage de Jean LAMARQUE,
+                                Le droit contre le bruit,
+                            Paris, Librairie générale de droit et de jurisprudence, 1974, p.
+                            12-13.
+                    
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163,
+                            reprenant des extraits de l’ouvrage de Jean LAMARQUE, Le droit contre le bruit, Paris,
+                            Librairie générale de droit et de jurisprudence, 1974, p. 12-13.
+                    
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163,
+                            reprenant des extraits de l’ouvrage de Jean LAMARQUE, Le droit contre le bruit, Paris,
+                            Librairie générale de droit et de jurisprudence, 1974, p. 12-13.
+                    
+               
+                        Voir : Caroline TRAUBE,Notes du cours Psychoacoustique musicale, Université de Montréal,
+                            hiver 2010, chap. 1, p. 6, en ligne :
+                            &lt;http://cours.musique.umontreal.ca/MUS3321/&gt;.
+                    
+               
+                        Voir : Caroline TRAUBE,Notes du cours Psychoacoustique musicale, Université de Montréal,
+                            hiver 2010, chap. 1, p. 6, en ligne :
+                            &lt;http://cours.musique.umontreal.ca/MUS3321/&gt;.
+                    
+            
+         
+         
+            3.  
+            
+               Application judiciaires de normes objectives
+            
+             – Ces notions sont importantes puisque ce sont les
+                    spécialistes de l’acoustique qui agissent à titre d’expert devant les
+                        tribunaux. Les tribunaux sont appelés à comprendre ces notions et à les
+                    appliquer dans leur appréciation des problématiques qui leur sont présentées.
+                    Dans bien des cas, les tribunaux s’en remettent donc à différentes normes plus
+                    objectives, que ce soit celles relevant de directives gouvernementales, de
+                    réglementations municipales ou d’organismes internationaux, pour créer une
+                    présomption selon laquelle un bruit dont l’intensité dépasse la norme entraîne
+                    inévitablement une nuisance pour la majorité des personnes qui y sont
+                    exposées.
+            Par contre, cet aspect subjectif de la nuisance de bruit a amené des
+                    questionnements lorsque soulevé dans le cadre de recours collectifs, soit
+                    notamment au niveau de la collectivisation des dommages.
+            
+               
+                        Pour saisir la portée du rôle joué par les experts devant les tribunaux, voir :Montréal (Ville de) c. Boris Bistro inc., 2012 QCCM 75. Cette décision est également
+                            intéressante dans le contexte du contrôle de l’intensité du bruit par
+                            les municipalités. Voir Marie-Claude BELLEMARE et Julie FORTIER, « La
+                            réglementation sur le bruit au Québec : réflexion sur les normes
+                            applicables », dans Service de la formation continue, Barreau du Québec,
+                                Développements récents en droit de l’environnement (2015), Cowansville, Éditions Yvon Blais,
+                            2015, p. 26, EYB2015DEV2234.
+                    
+            
+         
+      
+      
+         B.
+          Effets du bruit sur la santé
+         
+            4.  
+            
+               Conséquences multiples
+            
+             – Tant l’OMS, Santé
+                    Canada que l’Institut national de santé publique du Québec (ci-après « l’INSPQ
+                    ») reconnaissent la problématique du bruit comme une nuisance pouvant avoir des
+                    conséquences sur la santé des individus. En septembre 2015, l’INSPQ a déposé un
+                    avis scientifique intitulé « Avis sur une politique québécoise de lutte au bruit
+                    environnemental : pour des environnements sonores sains ». L’étude en
+                    question expose notamment les données associées aux conséquences du bruit sur la
+                    santé publique et offre des pistes de solution et de prévention afin de réduire
+                    ces conséquences. Les conséquences dues au bruit pourront varier selon les
+                    facteurs élaborés précédemment soit l’intensité, la nature, la fréquence, la
+                    répétition, la durée, la capacité de récupération et la sensibilité
+                        individuelle.
+            Le bruit pourra notamment avoir comme conséquences : les troubles du sommeil,
+                    la perturbation du repos et de la concentration, les dommages auditifs, les
+                    problèmes de
+                    compréhension du
+                    langage, la perturbation des communications extérieures, troubles
+                    d’apprentissage scolaire, maladies cardiovasculaires, gêne, dérangement,
+                    acouphène, etc.. Les troubles du sommeil quant à eux peuvent amener
+                    différents problèmes de santé plus graves comme notamment une augmentation de la
+                    pression artérielle, une modification de l’humeur, une augmentation du risque de
+                    maladies cardiovasculaires ou encore l’aggravation de problèmes
+                        psychologiques. Les tribunaux québécois et canadiens reconnaissent que le
+                    bruit peut avoir des conséquences sur la qualité de vie, sur la santé
+                    humaine et sur l’environnement.
+            Le bruit pourra également avoir des conséquences sociales et économiques
+                    importantes, en jouant notamment sur le sentiment d’attachement à un quartier et
+                    la perception d’une atteinte à la qualité de l’environnement, en obligeant la
+                    fermeture des fenêtres des résidences ou l’investissement dans l’insonorisation
+                    des maisons, voire en forçant un déménagement imprévu, la dévaluation des
+                    immeubles et le dépôt de plaintes à la municipalité, etc.. Selon
+                    l’étude de l’INSPQ, les coûts sociaux associés au bruit environnemental se
+                    chiffrent « à près de 680 M$ par année au Québec selon une évaluation
+                        conservatrice ».
+            
+               
+                        INSPQ,Avis sur une politique québécoise de lutte au bruit environnemental : pour des environnements sonores sains, en ligne :
+                            &lt;https://www.inspq.qc.ca/pdf/publications/2048_politique_lutte_bruit_environnemental.pdf&gt;.
+                    
+               
+                        AGENCE DE LA SANTÉ ET DES SERVICES SOCIAUX DE LA MONTÉRÉGIE,Une nuisance qui fait du bruit, en ligne :
+                            &lt;http://extranet.santemonteregie.qc.ca/userfiles/file/sante-publique/sante-environnementale/FICHE-THEMATIQUE-Une-nuisance-qui-fait-du-bruit.pdf&gt;.
+                    
+               
+                        AGENCE DE LA SANTÉ ET DES SERVICES SOCIAUX DE LA MONTÉRÉGIE,Une nuisance qui fait du bruit, p. 2, en ligne :
+                            &lt;http://extranet.santemonteregie.qc.ca/userfiles/file/sante-publique/sante-environnementale/FICHE-THEMATIQUE-Une-nuisance-qui-fait-du-bruit.pdf&gt;.
+                            Voir aussi le site Web de Santé Canada, Santé de l’environnement et du
+                            milieu de travail. Santé Canada a conduit des études afin d’évaluer
+                            comment le bruit affecte les Canadiens. Santé Canada conduit des
+                            recherches afin d’évaluer les effets potentiels sur la santé du bruit
+                            (loisir, communautaire, du travail, ainsi que le bruit qui est causé par
+                            les avions) :
+                            &lt;http://www.hc-sc.gc.ca/ewh-semt/noise-bruit/index-fra.php&gt;. Voir
+                            également INSPQ, Avis sur une politique québécoise de lutte au bruit environnemental : pour des environnements sonores sains, en ligne :
+                            &lt;https://www.inspq.qc.ca/pdf/publications/2048_politique_lutte_bruit_environnemental.pdf&gt;
+                            pour des données plus récentes sur les troubles de la santé associés au
+                            bruit, p. 1.
+                    
+               
+                        AGENCE DE LA SANTÉ ET DES SERVICES SOCIAUX DE LA MONTÉRÉGIE,Une nuisance qui fait du bruit, p. 2, en ligne :
+                            &lt;http://extranet.santemonteregie.qc.ca/userfiles/file/sante-publique/sante-environnementale/FICHE-THEMATIQUE-Une-nuisance-qui-fait-du-bruit.pdf&gt;.
+                    
+               
+                        
+                     Coalition pour la protection de l’environnement du parc linéaire « Petit Train du Nord »
+                            c. Laurentides (Municipalité régionale de comté des), EYB 2004-54733, par. 21 (C.S.).
+                    
+               
+                        AGENCE DE LA SANTÉ ET DES SERVICES SOCIAUX DE LA MONTÉRÉGIE,Une nuisance qui fait du bruit, p. 2, en ligne :
+                            &lt;http://extranet.santemonteregie.qc.ca/userfiles/file/sante-publique/sante-environnementale/FICHE-THEMATIQUE-Une-nuisance-qui-fait-du-bruit.pdf&gt;.
+                    
+               
+                        INSPQ,Avis sur une politique québécoise de lutte au bruit environnemental : pour des environnements sonores sains, en ligne :
+                            &lt;https://www.inspq.qc.ca/pdf/publications/2048_politique_lutte_bruit_environnemental.pdf&gt;
+                            pour des données plus récentes sur les troubles de la santé associés au
+                            bruit, p. 1.
+                    
+            
+         
+      
+      
+         C.
+          Normes reconnues au Canada et à l’international
+         
+            5.  
+            
+               Norme objective
+            
+             – La norme objective du bruit
+                    est importante afin de guider les instances municipales dans l’élaboration de
+                    leur réglementation. Que ce soit par rapport à la pression acoustique ou encore
+                    à l’identification de la source du bruit, l’édiction de normes permet une
+                    meilleure compréhension pour tous les acteurs de la société, comme l’a rappelé
+                    la Cour suprême du Canada dans l’arrêt Montréal (Ville) c. 2
+               952-1366 Québec inc.
+                où il était
+                    question de l’interprétation d’un règlement sur le bruit de la Ville de
+                        Montréal.
+            
+               
+                        [2005] 3 R.C.S. 141, 2005 CSC 62, par. 48.
+                    
+               
+                        
+                     Règlement sur le bruit,
+                            R.R.V.M. 1994, c. B-3.
+                    
+            
+         
+         
+            6.  
+            
+               La mesure du bruit
+            
+             – La mesure du bruit est au
+                    cœur même de tout litige émanant d’une nuisance environnementale. Les effets du
+                    bruit, soit les effets « désagréables, gênants, perturbateurs ou nocifs des
+                    bruits n’apparaissent qu’au-dessus de certains niveaux et sont d’autant plus
+                    importants que le niveau est plus élevé ».
+            
+               
+                        René CHOCHOLLE,Le bruit,
+                            coll. « Que sais-je », Paris, Presses universitaires de France, 1984,
+                            p. 46.
+                    
+            
+         
+         
+            7.  
+            
+               Note d’instructions 98-01 du MDDEP
+            
+             – Sous
+                    réserve des dispositions générales de la Loi sur la qualité de l’environnement
+               , comme nous le
+                    soulignerons, il n’existe pas de loi ou de règlement au Canada ou au Québec qui
+                    porte précisément sur les normes admissibles au niveau du bruit. Par contre, des
+                    normes informelles ont été établies par le ministère du Développement durable,
+                    de l’Environnement et de la Lutte contre les changements climatiques (ci-après «
+                    le MDDELCC ») par l’adoption de la Note d’instructions 98-01 sur le
+                        bruit.
+            La Note d’instructions 98-01 constitue un guide administratif applicable aux
+                    demandes d’autorisation requises en vertu de la Loi sur la qualité de l’environnement. Son objectif est
+                    d’établir des règles de fonctionnement communes à tous les analystes du MDDELCC
+                    dans la province, afin d’uniformiser le traitement des dossiers relatifs à la
+                    gestion du bruit généré par les entreprises. Ces normes ont depuis reçu
+                    l’aval des tribunaux québécois qui les utilisent comme standards dans
+                    l’élaboration de leurs décisions. Par ailleurs, les normes sur le bruit qui ont
+                    été édictées n’ont toujours pas été ratifiées dans un règlement officiel au
+                    niveau provincial.
+            
+               
+                        RLRQ, c. Q-2 (ci-après « L.q.e. »).
+                    
+               
+                        QUÉBEC (Ministère du Développement durable, de l’Environnement et des Parcs),Note d’instructions 98-01 sur le bruit du MDDEFP (révisée en date du 9 juin
+                            2006).
+                    
+               
+                        &lt;http://www.mddelcc.gouv.qc.ca/publications/note-instructions/98-01.htm&gt;.
+                    
+               
+                        
+                     Gestion Paroi inc. c.
+                                Gestion Gérard Furse inc.,
+                            2012 QCCS 901, par. 181; Gestion Paroi inc. c. Gestion Gérard Furse inc., 2015 QCCS 1305, par. 426; Iredale c. Mont-Tremblant (Ville de), 2011 QCCS
+                            760, [2011] J.Q. no 1669, EYB 2011-186946, par. 54; Iredale c. Stroll et al., 2008 QCCS 3008,
+                            [2008] J.Q. no 6425, EYB 2008-139195, par. 21; Picard c. Pointe-Lebel (Corporation municipale du village de), 2007 QCCS 2495, par. 131; St-Lambert (Ville de) c. Montréal (Ville de), 2015 QCCS 3245,
+                            par. 55.
+                    
+            
+         
+         
+         
+            8.  
+            
+               Objectifs de la note d’instructions
+            
+             – La Note
+                    d’instructions 98-01 adoptée en 1998 visait à outiller les différents
+                    intervenants dans le traitement des plaintes et à guider les entreprises
+                    québécoises quant aux bruits générés par leurs différentes activités :
+            
+               1. Objet de la note d’instructions
+               
+               Cette note d’instructions sur le bruit a pour objet de préciser la façon dont
+                    le ministre du Développement durable, de l’Environnement et des Parcs entend
+                    assumer les fonctions et les pouvoirs que lui confère la Loi sur la qualité de
+                    l’environnement, notamment ceux mentionnés à l’article 94, à l’égard des sources
+                    fixes. Elle fixe les méthodes et les critères qui permettent de juger de
+                    l’acceptabilité des émissions sonores, de s’assurer du respect du deuxième
+                    alinéa de l’article 20 de la loi et de baliser les interventions et les actions
+                    du ministère notamment en vue de la délivrance de documents officiels.
+               
+            
+            
+               
+                        QUÉBEC (Ministère du Développement durable, de l’Environnement et des Parcs),Note d’instructions 98-01 sur le bruit du MDDEFP (révisée en date du 9 juin 2006), en
+                            ligne :
+                            &lt;http://www.mddelcc.gouv.qc.ca/publications/note-instructions/98-01/note-bruit.pdf&gt;.
+                    
+            
+         
+         
+            9.  
+            
+               Entités visées par la note d’instructions
+            
+             – La
+                    note d’instructions mentionne spécifiquement que ces recommandations sur les
+                    niveaux de bruits ne s’appliquent pas aux sources qui sont déjà visées par
+                    règlement, par exemple les carrières et sablières ainsi que les usines de
+                    béton bitumineux. La note d’instructions exclut également les activités
+                    agricoles telles que définies dans la Note d’instructions 01-13 intitulée «
+                    Activités agricoles liées à l’agriculture ainsi que le conditionnement et la
+                    transformation de produits agricoles » :
+            
+               Constituent des activités agricoles, les activités nécessaires pour effectuer
+                    les travaux agricoles tels que définis au mot « agricole » dans le dictionnaire
+                    Le Petit Robert (édition 1990) lorsque ces activités sont réalisées par un
+                    agriculteur sur son exploitation et à l’égard de ses produits agricoles.
+                    Lorsqu’elles sont réalisées dans des conditions autres que « par un agriculteur
+                    sur son exploitation et à l’égard de ses produits agricoles », ces activités
+                    correspondent alors à l’exploitation d’un commerce lié à l’agriculture ou d’une
+                    entreprise para-agricole ou à des opérations agroalimentaires plutôt qu’à des
+                    activités agricoles.
+            
+            Les activités agricoles échappent non seulement à la note d’instructions, mais
+                    font également l’objet d’une immunité en matière de bruit et autres nuisances,
+                    sous certaines conditions, en vertu de la Loi sur la protection du territoire agricole et des activités agricoles
+               .
+            La note d’instructions vise donc toute source fixe de bruit émanant des
+                    industries. La source fixe se définit de la façon suivante : « une industrie,
+                    une manufacture, une centrale génératrice d’énergie, une ligne à haute tension,
+                    un poste de transformation électrique, un lieu d’enfouissement, un champ de tir
+                    et toute entreprise qui exploite un procédé ».
+            
+               
+                        
+                     Règlement sur les carrières et sablières, RLRQ, c. Q-2, r. 7. L’ancienne version de la
+                            NI-98 mentionnait spécifiquement que la note ne s’applique pas aux
+                            projets soumis au processus d’évaluation environnementale prévu à la
+                                Loi sur la qualité de l’environnement. Lors de la modification de 2006, cette
+                            exclusion a été enlevée de la note. Depuis, la Note 98-01 constitue les
+                            exigences minimales dans le cadre d’une évaluation environnementale pour
+                            une source de bruit fixe. Le ministère a en effet estimé que la note
+                            d’instructions sur le bruit fournissait un outil supplémentaire
+                            d’évaluation pertinent pour des projets assujettis à la procédure
+                            d’évaluation environnementale.
+                    
+               
+                        
+                     Règlement sur les usines de béton bitumineux, RLRQ, c. Q-2, r. 48.
+                    
+               
+                        Référence à la Note d’instructions 01-13, « Activités agricoles liées à l’agriculture ainsi que le conditionnement et la transformation de produits agricoles », en ligne : &lt;http://www.mddep.gouv.qc.ca/publications/note-instructions/01-13.html&gt;.
+                    
+               
+                        RLRQ, c. P-41.1, art. 79.17 à 79.19.2. Voir à ce sujet les arrêtsPlantons A et P inc. c.
+                                Delage, 2015 QCCA 7 et
+                                Fermes Galiman inc. c.
+                                Osadchuk, 2007 QCCA
+                            1428.
+                    
+               
+                        Note d’instructions 98-01, en ligne : &lt;http://www.mddelcc.gouv.qc.ca/publications/note-instructions/98-01/note-bruit.pdf&gt;.
+                    
+            
+         
+         
+            10.  
+            
+               Limites imposées
+            
+             – La grille de la Partie I de
+                    la Note d’instruction 98-01 établit le niveau sonore maximum de sources fixes et
+                    se caractérise par les usages du sol ainsi que par la densité de la population
+                    du territoire visé.
+            La zone I constitue un territoire
+                    destiné à des habitations unifamiliales isolées ou jumelées, à des écoles,
+                    hôpitaux ou autres établissements de services d’enseignement, de santé ou de
+                    convalescence. Il peut aussi s’agir d’un terrain d’une habitation existante en
+                    zone agricole.
+            La zone II est le territoire destiné à
+                    des habitations en unités de logements multiples, des parcs de maisons mobiles,
+                    des institutions ou des campings.
+            La zone III est le territoire destiné à
+                    des usages commerciaux ou à des parcs récréatifs. Toutefois, dans le cas de
+                    cette zone, le niveau de bruit prévu pour la nuit ne s’applique que dans les
+                    limites de propriété des établissements utilisés à des fins résidentielles. Dans
+                    les autres cas, le niveau maximal de bruit prévu le jour s’applique également la
+                    nuit.
+            La grille identifie une quatrième zone, soit la zone IV, qualifiée de zone non sensible. Il s’agit du territoire
+                    zoné pour fins industrielles ou agricoles. Toutefois, sur le terrain d’une
+                    habitation existante en zone industrielle et établie conformément aux règlements
+                    municipaux en vigueur au moment de sa construction, les critères sont de 50
+                    dB(A) la nuit et 55 dB(A) le jour.
+            Le MDDELCC établit les niveaux sonores maximums des sources fixes ainsi
+                    :
+            
+               
+                    
+                    
+                        
+                        
+                        
+                    
+                    
+                        
+                            
+                        
+                           
+                              
+                                 Zonage
+                              
+                           
+                        
+                     
+                            
+                        
+                           
+                              
+                                 Nuit (dBA)
+                              
+                           
+                        
+                     
+                            
+                        
+                           
+                              
+                                 Jour (dBA)
+                              
+                           
+                        
+                     
+                        
+                        
+                            
+                        
+                           
+                              I
+                           
+                        
+                     
+                            
+                        
+                           
+                              40
+                           
+                        
+                     
+                            
+                        
+                           
+                              45
+                           
+                        
+                     
+                        
+                        
+                            
+                        
+                           
+                              II
+                           
+                        
+                     
+                            
+                        
+                           
+                              45
+                           
+                        
+                     
+                            
+                        
+                           
+                              50
+                           
+                        
+                     
+                        
+                        
+                            
+                        
+                           
+                              III
+                           
+                        
+                     
+                            
+                        
+                           
+                              50
+                           
+                        
+                     
+                            
+                        
+                           
+                              55
+                           
+                        
+                     
+                        
+                        
+                            
+                        
+                           
+                              IV
+                           
+                        
+                     
+                            
+                        
+                           
+                              70
+                           
+                        
+                     
+                            
+                        
+                           
+                              70
+                           
+                        
+                     
+                        
+                    
+                
+            
+            
+               
+                        Note d’instructions 98-01, en ligne : &lt;http://www.mddelcc.gouv.qc.ca/publications/note-instructions/98-01/note-bruit.pdf&gt;.
+                    
+               
+                        Note d’instructions 98-01, annexe I.
+                    
+            
+         
+         
+            11.  
+            
+               Acceptation des normes par les tribunaux québécois
+            
+             – Comme le mentionnait déjà Langlois en 1992, ces
+                    normes dites informelles ont été acceptées par les tribunaux québécois dans le
+                    cadre de recours en injonction ou en dommages fondés sur l’abus de droit ou les
+                    troubles de
+                        voisinage. En effet, dès 1982, le juge Paul-Étienne Bernier de la Cour
+                    supérieure utilisait les seuils fixés par le ministère : « Tout comme pour ce
+                    qui est de la poussière, il n’existe pas non plus de normes réglementaires à ce
+                    sujet. Toutefois, le ministère de l’Environnement recommande : 45 dB(A) le jour
+                    et 40 la nuit en zone résidentielle, 55 dB(A) le jour et 50 la nuit en zone
+                    commerciale ainsi que 70 dB(A) en tout temps en zone industrielle. »
+            
+            
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163, à
+                            la page 176.
+                    
+               
+                        
+                     Gravel c. Carey Canadian Mines Ltd., [1982]
+                            C.S. 1097, [1982] no AZ-82021614, p. 24.
+                    
+            
+         
+         
+            12.  
+            
+               Illustrations jurisprudentielles
+            
+             – Depuis
+                    lors, de nombreuses décisions ont repris ces normes. Dans l’affaire Picard c. Pointe-Lebel (Corporation municipale du Village de) par exemple,
+                    la juge Ouellet de la Cour supérieure reconnaissait explicitement l’acceptation
+                    par les tribunaux des normes sur le bruit établies par le MDDELCC : « Le
+                    ministère de l’Environnement du Québec énonce certaines normes sur le niveau de
+                    bruit acceptable dans les différentes zones. Il s’agit de normes informelles et
+                    non contraignantes qui ont toutefois reçu “l’aval des tribunaux, et ce depuis
+                    plusieurs années déjà”. »
+            
+            Par contre, dans l’affaire Iredale c.
+                        Mont-Tremblant (Ville de), le juge
+                    Jean-Yves Lalonde de la Cour supérieure du Québec, a rappelé le caractère
+                    relatif de la directive, par opposition à une norme juridique, le ministère
+                    disposant en conséquence d’une certaine marge de manœuvre dans son appréciation
+                    des niveaux de bruit. Les circonstances pouvaient en effet justifier une
+                    modulation des niveaux acceptables :
+            
+               Le demandeur reproche au représentant du ministre de s’être écarté de la Note
+                    d’instructions 98-01. Il importe de préciser dès maintenant que la Note
+                    d’instructions 98-01 n’a pas force de loi, étant acquis que le législateur
+                    provincial, bien que hiérarchiquement compétent, a choisi de ne pas régir en
+                    matière de bruit, laissant cette responsabilité aux municipalités.
+               
+            
+            Le juge Lalonde a jugé que la décision du ministre était raisonnable.
+            Dans l’affaire récente opposant la Ville de Saint-Lambert à la Ville de
+                    Montréal pour le bruit causé par les concerts au Parc Jean-Drapeau (situé sur
+                    l’île de Montréal), la juge Corriveau reprend certains passages de la décision
+                        Iredale c. Stroll
+                qui se lisent comme suit
+                    :
+            
+               De plus, elles citent un extrait de la décision Iredale c. Stroll où
+                    le juge Lalonde s’exprime ainsi :
+               [21] […] Il est cependant acquis que la Note d’instructions 98-01 n’a pas force
+                    réglementaire, mais qu’elle peut devenir une obligation contractuelle si le
+                    ministre en exige le respect comme condition à l’émission du certificat
+                    demandé.
+               Dans le cas sous étude, en application de l’article 20 LQE, en l’absence de
+                    réglementation applicable, c’est en vertu du troisième volet de cette
+                    disposition qu’il faut évaluer s’il y a une contravention. Dans ce cas,
+                    l’analyse se fait selon les critères subjectifs et non selon une norme
+                        objective.
+               
+            
+            Puis, la juge Corriveau reprend les propos de la Cour d’appel dans l’affaire
+                        Courses automobiles Mont-Tremblant
+                    c. Iredale
+                concernant l’analyse
+                    contextuelle à faire dans le cas d’une demande d’injonction pour le bruit comme
+                    suit :
+            
+               Tel que confirmé dans l’arrêt précité Courses automobiles Mont-Tremblant c. Iredale, le Tribunal doit alors procéder à une analyse
+                    contextuelle et multifactorielle qui dépend des circonstances, de différents
+                    facteurs, des données scientifiques, économiques et sociales.
+                
+            
+            Dans l’affaire Gestion Paroi inc. c.
+                        Gestion Gérard Furse inc., le juge
+                    François Tôth de la Cour supérieure soulignait d’ailleurs que la directive 98-01
+                    ne pouvait que servir comme guide d’interprétation. En 2015, le juge Tôth,
+                    toujours dans l’affaire Gestion Paroi inc. c. Gestion Gérard Furse inc., reprend la norme établie par la Cour d’appel en matière
+                    d’analyse du niveau de bruit en ces termes : 
+            
+               Cette bataille de méthodologie a occupé une bonne partie des débats et détourné
+                    l’attention de l’analyse multifactorielle et contextuelle préconisée par la Cour
+                    d’appel : tout ne se résume pas à une mesure de pression acoustique.
+            
+            
+               
+                        Voir, notamment :Roy c.
+                                Usinage Nado Inc., J.E.
+                            86-186, par. 19-21 (C.S.); Piedmont (Municipalité de) c. Morin, J.E. 88-41, par. 29 et 43-44 (C.S.); Plante c. Nutrichef ltée, [1990] J.Q. no 2670,
+                            p. 629 (C.Q.); Giguère c.
+                                Turcotte, J.E. 95-1396,
+                            par. 23 (C.S.); Kerr c.
+                                Eastwood, [1995] J.Q. no
+                            3296, par. 32 (C.S.); Coalition pour la protection de l’environnement du parc linéaire « Petit Train du Nord » c. Laurentides (Municipalité régionale de comté des), EYB 2004-54733,
+                            par. 19-20 (C.S.); Directeur des poursuites criminelles et pénales c. Planchers Mistral inc., 2009 QCCQ
+                            1307, par. 72 et suiv.; Îles-de-la-Madeleine (Municipalité des) c. Duclos, 2009 QCCS 721, par. 63 et
+                            suiv., [2009] J.Q. no 3580; Gestion Paroi inc. c. Gestion Gérard Furse inc., 2012 QCCS 901, par. 95 et suiv.
+                    
+               
+                        
+                     Picard c. Pointe-Lebel (Corporation municipale du Village de), EYB 2007-120102, par. 130-131, [2007] J.Q. no 5421
+                            (C.S.).
+                    
+               
+                        
+                     Iredale c. Mont-Tremblant (Ville de), 2011 QCCS
+                            760, [2011] J.Q. no 1669, EYB 2011-186946, par. 205 (non contredit en
+                            appel sur ce point, Mont-Tremblant c. Iredale, 2013 QCCA 1348).
+                    
+               
+                        
+                     Iredale c. Stroll, 2008 QCCS 3008, par. 21.
+                        
+                    
+               
+                        
+                     St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2015
+                            QCCS 3245, par. 54-55. 
+                    
+               
+                        
+                     Mont-Tremblant c.
+                                Iredale, 2013 QCCA 1348,
+                            par. 98-102. 
+                    
+               
+                        
+                     St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2015
+                            QCCS 3245, par. 56. 
+                    
+               
+                        
+                     Gestion Paroi inc. c.
+                                Gestion Gérard Furse inc.,
+                            2012 QCCS 901, par. 182; Gestion Paroi inc. c. Gestion Gérard Furse inc., 2015 QCCS 1305, par. 425.
+                    
+            
+         
+         
+            13.  
+            
+               Autres normes reconnues
+            
+             – Il existe d’autres
+                    normes qui ont été reconnues et retenues par le MDDELCC et par les municipalités
+                    au fil des ans. Prenons à titre d’exemple les normes édictées par l’Organisation
+                    internationale de normalisation. Certaines municipalités ont effectivement
+                    utilisé ces normes, dites plus permissives, afin d’établir leurs standards en
+                    matière de bruit.
+            Dans la décision Roy c. Usinage Nado Inc., le juge
+                    Galipeau reconnaissait l’existence d’autres normes établissant les limites
+                    acceptables du bruit :
+            
+               Nous sommes en présence de deux méthodes d’évaluation du bruit, facteur de
+                    nuisance dans la communauté : celle du Ministère de l’Environnement estime que
+                    le bruit devient
+                    nuisance dès qu’il atteint 55 dB(A) en période diurne tandis que celle d’I.S.O.
+                    (ou de Montréal) fixe ce plafond à 60 dB(A).
+               
+            
+            Par contre, le juge Galipeau dans cette décision a tout de même établi sa
+                    préférence pour les normes édictées par le gouvernement québécois :
+            
+               Mais lorsque deux théories se défendent avec valeur et que leur mérite
+                    s’équivaut, il appartient au tribunal de trancher la question en accordant plus
+                    de poids à l’une qu’à l’autre et en la préférant à l’autre.
+               L’Organisation internationale de normalisation dont s’est inspiré apparemment
+                    le règlement de la Ville de Montréal recommande évidemment des normes
+                    applicables dans tous les pays et dans toutes les grandes villes. La
+                    recommandation ISO/R 1966-1971 (D-7), qui sert de guide pour le mesurage de
+                    l’acceptabilité du bruit par les collectivités, dit bien que la valeur de base
+                    servant de critère du bruit pour un pays donné est à fixer en fonction, entre
+                    autres, des habitudes de vie des gens. Il doit en être ainsi de la valeur de
+                    base servant de critère du bruit pour une région donnée ou pour une ville
+                    donnée, en ce sens qu’en l’absence de règlement précis et explicite, il faut
+                    tenir compte des diverses particularités des lieux. Dans une ville à forte
+                    concentration industrielle et dans une zone à prédominance d’industries, la
+                    volonté politique ne peut pas montrer la même exigence dans la détermination du
+                    seuil d’acceptabilité du bruit que dans une ville avec peu d’industries lourdes
+                    et dans une zone commerciale à faible concentration industrielle. Ce sont des
+                    motifs de cet ordre qui incitent le Ministère de l’Environnement à la prudence
+                    et l’empêchent d’édicter des règlements régissant le bruit à l’échelle
+                    provinciale; il préfère s’en tenir à la prohibition générale de l’article 20 de
+                    la Loi de la qualité de l’environnement, quitte à ce que ses préposés analysent
+                    et jugent chaque cas en fonction des circonstances et des normes
+                    suggérées.
+               
+                  Le tribunal croit que dans le cas d’espèce qui lui est soumis, les normes d’Environnement-Québec trouvent meilleure application que celles de l’Organisation
+                   
+                  internationale de normalisation ou celles adoptées par la Ville de Montréal. Si
+                    on peut s’attendre à ce que la métropole du Québec soit sympathique à ses
+                    industriels qui sont en nombre et fortement concentrés chez elle et permette un
+                    niveau de bruit acceptable par la communauté qui soit plus élevé qu’ailleurs, on
+                    peut comprendre que la collectivité, dans une région et dans un secteur comme
+                    celui où les parties sont situées soit moins tolérant au bruit et que les normes
+                    d’acceptabilité du bruit par cette collectivité soient moins élevées que celles
+                    de Montréal ou de toutes autres grandes villes industrielles. [Nous
+                    soulignons]
+            
+            Les tribunaux se basent sur une multitude de règlements et de limites de bruit
+                    en vigueur au Québec puisqu’il n’y en a aucun qui a été adopté spécifiquement
+                    pour encadrer l’ensemble des sources de bruit. Comme le mentionne la juge Hélène
+                    Langlois de la Cour supérieure dans l’affaire Coalition pour la protection de l’environnement du parc linéaire « Petit train du Nord », les experts proposent aux tribunaux une série de
+                    standards à utiliser pour leur paramètre dit comparatif afin de déterminer
+                    adéquatement le niveau de gêne qui pourra être occasionné par une activité
+                    récréative comme la motoneige en l’espèce :
+            
+               Les experts procèdent donc, à partir de guides, recommandations ou
+                    réglementations autres à déterminer le paramètre descripteur comparatif qui leur
+                    paraît être le plus représentatif de la gêne associée au bruit
+                        environnemental.
+               
+            
+            
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163, à
+                            la page 178, se référant au Recueil de normes 150-4 acoustique,
+                            vibrations et chocs de l’Organisation internationale de normalisation,
+                            1980.
+                    
+               
+                        
+                     Roy c. Usinage Nado Inc., EYB 1986-69409
+                            (C.S.).
+                    
+               
+                        
+                     Roy c. Usinage Nado Inc., EYB 1986-69409,
+                            par. 23 (C.S.).
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., EYB 1986-69409,
+                            par. 27-29 (C.S.).
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., EYB 1986-69409,
+                            par. 27-29 (C.S.).
+                    
+               
+                        
+                     Coalition pour la protection de l’environnement du parc linéaire « Petit train du Nord »
+                            c. Laurentides (Municipalité régionale de comté des), REJB 2004-81143, par. 257 (C.S.). À la note
+                            de bas de page 57 de cette décision, la juge citait les outils suivants
+                            dont pouvaient se servir les tribunaux pour évaluer le niveau sonore
+                            d’une activité : Règlement sur les carrières et sablières (RLRQ, c. Q-2, r. 7); Règlement sur les usines de béton bitumineux (RLRQ, c. Q-2, r. 48); Note d’instructions 98-01 du ministère de l’Environnement du Québec; Politique du ministère des Transports sur le bruit routier (1998); Règlement relatif à la qualité du milieu de travail (RLRQ, c.
+                            S-2.1, r. 11); Comité Consultatif fédéral-provincial de l’hygiène du milieu du travail – Lignes directrices nationales visant la limitation du bruit extérieur; Directives relatives au bruit communautaire (1998) de l’Organisation
+                            mondiale de la santé; Agence de protection de l’environnement des États-Unis (US
+                            EPA).
+                    
+            
+         
+         
+            14.  
+            
+               Obligation contractuelle de respecter la Note d’instructions 98-01
+            
+             – L’article 22 L.q.e. mentionne notamment
+                    que nul ne peut entreprendre l’exploitation d’une industrie quelconque,
+                    l’exercice d’une activité ou l’utilisation d’un procédé industriel s’il est
+                    susceptible d’en résulter une émission de contaminants dans l’environnement à
+                    moins d’obtenir préalablement du ministre un certificat d’autorisation. En
+                    effet, toute entreprise qui risque de causer de la nuisance par le bruit devra
+                    soumettre au MDDELCC, préalablement à l’obtention du certificat d’autorisation,
+                    une description de la nature du bruit qui sera produit et le volume de celui-ci.
+                    Les promoteurs soumettent bien souvent une étude d’impact sonore afin de
+                    transmettre à l’autorité responsable les données nécessaires à l’évaluation des
+                    conditions qui seront imposées en terme d’atténuation du bruit.
+            Le ministre peut donc inclure au certificat d’autorisation d’une entreprise ou
+                    d’une industrie des normes spécifiques à respecter. Comme le mentionne le juge
+                    Jean-Yves Lalonde de la Cour supérieure, dans l’affaire Iredale c. Mont-Tremblant, bien que la note d’instructions n’a pas force
+                    réglementaire, « […] elle peut devenir une obligation contractuelle si le
+                    ministre en exige le respect comme condition à l’émission du certificat demandé
+                        ».
+            Toute violation du certificat d’autorisation, dont les normes qui y sont
+                    édictées en matière de bruit, constituera une infraction susceptible d’être
+                    sanctionnée au terme de la Loi sur la qualité de l’environnement. Comme le mentionnait le juge Réjean Bédard de la
+                    Cour du Québec dans l’affaire Directeur des poursuites criminelles et pénales c. Planchers Mistral inc. relativement aux
+                    pouvoirs du ministre :
+            
+            
+               Il peut aussi exercer
+                    un contrôle par la délivrance d’un certificat d’autorisation émis en vertu de
+                    l’article 22 L.Q.E. Ces certificats imposent des seuils d’émission de bruit en
+                    fonction de différents critères (ex. : type de zonage). Il s’agit de normes
+                    objectivement vérifiables à l’aide d’appareils de mesure tel un sonomètre. Le
+                    certificat d’autorisation devient alors générateur d’infraction.
+               
+            
+            Fait intéressant récemment soulevé par la juge Corriveau dans l’affaire
+                        Saint-Lambert (Ville de) c.
+                        Montréal (Ville de), le droit
+                    n’est pas clair quant à la nécessité d’obtenir un certificat d’autorisation en
+                    ce qui concerne les prestations musicales dans les parcs. Ainsi : 
+            
+               En l’absence de balise claire établie dans la LQE ou la jurisprudence l’ayant
+                    appliquée, le Tribunal ne peut conclure qu’un certificat d’autorisation soit
+                    nécessaire et aurait dû être obtenu lors de l’aménagement du Parc. Selon la
+                    preuve, il n’y a pas de précédent à l’obtention de tel certificat pour des
+                    prestations musicales.
+               Le simple fait de soutenir cet argument, sans évaluer l’application aux lieux
+                    visés, n’est certes pas suffisant pour établir un droit clair en faveur de
+                        St-Lambert.
+               
+            
+            
+               
+                        
+                     Iredale c. Stroll et al., 2008 QCCS 3008,
+                            [2008] J.Q. no 6425, EYB 2008-139195, par. 21.
+                    
+               
+                        
+                     Directeur des poursuites criminelles et pénales c. Planchers Mistral inc., EYB 2009-157880, par. 69 (C.Q.).
+                    
+               
+                        
+                     St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2015
+                            QCCS 3245, par. 44-45.
+                    
+            
+         
+         
+            15.  
+            
+               Recommandations de l’OMS
+            
+             – L’Organisation
+                    mondiale de la santé (OMS), dans le guide intitulé Valeurs guides concernant le bruit nocturne en Europe, fixe le niveau sonore nocturne à 50 à 55 dB(A)
+                    (extérieur) afin de limiter les effets nocifs du bruit sur le sommeil. L’étude
+                    en question recommande par ailleurs une cible nocturne optimale à 40 dB(A)
+                        (extérieur).
+            Une affaire récente rendue par le juge Collier de la Cour supérieure reprenait
+                    un rapport de l’OMS sur le bruit dans l’environnement et les normes raisonnables
+                    pouvant être acceptables pour l’humain :
+            
+               Selon un rapport de l’Organisation mondiale de la Santé (OMS) portant sur le
+                    bruit dans l’environnement, le bruit tend à être fortement gênant pour une
+                    personne lorsqu’il est au-dessus de 55 décibels le jour, et au-dessus de 45
+                    décibels durant les heures de sommeil. Ces plafonds sont abaissés lorsque le
+                    bruit est intermittent ou comporte des basses fréquences. Notons que les bruits
+                    des réparations causés par les défendeurs (coups de marteau sur du métal, bruits
+                    d’outils pneumatiques à percussion, jets d’air sous pression, travaux de meulage
+                    rotatif à haute vitesse) sont tous intermittents.
+               
+            
+            
+               
+                        ORGANISATION MONDIALE DE LA SANTÉ,Valeurs guides concernant le bruit nocturne en Europe,
+                            2009.
+                    
+               
+                        
+                     Hilinski c. Robert, 2016 QCCS 574, par.
+                            81.
+                    
+            
+         
+         
+            16.  
+            
+               Normes de la Commission européenne (ci-après « la CE »)
+            
+             – À l’échelle internationale, nous nous limitons à rappeler
+                    l’adoption de la Directive 2002/49/CE du Parlement européen et du Conseil du 25 juin 2002 relative à
+                    l’évaluation et à la gestion du bruit dans l’environnement.
+                        La Directive sur le bruit ambiant
+                    visait à exiger des États membres qu’ils déterminent l’exposition au bruit
+                    ambiant au moyen d’une cartographie stratégique du bruit et qu’ils élaborent des
+                    plans d’action de réduction du bruit pour les principales infrastructures de
+                    transport (routes, voies ferrées, aéroports) et les agglomérations de plus de
+                    100 000 habitants.
+            Le premier exercice européen de cartographie réalisé en 2007 ayant révélé des
+                    différences considérables entre les méthodes d’évaluation, la collecte et la
+                    qualité des données, de nouvelles méthodes communes d’évaluation du bruit
+                    viennent d’être publiées le 14 septembre 2012. Ces nouvelles méthodes – appelées
+                    méthodes communes d’évaluation du bruit (CNOSSOS-EU) – ont été élaborées par le
+                    Centre commun de recherche (CCR) de la CE. Elles évaluent le bruit causé par le
+                    trafic routier, ferroviaire et aérien, et par l’industrie. Elles fourniront des
+                    données cohérentes et comparables sur les niveaux de bruit auxquels les
+                    Européens sont exposés. Les États membres devront commencer à utiliser ces
+                    nouvelles méthodes pour établir la prochaine cartographie européenne stratégique
+                    du bruit en 2017.
+            
+               
+                        &lt;http://ec.europa.eu/environment/noise/directive.htm&gt;.
+                    
+               
+                        &lt;http://ihcp.jrc.ec.europa.eu/our_activities/public-health/env_noise/new-report-by-jrc-common-framework-to-assess-noise&gt;.
+                    
+            
+         
+      
+   
+   
+      
+         A.
+          Autorités provinciales
+         
+            17.  
+            
+               Le bruit à titre de contaminant
+            
+             – La Loi sur la qualité de l’environnement
+                    prohibe, dans une certaine mesure, l’exposition au bruit qui porterait atteinte
+                    à la qualité de l’environnement. En l’espèce, puisqu’il n’existe au Québec
+                    aucune réglementation portant sur contrôle des bruits, l’article 20 L.q.e., tel
+                    que le mentionne la Cour du Québec dans l’affaire Directeur des poursuites criminelles et pénales c. Planchers Mistral inc. sous la plume du juge
+                    Réjean Bédard, crée une prohibition générale de polluer par le bruit.
+            L’article 20, pierre angulaire de la Loi sur la qualité de l’environnement
+               , prohibe l’émission d’un
+                    contaminant dans l’environnement qui risque de porter atteinte à la vie, à la
+                    santé, à la sécurité, au bien-être ou au confort de l’être humain :
+            
+               20. Nul ne doit émettre, déposer, dégager ou rejeter ni permettre l’émission,
+                    le dépôt, le dégagement ou le rejet dans l’environnement d’un contaminant
+                    au-delà de la quantité ou de la concentration prévue par règlement du
+                    gouvernement.
+               La même prohibition s’applique à l’émission, au dépôt, au dégagement ou au
+                    rejet de tout contaminant, dont la présence dans l’environnement est prohibée
+                    par règlement du gouvernement ou est susceptible de porter atteinte à la vie, à
+                    la santé, à la sécurité, au bien-être ou au confort de l’être humain, de causer
+                    du dommage ou de porter autrement préjudice à la qualité du sol, à la
+                    végétation, à la faune ou aux biens.
+            
+            Comme le rappelle Denis Langlois, en l’absence de réglementation, nous
+                    devons nous en remettre à la troisième prohibition de l’article 20 dans les
+                    situations où le bruit est «
+                    susceptible de porter
+                    atteinte à la vie, à la santé, à la sécurité, au bien-être ou au confort de
+                    l’être humain ». La récente décision de la Cour d’appel du Québec dans
+                    l’affaire Courses automobiles Mont-Tremblant inc. c. Iredale
+                    confirme cette absence de réglementation provinciale et confirme
+                    l’utilisation de la prohibition du troisième volet de l’article 20
+                        L.q.e. :
+            
+               [96] Bref, le gouvernement n’ayant adopté aucun règlement sur le bruit de
+                    nature à viser la situation de l’espèce, ni l’un ni l’autre des deux premiers
+                    volets de l’article 20 L.q.e. n’est
+                    applicable ou même simplement pertinent ici.
+               [97] Mais l’article 20 L.q.e.
+                    comporte un troisième volet : nul ne peut émettre ou rejeter dans
+                    l’environnement un contaminant « susceptible de porter atteinte à la vie, à la
+                    santé, à la sécurité, au bien-être ou au confort de l’être humain, de causer du
+                    dommage ou de porter autrement préjudice à la qualité du sol, à la végétation, à
+                    la faune ou aux biens ». En l’absence de tout règlement du gouvernement
+                    applicable à la situation, il ne reste donc que cette norme et c’est à celle-ci
+                    qu’on doit se rapporter afin de déterminer si les règlements de la Ville sont
+                    conciliables ou non avec la Loi sur la qualité de l’environnement.
+            
+            Le législateur a statué que le « son » était en soi un contaminant :
+            
+               Art. 1 (5o) « contaminant » :
+                    une matière solide, liquide ou gazeuse, un micro-organisme, un son, une
+                    vibration, un rayonnement, une chaleur, une odeur, une radiation ou toute
+                    combinaison de l’un ou l’autre susceptible d’altérer de quelque manière la
+                    qualité de l’environnement;
+            
+            Par exemple, dans l’affaire Directeur des poursuites criminelles et pénales c. Planchers Mistral inc., le juge Bédard
+                    soulignait que la loi était claire à cet effet et qu’un son susceptible de
+                    causer préjudice à la qualité de l’environnement d’un individu de quelque
+                    manière que ce soit, constituait un contaminant.
+            Dans l’affaire Roy c. Usinage Nado Inc.
+                rendue en
+                    1986 par le juge Louis-Philippe Galipeau de la Cour supérieure, les demandeurs
+                    se plaignaient du bruit excessif découlant des opérations d’une usine
+                    d’estampage. Outre les conséquences sur leur santé, les demandeurs déclaraient
+                    qu’un tel bruit rendait leur résidence inhabitable, leur causant ainsi un tort
+                    sérieux et irréparable. Malgré les mises en demeure signifiées
+                    à la défenderesse, celle-ci refusait d’obtempérer et de s’assujettir aux normes
+                    établies par le ministère.
+            
+               
+                        
+                     Directeur des poursuites criminelles et pénales c. Planchers Mistral inc., EYB 2009-157880, par. 68 (C.Q.).
+                    
+               
+                        
+                     Québec (Procureure générale) c. Compagnie pétrolière Impériale limitée, REJB 2001-25281, par. 65
+                            (C.A.).
+                    
+               
+                        Denis LANGLOIS, « Le bruit et la fureur : les réglementations municipale et provinciale en matière de bruit », dans Service de la formation permanente, Barreau du Québec, vol. 33,Développements récents en droit municipal (1992), Cowansville, Éditions Yvon Blais, 1992, p. 163, à
+                            la page 186.
+                    
+               
+                        Expression reprise par les tribunaux dans l’évaluation de niveaux sonores. Voir par exemple les propos du juge Baudouin dans l’affaireGagné c. Bouliane, J.E. 91-552, p. 13 (C.A.).
+                            Voir également St-Lambert (Ville de) c. Montréal (Ville de), 2015 QCCS 3245, par. 59.
+                    
+               
+                        
+                     Courses automobiles Mont-Tremblant inc. c. Iredale, 2013 QCCA 1348, par. 96 et 97. Voir également
+                                St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2015
+                            QCCS 3245, par. 55.
+                    
+               
+                        
+                     Directeur des poursuites criminelles et pénales c. Planchers Mistral inc., EYB 2009-157880, par. 65 et 66
+                            (C.Q.).
+                    
+               
+                        EYB 1986-69409 (C.S.).
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., EYB 1986-69409,
+                            par. 5 (C.S.).
+                    
+            
+         
+         
+            18.  
+            
+               Absence de réglementation québécoise sur le bruit
+            
+             – Comme nous l’avons souligné, il n’existe aucune
+                    réglementation en matière de bruit au Québec, comme l’a également rappelé le
+                    juge Galipeau dans l’affaire Usinage Nado Inc.
+               . Le législateur a plutôt choisi d’édicter « des directives à
+                    ses officiers et inspecteurs leur permettant d’établir ou de faire appel à
+                    certaines normes reconnues concernant le seuil d’acceptabilité du bruit et des
+                    vibrations occasionnées par les opérations de certaines industries à des
+                    périodes données de la journée ».
+            Dans cette affaire, le juge Galipeau a confirmé que le bruit excessif produit
+                    par la défenderesse constituait un contaminant au sens de l’article 1(5)
+                        L.q.e.. De plus, en l’espèce ce bruit portait atteinte « sinon à la
+                    vie du moins et dans une certaine mesure à la santé de la demanderesse et très
+                    certainement au bien-être et au confort des demandeurs »,
+                    contrevenant ainsi à l’article 20 L.q.e. Le juge a ordonné l’arrêt « absolu » de
+                    toutes les opérations de l’usine, car elles portaient atteinte au droit à la
+                    qualité de l’environnement des demandeurs. Aucune opération ne serait donc
+                    tolérée tant et aussi longtemps que les niveaux de bruit émis ne
+                    correspondraient pas aux normes établies de 55 dB le jour et 50 dB la
+                    nuit.
+            Dans l’affaire Sorel-Tracy (Ville) c.
+                        Gestion Marc André Lafrance inc., il était question d’activité de démantèlement de deux
+                    navires et de la récupération du métal sur le quai Richelieu. La ville de
+                    Sorel-Tracy demandait au tribunal de reconduire une ordonnance afin que les
+                    défenderesses se conforment aux règlements de zonage et de nuisance. La juge
+                    Pepita G. Capriolo de la Cour supérieure devait également qualifier ce bruit de
+                    « contaminant » au sens de l’article 20 L.q.e.
+            Dans l’affaire Gagné c. Sablières Laurentiennes ltée
+               , la Cour
+                    d’appel sous la plume du juge Baudouin reconnaissait et précisait les notions de
+                    « bien-être et de confort » de l’être humain tel qu’édictées à l’article 20
+                    L.q.e :
+            
+               Nous ne sommes évidemment pas ici en présence d’une contravention à une norme
+                    objectivement fixée (par exemple, de tant de décibels). Le « bien-être » et le «
+                    confort » d’un être humain sont des concepts relatifs, flexibles, susceptibles
+                    de varier dans le temps, dans l’espace, selon l’état même de la personne qui
+                    invoque le respect de ce droit et diverses circonstances. Ils exigent donc pour
+                    déterminer s’il y a ou non violation de la loi, plus qu’une simple constatation.
+                    Ils nécessitent une évaluation et une appréciation. […].
+               
+            
+            Les appelants dans cette affaire reprochaient à Sablières Laurentiennes Ltée
+                exploitant une carrière,
+                    une usine de béton et une usine de béton bitumineux de faire du bruit et de
+                    produire de la poussière de façon excessive. De par ces nuisances et leur
+                    contravention à la Loi sur la qualité de l’environnement, les demanderesses considéraient être victimes
+                    d’un préjudice sérieux et demandaient à la Cour une injonction
+                    permanente.
+            
+            Bref, de façon
+                    généralisée et contemporaine, les tribunaux ont reconnu que le bruit
+                    pouvait constituer un contaminant dans le cas où celui-ci a des répercussions
+                    négatives sur la qualité de l’environnement et sur la santé des
+                    individus.
+            
+               
+                        
+                     Roy c. Usinage Nado Inc., EYB 1986-69409,
+                            par. 9 (C.S.). Sur le sujet de l’absence de réglementation sur le bruit
+                            au Québec, voir Marie-Claude BELLEMARE et Julie FORTIER, « La
+                            réglementation sur le bruit au Québec : réflexion sur les normes
+                            applicables », dans Service de la formation continue, Barreau du Québec,
+                                Développements récents en droit de l’environnement (2015), Cowansville, Éditions Yvon Blais,
+                            2015, p. 4, EYB2015DEV2234, référant au texte de Robert DAIGNEAULT et
+                            Martin PAQUET, L’environnement au Québec, Brossard, Publications CCH, 1994, feuilles
+                            mobiles, à jour en septembre 2013, p. 5, 304.
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., EYB 1986-69409,
+                            par. 10 (C.S.). Au paragraphe 11 de la décision, le juge cite
+                            Environnement-Québec qui a établi des normes pour les sources fixes de
+                            bruit tel que le propose l’étude déposée en preuve par l’ingénieur du
+                            gouvernement.
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., EYB 1986-69409,
+                            par. 31 (C.S.). Voir l’interprétation de la Cour d’appel du Québec dans
+                            l’affaire Courses automobiles Mont-Tremblant inc.c. Iredale, 2013 QCCA 1348, par. 99, où il est question du
+                            bruit dit « excessif » et de l’évaluation qui doit être faite du
+                            contexte de l’émission de ce bruit et de son intensité dans pareil
+                            contexte.
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., EYB 1986-69409,
+                            par. 31 (C.S.).
+                    
+               
+                        REJB 2002-32317 (C.S.).
+                    
+               
+                        
+                     Sorel-Tracy (Ville) c.
+                                Gestion Marc André Lafrance inc., REJB 2002-32317, par. 3 et 4 (C.S.).
+                    
+               
+                        EYB 1991-63754 (C.A.).
+                    
+               
+                        
+                     Gagné c. Sablières Laurentiennes ltée, EYB
+                            1991-63754, par. 31 (C.A.).
+                    
+               
+                        
+                     Gagné c. Sablières Laurentiennes ltée, EYB
+                            1991-63754 (C.A.). Voir également au même effet : Gestion Paroi inc. c. Gestion Gérard Furse inc., EYB
+                            2012-203570, par. 95, [2012] J.Q. no 2037 (C.S.).
+                    
+               
+                        
+                     Gestion Paroi inc. c.
+                                Gestion Gérard Furse inc.,
+                            EYB 2012-203570, par. 95, [2012] J.Q. no 2037 (C.S.); Gestion Paroi inc. c. Gestion Gérard Furse inc., 2015 QCCS
+                            1305, par. 426. Voir également l’affaire Îles-de-la-Madeleine (Municipalité de) c. Duclos, 2009 QCCS 721, EYB
+                            2009-157158.
+                    
+            
+         
+         
+            19.  
+            
+               Recours possibles à entreprendre en vertu de la
+                        Loi sur la qualité de l’environnement
+            
+             – En vertu de l’article 19.1 L.q.e., toute
+                    personne a droit à la qualité de l’environnement, à sa protection et à la
+                    sauvegarde des espèces vivantes qui y habitent. Rappelons qu’au terme des
+                    articles 19.2 et 19.3 L.q.e., c’est en vertu de l’injonction que toute personne,
+                    incluant les municipalités, pourront faire une demande afin de faire cesser la
+                    violation pouvant porter atteinte à leur droit garanti par l’article 19.1
+                    L.q.e.
+            Les recours entrepris pour contrer le bruit excessif se fondent régulièrement
+                    sur des requêtes en injonction. 
+            Au stade interlocutoire toutefois, l’absence de normes de bruit peut rendre le
+                    droit moins clair, obligeant une preuve de la balance des inconvénients, et ce,
+                    malgré une expertise qui aurait allégué un risque pour la santé, le bien-être ou
+                    le confort des citoyens, comme l’a rappelé la Cour dans l’affaire Ville de St-Lambert
+               .
+            Ce type de recours s’est révélé efficace, notamment pour faire « cesser
+                    immédiatement et de façon absolue les opérations » d’un atelier d’usinage.
+                    L’action en injonction fut également accordée dans le cas d’un silo pour faire
+                    sécher le maïs et d’un sentier de motoneige. Dans l’affaire Brissette c. Pépin, les activités reprochées étaient non seulement nuisibles
+                    pour le voisinage, mais elles étaient également interdites en vertu du zonage
+                    municipal. La Cour supérieure a accordé une injonction permanente afin de faire
+                    « cesser immédiatement et définitivement l’exploitation d’un site de matières
+                    résiduelles, d’entreposer, de transporter, de faire transporter, trier, recycler
+                    ou autrement utiliser telles matières résiduelles, contaminants, polluants et de
+                    les entreposer, ainsi que de cesser l’exploitation et l’usage d’une piste de
+                    moto-cross, à l’exception d’événements particuliers annuels ou biannuels sur les
+                    lots ».
+            Dans un autre litige, la Cour d’appel a apporté des correctifs à une décision
+                    de la Cour supérieure qui exigeait l’établissement d’une zone tampon et qui
+                    permettait au demandeur d’ériger lui-même cette zone si l’entreprise de
+                    restauration n’obtempérait pas : « La Cour estime toutefois que
+                    l’autorisation donnée à l’intimé de procéder lui-même aux travaux, à défaut par
+                    l’appelant d’y procéder, n’a pas, en l’espèce, d’assise juridique. Il y aura
+                    donc lieu de biffer les deux paragraphes du dispositif qui en traitent.
+                        »
+            
+            Les tribunaux ont également imposé comme ordonnance des mesures pour atténuer
+                    le bruit et réduire les inconvénients jugés anormaux, telles des restrictions
+                    partielles aux activités d’une épicerie ou l’imposition d’heures d’opération
+                    limitées à une entreprise de débosselage. Dans le cas d’une
+                    thermopompe résidentielle, la Cour supérieure du Québec a ordonné
+                    aux défendeurs d’effectuer à leur choix l’une des trois opérations suivantes : «
+                    l’installation d’un silencieux à la thermopompe de la piscine; le déplacement de
+                    celle-ci à un endroit suffisamment éloigné de la ligne séparative des lots des
+                    parties pour diminuer le bruit qui se propage sur le terrain et dans la
+                    résidence des défendeurs; l’isolation adéquate de celle-ci. »
+            
+            Il importe toutefois de souligner que le recours en injonction de la Loi sur la qualité de l’environnement se
+                    limite aux cas où il y a violation à de la loi ou non-respect des autorisations
+                    accordées, comme le confirme expressément l’article 19.7 L.q.e. Ainsi, les
+                    tribunaux s’abstiendront de prononcer une injonction à l’encontre d’une
+                    entreprise qui opère en conformité avec la loi et ses autorisations. C’est dans
+                    cette optique que la requête de citoyens de St-Cyrille de Wendover fut rejetée.
+                    Ceux-ci alléguaient subir des dommages considérables résultant de la présence
+                    d’une sablière qui opérait selon un certificat d’autorisation du MDDELCC. Les
+                    demandeurs dénonçaient la croissance importante des activités de la sablière, ce
+                    qui avait pour résultat de décupler les inconvénients pour eux. Le bruit
+                    infernal, les vibrations, la poussière affectaient leur bien-être, troublaient
+                    gravement la qualité de leur environnement et leur droit à la tranquillité, en
+                    plus de détériorer leurs résidences. Or, la Cour a estimé que le Règlement sur les carrières et sablières
+                autorisait l’entreprise à dépasser son
+                    taux annuel de production sans contrevenir à son certificat d’autorisation
+                    :
+            
+               Dans les circonstances, on ne peut dire que l’intimée a agi à l’encontre de la
+                    loi (au sens large), ni qu’elle a violé les conditions d’opération auxquelles
+                    elle était tenue. Elle était autorisée à agir comme elle l’a fait, du moins en
+                    vertu d’une réglementation qui n’a pas été attaquée. Elle pouvait ainsi,
+                    étonnamment, exploiter sa carrière pour plus du double qu’elle devait le faire à
+                    l’origine et faire circuler plus de quatre camions à l’heure (cela n’a même pas
+                    été prévu dans le certificat).
+               
+            
+            
+            Si tel est le
+                    raisonnement que commande l’injonction particulière de la Loi sur la qualité de l’environnement, il en
+                    va autrement de l’injonction de droit commun qui pourrait s’appliquer à tout
+                    litige reposant non pas sur une violation de la loi, mais de l’article 976
+                    C.c.Q., comme nous aurons l’occasion de le souligner.
+            Il convient enfin de souligner qu’une municipalité voisine a, au terme de
+                    l’article 19.3 L.q.e., l’intérêt pour agir lorsque la source même de la nuisance
+                    par le bruit ne se trouve pas sur son territoire. Dans l’affaire St-Lambert (Ville de) c. Montréal (Ville de), la juge Corriveau
+                    mentionne ceci : 
+            
+               La lecture de l’article 19.3 LQE suggère que seul le Procureur général ou un
+                    citoyen peut entamer une telle procédure. Pourtant, en matière environnementale
+                    et contamination, il semble illogique d’interdire à une municipalité ou une
+                    ville de se plaindre d’une contravention qui origine du territoire d’une autre
+                    municipalité, alors qu’elle peut avoir des répercussions sur son propre
+                    territoire.
+               Dans l’arrêt Malartic (Ville de) c.
+                        Procureur général du Québec, la
+                    Cour d’appel décide qu’une contravention à l’article 22 LQE (soit l’absence d’un
+                    certificat d’autorisation émis par le Ministère de l’Environnement) peut être
+                    soulevée, alors qu’elle provient d’un autre territoire.
+               Le Tribunal est d’avis que St-Lambert a établi avoir un droit apparent à
+                    instituer la procédure entamée.
+               
+            
+            Toujours dans cette même affaire, la Cour supérieure, dans un jugement sur la
+                    requête en irrecevabilité, a réitéré que la nuisance en tant que telle devait
+                    s’évaluer à l’endroit de l’atteinte, c’est-à-dire là où les citoyens de
+                    St-Lambert se plaignaient du bruit provenant de la rive montréalaise : 
+            
+               De ce qui précède, le Tribunal est d’avis que la LQE demande une interprétation
+                    qui favorise la protection de l’environnement. L’interdiction de polluer sous
+                    l’article 20 de la Loi et de ne pas nuire au bien-être et au confort de l’être
+                    humain doit s’apprécier à l’endroit de l’atteinte, c’est-à-dire dans le cas
+                    présent sur le territoire de Saint-Lambert.
+               
+            
+            
+               
+                        
+                     St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2015
+                            QCCS 3245, par. 61 et suiv.
+                    
+               
+                        
+                     Roy c. Usinage Nado inc., J.E. 86-186, par.
+                            42 (C.S.).
+                    
+               
+                        
+                     Kerr c. Eastwood, [1995] J.Q. no 3296, par.
+                            46 (C.S.).
+                    
+               
+                        
+                     Coalition pour la protection de l’environnement du parc linéaire « Petit Train du Nord »
+                            c. Laurentides (Municipalité régionale de comté des), EYB 2004-5473, par. 48 (C.S.).
+                    
+               
+                        
+                     Brissette c. Pépin, 2006 QCCS 5336, par. 170
+                            (injonction suspendue par la Cour d’appel parce que la cause était en
+                            appel, 2007 QCCA 529; appel rejeté, EYB 2008-132809 (C.A.)).
+                    
+               
+                        
+                     Tessier c. Dion, J.E. 2000-1606 (C.S.).
+                    
+               
+                        
+                     Tessier c. Dion, REJB 2003-37849, par. 6
+                            (C.A.).
+                    
+               
+                        
+                     Sévigny c. Alimentation G.F. Robin inc., J.E.
+                            99-584, par. 116 et suiv. (C.S.).
+                    
+               
+                        
+                     Lamothe c. Martin, EYB 1992-56519, par. 11
+                            (C.A.).
+                    
+               
+                        
+                     Daigle c. Caron, 2006 QCCS 2605.
+                    
+               
+                        
+                     Daigle c. Caron, 2006 QCCS 2605, par.
+                            42.
+                    
+               
+                        RLRQ, c. Q-2, r. 7, art. 2.
+                    
+               
+                        
+                     Milot c. 3
+                     103-6965 Québec inc., J.E. 2000-1830, par. 62
+                            (C.S.).
+                    
+               
+                        
+                     St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2015
+                            QCCS 3245, par. 34-36. 
+                    
+               
+                        
+                     St-Lambert (Ville de) c.
+                                Montréal (Ville de), 2016
+                            QCCS 121, par. 48. Voir également Lorianne CHASLES BÉLEC, « Commentaire
+                            sur la décision St-Lambert (Ville de) c. Montréal (Ville de) – La saga du bruit entre Montréal et Saint-Lambert »,
+                                Repères, mars 2016,
+                            EYB2016REP1878; et Chloé D’ASTOUS, « Commentaire sur la décision
+                                St-Lambert (Ville de) c.
+                                Montréal (Ville de) –
+                            Analyse des critères de l’émission d’une ordonnance de sauvegarde en
+                            matière de bruit lorsqu’il n’y a pas de norme applicable à cet effet »,
+                                Repères, décembre 2015,
+                            EYB2015REP1821.
+                    
+            
+         
+         
+            20.  
+            
+               Pouvoir du ministre de surveiller, de contrôler et de réglementer le bruit
+            
+             – Force est de constater que le gouvernement
+                    du Québec possède par ailleurs tous les pouvoirs pour réglementer le bruit sur
+                    son territoire, tel qu’il ressort des articles 94 et 95 L.q.e., comme l’ont
+                    confirmé les tribunaux.
+            Par contre, le gouvernement québécois a décidé, malgré la compétence pour ce
+                    faire, de ne pas réglementer lui-même le bruit, s’en remettant à la compétence
+                    des municipalités, comme nous le verrons.
+            Le juge Gagnon de la Cour supérieure dans l’affaire Simoneau c. Marion
+                mentionnait spécifiquement ce pouvoir du
+                    ministre, mais constatait par ailleurs le silence de la Loi sur la qualité de l’environnement quant
+                    au bruit :
+            
+               En effet, la Loi sur la qualité de l’environnement est passablement silencieuse
+                    en ce qui a trait spécifiquement au bruit, se contentant essentiellement
+                    d’habiliter le gouvernement à adopter des règlements pour prohiber ou limiter
+                    les bruits abusifs ou inutiles, pour déterminer les conditions et modalités
+                    d’utilisation de tout véhicule, moteur, pièce de machinerie, instrument ou
+                    équipement générateur de bruit et pour prescrire des normes relatives à
+                    l’intensité du bruit.
+               
+            
+            
+               
+                        Art. 94. Le ministre a pour fonctions de surveiller et de contrôler le bruit. À cette fin il peut construire, ériger, installer et exploiter tout système ou tout équipement nécessaire sur le territoire de toute municipalité. Il peut également acquérir de gré à gré ou par expropriation tout immeuble requis et conclure toute entente avec toute personne ou municipalité. Art. 95. Le gouvernement peut adopter des règlements pour : a) prohiber ou limiter les bruits abusifs ou inutiles à l’intérieur ou à l’extérieur de tout édifice; b) déterminer les conditions et modalités d’utilisation de tout véhicule, moteur, pièce de machinerie, instrument ou équipement générateur de bruit; c) prescrire des normes relatives à l’intensité du bruit.
+                    
+               
+                        
+                     Québec (Procureure générale) c. Compagnie pétrolière Impériale limitée, REJB 2001-25281, par. 66
+                            (C.A.); Courses automobiles Mont-Tremblant inc.c. Iredale, 2013 QCCA 1348, par. 39.
+                    
+               
+                        
+                     Loi sur les compétences municipales, RLRQ, c. C-47.1.
+                    
+               
+                        EYB 2005-93906, par. 65 (C.S.).
+                    
+               
+                        
+                     Simoneau c. Marion, EYB 2005-93906, par. 65
+                            (C.S.). Voir également : Victoriaville (Ville) c. Hélie, REJB 1997-01587, par. 8 (C.M.).
+                    
+            
+         
+         
+            21.  
+            
+               Règlements provinciaux prohibant le bruit pour certains usages particuliers
+            
+             – Le gouvernement du Québec a adopté deux
+                    règlements référant à des normes de bruit. En effet, dans le Règlement sur les carrières et sablières
+               , les industries qui y sont assujetties
+                    doivent limiter leur émission de bruit aux normes suivantes :
+            
+               
+                  12. Exception pour le bruit : Une nouvelle carrière ou sablière peut néanmoins
+                    être établie à une distance inférieure aux normes prescrites selon les
+                    articles 10 et 11 si l’exploitant soumet à l’appui de sa demande une évaluation
+                    du niveau maximum de bruit qui sera émis dans l’environnement par l’exploitation
+                    de la nouvelle carrière ou de la nouvelle sablière et si le bruit évalué aux
+                    limites de toute zone résidentielle, commerciale ou mixte visée à l’article 10
+                    et à toute construction ou immeuble visé à l’article 11 n’excède pas 40 dBA
+                    entre 18 h et 6 h et 45 dBA entre 6 h et 18 h.
+               Dans le cas où le ministre a accordé un certificat d’autorisation pour une
+                    carrière ou sablière suite à une demande appuyée d’une évaluation de bruit
+                    conformément au présent article, l’exploitant de la carrière ou sablière doit,
+                    tout au cours de l’exploitation de celle-ci, respecter les normes de bruit
+                    établies au premier alinéa.
+            
+            Les usines de béton bitumineux doivent, pour leur part, s’en remettre au
+                        Règlement sur les usines de béton bitumineux
+                qui dispose :
+            
+               
+                  10. Bruit : Une usine de béton
+                    bitumineux ainsi que les lieux de chargement, de déchargement et de dépôt des
+                    agrégats utilisés pour les besoins d’une telle usine peuvent néanmoins être
+                    placés à une distance inférieure aux normes prescrites par les articles 8 et 9
+                    si l’exploitant soumet à l’appui de sa demande une évaluation du niveau maximal
+                    de bruit qui sera émis dans l’environnement par l’exploitation de cette usine de
+                    béton bitumineux et si le bruit évalué aux limites de toute zone résidentielle,
+                    commerciale ou mixte visée à l’article 8 ou à toute construction ou immeuble
+                    visé à l’article 9 n’excède pas 40 dBA entre 18 h et 6 h et 45 dBA entre 6 h et
+                    18 h. Ces évaluations ne doivent pas comprendre le bruit émis par les camions de
+                    transport de béton bitumineux.
+               Dans le cas où le ministre a accordé un certificat d’autorisation pour une
+                    usine de béton bitumineux sur la foi d’une demande appuyée d’une évaluation de
+                    bruit conforme au présent article, l’exploitant de l’usine de béton bitumineux
+                    doit respecter les normes de bruit établies au premier alinéa pendant toute la
+                    durée de l’exploitation de cette usine.
+            
+            
+               
+                        RLRQ, c. Q-2, r. 7.
+                    
+               
+                        RLRQ, c. Q-2, r. 48.
+                    
+            
+         
+         
+            22.  
+            
+               Contrôle sur le bruit routier
+            
+             – Un autre
+                    ministère possède des pouvoirs en matière de réglementation du bruit et il
+                    s’agit du ministère des Transports du Québec. Le ministère élaborait en 1998,
+                    grâce à son Service de l’environnement, une Politique sur le bruit routier
+                dans le but de répondre à
+                    une augmentation des plaintes à cet effet. Cette politique est un outil de mise
+                    en œuvre d’une politique encore plus globale soit la Politique sur l’environnement et du ministère des Transports du Québec
+                qui elle s’inscrivait dans un contexte
+                    encore plus large d’amélioration de la qualité de l’environnement et de la
+                    qualité de vie des Québécois.
+            L’objectif de la politique en question était d’instaurer des mesures concrètes
+                    visant à prévenir la pollution sonore et à corriger par la suite les situations
+                    qualifiées de problématiques lorsqu’il y avait notamment des activités humaines
+                    extérieures à proximité du réseau routier provincial. Cette approche devait se
+                    faire de concert avec les municipalités à l’aide de schémas d’aménagement du
+                    territoire et des différentes dispositions à la Loi sur l’aménagement et l’urbanisme
+               .
+            Le MTQ planifie son intervention de deux façons soit, d’une part, par une
+                    approche de planification intégrée et, d’autre part, par une approche
+                    corrective. L’approche de planification intégrée consiste essentiellement à «
+                    prendre les mesures nécessaires pour prévenir la problématique de pollution
+                    sonore » et l’approche corrective vise quant à elle l’instauration de
+                    mesures visant à corriger les problèmes de pollution sonore. En vertu de cette
+                    politique, les municipalités locales ont la responsabilité d’assurer un climat
+                    sonore acceptable lors des nouveaux projets de construction résidentielle,
+                    institutionnelle ou de projets à caractère récréatif. Les coûts d’atténuation
+                    sont assumés par la municipalité ou leurs partenaires.
+            La solution la plus utilisée pour atténuer le bruit reste l’installation de
+                    murs le long des voies routières.
+            Il importe de noter que la Loi sur l’aménagement et l’urbanisme oblige les municipalités régionales de comtés
+                    (MRC) à déterminer « les voies de circulation dont la présence, actuelle ou
+                    projetée, dans un lieu fait en sorte que l’occupation du sol à proximité de ce
+                    lieu est soumise à des contraintes majeures pour des raisons de sécurité
+                    publique, de santé publique ou de bien-être général », ce qui
+                    inclut les questions de bruit. De plus, les MRC doivent établir des normes
+                    minimales dans les zones de contraintes afin d’obliger les municipalités qui
+                    font partie de leur territoire à adopter des dispositions réglementaires en
+                    matière de zonage et de lotissement afin d’atténuer les impacts sonores de la
+                    circulation routière :
+            
+               Le MTQ considère qu’une voie de circulation pose une contrainte majeure à
+                    l’occupation du sol lorsque l’impact sonore, découlant de sa présence, dépasse
+                    les limites de ce qui est acceptable, soit un niveau de bruit équivalent de 55
+                    dBA (décibels) sur 24 heures pour les zones sensibles au bruit, c’est-à-dire les
+                    zones résidentielles, institutionnelles et récréatives.
+               
+            
+            La Politique sur l’environnement du
+                    MTQ fut récemment citée et analysée par la Cour supérieure du Québec puis par la
+                    Cour d’appel dans le recours collectif Carrier c. Québec (Procureur général)
+               . Dans cette affaire, il était question
+                    de l’immunité de l’État au stade de l’autorisation du recours collectif. On
+                    reprochait notamment au ministère les troubles de voisinage causés par le bruit
+                    excessif de la circulation automobile sur l’autoroute Laurentienne. Comme le
+                    mentionnait la Cour d’appel, en autorisant l’exercice du recours collectif, le
+                    ministre est le gestionnaire de la section de l’autoroute visée par le recours
+                    collectif, mais il est également considéré comme un voisin au sens de l’article
+                    976 C.c.Q. portant sur les troubles de voisinages du Code civil du Québec :
+            
+               Selon l’article 6 de la Loi sur la voirie, le ministre, à titre de gestionnaire, exerce tous les
+                    droits d’un propriétaire. Il « est investi des pouvoirs nécessaires à ces fins
+                    et assume l’obligation y afférente » [je
+                    souligne]. La preuve au dossier était suffisante au stade de l’autorisation pour
+                    convenir de manière prima facie que
+                    l’intimé est un « voisin » au sens où l’entend l’article 976 C.c.Q.
+               
+            
+            
+            Dans cette affaire,
+                    la preuve déposée a permis de conclure qu’il y avait prima facie commission d’une faute
+                    extracontractuelle de la part du ministère des Transports du Québec notamment en
+                    ce qu’il avait connaissance des nombreux inconvénients qui étaient vécus par les
+                    membres du groupe du recours collectif. Le ministère aurait de plus été
+                    négligent en omettant de mettre en œuvre des mesures d’atténuation du bruit tel
+                    qu’il était possible de le faire.
+            
+               
+                        QUÉBEC (Ministère des Transports),Politique sur le bruit routier, préparée par le Service
+                            de l’environnement et éditée par la Direction des communications du
+                            ministère des Transports du Québec, mars 1998.
+                    
+               
+                        QUÉBEC (Ministère des Transports),La politique sur l’environnement du ministère des Transports du Québec, 1992.
+                    
+               
+                        RLRQ, c. A-19.1.
+                    
+               
+                        QUÉBEC (Ministère des Transports),La politique sur l’environnement du ministère des Transports du Québec, 1998, p. 2.
+                    
+               
+                        QUÉBEC (Ministère des Transports),Écrans antibruit, Bulletin d’information technique, vol.
+                            11, no 3, avril 2006, p.
+                            1.
+                    
+               
+                        
+                     Loi sur l’aménagement et l’urbanisme, RLRQ, c. A-19.1, art. 5(5).
+                    
+               
+                        QUÉBEC (Ministère des Transports),Aménagement du territoire et environnement, Direction du
+                            Bas-Saint-Laurent–Gaspésie–Îles-de-la-Madeleine, Québec, 2001, p.
+                            23.
+                    
+               
+                        2011 QCCA 1231.
+                    
+               
+                        
+                     Carrier c. Québec (Procureur général), 2011
+                            QCCA 1231, par. 47.
+                    
+            
+         
+      
+      
+         B.
+          Autorités municipales
+         
+            23.  
+            
+               Avantage des municipalités
+            
+             – En ce qui
+                    concerne la nuisance liée au bruit, le juge Lalonde de la Cour supérieure du
+                    Québec soulignait récemment dans l’affaire Iredale c. Mont-Tremblant (Ville de) que « les tribunaux s’entendent pour dire qu’en matière
+                    réglementaire relevant de leur compétence attributive, les autorités municipales
+                    [étaient] les mieux placées pour décider de la justesse des normes
+                    réglementaires applicables à la réalité de leur territoire ».
+            Rappelons que l’article 124 L.q.e. permet de donner préséance à un règlement
+                    municipal dans le cas où le règlement en question a été approuvé par le ministre
+                    de l’Environnement :
+            
+               124. […]
+               Ces règlements, de même que les normes fixées en application du deuxième alinéa
+                    de l’article 31.5, prévalent sur tout règlement municipal portant sur le même
+                    objet, à moins que le règlement municipal ne soit approuvé par le ministre
+                    auquel cas ce dernier prévaut dans la mesure que détermine le ministre. Avis de
+                    cette approbation est publié sans délai dans la Gazette officielle du Québec. Le
+                    présent alinéa s’applique malgré l’article 3 de la Loi sur les compétences
+                    municipales (chapitre C-47.1).
+               […]
+            
+            Comme nous l’avons vu, en l’absence de norme réglementaire régissant
+                    globalement le bruit dans la province, les règlements municipaux trouvent ainsi
+                    application.
+            
+               
+                        
+                     Iredale c. Mont-Tremblant (Ville de), 2011 QCCS
+                            760, [2011] J.Q. no 1669, EYB 2011-186946, par. 106, non contredit en
+                            appel sur ce point.
+                    
+               
+                        Sur le principe de la préséance de laLoi sur la qualité de l’environnement sur les règlements municipaux voir :
+                                4410912 Canada inc. c.
+                                Saint-Télesphore (Municipalité de la paroisse de), EYB 2011-191125, par. 62 (C.S.); Iredale c. Mont-Tremblant (Ville de), 2011 QCCS
+                            760, [2011] J.Q. no 1669, EYB 2011-186946, par. 105; Bélanger c. Québec (Ministère du Développement durable, de l’Environnement et des Parcs), EYB 2011-185053, par. 120
+                            (C.S.); Chertsey (Municipalité de) c. Québec (Ministre de l’Environnement), EYB 2008-133376, par. 100 et suiv.
+                            (C.S.); Nadon c. Montréal (Ville de), EYB
+                            2007-113015, par. 52 (C.S.); Laverlochère (Municipalité) c. Ferme Geléry inc., REJB 2003-49608, par. 29 et suiv. (C.A.);
+                                Coalition rurale du Haut Saint-Laurent c. Meunerie Côté-Paquette inc., EYB 2002-33249, par. 33 (C.S.);
+                                Saint-Timothée (Ville) c.
+                                Carrière Dolomite (1996) inc., REJB 2002-30840, par. 50 (C.S.); Reliance Power Equipment Ltd. c.
+                                Pointe-Claire (Ville),
+                            REJB 1999-12734, par. 185 (C.S.); Victoriaville (Ville) c. Hélie, REJB 1997-01587, par. 17-18 (C.M.); Ferme l’Évasion inc. c. Elgin (Municipalité du canton d’),
+                            EYB 2009-164423, par. 210 (C.S.); Enfouissements J.C. Verreault ltée c. Saint-Robert (Municipalité de),
+                            EYB 2010-173788 (C.A.). Voir aussi la décision de principe St-Michel-Archange (Municipalité de)
+                            c. 2
+                     419-6388 Québec Inc., [1992] R.J.Q.
+                            875, 888-891 (C.A.).
+                    
+            
+         
+         
+            24.  
+            
+               Pouvoir des municipalités de réglementer le bruit
+            
+             – La compétence des municipalités sur le contrôle des
+                    nuisances sur leur territoire ne date pas d’hier. Ce pouvoir, énoncé depuis 2006
+                    à l’article 59 de la Loi sur les compétences municipales, était déjà prévu bien avant au Code municipal du Québec
+                et dans la
+                        Loi sur les cités et villes
+               .
+            Le bruit était plus spécifiquement couvert par les dispositions de la Loi sur les cités et villes
+                qui
+                    prévoyaient, dès 1964, que le conseil municipal pouvait adopter des règlements
+                    pour défendre l’usage de voitures bruyantes, des règlements pour
+                    limiter les nuisances en général et pour permettre ou prohiber l’usage
+                    d’instruments de musique sur la voie publique. Toutes ces dispositions
+                    de la Loi sur les cités et villes sont
+                    aujourd’hui abrogées, soit parce qu’elles ont été reprises dans la Loi sur les compétences municipales, soit
+                    parce qu’elles étaient tout simplement désuètes.
+            
+               
+                        Art. 546 C.m.Q. (abrogé).
+                    
+               
+                        Art. 463(1) L.c.v. (abrogé).
+                    
+               
+                        
+                     Loi des cités et villes,
+                            S.R.Q. 1964, c. 193.
+                    
+               
+                        Art. 415(35) L.c.v.
+                    
+               
+                        Art. 463 L.c.v.
+                    
+               
+                        Art. 460(12) L.c.v.
+                    
+               
+                        Art. 194 L.c.m.
+                    
+               
+                        Jean HÉTU et Yvon DUPLESSIS,Loi sur les compétences municipales et Code municipal : textes explicatifs et références législatives, Brossard, Publications CCH,
+                            2006, p. 75.
+                    
+            
+         
+         
+            25.  
+            
+               Loi sur les compétences municipales
+            
+             – La
+                        Loi sur les compétences municipales est entrée en vigueur en 2006. Cette loi
+                    regroupe les compétences des municipalités dont traitaient la Loi sur les cités et villes et le Code municipal du Québec. Elle octroie le
+                    pouvoir aux municipalités de légiférer dans différents domaines dont notamment
+                    en matière environnementale et en matière de nuisance.
+            Comme nous l’avons souligné, le juge Lalonde de la Cour supérieure du Québec
+                    rappelait dans l’affaire Iredale que
+                    le législateur ayant décidé de ne pas légiférer le bruit, il a
+                    implicitement attribué
+                    cette compétence aux municipalités en leur octroyant un large pouvoir pour ce
+                        faire.
+            Dans cette même décision, le juge Lalonde explique, en ces termes, que c’est la
+                    combinaison des articles 20 L.q.e. et 85 L.c.m. qui permet d’établir les limites
+                    du cadre réglementaire de la municipalité :
+            
+               Particulièrement, la finalité de l’article 20 L.Q.E. est celle de protéger la
+                    population contre l’émission de tout contaminant (le bruit en est un)
+                    susceptible de porter atteinte à la vie, à la santé, à la sécurité, au bien-être
+                    ou au confort de l’être humain. Par conséquent, l’objectif d’une municipalité ne
+                    peut être que la protection des habitants de sa ville contre la pollution
+                        sonore.
+               
+            
+            Ce pouvoir de réglementation leur permet notamment de définir ce qui constitue
+                    pour eux une nuisance. Une fois édicté et défini, « le citoyen, l’officier
+                    municipal ou le juge, selon le cas, connaissent avec précision les obligations
+                    imposées par le règlement municipal ».
+            Par exemple, la Ville de Québec a adopté des normes similaires à celles fixées
+                    par le ministère dans la Note d’instructions 98-01 et impose aux contrevenants
+                    des amendes allant jusqu’à 4 000 $ en cas de récidive.
+            Quant à la Ville de Montréal, elle se montre moins sévère, avec des amendes
+                    maximales de 1 000 $ pour les contrevenants qui récidivent. Toutefois,
+                    dès 2008, l’arrondissement Ville-Marie s’est dissocié de ces règles, en adoptant
+                    son propre règlement en matière de bruit. Ainsi, les amendes maximales dans ce
+                    secteur ont grimpé à 10 000 $ pour les personnes physiques et à 12 000 $ pour
+                    les personnes morales. Deux ans plus tard, l’arrondissement du Plateau
+                    Mont-Royal a emboîté le pas, ce qui montre un certain resserrement des règles
+                    entourant le bruit. Quant à la fixation des niveaux de bruit par secteur, les
+                    normes peuvent varier d’un arrondissement à l’autre. Les critères établis sont
+                    généralement en harmonie avec les balises de la Note d’instructions 98-01 du
+                    ministère.
+            
+               
+                        
+                     Loi sur les compétences municipales, RLRQ, c. C-47.1. Une revue des recours et
+                            des sanctions possibles pouvant découler de la réglementation municipale
+                            sur le bruit est faite dans le texte de Marie-Claude BELLEMARE et Julie
+                            FORTIER, « La réglementation sur le bruit au Québec : réflexion sur les
+                            normes applicables », dans Service de la formation continue, Barreau du
+                            Québec, Développements récents en droit de l’environnement (2015), Cowansville, Éditions Yvon
+                            Blais, 2015, p. 29, EYB2015DEV2234.
+                    
+               
+                        QUÉBEC (Ministère des Affaires municipales et des Régions),La Loi sur les compétences municipales commentée article par article, 2006, p. 3, en
+                            ligne :
+                            &lt;http://www.mamrot.gouv.qc.ca/pub/ministere/legislation/loi_competences_municipales_commentee.pdf&gt;.
+                    
+               
+                        
+                     Iredale c. Mont-Tremblant (Ville de), 2011 QCCS
+                            760, [2011] J.Q. no 1669, EYB 2011-186946, par. 96 et 97, non contredit
+                            en appel sur ce point.
+                    
+               
+                        
+                     Iredale c. Mont-Tremblant (Ville de), 2011 QCCS
+                            760, [2011] J.Q. no 1669, EYB 2011-186946, par. 108, cité avec
+                            approbation en appel : Courses automobiles Mont-Tremblant inc. c. Iredale, 2013 QCCA 1348, par. 28.
+                            Voir également les décisions citées par le juge pour appuyer sa position
+                            aux notes de bas de page 57 et 58.
+                    
+               
+                        
+                     Règlement sur le bruit,
+                            R.V.Q. 978, art. 29.
+                    
+               
+                        
+                     Règlement sur le bruit,
+                            R.R.V.M., c. B-3, art. 21(3).
+                    
+            
+         
+         
+            26.  
+            
+               Prérogative non absolue du conseil municipal
+            
+             – Par contre, comme il en était question dans la décision
+                        Saint-Michel-Archange (Municipalité de) c. 2
+               419-6388 Québec Inc.
+               , la
+                    municipalité ne peut pas non plus dépasser ses pouvoirs et décréter des normes
+                    déraisonnables afin d’encadrer les nuisances.
+            Dans la décision Montréal (Ville) c.
+                        2
+               952-1366 Québec Inc., on cite l’article 2 du règlement qui définit
+                    certains types de bruit comme étant nuisances :
+            
+               2. Le bruit dont le niveau de pression acoustique est supérieur au maximum fixé
+                    par ordonnance ou celui qui est spécifiquement prohibé par le présent règlement
+                    constitue une nuisance et est interdit comme étant contraire à la paix et à
+                    l’ordre publics.
+            
+            Ainsi, identifier les bruits spécifiques qui constituent une nuisance est l’une
+                    des prérogatives de la ville qui peut réglementer en la matière.
+            Par ailleurs, il convient également de mentionner que la prohibition de la
+                    nuisance du bruit ne constitue pas une prohibition absolue. Comme le mentionnait
+                    le juge Jacques de la Cour d’appel du Québec dans l’affaire Sablières Laurentiennes Ltée c. Ste-Adèle (Ville de)
+               , la
+                    responsabilité de réglementer le bruit fait partie des pouvoirs des
+                    municipalités, ce qui implique la possibilité d’empêcher une activité en dehors
+                    de certaines limites. Les municipalités peuvent donc prendre des règlements pour
+                    restreindre ou prohiber l’usage de choses qui sont source de bruit :
+            
+               Enfin, rien au dossier ne permet de conclure que les heures d’activité des
+                    carrières, sablières ou gravières sont déraisonnables. La méthode de contrôle du
+                    bruit nuisible au bien-être des citoyens choisie par la Ville, soit les heures
+                    d’ouverture, est une méthode parmi d’autres. Le choix de la méthode, fait de
+                    bonne foi, relève de la discrétion du conseil municipal et doit être respecté
+                    par les tribunaux s’il est raisonnable.
+               
+            
+            Dans la décision Courses automobiles Mont-Tremblant inc.c. Iredale, la Cour d’appel en vient à une conclusion similaire en
+                    ce qui a trait à la déférence dont les tribunaux doivent faire preuve face aux
+                        élus.
+            
+               
+                        [1992] R.J.Q. 875, 881 (C.A.).
+                    
+               
+                        
+                     Règlement sur le bruit,
+                            R.R.V.M., c. B-3.
+                    
+               
+                        
+                     Sablières Laurentiennes Ltée c. Ste-Adèle (Ville), EYB 1989-63272 (C.A.).
+                    
+               
+                        
+                     Sablières Laurentiennes Ltée c. Ste-Adèle (Ville), EYB 1989-63272, par. 12 (C.A.). Voir également
+                            la décision rendue par la Cour d’appel du Québec dans l’affaire
+                                Pneu Estrimont inc. c.
+                                Sherbrooke (Ville de),
+                            2013 QCCA 352, par. 68, qui confirme le fait que le choix de la norme ou
+                            de la méthode de contrôle du bruit qui est choisie par une ville relève
+                            de la discrétion du conseil municipal et doit être respecté par les
+                            tribunaux dans le cas où la norme ou la méthode en question est
+                            considérée raisonnable. Voir également l’interprétation de la Cour
+                            d’appel du Québec dans la récente affaire Camp Jardin (Gan) d’Israël c. La Minerve (Municipalité de), 2013
+                            QCCA 1699, par. 56 et suiv.
+                    
+               
+                        
+                     Courses automobiles Mont-Tremblant inc.c. Iredale, 2013 QCCA 1348, par. 57.
+                    
+            
+         
+         
+            27.  
+            
+               Loi sur les cités et villes
+                et Code municipal
+            
+             – Bien que plusieurs
+                    articles portant sur la limitation des nuisances aient été abrogés ou inclus
+                    dans la Loi sur les compétences
+                        municipales,
+                    certaines dispositions de la Loi sur les cités et villes
+                et du Code municipal portant sur la tranquillité publique ont
+                    survécu.
+            
+               
+                        Art. 348.3 à 348.5.
+                    
+               
+                        Art. 437.7.
+                    
+            
+         
+         
+            28.  
+            
+               Pouvoir d’assurer la paix et l’ordre public
+            
+             – Le pouvoir général d’une municipalité d’assurer la paix,
+                    l’ordre et le bien-être des citoyens est également prévu dans la Loi sur les compétences municipales
+               .
+            
+               
+                        RLRQ, c. C-47.1, art. 85.
+                    
+            
+         
+         
+            29.  
+            
+               Affaire 
+               Montréal (Ville de)
+                
+               c. 
+               2
+               952-1366 Québec Inc.
+            
+             – La Cour suprême du Canada, dans l’affaire Montréal (Ville de) c. 2
+               952-1366 Québec Inc. est venue établir l’état du droit en
+                    matière de nuisance causée par le bruit dans un contexte municipal en regard
+                    notamment de la liberté d’expression. Dans cette affaire, il était question de
+                    haut-parleurs installés à l’entrée d’un bar de danseuses nues afin de projeter à
+                    l’extérieur le spectacle se déroulant à l’intérieur. Le commerçant fut condamné
+                    en première instance en vertu d’un règlement municipal, soit un règlement de la
+                    Ville de Montréal prohibant les bruits produits par des appareils sonores
+                    lorsque ces bruits s’entendent à l’extérieur.
+            Deux questions se posaient en litige soit, d’une part, si le règlement
+                    outrepassait la compétence attribuée à la Ville par sa loi habilitante et,
+                    d’autre part, si le règlement portait atteinte à la liberté d’expression et dans
+                    l’affirmative, si cette atteinte était justifiable.
+            La Cour supérieure avait annulé la décision de la Cour municipale et déclaré
+                    non coupable le commerçant au motif que le règlement en question de la Ville
+                    allait à l’encontre du droit à la liberté d’expression de celui-ci. Selon la
+                    Cour supérieure, une telle atteinte à ce droit fondamental ne pouvait être
+                    justifiable. La Cour d’appel est venue confirmer cette décision.
+            La juge en chef McLachlin et la juge Deschamps, statuant pour la majorité, ont
+                    pour leur part conclu à la validité du règlement municipal.
+            Le commerçant contestait le règlement alléguant que la Ville avait outrepassé
+                    sa compétence déléguée en matière de nuisance puisque les articles en question
+                    définissaient comme une nuisance une activité qui en tant que telle n’en est pas
+                        une. Dans leur analyse de l’interprétation et de la portée à donner à
+                    l’article 9(1) du règlement municipal, la majorité de la Cour a cherché à
+                    déterminer si « cette disposition se limite à interdire les bruits qui
+                    interfèrent avec la jouissance paisible de l’environnement urbain ». En effet,
+                    un tel règlement ne viendrait pas interdire la production de bruits doux et
+                        inoffensifs.
+            La Cour a considéré, par ailleurs, que l’utilisation d’expression générale en
+                    matière environnementale avait déjà été approuvée par la Cour suprême du Canada
+                    dans l’affaire Ontario c. Canadien Pacifique ltée
+               , en référant
+                    en ces termes à la loi ontarienne sur la protection de l’environnement :
+            
+               Il ressort clairement de cette brève revue des interdictions relatives à la
+                    pollution au Canada que nos législateurs ont préféré adopter une démarche
+                    générale, évitant ainsi une codification exhaustive de chaque situation
+                    entraînant l’interdiction de polluer. Une telle démarche dans le domaine de la
+                    protection de l’environnement ne surprend pas, étant donné que la nature de
+                    l’environnement (sa complexité et la vaste gamme des activités qui peuvent en
+                    causer la dégradation) ne se prête pas à une codification précise. Les lois sur
+                    la protection de l’environnement ont donc été rédigées d’une façon qui permette
+                    de répondre à une vaste gamme d’atteintes environnementales, y compris celles
+                    qui n’ont peut-être même pas été envisagées par leurs rédacteurs.
+               
+            
+            Comme l’expliquent les juges de la majorité dans Ville de Montréal, plus le texte législatif à interpréter est
+                    général, plus le contexte est important dans l’analyse à effectuer. Il est utile
+                    de rappeler les propos de la Cour qui, convenant du peu de précision de la
+                    disposition municipale portant sur le bruit, se questionne sur la notion
+                    elle-même de bruit :
+            
+               Qu’est-ce exactement qu’un « bruit » ? Est-ce un son susceptible de déranger la
+                    paix publique ? Où est-ce tout son qu’on puisse imaginer ? Que veut dire «
+                    s’entend à l’extérieur » ? Un lien avec un bâtiment est-il nécessaire ? Ou
+                    est-ce qu’un téléphone cellulaire constituerait un appareil sonore ? Les termes
+                    généraux utilisés par le législateur permettent des interprétations diverses.
+                    Cette ambiguïté ne peut être résolue que par une étude contextuelle du
+                    paragraphe 9(1).
+               
+            
+            Comme l’explique la Cour dans son interprétation de l’article en question, le
+                    bruit touche la vie des citadins depuis toujours et les municipalités ont tôt
+                    fait de s’y attarder afin de le réguler. Il s’agit en effet d’une compétence
+                    municipale depuis longtemps reconnue. Il s’agit même selon un auteur d’un
+                    champ de réglementation de prédilection pour les municipalités.
+            Ainsi, suivant les enseignements de la Cour suprême dans Montréal (Ville), « la Ville a été habilitée
+                    à réglementer les nuisances dès l’époque préconfédérative. Elle avait alors
+                    adopté des règlements « pour le bon ordre, la paix, le bien-être […] et pour la
+                    prévention et la suppression de toutes nuisances ».
+            La Cour suprême fait l’historique de plus de 100 ans de réglementation portant
+                    sur le bruit à la Ville de Montréal, laquelle a, de tout temps, trouvé son
+                    fondement dans la recherche de la paix publique et du bon ordre au sein de la
+                        municipalité.
+            Le mot « bruit », il est vrai, constitue un mot général et a une portée très
+                    vaste, il s’agit d’un mot à « texture ouverte » comme le qualifie la Cour
+                        suprême, reprenant les enseignements de l’auteur Pierre-André Côté.
+                    Bref, le « bruit en lui-même n’est donc pas nécessairement une nuisance, et
+                    pourtant il est incontestable qu’il peut constituer une nuisance ». L’objectif
+                    de la réglementation portant sur le bruit est donc de contrôler le bruit et de
+                    protéger les citoyens contre la pollution sonore.
+            Cette décision résume en somme, l’ensemble de ce chapitre, rappelant les
+                    objectifs traditionnels poursuivis par les autorités publiques dans le contrôle
+                    de cette nuisance et les particularités subjectives de cette nuisance. La Cour
+                    suprême nous donne des outils afin de porter un tel jugement et rend légitime le
+                    pouvoir des municipalités de régir la paix publique et le bon ordre au sein de
+                    l’environnement restreint des citoyens. L’analyse
+                    effectuée par la Cour
+                    dans cette décision, analyse à la fois historique et téléologique a permis de
+                    déterminer que l’objectif poursuivi par le législateur était de contrôler les
+                    bruits perturbateurs pouvant avoir une incidence sur le bien-être des citoyens
+                    et sur leur jouissance paisible de leur environnement.
+            
+               
+                        [2005] 3 R.C.S. 141, 2005 CSC 62. Voir également sur cet arrêt : Alain-Claude DESFORGES, « Vers une nouvelle relecture des pouvoirs municipaux ? L’arrêt de la Cour suprême dans l’affaire Ville de Montréal et 2952-1366 Québec inc. », dans, Service de la formation continue, Barreau du Québec, vol. 247,Développements récents en droit municipal (2006),
+                                Droit civil en ligne
+                            (DCL), EYB2006DEV1182.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 4.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 14.
+                    
+               
+                        Position par ailleurs soutenue par le juge Binnie dissident dans cette affaire,Montréal (Ville) c. 2
+                     952-1366 Québec Inc., [2005] 3 R.C.S. 141, 2005 CSC 62, par. 15.
+                    
+               
+                        [1995] 2 R.C.S. 1031.
+                    
+               
+                        
+                     Ontario c. Canadien Pacifique Ltée, [1995] 2
+                            R.C.S. 1031, par. 43. Propos repris dans la décision R. c. Hydro-Québec, [1997] 3 R.C.S. 213, par. 134.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 16, propos repris par le juge Martin
+                            Bureau de la Cour supérieure dans la récente affaire Sherbrooke (Ville de) c. Blais, 2013 QCCS 5703, par. 16 et
+                            17.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 18.
+                    
+               
+                        Lorne GIROUX, « Retour sur les compétences municipales en matière de nuisance », dans Service de la formation permanente, Barreau du Québec, vol. 124,Développements récents en droit de l’environnement (1999), Cowansville, Éditions
+                            Yvon Blais, 1999, p. 299, à la page 303. La Cour d’appel du Québec a
+                            récemment repris les propos de l’époque de Lorne Giroux (aujourd’hui
+                            juge à la Cour d’appel du Québec) dans l’affaire Camp Jardin (Gan) d’Israël c.
+                                La Minerve (Municipalité de), 2013 QCCA 1699, par. 48.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 18. Voir également à ce propos l’Acte pour amender et consolider les dispositions de l’ordonnance pour incorporer la cité et ville de Montréal, S. Prov. C. 1851, 14 &amp; 14 Vict., c. 128,
+                            art. LVIII.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 19-20.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 25.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 24.
+                    
+               
+                        
+                     Montréal (Ville) c.
+                                2
+                     952-1366 Québec Inc., [2005] 3
+                            R.C.S. 141, 2005 CSC 62, par. 26.
+                    
+            
+         
+      
+      
+         C.
+          Autorités fédérales
+         
+            30.  
+            
+               Transport Canada
+            
+             – Le Règlement de l’aviation canadien sur le bruit
+                (provenant de la Loi sur l’aéronautique
+               ) vient préciser les différentes
+                    procédures d’atténuation du bruit lié aux aéronefs et aéroports (exemples : les
+                    pistes préférentielles, les heures d’utilisation d’aéronefs, etc.).
+            L’organisme en question travaille de concert avec Santé Canada, NAV CANADA et
+                    l’Organisation de l’aviation civile internationale (OACI).
+            En 2007, l’Organisation de l’aviation civile internationale a réaffirmé
+                    l’importance de s’attaquer au bruit des aéronefs :
+            
+               [L]’OACI, en tant qu’institution des Nations Unies qui est le chef de file pour
+                    les questions relatives à l’aviation civile internationale, a conscience des
+                    effets néfastes que l’activité de l’aviation civile peut exercer sur
+                    l’environnement, qu’elle continuera de s’en occuper et qu’elle sait qu’il lui
+                    incombe, ainsi qu’à ses États membres, d’assurer le maximum de compatibilité
+                    entre le développement sûr et ordonné de l’aviation civile et la qualité de
+                    l’environnement. Dans l’exercice de ses responsabilités, l’OACI et ses États
+                    contractants s’efforceront :
+               a) de limiter ou de réduire le nombre de personnes exposées à un niveau élevé
+                    de bruit des aéronefs;
+               b) de limiter ou de réduire l’incidence des émissions de l’aviation sur la
+                    qualité de l’air local;
+               c) de limiter ou de réduire l’incidence des émissions de gaz à effet de serre
+                    de l’aviation sur le climat mondial;
+               
+            
+            L’approche préconisée par l’organisme vise la réduction du bruit à la source
+                    (soit par exemple des aéronefs plus silencieux), la planification et la gestion
+                    de l’utilisation des terrains, les procédures opérationnelles d’atténuation du
+                    bruit et les restrictions d’exploitation. Le ministère des Transports fédéral
+                    veille également à l’application de procédures spécifiques d’atténuation du
+                    bruit et autres restrictions pouvant exister en matière de limitation du bruit.
+                    Les critères acoustiques d’utilisation et les procédures d’atténuation du bruit,
+                    spécifiques à chaque aéroport, sont approuvés par le gouvernement
+                    fédéral.
+            À titre d’exemple, l’aéroport Pierre-Elliott-Trudeau à Montréal a adopté des
+                    procédures particulières durant les heures d’exploitation restreintes, notamment
+                    la nuit, et en tout temps, les pilotes de jet doivent respecter les procédures
+                    de départ et d’arrivée qui suivent :
+            
+               Après le décollage, l’avion doit monter rapidement en ligne droite jusqu’à une
+                    altitude minimale de 915 mètres (3 000 pieds) avant de pouvoir amorcer un
+                    virage;
+               À l’atterrissage, l’avion doit effectuer son approche finale en ligne avec
+                    l’axe de la piste et en respectant un angle de descente de 3 degrés ou plus. Les
+                    pilotes doivent maintenir un régime de poussée/traînée produisant un niveau de
+                    bruit minimal tout en demeurant sécuritaire.
+               
+            
+            
+               
+                        
+                     Règlement de l’aviation canadien, DORS/96-4330.
+                    
+               
+                        L.R.C. (1985), c. A-2.
+                    
+               
+                        Organisation de l’aviation civile internationale,Résolutions de l’Assemblée (DOC
+                            9902), 2007, p. I-56.
+                    
+               
+                        Aéroport de Montréal,Mesures d’atténuation du bruit, en ligne :
+                            &lt;http://www.admtl.com/fr/adm/collectivites/climat-sonore/mesures-d-attenuation&gt;.
+                    
+            
+         
+         
+            31.  
+            
+               Office des transports du Canada (OTC)
+            
+             – L’OTC
+                    offre des lignes directrices sur le bruit et sur les vibrations ferroviaires (en
+                    vertu de la Loi sur les transports au Canada
+               ). En fait, aucun organisme fédéral ne possède le pouvoir ou
+                    le mandat de réglementer le bruit issu des transports ferroviaires au Canada.
+                    Par contre, l’OTC a pour sa part l’autorité de résoudre les plaintes relatives
+                    au bruit et aux vibrations qui sont liées aux activités de construction ou
+                    d’exploitation des chemins de fer qui eux sont de compétence fédérale. À ce
+                    sujet, la Cour supérieure le mentionnait spécifiquement, sous la plume du juge
+                    Jean-Jacques Croteau dans l’affaire Voisins du train de banlieue de Blainville
+               .
+            
+            Les pouvoirs octroyés
+                    à l’OTC ont soulevé une question de compétence qui fut tranchée par la Cour
+                    d’appel fédérale. La Cour a déterminé que l’OTC n’avait pas la compétence pour
+                    traiter les plaintes relatives au bruit, à la fumée et aux vibrations résultant
+                    de l’exploitation régulièrement autorisée des chemins de fer :
+            
+               De toute évidence, le paragraphe 95(1), pas plus que ceux qui l’ont précédé, ne
+                    vise la responsabilité des compagnies ferroviaires découlant de leurs activités
+                    d’exploitation courante. Les personnes qui portent plainte, comme les intimés,
+                    doivent toujours intenter des actions de common law en nuisance si elles
+                    allèguent qu’une compagnie de chemin de fer fait trop de bruit dans son
+                    exploitation courante.
+               
+            
+            Par la suite, des lignes directrices ont été établies par le gouvernement
+                    concernant les mesures de collaboration qui doivent être utilisées par les
+                    parties avant que l’OTC puisse entreprendre une enquête, les éléments analysés
+                    pour déterminer si une compagnie de chemin de fer a limité le bruit ou les
+                    vibrations à un niveau raisonnable et la marche à suivre pour déposer une
+                    plainte, les renseignements qui doivent l’accompagner ainsi que le processus qui
+                    doit être suivi.
+            Ces lignes directrices ont donc mis l’emphase sur la communication entre les
+                    parties. La Cour d’appel fédérale s’est prononcée clairement sur ce point, en
+                    soutenant que l’OTC ne pouvait se prononcer sur une plainte relative au bruit si
+                    les parties avaient précédemment conclu un règlement extrajudiciaire visant
+                    cette même plainte :
+            
+               [L]a Loi autorise l’Office à publier des lignes directrices sur des mesures de
+                    coopération en matière de résolution des conflits concernant le bruit ou les
+                    vibrations. Lorsque de telles lignes directrices sont publiées, l’Office ne peut
+                    procéder à une enquête au sujet d’une plainte ou connaître d’une plainte que
+                    s’il est convaincu que toutes ces mesures ont été épuisées. La médiation, qui
+                    est une forme de coopération en matière de résolution prévue par la Loi, a pour
+                    effet de suspendre les procédures dont l’Office est saisi. Un règlement
+                    intervenu au terme de la médiation peut être déposé auprès de l’Office et être
+                    assimilé à un arrêté de l’Office en vue de son exécution.
+               
+            
+            Le rôle de l’OTC est donc très limité. De surcroît, le législateur a fait
+                    siennes les conclusions de la Cour d’appel fédérale en les intégrant à l’article
+                    95.3 de la Loi sur les transports en
+                        2007 :
+            
+               Le nouvel article 95.3 prévoit que l’Office, lorsqu’il reçoit une plainte, peut
+                    ordonner à la compagnie de chemin de fer concernée de prendre les mesures qu’il
+                    estime raisonnables en vue de respecter l’article 95.1, compte tenu des facteurs
+                    dont il est question à cet article.
+               Si l’Office a publié des lignes directrices en vertu de l’article 95.2, il ne
+                    peut procéder à l’examen de la plainte que s’il est convaincu que toutes les
+                    mesures de coopération prévues par celles-ci ont été appliquées. Cette
+                    disposition vise à favoriser le règlement des conflits à l’amiable et à combler
+                    le plus possible l’écart qui sépare les parties avant que l’Office
+                        intervienne.
+               
+            
+            La version initiale du projet de loi adoptée par la Chambre des communes
+                    prévoyait également que la compagnie de chemin de fer devait faire « le moins de
+                    bruit ou de vibrations possible » au lieu d’être simplement « tenue de ne pas
+                    faire de bruit déraisonnable ».
+            Le secrétaire parlementaire du ministre des Transports, de l’Infrastructure et
+                    des Collectivités, M. Brian Jean s’exprimait ainsi devant le Parlement, le 28
+                    février 2007 :
+            
+               Ce changement est très important parce qu’il fera en sorte qu’il y aura moins
+                    de bruit pour les gens qui habitent dans les secteurs avoisinants. C’est
+                    extrêmement important pour eux. Nous écoutons les gens. Le gouvernement écoute
+                    les Canadiens et agit dans leur intérêt.
+               Enfin, les amendements apportés par le comité obligeraient le chemin de fer à
+                    tenir compte de l’incidence potentielle sur les personnes habitant des
+                    propriétés adjacentes lorsqu’il doit prendre des mesures pour faire le moins de
+                    bruit ou de vibrations possible. […]
+               Le transport ferroviaire représente une partie importante de notre collectivité
+                    et de notre pays, mais il doit s’intégrer dans les collectivités qui sont
+                    installées le long des voies ferrées. Nous avons tenté d’établir un équilibre à
+                    cet égard dans la mesure législative.
+               
+            
+            La version finale de la loi a toutefois été modifiée par le comité sénatorial
+                    qui a rétabli la notion de bruit raisonnable dans les articles 95.1 et 95.3 et
+                    supprimé la référence aux personnes qui résident en des lieux adjacents.
+            Ajoutons que les mesures correctrices qui pouvaient être recommandées par l’OTC
+                    pouvaient être invoquées à l’encontre d’une action prise par des riverains
+                    s’étant plaints du bruit, comme l’a reconnu la Cour d’appel du Québec en
+                    refusant l’exercice du recours collectif dans l’affaire des Voisins du train de banlieue de Blainville
+               .
+            
+               
+                        L.C. 1996, c. 10, art. 95.1 à 95.3.
+                    
+               
+                        
+                     Voisins du train de banlieue de Blainville c. Agence Métropolitaine de Transport, J.E. 2004-1250, par. 80-81
+                            et 129, [2004] J.Q. no 6601 (C.S.).
+                    
+               
+                        
+                     Cie des chemins de fer nationaux du Canada c. Brocklehurst, [2000] A.C.F. no 2020 (C.A.).
+                    
+               
+                        
+                     Cie des chemins de fer nationaux du Canada c. Brocklehurst, [2000] A.C.F. no 2020, par. 37
+                            (C.A.).
+                    
+               
+                        
+                     BNSF Railway Co. c.
+                                Canada (Office des transports), [2011] A.C.F. no 1377, par. 28
+                            (C.A.).
+                    
+               
+                        
+                     Loi modifiant la Loi sur les transports au Canada et la Loi sur la sécurité ferroviaire et d’autres lois en conséquence, L.C. 2007, c. 19
+                            (sanctionnée le 22 juin 2007).
+                    
+               
+                        CANADA (Bibliothèque du Parlement),Projet de loi C-11 : Loi modifiant la législation régissant les transports, Division du droit et du gouvernement et
+                            Division de l’économie, 2006 (révisé le 27 septembre 2007).
+                    
+               
+                        CANADA,Débats de la Chambre des communes, 1ère sess., 39e légis., 28 février 2007, « Initiatives ministérielles.
+                            Loi modifiant la Loi sur les transports », p. 1525 (M. Brian
+                            Jean).
+                    
+               
+                        10e Rapport du Comité sénatorial permanent des transports et des communications, 17 mai 2007.
+                    
+               
+                        
+                     Voisins du train de banlieue de Blainville inc. c. Agence métropolitaine de transport, 2007 QCCA 236, par.
+                            38.
+                    
+            
+         
+         
+         
+            32.  
+            
+               Société canadienne d’hypothèques et de logement (SCHL)
+            
+             – La SCHL a elle aussi publié des lignes directrices quant
+                    aux niveaux de bruit acceptables sous forme d’études. L’objectif était de doter
+                    l’industrie de la construction d’un outil fiable d’évaluation du degré de
+                    confort acoustique dans les édifices à logements multiples :
+            
+               Le critère retenu pour caractériser le climat sonore du site où le logement est
+                    bâti se base sur le bruit résiduel urbain L95 (un niveau dépassé 95 % du temps),
+                    obtenu à partir d’un échantillon sonore d’une durée de 5 minutes prélevé durant
+                    le jour en façade du logement étudié : le niveau L95 ainsi mesuré devrait
+                    préférablement être inférieur ou égal à 55 dB(A). Ce critère a pour seul but de
+                    donner une idée du bruit de fond ou bruit résiduel urbain dans lequel est situé
+                    le logement; il n’a pas pour but de caractériser les différentes sources de
+                    bruit ponctuelles localisées dans les environs du logement à moins que ces
+                    sources ne fonctionnent de manière continue.
+               
+            
+            Les critères établis par la SCHL visent également les matériaux utilisés lors
+                    de la construction, afin d’obtenir une meilleure insonorisation.
+            Ces normes ont servi de guide lors de nombreux litiges devant les tribunaux,
+                    notamment lors de conflits entre copropriétaires. Lors d’une requête en
+                    injonction en Cour supérieure, le juge Moulin a notamment cité un rapport
+                    d’expert qui décrivait ainsi les critères de la SCHL en matière d’insonorisation
+                    :
+            
+               […] La Société canadienne d’hypothèques et de logement (SCHL) exige toutefois,
+                    en raison des garanties de prêt pour une plus grande accessibilité à la
+                    propriété avec une mise de fonds moindre, un rendement de FIIC 55 sur un
+                    plancher dur (bois, céramique, linoléum) et FIIC 65 sur un plancher mou (tapis).
+                    Ceci ne peut être interprété comme un règlement, mais est devenu une référence
+                    courante pour les projets d’habitation en copropriétés.
+               
+            
+            Le juge a accordé l’injonction et ordonné au défendeur de procéder à
+                    l’enlèvement du plancher de bois franc installé dans son unité pour le remplacer
+                    par un matériau permettant une meilleure insonorisation.
+            
+               
+                        SOCIÉTÉ CANADIENNE D’HYPOTHÈQUES ET DE LOGEMENT,Qualification du degré de confort acoustique procuré par les immeubles multi-logements – Phase I,
+                            1996; SOCIÉTÉ CANADIENNE D’HYPOTHÈQUES ET DE LOGEMENT, Qualification du degré de confort acoustique dans les édifices multi-logements – Phase II,
+                            2003.
+                    
+               
+                        &lt;http://www.cmhc-schl.gc.ca/publications/fr/rh-pr/tech/03-116-f.htm&gt;.
+                    
+               
+                        
+                     Marcotte c. Syndicat des copropriétaires La Maison Amyot, 2011 QCCS 3044; Savard c. Syndicat des copropriétaires Les Cours centrales phase II, 2011 QCCS
+                            2176; Chemins de fer nationaux du Canada et Daigneault, 2013 QCCLP 1355, par. 48; Belmamoun c. Brossard (Ville de), 2015 QCCS 2913,
+                            par. 148.
+                    
+               
+                        
+                     Schmidt c. Bérubé, EYB 2005-95236, par.
+                            23.
+                    
+            
+         
+      
+   
+   
+      III.
+       RECOURS CIVILS LIÉS AU BRUIT
+      
+         33.  
+         
+            Le bruit comme trouble de voisinage, source de litiges civils
+         
+          – Au chapitre du droit civil en environnement, le bruit a été
+                l’un des sujets ayant généré le plus de litiges, que ce soit comme source unique de
+                dommages ou s’ajoutant à d’autres facteurs de pollution, tels que la poussière et
+                les odeurs.
+         Les recours civils faisant l’objet d’un autre fascicule, le bruit constituant une
+                forme de nuisance parmi d’autres ayant entraîné de tels litiges civils, nous nous
+                limiterons à rappeler les grandes lignes de ce cadre obligationnel, nous concentrant
+                sur quelques décisions marquantes des dernières années rendues principalement dans
+                un contexte de recours collectif.
+         Rappelons donc que la responsabilité civile en environnement repose notamment sur
+                la faute découlant du non-respect des normes de conduite (art. 1457 C.c.Q.) ou sur
+                l’exposition à des inconvénients anormaux de voisinage (art. 976 C.c.Q.), que le
+                comportement de leurs auteurs ait ou non été fautif.
+         La faute susceptible d’engager une responsabilité civile sous le premier régime,
+                peut découler du non-respect de l’une ou l’autre des normes réglementaires relatives
+                au bruit, voire des politiques et directives précitées, dans la mesure où celles-ci
+                permettraient au tribunal d’établir la mesure des règles de conduite qui, suivant
+                les circonstances et les usages, s’imposent à ce dernier, au sens de l’article 1457
+                C.c.Q.
+         L’autre source de responsabilité civile découle de l’article 976 C.c.Q qui dispose
+                que : « Les voisins doivent accepter les inconvénients normaux du voisinage qui
+                n’excèdent pas les limites de la tolérance qu’ils se doivent, suivant la nature ou
+                la situation de leurs fonds, ou suivant les usages locaux ».
+         La décision de principe en ce domaine est celle rendue par la Cour suprême du
+                Canada en 2008 dans l’affaire Ciment St-Laurent
+            , laquelle, faut-il le rappeler, impliquait un groupe de personnes
+                qui, en vertu de la procédure de recours collectif, réclamait un dédommagement pour
+                avoir été exposé, notamment, à des bruits excessifs. C’est à cette occasion que la
+                Cour suprême a reconnu dans les dispositions de l’article 976 C.c.Q. « une
+                responsabilité civile fondée sur l’existence de troubles de voisinage anormaux,
+                malgré l’absence de faute prouvée ou présumée ».
+         Il avait fallu attendre 1989 pour que les tribunaux adoptent une interprétation
+                favorable à l’autorisation des recours collectifs en matière de dommages
+                    environnementaux. Auparavant, les demandes d’autorisation étaient rejetées sous
+                prétexte que la cause ne satisfaisait pas au premier ou au second alinéa de
+                l’article 1003 C.p.c. considérant les disparités entre les membres quant à la nature
+                ou l’intensité des dommages liés aux nuisances. Cette interprétation qui excluait
+                pratiquement le recours collectif en matière de nuisance fut par la suite renversée
+                par la Cour d’appel dans l’affaire Comité d’environnement de La Baie inc. c. Société d’électrolyse et de chimie Alcan ltée
+            .
+         
+            
+                    
+                  Ciment du St-Laurent inc. c.
+                            Barrette, 2008 CSC 64, [2008]
+                        3 R.C.S. 392.
+                
+            
+                    
+                  Ciment du St-Laurent inc. c.
+                            Barrette, 2008 CSC 64, [2008]
+                        3 R.C.S. 392, par. 75 et suiv.
+                
+            
+                    3. Odette NADON,
+                        « L’évolution du droit de l’environnement à la lumière du recours collectif
+                        », dans Service de la formation permanente, Barreau du Québec, vol. 115,
+                            Développements récents sur les recours collectifs (1999), Cowansville, Éditions Yvon Blais, 1999, p.
+                        151, aux pages 151 et suiv.
+                
+            
+                    EYB 1990-63507 (C.A.).
+                
+         
+      
+      
+         34.  
+         
+            Courants jurisprudentiels contradictoires
+         
+          – Rappelons qu’en ce qui concerne l’autorisation
+                d’exercer un recours collectif en matière d’environnement, la jurisprudence s’est
+                libéralisée à partir de 1989. En effet, c’est en 1989 que les tribunaux adoptent une
+                interprétation favorable à l’autorisation des recours collectifs en matière de
+                dommages environnementaux. Auparavant, les demandes d’autorisation étaient rejetées sous
+                prétexte que la cause ne satisfaisait pas au premier ou au second alinéa de
+                l’article 1003 du Code de procédure civile
+                considérant les disparités entre les membres quant à la nature ou l’intensité des
+                dommages liés aux nuisances. Cette interprétation qui excluait pratiquement le
+                recours collectif en matière de nuisance fut par la suite renversée par la Cour
+                d’appel dans l’affaire Comité d’environnement de La Baie inc. c. Société d’électrolyse et de chimie Alcan ltée
+            .
+         Ce dernier rappel est important, notamment en référence à notre sujet d’étude. En
+                effet, en ce qui a trait aux nuisances sonores, deux courants jurisprudentiels se
+                sont développés en matière de recours collectifs, l’un et l’autre se contredisant
+                sur la possibilité que le bruit à l’origine du dommage puisse constituer une
+                question de fait similaire ou connexe à l’ensemble des membres d’un recours, au sens
+                de l’article 1003 du Code de procédure civile.
+         Parmi les décisions en matière de recours collectifs pour nuisances sonores qui ont
+                suivi les enseignements de la Cour d’appel dans l’arrêt Comité d’environnement de La Baie, soulignons
+                l’affaire Krantz
+             qui impliquait
+                des nuisances de bruit et de poussières générées par la réfection d’une
+                autoroute.
+         Dans cette affaire, les intimées plaidaient entre autres que l’évaluation du
+                caractère normal des inconvénients et les limites de la tolérance au bruit et à la
+                pollution étaient subjectives et nécessitaient, en pratique, un examen individuel de
+                la situation de chaque membre. Selon eux, la tolérance au bruit variait grandement
+                d’un individu à l’autre, un grand nombre de conditions faisant qu’un bruit pouvait
+                être ou non perturbant et variait en fonction d’une foule de facteurs et de
+                considérations propres à chaque membre. Les intimées concluaient ainsi que même si
+                l’on voulait tenter de faire des sous-groupes et de graduer éventuellement les
+                dommages par zones, à la fin du recours, on n’y parviendrait pas en raison des trop
+                grandes variables impliquées pour chacun.
+         Le juge Senécal autorisant le recours devait rejeter ces arguments en concluant, à
+                l’inverse, à l’utilité de la procédure de recours collectif dans ce genre de dossier
+                :
+         
+            On l’a dit, le bruit est l’une des plus insupportables formes de nuisance et de
+                pollution dans la vie en société. Pourtant, lorsqu’il crée des inconvénients et des
+                dommages de façon répétée à un endroit, c’est le genre de situation où il est quasi
+                impensable que chacun prenne un recours individuel. On peut même penser qu’il n’y a
+                à peu près pas un seul citoyen qui serait en mesure d’intenter seul et pour lui-même
+                un tel recours, avec tous les frais, l’énergie et le temps que cela implique.
+            En réalité, les intimées tentent d’écarter tout recours collectif dans les cas de
+                problèmes reliés à l’environnement, ainsi que le note justement le requérant. En
+                effet, tout inconvénient relié à l’environnement est généralement ressenti de façon
+                subjective par ses victimes. Or, les recours collectifs sont particulièrement
+                appropriés dans les cas reliés à l’environnement parce que les problèmes que l’on
+                retrouve dans ces cas affectent un grand nombre de gens, qu’il est très difficile
+                d’entreprendre un recours en ces matières, que la preuve est longue, complexe et
+                souvent technique, qu’établir la responsabilité demande souvent des efforts
+                considérables et une preuve élaborée, etc. Le fait que tout inconvénient relié à
+                l’environnement soit souvent ressenti de façon subjective ne peut pas être une fin
+                de non-recevoir à l’encontre du recours collectif.
+            De fait, la jurisprudence a reconnu que le recours collectif est possible dans le
+                cas de problèmes environnementaux, entre autres pour les problèmes reliés au
+                    bruit.
+            
+         
+         Dans l’affaire du Petit train du Nord,
+                impliquant des nuisances sonores liées au passage de motoneiges, l’autorisation a
+                été accordée sans que cet aspect soulève de problèmes, la Cour estimant que « les
+                prétentions de tous les résidents dont les propriétés bordent le parc linéaire sont
+                essentiellement les mêmes bien que les dommages, s’il y a lieu, devront être
+                individualisés ».
+         Dans le jugement au fond, la Cour a accordé un dédommagement aux membres du groupe qui se
+                trouvaient à l’intérieur d’un périmètre de 100 mètres des pistes de motoneiges, la
+                preuve, tant d’experts que testimoniale, ne permettant pas de conclure à l’existence
+                d’une nuisance au-delà de cette limite, au sens de l’article 976 C.c.Q.
+         Dans le dossier du CP Rail, impliquant le bruit d’une gare de triage, la Cour
+                d’appel, autorisant l’exercice du recours collectif, confirmait l’une des
+                conclusions du juge de première instance selon laquelle le « fait que les résidents
+                de ce secteur aient à subir des problèmes de bruits et que cela leur cause de la
+                nuisance à des degrés qui ne sont pas les mêmes n’empêche pas l’autorisation du
+                recours collectif ».
+         La Cour d’appel infirmant le jugement de première instance a autorisé le recours
+                collectif des personnes incommodées par le bruit de l’autoroute Laurentienne dans la
+                région de Québec. Dans l’affaire Carrier
+            , la Cour d’appel a préféré renvoyer au fond la question de la
+                détermination des dommages, lesquels pourront varier d’un réclamant à l’autre,
+                concluant :
+         
+            […] Il est possible que les nuisances vécues par les membres du groupe le soient à
+                des degrés divers. Il faut cependant se garder de mettre sur le même pied
+                l’autorisation d’un recours collectif et son exécution finale. Il appartiendra au
+                juge du fond de distinguer les questions individuelles que soulève le recours.
+                […]
+         
+         Parmi les autres décisions ayant autorisé des recours collectifs en matière de
+                bruit, soulignons également les affaires Coalition contre le bruit
+            , impliquant des riverains d’un lac
+                incommodés par le bruit des hydravions, et Gaudet c. P. &amp; B. Entreprises ltée
+            , impliquant des voisins d’une usine de béton bitumineux aux
+                Îles-de-la-Madeleine incommodés par le bruit, la poussière et les odeurs et plus
+                récemment les recours autorisés concernant la construction de parcs éoliens au
+                Québec et les nuisances qui y sont associées.
+         
+         À l’inverse, une autre
+                tendance jurisprudentielle a refusé d’autoriser l’exercice d’un recours collectif en
+                matière de bruit en raison de la disparité des dommages et des circonstances.
+         Ainsi, dans l’affaire du Train de banlieue
+            , la Cour d’appel refusant l’exercice du recours collectif a
+                conclu, sous la plume du juge Baudouin :
+         
+            […] Puisque le fondement du recours envisagé est la doctrine de l’abus de droit en
+                matière de droit de propriété, il est clair que le préjudice subi par le groupe est
+                susceptible d’infinies variations. Non seulement le type même de dommages ne peut
+                être le même, mais l’intensité de celui-ci non plus, sans oublier évidemment, tel
+                que mentionné, qu’une partie de ces personnes n’en subissent probablement aucun.
+                […]
+            Le facteur de subjectivité lié à chacune des personnes composant le groupe fait
+                qu’en réalité il s’agit davantage d’un simple amalgame de recours
+                    individuels.
+            
+         
+         Enfin, dans l’affaire Aéroport de Montréal
+             où les membres du groupe se plaignaient également des nuisances
+                sonores provenant des avions, l’autorisation d’exercer le recours collectif a été
+                rejetée, la Cour d’appel concluant :
+         
+            En l’espèce, la décision d’englober les résidants d’un territoire aussi vaste
+                comportait un risque plus élevé que la normale de dilution des questions communes en
+                raison de la nature du fondement même de la réclamation, le bruit. Cette
+                particularité n’a pas échappé au juge. À mon avis, les conclusions qu’il a tirées
+                sur la prépondérance marquée des questions individuelles ne sont pas manifestement
+                    déraisonnables.
+            
+         
+         Soulignons toutefois la dissidence de la juge Otis, qui aurait plutôt autorisé le
+                recours concluant sur ce dernier point :
+         
+            À l’examen du dossier, il appert que le juge a bien déterminé que les faits
+                allégués justifiaient les conclusions recherchées (1003a) C.p.c.) à l’exception, toutefois, du recours en
+                injonction qui n’aurait pas dû être écarté à ce stade. En ce qui a trait au second
+                critère (1003b) C.p.c.), au regard de la
+                nature objective et subjective de la nuisance sonore causée par les avions, des
+                réclamations s’y rattachant et de l’étalement géographique du groupe, il appert que
+                le juge a imposé un fardeau de preuve qui ressort davantage au fond du recours
+                collectif qu’à son autorisation en exigeant la particularisation prématurée des
+                réclamations individuelles et en omettant de circonscrire le groupe afin de ne pas
+                compromettre la recevabilité du recours.
+            
+         
+         Comme nous avons déjà eu l’occasion de le souligner, il nous semble que les
+                enseignements de la Cour suprême dans l’affaire Ciment du St-Laurent devraient plutôt privilégier l’interprétation
+                favorable à l’exercice des recours collectifs en matière de nuisance sonore.
+         Rappelons que dans cette affaire, la juge de première instance avait en effet
+                établi des sous-groupes pour la détermination des indemnités à être payées à la
+                suite de l’exposition au bruit et à la poussière, la preuve ayant démontré
+                l’existence de préjudices communs, mais variables en intensité selon le statut
+                personnel du membre et selon aussi son éloignement relatif de la source de
+                pollution.
+         D’une manière générale, en approuvant ainsi la méthode suivie par la juge de
+                première instance, la Cour suprême se trouve indirectement à infirmer l’ensemble de
+                la jurisprudence qui a estimé que des problèmes de bruit et poussières ne se
+                prêtaient pas à un recours collectif.
+         En fait, s’il est une nuisance qui se prête particulièrement à l’exercice de
+                recours collectifs c’est bien le bruit, car comme l’a bien fait ressortir la juge
+                Otis, dissidente dans l’affaire ADM, « […]
+                on ne peut plus parler du bruit comme un élément subjectif totalement imprécis, non
+                mesurable ou dépendant essentiellement des sensibilités individuelles.
+         
+            
+                    Odette NADON, « L’évolution du droit de l’environnement à la lumière du recours collectif », dans Service de la formation permanente, Barreau du Québec, vol. 115,Développements récents sur les recours collectifs (1999), Cowansville, Éditions Yvon
+                        Blais, 1999, p. 151, aux pages 151 et suiv.
+                
+            
+                    EYB 1990-63507 (C.A.).
+                
+            
+                    
+                  Krantz c. Québec (Procureur général), EYB
+                        2006-104192, par. 156 et suiv. (C.S.).
+                
+            
+                    
+                  Krantz c. Québec (Procureur général), EYB
+                        2006-104192, par. 174-176 (C.S.).
+                
+            
+                    
+                  Coalition pour la protection de l’environnement du parc linéaire « Petit train du Nord » c.
+                            Laurentides (Municipalité régionale de comté des), REJB 2002-30731 (C.S.).
+                
+            
+                    
+                  Coalition pour la protection de l’environnement du parc linéaire « Petit train du Nord » c.
+                            Laurentides (Municipalité régionale de comté des), REJB 2004-81143 (C.S.) (désistement d’appel, C.A.
+                        Montréal, no 500-09-015224-058, 6 juillet 2009).
+                
+            
+                    
+                  Paquin c. Compagnie de chemin de fer Canadien Pacifique, REJB 2004-64930 (C.S.), conclusion confirmée en
+                        appel, EYB 2005-97828 (C.A.).
+                
+            
+                    
+                  Carrier c. Québec (Procureur général), EYB
+                        2011-192582, par. 73 (C.A.).
+                
+            
+                    
+                  Coalition contre le bruit c.
+                            Shawinigan (Ville de), EYB
+                        2012-210788 (C.S.).
+                
+            
+                    EYB 2011-197991 (C.S.).
+                
+            
+                    
+                  Rivard c. Éoliennes de l’Érable inc., 2014 QCCS
+                        5189; Labranche c. Énergie éolienne des Moulins, s.e.n.c.,
+                        2016 QCCS 1479; Blouin c.
+                            Parcs éoliens de la Seigneurie de Beaupré 2 et 3, s.e.n.c., 2016 QCCA 77.
+                
+            
+                    
+                  Voisins du train de banlieue de Blainville inc. c. Agence métropolitaine de transport, EYB 2007-115050, par. 78-79
+                        (C.A.).
+                
+            
+                    
+                  Voisins du train de banlieue de Blainville c. Agence métropolitaine de transport, J.E. 2004-1250 (C.S.).
+                
+            
+                    
+                  Citoyens pour une qualité de vie / Citizens for a quality of life c. Aéroports de Montréal, EYB 2007-124367,
+                        par. 103 et 44 (C.A.).
+                
+            
+                    
+                  Citoyens pour une qualité de vie / Citizens for a quality of life c. Aéroports de Montréal, EYB 2007-124367,
+                        par. 103 (C.A.).
+                
+            
+                    
+                  Citoyens pour une qualité de vie / Citizens for a quality of life c. Aéroports de Montréal, EYB 2007-124367,
+                        par. 44 (C.A.).
+                
+            
+                    
+                  Citoyens pour une qualité de vie / Citizens for a quality of life c. Aéroports de Montréal, EYB 2007-124367,
+                        par. 61 (C.A.).
+                
+         
+      
+   
+   
+      
+      CONCLUSION
+      
+         35.  
+         
+            Survol des principes
+         
+          – Que le voisin source de
+                nuisance soit un individu, une autoroute, une usine ou un chemin de fer, le bruit
+                qu’il émet peut être considéré comme un contaminant dans l’environnement s’il
+                dépasse les niveaux acceptables reconnus par les tribunaux.
+         
+         Bien que le droit à
+                l’injonction prévu à la Loi sur la qualité de l’environnement soit devenu plus accessible aux citoyens, cette
+                réparation demeure inefficace lorsque l’entité qui génère le bruit opère
+                conformément à un certificat d’autorisation du MDDELCC. Il faut alors s’en remettre
+                aux réparations civiles de droit commun en invoquant notamment les dispositions du
+                    Code civil du Québec relatives aux
+                nuisances, lesquelles s’appliquent même en l’absence de faute, comme l’a rappelé la
+                Cour suprême du Canada dans l’affaire Ciment du St-Laurent.
+         Au chapitre du droit public, le gouvernement du Québec a pratiquement laissé le
+                champ libre aux municipalités en matière de réglementation du bruit, étant donné
+                leur proximité du territoire visé. La municipalité qui veut encadrer l’émission de
+                bruit peut donc adopter des règlements avec une large portée, sans toutefois
+                enfreindre les limites constitutionnelles de sa compétence, en plus de respecter le
+                critère de raisonnabilité au regard des objectifs municipaux permis.
+         Pour sa part, le secteur de l’aviation qui est sous l’égide des compétences
+                fédérales fait l’objet de règles spécifiques en matière d’émission de bruit. Le
+                transport ferroviaire reste pour sa part peu ou pas réglementé. Les autorités
+                publiques provinciales ou municipales ayant peu de pouvoir de contraindre des
+                entreprises relevant de l’autorité fédérale, il revient au Parlement canadien de
+                légiférer.
+         On a tendance à négliger ce type de nuisance, mais ses conséquences sur l’être
+                humain iront en s’aggravant dans les prochaines années sous la pression des
+                développements urbains, de la concentration des transports urbains, de cette
+                tendance lourde de s’isoler derrière des écouteurs de baladeurs, de iPods et autres
+                merveilles de la technologie, repoussant les vertus de ce qui deviendra une denrée
+                rare : le silence…
+      
+   
+   

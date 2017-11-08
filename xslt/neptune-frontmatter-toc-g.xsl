@@ -46,7 +46,7 @@
                     </core:para>
                 </core:comment>
             </xsl:if>
-            <xsl:apply-templates select="part/toc/tocdiv/preceding-sibling::para"/>
+            <xsl:apply-templates select="part/toc/tocdiv/preceding-sibling::tocentry"/>
             <xsl:apply-templates select="part/toc/tocdiv"/>
         </fm:toc>
     </xsl:template>

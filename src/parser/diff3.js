@@ -164,8 +164,8 @@ function diff( o, n ) {
 
 var fs = require('fs');
 
-var one = fs.readFileSync('testa.txt', 'utf8');
-var other = fs.readFileSync('testb.txt', 'utf8');
+var one = fs.readFileSync('testa.txt', 'utf8').replace(/ /g, '');
+var other = fs.readFileSync('testb.txt', 'utf8').replace(/ /g, '');
 
 
-console.log(diffString(one, other));
+exports.exec = diffString;

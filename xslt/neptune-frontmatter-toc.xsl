@@ -7,7 +7,9 @@
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
     <xsl:include href="neptune-frontmatter.xsl"/>
-    
+
+<!--<xsl:output indent="yes"></xsl:output>-->
+
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="volNum" select="'--volNum--'"/>
     <xsl:param name="tocNumber" select="'01a'"/>
@@ -116,10 +118,11 @@
                     
                     <core:entry-title>
                         <xsl:choose>
-                            <xsl:when test="emphasis[contains(.,$label)]">
-                                <xsl:apply-templates select="*|text()">
+                            <xsl:when test="emphasis[1][contains(.,$label)]">
+                                <xsl:apply-templates select="emphasis[1]">
                                     <xsl:with-param name="labelToExtract" select="$label"/>
                                 </xsl:apply-templates>
+                                <xsl:apply-templates select="(*|text()) except emphasis[1]"/>
                             </xsl:when>
                             <xsl:when test="emphasis">
                                 <xsl:value-of select="substring-after(text()[1], $label)"/>

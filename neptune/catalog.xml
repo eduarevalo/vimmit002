@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+  <!DOCTYPE catalog
+    PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
+           "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
+
+  <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+           prefer="public">
+
+    <publi publicId="-//LEXISNEXIS//DTD Front Matter v015//EN//XML"  
+         uri="/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/frontmatterV015-0000.dtd"/>
+
+    <public 
+         publicId="-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML"  
+         uri="/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/treatiseV021-0000.dtd"/>
+
+    <public 
+         publicId="-//LEXISNEXIS//DTD Endmatter v018//EN//XML"  
+         uri="/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/endmatterxV018-0000.dtd"/>
+
+  </catalog>

@@ -12,7 +12,8 @@ const fs = require('fs'),
     htmlparser = require("htmlparser2"),
     inlineCss = require('inline-css'),
     exec = require('child_process').exec,
-    xmllint = require('./xmllint');
+    xmllint = require('./xmllint'),
+    diff = require('./diff3');
 
 const fxMkDir = util.promisify(fx.mkdir),
     fsReadFile = util.promisify(fs.readFile),
@@ -22,8 +23,21 @@ const fxMkDir = util.promisify(fx.mkdir),
 
 function fascicleFilter(input){
     return /-F[0-9]+.*.xml$/.test(input);
-    //6018_JCQ_09-F02_MJ8.indd.inline.html.db.xml
 }
+
+function wrapInHtml(content){
+    return `<html>
+    <head>
+        <style>
+            ins {background-color: green;}
+            del {background-color: red;}
+        </style>
+    </head>
+    <body> ${content} </body>
+    </html>`;
+    
+}
+var htmlWrapper = '';
 
 function transformCollection(collectionFolder, filter){
     
@@ -67,18 +81,13 @@ function transformCollection(collectionFolder, filter){
         
                                                 var newFileName = pubNum + '-fmvol001.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/frontmatterV015-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/frontmatterV015-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, errors: [], xmlPath: xmlPath }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/frontmatterV015-0000.dtd',
+                                                    docType: '<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                };
                                             
                                         });
                                 }else{
@@ -122,18 +131,13 @@ function transformCollection(collectionFolder, filter){
         
                                                 var newFileName = pubNum + '-fmvol001pre.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/frontmatterV015-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/frontmatterV015-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/frontmatterV015-0000.dtd',
+                                                    docType: '<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                };
                                             
                                         });
                                 }else{
@@ -177,18 +181,13 @@ function transformCollection(collectionFolder, filter){
         
                                                 var newFileName = pubNum + '-fmvol001ap.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/frontmatterV015-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/frontmatterV015-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/frontmatterV015-0000.dtd',
+                                                    docType: '<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                };
                                             
                                         });
                                 }else{
@@ -232,18 +231,13 @@ function transformCollection(collectionFolder, filter){
             
                                                     var newFileName = pubNum + '-fmvol001bio.xml';
                                                     var xmlFilePath = neptunePath + '/' + newFileName;
-                                                    return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/frontmatterV015-0000.dtd' };
-                                                    /*return fsWriteFile(xmlFilePath, content)
-                                                        .then(() => {
-                                                            return xmllint.exec({
-                                                                xmlPath: xmlFilePath,
-                                                                dtdPath: './../../neptune/frontmatterV015-0000.dtd'
-                                                            })
-                                                            .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                            .catch( output => {
-                                                                return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                            });
-                                                        });*/
+                                                    return { 
+                                                        content: content, 
+                                                        filePath: xmlFilePath, 
+                                                        xmlPath: xmlPath, 
+                                                        dtdPath: './../../neptune/frontmatterV015-0000.dtd',
+                                                        docType: '<! DOCTYPE fm: vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                    };
                                                 
                                             });
                                     }else{
@@ -287,18 +281,14 @@ function transformCollection(collectionFolder, filter){
         
                                                 var newFileName = pubNum + '-ptoc01a.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/frontmatterV015-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/frontmatterV015-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/frontmatterV015-0000.dtd',
+                                                    docType: '<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                };
+                                                
                                             
                                         });
                                 }else{
@@ -349,19 +339,14 @@ function transformCollection(collectionFolder, filter){
                                                 var newFileName = pubNum + '-ptoc' + tocNumber + '.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
 
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/frontmatterV015-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/frontmatterV015-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
-                                            
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/frontmatterV015-0000.dtd',
+                                                    docType: '<! DOCTYPE fm: vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                };
+                                                
                                         });
                                 }else{
                                     return Promise.resolve();
@@ -404,18 +389,13 @@ function transformCollection(collectionFolder, filter){
     
                                                 var newFileName = pubNum + '-ch' + chapterNum + '.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/treatiseV021-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/treatiseV021-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/treatiseV021-0000.dtd',
+                                                    docType: '<!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">'
+                                                };
                                             
                                         });
                                 }else{
@@ -459,18 +439,13 @@ function transformCollection(collectionFolder, filter){
         
                                                 var newFileName = pubNum + '-tos001.xml';
                                                 var xmlFilePath = neptunePath + '/' + newFileName;
-                                                return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/endmatterxV018-0000.dtd' };
-                                                /*return fsWriteFile(xmlFilePath, content)
-                                                    .then(() => {
-                                                        return xmllint.exec({
-                                                            xmlPath: xmlFilePath,
-                                                            dtdPath: './../../neptune/endmatterxV018-0000.dtd'
-                                                        })
-                                                        .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                        .catch( output => {
-                                                            return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                        });
-                                                    });*/
+                                                return { 
+                                                    content: content, 
+                                                    filePath: xmlFilePath, 
+                                                    xmlPath: xmlPath, 
+                                                    dtdPath: './../../neptune/endmatterxV018-0000.dtd',
+                                                    docType: '<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">'
+                                                };
                                             
                                         });
                                 }else{
@@ -514,18 +489,14 @@ function transformCollection(collectionFolder, filter){
     
                                             var newFileName = pubNum + '-index.xml';
                                             var xmlFilePath = neptunePath + '/' + newFileName;
-                                            return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/endmatterxV018-0000.dtd' };
-                                            /*return fsWriteFile(xmlFilePath, content)
-                                                .then(() => {
-                                                    return xmllint.exec({
-                                                        xmlPath: xmlFilePath,
-                                                        dtdPath: './../../neptune/endmatterxV018-0000.dtd'
-                                                    })
-                                                    .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                    .catch( output => {
-                                                        return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                    });
-                                                });*/
+                                            return { 
+                                                content: content, 
+                                                filePath: xmlFilePath, 
+                                                xmlPath: xmlPath, 
+                                                dtdPath: './../../neptune/endmatterxV018-0000.dtd',
+                                                docType: '<!DOCTYPE em:index PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">'
+                                            };
+                                            
                                         
                                     });
                             }else{
@@ -571,19 +542,13 @@ function transformCollection(collectionFolder, filter){
                                             var newFileName = pubNum + '-toclist.xml';
                                             var xmlFilePath = neptunePath + '/' + newFileName;
 
-                                            return { content: content, filePath: xmlFilePath, xmlPath: xmlPath, dtdPath: './../../neptune/endmatterxV018-0000.dtd' };
-
-                                            /*return fsWriteFile(xmlFilePath, content)
-                                                .then(() => {
-                                                    return xmllint.exec({
-                                                        xmlPath: xmlFilePath,
-                                                        dtdPath: './../../neptune/endmatterxV018-0000.dtd'
-                                                    })
-                                                    .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                    .catch( output => {
-                                                        return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                    });
-                                                });*/
+                                            return { 
+                                                content: content, 
+                                                filePath: xmlFilePath, 
+                                                xmlPath: xmlPath, 
+                                                dtdPath: './../../neptune/endmatterxV018-0000.dtd',
+                                                docType: '<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">'
+                                            };
                                         
                                     });
                             }else{
@@ -600,14 +565,10 @@ function transformCollection(collectionFolder, filter){
                     var files = [];
                     fileTypes.forEach(function(fileType){
                         fileType.forEach( function(file){
-                            /*var errorsCount = file.errors.length;
-                            if(errorsCount){
-                                errorsCount -= 2;
-                            }
-                            console.log('File:', file.filePath, 'Errors: ', errorsCount);*/
                             files.push(file);
                         });
                     })
+
                     var sorted = _.sortBy(files, function(file){
                         var fileName = _.last(file.xmlPath.split('/'));
                         var match = fileName.match(/^[0-9]+_JCQ_([0-9]+)-/);
@@ -633,48 +594,41 @@ function transformCollection(collectionFolder, filter){
                                 xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "");
                             }
 
+                            var htmlPath = file.xmlPath.replace('/xml/', '/html/').replace('.inline.html.db.xml', '.html');
+                            
                             return fsWriteFile(file.filePath, xppContent)
                                 .then(() => {
-                                    return xmllint.exec({
-                                        xmlPath: file.filePath,
-                                        dtdPath: file.dtdPath
-                                    })
-                                    .then( () => { 
-                                        console.log(file.filePath);
-                                     })
-                                    .catch( output => {
-                                        console.log(file.filePath + " with " + output.stderr.split("\n") + "errors");
+
+                                    var diffPromise = Promise.all([exportHtmlText(htmlPath), exportXmlText(file.filePath)])
+                                        .then( (promises) => {
+                                            var htmlContent = promises[0].replace(/\r\n/g,'').replace(/\u00AD/g,''),
+                                                xmlContent = promises[1].replace(/\r\n/g,'');
+                                            var diffPath = htmlPath.replace('/html/', '/neptune/').replace('.html', '-diff.html');
+                                            var diffContent = diff.exec(htmlContent, xmlContent);
+                                            return fsWriteFile(diffPath, wrapInHtml(diffContent)); 
+                                        });
+
+                                    return diffPromise.then(() => {
+                                        return xmllint.exec({
+                                            xmlPath: file.filePath,
+                                            dtdPath: file.dtdPath
+                                        })
+                                        .then( () => { 
+                                            console.log(file.filePath);
+                                         })
+                                        .catch( output => {
+                                            console.log(file.filePath + " with " + output.stderr.split("\n") + "errors");
+                                        });
+                                    }).then(() =>{
+                                        return fsReadFile(file.filePath, 'utf8').
+                                            then( (data) => {
+                                                var content = data.replace('<?xml version="1.0" encoding="UTF-8"?>', '<?xml version="1.0" encoding="UTF-8"?>' + file.docType);
+                                                return fsWriteFile(file.filePath, content);
+                                            });
                                     });
+
                                 });
                             
-                            /*return saxon
-                                .exec({
-                                    xmlPath: file.xmlPath, 
-                                    xslPath: __dirname + '/../../xslt/inject-xpp.xsl',
-                                    params: {
-                                        nextFilePath: sorted[index+1] ? sorted[index+1].xmlPath : 'LAST'
-                                    }
-                                })
-                                .then( response => response.stdout )
-                                .then( content => {
-
-                                    return content;
-
-                                        var newFileName = pubNum + '-toclist.xml';
-                                        var xmlFilePath = neptunePath + '/' + newFileName;
-                                        return fsWriteFile(xmlFilePath, content)
-                                            .then(() => {
-                                                return xmllint.exec({
-                                                    xmlPath: xmlFilePath,
-                                                    dtdPath: './../../neptune/endmatterxV018-0000.dtd'
-                                                })
-                                                .then( () => { return { filePath: xmlFilePath, xmlPath: xmlPath, errors: [] }; })
-                                                .catch( output => {
-                                                    return { filePath: xmlFilePath, xmlPath: xmlPath, errors: output.stderr.split("\n") }
-                                                });
-                                            });
-                                    
-                                });*/
                             
                         });
                     }, Promise.resolve());
@@ -710,6 +664,27 @@ function transformPackages(paths, filter){
                 });
         })
     );
+}
+
+function exportHtmlText(filePath){
+    return saxon
+        .exec({
+            xmlPath: filePath, 
+            xslPath: __dirname + '/../../xslt/extract-html-text.xsl'
+        })
+        .then( response => response.stdout );
+}
+
+function exportXmlText(filePath){
+    return saxon
+        .exec({
+            xmlPath: filePath, 
+            xslPath: __dirname + '/../../xslt/extract-neptune-text.xsl'/*,
+            options: {
+                catalog: "/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/catalog.xml"
+            }*/
+        })
+        .then( response => response.stdout );
 }
 
 exports.transformPackages = transformPackages;

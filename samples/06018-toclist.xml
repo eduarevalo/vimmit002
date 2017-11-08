@@ -13,7 +13,7 @@
             apparaître en bas des pages qui ont été modifiées à la suite d’une mise à
             jour.</core:para>
     </core:comment>
-    <table typesize="small" colsep="0" frame="none" rowsep="0">
+    <table typesize="reg" colsep="0" frame="none" rowsep="0">
         <tgroup cols="1">
             <colspec align="left" colname="col0" colnum="1" colwidth="162.00pt"/>
             <tbody>

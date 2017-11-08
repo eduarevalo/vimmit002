@@ -4,7 +4,7 @@
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
-    <xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Front Matter v015//EN//XML" doctype-system="frontmatterV015-0000.dtd"/>
+    <!--<xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Front Matter v015//EN//XML" doctype-system="frontmatterV015-0000.dtd"/>-->
     
     <xsl:import href="neptune.xsl"/>
     

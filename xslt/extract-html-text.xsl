@@ -9,4 +9,7 @@
     <xsl:strip-space elements="*" />
     <xsl:preserve-space elements="html:p html:span"/>
     
+    
+    <xsl:template match="html:p[@class='Markup']"/>
+    
 </xsl:stylesheet>

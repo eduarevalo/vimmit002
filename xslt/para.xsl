@@ -73,11 +73,21 @@
         <xsl:variable name="role">
             <xsl:value-of select="normalize-space(concat(@class, ' ', @style))"/>
         </xsl:variable>
+        <xsl:variable name="label">
+            <xsl:call-template name="extractLabel">
+                <xsl:with-param name="text" select="."/>
+            </xsl:call-template>
+        </xsl:variable>
         <xsl:choose>
             <xsl:when test="string-length($role) > 0">
                 <xsl:variable name="reference" select="normalize-space()"/>
                 <xsl:variable name="referencedNode" select="./following::html:p[contains(@class, 'Notes')][starts-with(self::node(), $reference)][1]"/>
                 <xsl:choose>
+                    <xsl:when test="$label!='' and parent::html:p[contains(@class,'Texte')] and following-sibling::html:span[2][contains(.,'–')]">
+                        <emphasis role="label" xreflabel="{$label}">
+                            <xsl:apply-templates/>
+                        </emphasis>
+                    </xsl:when>
                     <xsl:when test="contains($role, 'Super') and text() castable as xs:decimal and ./parent::html:p[not(contains(@class, 'Notes'))] and $reference and $referencedNode">
                         <emphasis role="footnoteref">
                             <footnoteref linkend='{generate-id($referencedNode)}'/>
@@ -108,6 +118,18 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="extractLabel">
+        <xsl:param name="text"/>
+        <xsl:analyze-string select="normalize-space($text)" 
+            regex="^\(?([0-9]*[a-z]*[A-Z]*){{1,2}}[\.|\)]">
+            <xsl:matching-substring>
+                <xsl:copy>
+                    <xsl:value-of select="regex-group(1)"/>
+                </xsl:copy>
+            </xsl:matching-substring>
+        </xsl:analyze-string>
     </xsl:template>
     
 </xsl:stylesheet>
