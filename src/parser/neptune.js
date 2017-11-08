@@ -605,6 +605,10 @@ function transformCollection(collectionFolder, filter){
                                                 xmlContent = promises[1].replace(/\r\n/g,'');
                                             var diffPath = htmlPath.replace('/html/', '/neptune/').replace('.html', '-diff.html');
                                             var diffContent = diff.exec(htmlContent, xmlContent);
+                                            var diffCount = diffContent.match(/<ins|<del/g);
+                                            if(diffCount){
+                                                console.log(htmlPath, "Integrity Errors:", diffCount.length);
+                                            }
                                             return fsWriteFile(diffPath, wrapInHtml(diffContent)); 
                                         });
 

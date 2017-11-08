@@ -2,6 +2,7 @@
 <xsl:stylesheet 
     xmlns:tr="http://www.lexisnexis.com/namespace/sslrp/tr"
     xmlns:fn="http://www.lexisnexis.com/namespace/sslrp/fn"
+    xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs"
@@ -18,5 +19,6 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="core:title-alt"/>
     
 </xsl:stylesheet>

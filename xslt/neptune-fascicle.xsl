@@ -348,6 +348,24 @@
     <xsl:template match="para[contains(@role,'Citation')][preceding-sibling::para[1][contains(@role,'Citation')]]">
     </xsl:template>
     
+    <xsl:template match="para[contains(@role,'Citation2')][preceding-sibling::para[1][not(contains(@role,'Citation2'))]]">
+        <xsl:param name="controlledFlow" select="false()"/>
+        <xsl:variable name="thisPara" select="."/>
+        <xsl:if test="$controlledFlow">
+            <core:blockquote>
+                <core:blockquote-para>
+                    <xsl:apply-templates/>
+                </core:blockquote-para>
+                <xsl:variable name="citation2Limit" select="($thisPara/following-sibling::para[not(contains(@role,'Citation2'))])[1]"/>
+                <xsl:for-each select="$citation2Limit/preceding-sibling::para intersect ./following-sibling::para[contains(@role,'Citation2')]">
+                    <core:blockquote-para>
+                        <xsl:apply-templates/>
+                    </core:blockquote-para>
+                </xsl:for-each>
+            </core:blockquote>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template match="para">
         <xsl:param name="labelToExtract"/>
         <xsl:param name="printFirstTextPageNumber" select="true()"/>
@@ -359,16 +377,27 @@
             </xsl:call-template>
         </xsl:if>
         <xsl:choose>
+            <xsl:when test="contains(@role,'Citation2')"></xsl:when>
             <xsl:when test="contains(@role,'Citation')">
                 <core:blockquote>
                     <core:blockquote-para>
                         <xsl:apply-templates select="$validNodes"/>
                     </core:blockquote-para>
+                    <xsl:if test="./following-sibling::para[1][contains(@role, 'Citation2')]">
+                        <xsl:apply-templates select="./following-sibling::para[1][contains(@role, 'Citation2')]">
+                            <xsl:with-param name="controlledFlow" select="true()"/>
+                        </xsl:apply-templates>
+                    </xsl:if>
                     <xsl:variable name="limit" select="(following-sibling::*[not(contains(@role, 'Citation'))])[1]"/>
-                    <xsl:for-each select="$limit/preceding-sibling::para intersect ./following-sibling::para[contains(@role,'Citation')]">
+                    <xsl:for-each select="$limit/preceding-sibling::para[not(contains(@role, 'Citation2'))] intersect ./following-sibling::para[contains(@role,'Citation')]">
                         <core:blockquote-para>
                             <xsl:apply-templates/>
                         </core:blockquote-para>
+                        <xsl:if test="./following-sibling::para[1][contains(@role, 'Citation2')]">
+                            <xsl:apply-templates select="./following-sibling::para[1][contains(@role, 'Citation2')]">
+                                <xsl:with-param name="controlledFlow" select="true()"/>
+                            </xsl:apply-templates>
+                        </xsl:if>
                     </xsl:for-each>
                 </core:blockquote>
             </xsl:when>
