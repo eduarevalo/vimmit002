@@ -10,7 +10,7 @@
     <xsl:preserve-space elements="html:p html:span"/>
     
     
-    <xsl:template match="html:p[contains(@class,'Markup')]"/>
+    <xsl:template match="html:p[starts-with(@class,'Markup')]"/>
     <xsl:template match="html:head"/>
     
 </xsl:stylesheet>
