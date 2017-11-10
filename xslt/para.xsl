@@ -25,6 +25,8 @@
     
     <xsl:template match="html:p">
         <xsl:variable name="indent" select="starts-with(., '&#9;')"/>
+        <xsl:variable name="nodes" select="* | text()"/>
+        <xsl:variable name="firstTextNode" select="$nodes[1][self::text()]"/>
         <para>
             <xsl:choose>
                 <xsl:when test="$indent">
@@ -38,7 +40,24 @@
                     </xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:apply-templates/>            
+            
+            <xsl:variable name="label">
+                <xsl:call-template name="extractLabel">
+                    <xsl:with-param name="text" select="$firstTextNode"/>
+                </xsl:call-template>
+            </xsl:variable>
+            
+            <xsl:choose>
+                <xsl:when test="$label!='' and contains(@class,'Texte') and ($nodes[3][starts-with(normalize-space(.),'–')] or $nodes[self::text()][2][starts-with(normalize-space(.),'–')])">
+                 <emphasis role="label" xreflabel="{substring-before($label, '.')}">
+                     <xsl:apply-templates select="$firstTextNode"/>
+                 </emphasis>
+                 <xsl:apply-templates select="$nodes except $firstTextNode"/>
+             </xsl:when>
+             <xsl:otherwise>
+                 <xsl:apply-templates/>
+             </xsl:otherwise>
+            </xsl:choose>       
         </para>
     </xsl:template>
     
@@ -50,15 +69,23 @@
         </para>
     </xsl:template>
     
+    <xsl:template match="html:p[contains(@class, 'Notes2')]" priority="150"/>
+    
     <xsl:template match="html:p[contains(@class, 'Notes')]">
         <para>
             <xsl:attribute name="role">
                 <xsl:value-of select="concat(@class, ' ', @style)"/>
             </xsl:attribute>
+            <xsl:variable name="limit" select="(following-sibling::*[not(contains(@class, 'Notes2'))])[1]"/>
             <footnote xml:id="{generate-id()}">
                 <para>
                     <xsl:apply-templates/>    
                 </para>
+                <xsl:for-each select="(following-sibling::* | following-sibling::processing-instruction()) intersect ($limit/preceding-sibling::* | $limit/preceding-sibling::processing-instruction())">
+                    <para>
+                        <xsl:apply-templates/>
+                    </para>
+                </xsl:for-each>
             </footnote>      
         </para>
     </xsl:template>
@@ -83,8 +110,8 @@
                 <xsl:variable name="reference" select="normalize-space()"/>
                 <xsl:variable name="referencedNode" select="./following::html:p[contains(@class, 'Notes')][starts-with(self::node(), $reference)][1]"/>
                 <xsl:choose>
-                    <xsl:when test="$label!='' and parent::html:p[contains(@class,'Texte')] and following-sibling::html:span[2][contains(.,'–')]">
-                        <emphasis role="label" xreflabel="{$label}">
+                    <xsl:when test="$label!='' and parent::html:p[contains(@class,'Texte')] and (./following-sibling::html:span[2][contains(.,'–')] or ./following-sibling::text()[1][starts-with(replace(normalize-space(.),' ',''), '–')])">
+                        <emphasis role="label" xreflabel="{substring-before($label, '.')}">
                             <xsl:apply-templates/>
                         </emphasis>
                     </xsl:when>

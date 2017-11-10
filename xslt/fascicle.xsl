@@ -138,7 +138,7 @@
                 <xsl:choose>
                     <xsl:when test="self::node()[contains(@class, 'Auteur---Nom')]">
                         <author>
-                            <personname>
+                            <personname role="{@style}">
                                 <xsl:apply-templates/>
                             </personname>
                             <xsl:if test="following-sibling::html:p[1][contains(@class, 'Auteur---description') or contains(@class,'Notes')]">

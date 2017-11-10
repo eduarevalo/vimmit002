@@ -19,6 +19,16 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    <xsl:template match="fn:footnote">
+        <xsl:value-of select="@fr"/>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="fn:footnote-id">
+        <xsl:value-of select="@*"/>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
     <xsl:template match="core:title-alt"/>
     
 </xsl:stylesheet>

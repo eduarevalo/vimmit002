@@ -22,7 +22,7 @@
     
     <xsl:template match="/">
         
-        <fm:vol-fm pub-num="{$pubNum}" volnum="1">
+        <fm:vol-fm pub-num="{$pubNum}" volnum="">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=fmvol001'"/>
             <xsl:processing-instruction name="textpage">

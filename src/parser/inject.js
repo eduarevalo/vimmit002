@@ -124,7 +124,7 @@ function inlineHtmlParser(html){
         'border-color: ([^;]*);': '',
         'border-style: [^;]*;': '',
         'border-width: ([0-9]*)(px|);': '',
-        'color: ([^;]*)*;': '',
+        'background-color: ([^;]*);': function(match, p1, p2){ return `BgColor-${p1}`; },
         "font-family: [^;]*;": '',
         'font-size: ([0-9]*)(px|%);': function(match, p1, p2){ return `FontSize-${p1}${p2}`; },
         'font-style: (normal|italic|oblique);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
@@ -152,9 +152,9 @@ function inlineHtmlParser(html){
         'widows: ([0-9]*);': '',
         'vertical-align: (super|sub);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
         'display: inline-block;':'',
-        'height: ([0-9]*)(px|);':'',
+        'height: ([0-9]*)(px|);': function(match, p1){ return `Height-${p1}`; },
         'position: relative;':'',
-        'width: ([0-9]*)(px|);':'',
+        'width: ([0-9]*)(px|);': function(match, p1){ return `Width-${p1}`; },
         
         // AFTER FIXES
         /*'style="([^"]*)"': function(match, p1){ 

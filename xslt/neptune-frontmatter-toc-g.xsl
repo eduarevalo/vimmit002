@@ -9,7 +9,6 @@
     <xsl:import href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
-    <xsl:param name="volNum" select="'--volNum--'"/>
     <xsl:param name="tocNumber" select="'01a'"/>
     <xsl:param name="nextPageRef"></xsl:param>
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
@@ -17,7 +16,7 @@
     
     <xsl:template match="/">
         
-        <fm:vol-fm pub-num="{$pubNum}" volnum="{$volNum}">
+        <fm:vol-fm pub-num="{$pubNum}" volnum="">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="concat('ch-num=ptoc', $tocNumber)"/>
             <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>

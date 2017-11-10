@@ -17,7 +17,7 @@
     
     <xsl:template match="/">
         
-        <em:index volnum="1">
+        <em:index volnum="">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=index'"/>
             <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>

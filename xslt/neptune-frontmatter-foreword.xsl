@@ -16,7 +16,7 @@
     
     <xsl:template match="/">
         
-        <fm:vol-fm pub-num="{$pubNum}" volnum="1">
+        <fm:vol-fm pub-num="{$pubNum}" volnum="">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=fmvol001ap'"/>
             <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
@@ -46,8 +46,8 @@
         <xsl:param name="set"/>
         <xsl:variable name="names" select="$set[(position() mod 5) = 1]"/>
         <fm:signed>
-            <fm:signed-line>
-                <xsl:for-each select="$names">
+            <xsl:for-each select="$names">
+                <fm:signed-line>
                     <fm:right>
                         <xsl:apply-templates/>
                         <core:nl/>
@@ -58,8 +58,8 @@
                             </xsl:if>
                         </xsl:for-each>
                     </fm:right>
-                </xsl:for-each>
-            </fm:signed-line>
+                </fm:signed-line>
+            </xsl:for-each>
         </fm:signed>
     </xsl:template>
     

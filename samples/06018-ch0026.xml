@@ -3,7 +3,7 @@
     <!-- pub-num=06081 -->
     <!-- ch-num=ch0026 -->
     <?textpage page-num="26-1" release-num="Septembre 2016"?>
-    <core:desig value="1">FASCICULE 26</core:desig>
+    <core:desig value="26">FASCICULE 26</core:desig>
     <core:title>Bruit</core:title>
     <core:title-alt use4="r-running-hd">Fasc. 26 – Bruit</core:title-alt>
     <core:title-alt use4="l-running-hd">II. Aspects particuliers</core:title-alt>
@@ -99,6 +99,169 @@
                 </core:blockquote>
 
                 <!-- -->
+            </tr:secmain>
+            <!--  -->
+            <?textpage page-num="26-7" release-num="Septembre 2016"?>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <tr:ch-ptsub1 volnum="2">
+            <core:desig value="C">C.</core:desig>
+            <core:title>Normes reconnues au Canada et à l’international</core:title>
+            <tr:secmain volnum="2">
+                <core:desig value="5">5.</core:desig>
+                <core:title runin="1">Norme objective</core:title>
+                <core:para runin="1"> – La norme objective du bruit est importante afin de guider
+                    les instances municipales dans l’élaboration de leur réglementation. Que ce soit
+                    par rapport à la pression acoustique ou encore à l’identification de la source
+                    du bruit, l’édiction de normes permet une meilleure compréhension pour tous les
+                    acteurs de la société, comme l’a rappelé la Cour suprême du Canada dans l’arrêt
+                        <core:emph typestyle="it">Montréal (Ville) c. 2952- 1366 Québec
+                        inc.</core:emph><fn:endnote-id er="1"/> où il était question de
+                    l’interprétation d’un règlement sur le bruit de la Ville de
+                        Montréal<fn:endnote-id er="2"/>.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>[2005] 3 R.C.S. 141, 2005 CSC 62, par. 48.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para><core:emph typestyle="it">Règlement sur le bruit</core:emph>,
+                            R.R.V.M. 1994, c. B-3.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+            <!--  -->
+            <?textpage page-num="26-9" release-num="Septembre 2016"?>
+            <!--  -->
+            <?textpage page-num="26-11" release-num="Septembre 2016"?>
+            <!--  -->
+            <tr:secmain volnum="2">
+                <core:desig value="12">12.</core:desig>
+                <core:title runin="1">Illustrations jurisprudentielles</core:title>
+                <core:para runin="1">– Depuis lors, de nombreuses décisions ont repris ces
+                        normes<fn:endnote-id er="1"/>. Dans l’affaire <core:emph typestyle="it"
+                        >Picard c. Pointe-Lebel (Corporation municipale du Village de)</core:emph>
+                    par exemple, la juge Ouellet de la Cour supérieure reconnaissait explicitement
+                    l’acceptation par les tribunaux des normes sur le bruit établies par le MDDELCC
+                    : « Le ministère de l’Environnement du Québec énonce certaines normes sur le
+                    niveau de bruit acceptable dans les différentes zones. Il s’agit de normes
+                    informelles et non contraignantes qui ont toutefois reçu “l’aval des tribunaux,
+                    et ce depuis plusieurs années déjà”. »<fn:endnote-id er="2"/></core:para>
+                <core:para>Par contre, dans l’affaire <core:emph typestyle="it">Iredale c.
+                        Mont-Tremblant (Ville de)</core:emph>, le juge Jean-Yves Lalonde de la Cour
+                    supérieure du Québec, a rappelé le caractère relatif de la directive, par
+                    opposition à une norme juridique, le ministère disposant en conséquence d’une
+                    certaine marge de manoeuvre dans son appréciation des niveaux de bruit. Les
+                    circonstances pouvaient en effet justifier une modulation des niveaux
+                    acceptables :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para>Le demandeur reproche au représentant du ministre de
+                        s’être écarté de la Note d’instructions 98-01. Il importe de préciser dès
+                        maintenant que la Note d’instructions 98-01 n’a pas force de loi, étant
+                        acquis que le législateur provincial, bien que hiérarchiquement compétent, a
+                        choisi de ne pas régir en matière de bruit, laissant cette responsabilité
+                        aux municipalités.<fn:endnote-id er="3"/></core:blockquote-para>
+                </core:blockquote>
+                <core:para>Le juge Lalonde a jugé que la décision du ministre était
+                    raisonnable.</core:para>
+                <core:para>Dans l’affaire récente opposant la Ville de Saint-Lambert à la Ville de
+                    Montréal pour le bruit causé par les concerts au Parc Jean-Drapeau (situé sur
+                    l’île de Montréal), la juge Corriveau reprend certains passages de la décision
+                        <core:emph typestyle="it">Iredale c. Stroll</core:emph><fn:endnote-id er="4"
+                    /> qui se lisent comme suit :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para>De plus, elles citent un extrait de la décision <core:emph
+                            typestyle="it">Iredale c. Stroll</core:emph> où le juge Lalonde
+                        s’exprime ainsi :<core:blockquote>
+                            <core:blockquote-para>Dans le cas sous étude, en application de
+                                l’article 20 LQE, en l’absence de réglementation applicable, c’est
+                                en vertu du troisième volet de cette disposition qu’il faut évaluer
+                                s’il y a une contravention. Dans ce cas, l’analyse se fait selon les
+                                critères subjectifs et non selon une norme objective.<fn:endnote-id
+                                    er="5"/></core:blockquote-para>
+                        </core:blockquote></core:blockquote-para>
+                </core:blockquote>
+                <core:para>Puis, la juge Corriveau reprend les propos de la Cour d’appel dans
+                    l’affaire <core:emph typestyle="it">Courses automobiles Mont-Tremblant c.
+                        Iredale</core:emph><fn:endnote-id er="6"/> concernant l’analyse contextuelle
+                    à faire dans le cas d’une demande d’injonction pour le bruit comme suit
+                    :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para>Tel que confirmé dans l’arrêt précité <core:emph
+                            typestyle="it">Courses automobiles Mont-Tremblant c.
+                        Iredale</core:emph>, le Tribunal doit alors procéder à une analyse
+                        contextuelle et multifactorielle qui dépend des circonstances, de différents
+                        facteurs, des données scientifiques, économiques et sociales.<fn:endnote-id
+                            er="7"/></core:blockquote-para>
+                </core:blockquote>
+                <core:para>Dans l’affaire <core:emph typestyle="it">Gestion Paroi inc. c. Gestion
+                        Gérard Furse inc.</core:emph>, le juge François Tôth de la Cour supérieure
+                    soulignait d’ailleurs que la directive 98-01 ne pouvait que servir comme guide
+                        d’interprétation<fn:endnote-id er="8"/>. En 2015, le juge Tôth, toujours
+                    dans l’affaire <core:emph typestyle="it">Gestion Paroi inc. c. Gestion Gérard
+                        Furse inc.</core:emph>, reprend la norme établie par la Cour d’appel en
+                    matière d’analyse du niveau de bruit en ces termes :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para>Cette bataille de méthodologie a occupé une bonne partie
+                        des débats et détourné l’attention de l’analyse multifactorielle et
+                        contextuelle préconisée par la Cour d’appel : tout ne se résume pas à une
+                        mesure de pression acoustique.</core:blockquote-para>
+                </core:blockquote>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>Voir, notamment : <core:emph typestyle="it">Roy c. Usinage Nado
+                                Inc.</core:emph>, J.E. 86-186, par. 19-21 (C.S.); <core:emph
+                                typestyle="it">Piedmont (Municipalité de) c. Morin</core:emph>, J.E.
+                            88-41, par. 29 et 43-44 (C.S.); <core:emph typestyle="it">Plante c.
+                                Nutrichef ltée</core:emph>, [1990] J.Q. no 2670, p. 629 (C.Q.);
+                                <core:emph typestyle="it">Giguère c. Turcotte</core:emph>, J.E.
+                            95-1396, par. 23 (C.S.); <core:emph typestyle="it">Kerr c.
+                                Eastwood</core:emph>, [1995] J.Q. no 3296, par. 32 (C.S.);
+                                <core:emph typestyle="it">Coalition pour la protection de
+                                l’environnement du parc linéaire « Petit Train du Nord » c.
+                                Laurentides (Municipalité régionale de comté des)</core:emph>, EYB
+                            2004-54733, par. 19-20 (C.S.); <core:emph typestyle="it">Directeur des
+                                poursuites criminelles et pénales c. Planchers Mistral
+                                inc.</core:emph>, 2009 QCCQ 1307, par. 72 et suiv.; <core:emph
+                                typestyle="it">Îles-de-la-Madeleine (Municipalité des) c.
+                                Duclos</core:emph>, 2009 QCCS 721, par. 63 et suiv., [2009] J.Q. no
+                            3580; <core:emph typestyle="it">Gestion Paroi inc. c. Gestion Gérard
+                                Furse inc.</core:emph>, 2012 QCCS 901, par. 95 et suiv.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para><core:emph typestyle="it">Picard c. Pointe-Lebel (Corporation
+                                municipale du Village de)</core:emph>, EYB 2007-120102, par. 130-
+                            131, [2007] J.Q. no 5421 (C.S.)</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="3">
+                        <fn:para><core:emph typestyle="it">Iredale c. Mont-Tremblant (Ville
+                                de)</core:emph>, 2011 QCCS 760, [2011] J.Q. no 1669, EYB
+                            2011-186946, par. 205 (non contredit en appel sur ce point, <core:emph
+                                typestyle="it">Mont-Tremblant c. Iredale</core:emph>, 2013 QCCA
+                            1348).</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="4">
+                        <fn:para><core:emph typestyle="it">Iredale c. Stroll</core:emph>, 2008 QCCS
+                            3008, par. 21</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="5">
+                        <fn:para><core:emph typestyle="it">St-Lambert (Ville de) c. Montréal (Ville
+                                de)</core:emph>, 2015 QCCS 3245, par. 54-55.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="6">
+                        <fn:para><core:emph typestyle="it">Mont-Tremblant c. Iredale</core:emph>,
+                            2013 QCCA 1348, par. 98-102.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="7">
+                        <fn:para><core:emph typestyle="it">St-Lambert (Ville de) c. Montréal (Ville
+                                de)</core:emph>, 2015 QCCS 3245, par. 56.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="8">
+                        <fn:para><core:emph typestyle="it">Gestion Paroi inc. c. Gestion Gérard
+                                Furse inc.</core:emph>, 2012 QCCS 901, par. 182; <core:emph
+                                typestyle="it">Gestion Paroi inc. c. Gestion Gérard Furse
+                                inc.</core:emph>, 2015 QCCS 1305, par. 425.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
             </tr:secmain>
             <!--  -->
         </tr:ch-ptsub1>

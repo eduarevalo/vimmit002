@@ -236,7 +236,7 @@ function transformCollection(collectionFolder, filter){
                                                         filePath: xmlFilePath, 
                                                         xmlPath: xmlPath, 
                                                         dtdPath: './../../neptune/frontmatterV015-0000.dtd',
-                                                        docType: '<! DOCTYPE fm: vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                        docType: '<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
                                                     };
                                                 
                                             });
@@ -344,7 +344,7 @@ function transformCollection(collectionFolder, filter){
                                                     filePath: xmlFilePath, 
                                                     xmlPath: xmlPath, 
                                                     dtdPath: './../../neptune/frontmatterV015-0000.dtd',
-                                                    docType: '<! DOCTYPE fm: vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
+                                                    docType: '<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">'
                                                 };
                                                 
                                         });
@@ -577,29 +577,38 @@ function transformCollection(collectionFolder, filter){
                         }
                         return fileName;
                     });
+
+                    var volnum = "1";
                     
                     return _.reduce(sorted, function(promise, file, index){
                         return promise.then(function(){
 
+                            var volNumMatch = file.filePath.match(/\-ptoc([0-9]+)\.xml$/);
+                            if(volNumMatch){
+                                volnum = parseInt(volNumMatch[1]);
+                            }
                             var xppContent;
 
                             if(sorted[index+1]){
                                 var match = sorted[index+1].content.match(/page-num=\"([A-Z\-0-9]+)"\srelease-num="/);
                                 if(match && match[1]){
-                                    xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "<?xpp nextpageref=\"" + match[1] + "\"?>");
+                                    xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "<?xpp XppPI nextpageref=\"" + match[1] + "\"?>");
                                 }else{
-                                    xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "<?xpp nextpageref=\"NOT_FOUND\"?>");
+                                    xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "<?xpp XppPI nextpageref=\"NOT_FOUND\"?>");
                                 }
                             }else{
                                 xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "");
                             }
 
-                            var htmlPath = file.xmlPath.replace('/xml/', '/html/').replace('.inline.html.db.xml', '.html');
+                            xppContent = xppContent.replace(/volnum=""/g, `volnum="${volnum}"`);
+
+                            var htmlPath = file.xmlPath.replace('/xml/', '/html/').replace('.inline.html.db.xml', '.html'),
+                                tempXml = file.filePath.replace('/neptune/','/temp/');
                             
-                            return fsWriteFile(file.filePath, xppContent)
+                            return fsWriteFile(tempXml, xppContent)
                                 .then(() => {
 
-                                    var diffPromise = Promise.all([exportHtmlText(htmlPath), exportXmlText(file.filePath)])
+                                    var diffPromise = Promise.all([exportHtmlText(htmlPath), exportXmlText(tempXml)])
                                         .then( (promises) => {
                                             var htmlContent = promises[0].replace(/\r\n/g,'').replace(/\u00AD/g,''),
                                                 xmlContent = promises[1].replace(/\r\n/g,'');
@@ -610,6 +619,11 @@ function transformCollection(collectionFolder, filter){
                                                 console.log(htmlPath, "Integrity Errors:", diffCount.length);
                                             }
                                             return fsWriteFile(diffPath, wrapInHtml(diffContent)); 
+                                        }).then( () => {
+                                            return neptuneLast(tempXml)
+                                                .then( (lastContent) => {
+                                                    return fsWriteFile(file.filePath, lastContent);
+                                                });
                                         });
 
                                     return diffPromise.then(() => {
@@ -674,7 +688,7 @@ function exportHtmlText(filePath){
     return saxon
         .exec({
             xmlPath: filePath, 
-            xslPath: __dirname + '/../../xslt/extract-html-text.xsl'
+            xslPath: __dirname + '/../../xslt/extract-html-final-text.xsl'
         })
         .then( response => response.stdout );
 }
@@ -684,6 +698,28 @@ function exportXmlText(filePath){
         .exec({
             xmlPath: filePath, 
             xslPath: __dirname + '/../../xslt/extract-neptune-text.xsl'/*,
+            options: {
+                catalog: "/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/catalog.xml"
+            }*/
+        })
+        .then( response => response.stdout );
+}function exportXmlText(filePath){
+    return saxon
+        .exec({
+            xmlPath: filePath, 
+            xslPath: __dirname + '/../../xslt/extract-neptune-text.xsl'/*,
+            options: {
+                catalog: "/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/catalog.xml"
+            }*/
+        })
+        .then( response => response.stdout );
+}
+
+function neptuneLast(filePath){
+    return saxon
+        .exec({
+            xmlPath: filePath, 
+            xslPath: __dirname + '/../../xslt/neptune-last.xsl'/*,
             options: {
                 catalog: "/Users/eas/Documents/dev/projects/lexis-nexis/vimmit002/neptune/catalog.xml"
             }*/

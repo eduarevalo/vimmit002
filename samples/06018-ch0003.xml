@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="1">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=ch0003 -->
+    <?textpage page-num="3-1" release-num="Février 2017"?>
+    <core:desig value="3">FASCICULE 3</core:desig>
+    <core:title>Municipalités et protection de l’environnement</core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 3 – Municipalités et protection de
+        l’environnement</core:title-alt>
+    <core:title-alt use4="l-running-hd">I. Aspects généraux</core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="bf">Annie ROCHETTE</core:emph></core:name.text>
+            <core:name.detail>
+                <core:role>Professeure, Département des sciences juridiques, Université du Québec à
+                    Montréal</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="it">Hugo COLLIN</core:emph></core:name.text>
+            <core:name.detail>
+                <core:role>Avocat</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:comment-prelim type="currentness">
+        <core:para>À jour au 15 novembre 2016</core:para>
+    </core:comment-prelim>
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>POINTS-CLÉS</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:enum>1.</core:enum>
+                    <core:para>En raison du <core:emph typestyle="bf">principe de
+                            subsidiarité</core:emph>, les municipalités doivent jouer un rôle
+                        important dans la protection de l’environnement (V. n<core:emph
+                            typestyle="su">os</core:emph> 1 à 8).</core:para>
+                </core:listitem>
+                <!--  -->
+            </core:list>
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <?textpage page-num="3-3" release-num="Février 2017"?>
+    <!--  -->
+    <tr:ch-pt volnum="1">
+        <core:no-desig/>
+        <core:title>INTRODUCTION</core:title>
+        <tr:secmain volnum="1">
+            <core:desig value="1">1.</core:desig>
+            <core:title runin="1">Rôle essentiel des municipalités</core:title>
+            <core:para runin="1"> – La société québécoise est confrontée à des défis
+                environnementaux de taille, notamment la pollution des lacs et des rivières, les
+                changements climatiques et la gestion des matières résiduelles, qui exigent des
+                actions et des solutions à tous les niveaux. Étant plus près des citoyennes et
+                citoyens et connaissant les besoins locaux, les municipalités ont un rôle essentiel
+                à jouer dans l’atteinte du développement durable et la protection de
+                l’environnement. Ce rôle a d’ailleurs été reconnu par les tribunaux à maintes
+                reprises (Partie I).</core:para>
+            <core:para>Afin de pouvoir jouer ce rôle essentiel, les municipalités ont été dotées de
+                pouvoirs délégués par le législateur québécois tout en respectant le partage des
+                compétences entre les gouvernements fédéral et provincial en matière de protection
+                de l’environnement. Ces pouvoirs et responsabilités sont explicités dans quelques
+                lois provinciales, notamment la <core:emph typestyle="it">Loi sur les compétences
+                    municipales</core:emph><fn:endnote-id er="1"/> et la <core:emph typestyle="it"
+                    >Loi sur l’aménagement et l’urbanisme</core:emph><fn:endnote-id er="2"/>, qui
+                confèrent aux municipalités locales des pouvoirs assez larges en matière
+                d’environnement (Partie II).</core:para>
+            <core:para>comprennent pourtant certaines limites, notamment la protection de certaines
+                activités comme l’exploitation minière et l’agriculture, ainsi que les droits
+                acquis. De plus, les compétences des municipalités en matière de protection de
+                l’environnement demeurent encore sous-utilisées, les municipalités locales manquant
+                de sources de revenus afin de réaliser pleinement le rôle qu’elles doivent jouer
+                dans la protection de l’environnement et l’aménagement du territoire de façon à
+                surmonter les défis environnementaux du 21<core:emph typestyle="su">e</core:emph>
+                siècle.</core:para>
+            <fn:endnotes>
+                <fn:endnote er="1">
+                    <fn:para>RLRQ, c. C-47.1 (ci-après « L.c.m. »).</fn:para>
+                </fn:endnote>
+                <fn:endnote er="2">
+                    <fn:para>RLRQ, c. A-19.1 (ci-après « L.a.u. »).</fn:para>
+                </fn:endnote>
+            </fn:endnotes>
+        </tr:secmain>
+    </tr:ch-pt>
+    <?textpage page-num="3-5" release-num="Février 2017"?>
+    <tr:ch-pt volnum="1">
+        <core:desig value="I">I.</core:desig>
+        <core:title>RÔLE DES MUNICIPALITÉS DANS LA PROTECTION DE L’ENVIRONNEMENT</core:title>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Principe de subsidiarité</core:title>
+            <tr:ch-ptsub2-dummy volnum="1">
+                <tr:secmain volnum="1">
+                    <core:desig value="1.1">1.1.</core:desig>
+                    <core:title runin="1">Introduction</core:title>
+                    <core:para runin="1"> – En matière de protection de l’environnement, le principe
+                        de subsidiarité est déterminant. Il vise la répartition des pouvoirs de
+                        façon à permettre que les décisions soient prises au niveau d’action le plus
+                        approprié. Puisque les communautés locales sont mieux à même de comprendre
+                        et apprécier les besoins et les problèmes locaux, l’application de ce
+                        principe dicte alors qu’elles doivent jouer un rôle déterminant dans
+                        l’atteinte du développement durable. Le principe de subsidiarité ayant
+                        d’abord été mis de l’avant en droit international, un bref aperçu de son
+                        fondement en droit international sera effectué, pour ensuite résumer la
+                        place qu’il occupe en droit québécois.</core:para>
+                </tr:secmain>
+            </tr:ch-ptsub2-dummy>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="1">1.</core:desig>
+                <core:title>Fondement international</core:title>
+                <tr:secmain volnum="1">
+                    <core:desig value="2">2.</core:desig>
+                    <core:title runin="1">Rapport Brundtland</core:title>
+                    <core:para> – Au cours de la deuxième moitié du 20<core:emph typestyle="su"
+                            >e</core:emph> siècle, la communauté internationale constate peu à peu
+                        l’impact négatif que peut avoir la dégradation de l’environnement sur le
+                        développement économique et le développement économique sur la qualité de
+                        l’environnement. Reconnaissant la relation d’interdépendance entre
+                        l’environnement et le développement, le rapport Brundtland<fn:endnote-id
+                            er="1"/>, déposé dans le cadre de la Commission mondiale pour
+                        l’environnement et le développement des Nations Unies, introduit le concept
+                        de développement durable dans le discours international. Ce document définit
+                        le développement durable et établit les assises qui doivent guider la
+                        communauté internationale dans sa progression vers l’atteinte de
+                        celui-ci.</core:para>
+                    <!--  -->
+                </tr:secmain>
+                <!--  -->
+            </tr:ch-ptsub2>
+            <?textpage page-num="3-7" release-num="Février 2017"?>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="2">2.</core:desig>
+                <core:title>En droit québécois</core:title>
+                <tr:ch-ptsub3 volnum="1">
+                    <core:desig value="a">a)</core:desig>
+                    <core:title>Subsidiarité et développement durable</core:title>
+                    <tr:secmain volnum="1">
+                        <core:desig value="4">4.</core:desig>
+                        <core:title runin="1">Introduction</core:title>
+                        <core:para runin="1"> – Depuis le Rapport Brundtland<fn:endnote-id er="1"/>,
+                            qui visait à concilier la protection de l’environnement et le
+                            développement économique, l’importance croissante accordée au principe
+                            du développement durable a mené à l’adoption, au Québec, de la Loi sur
+                            le développement durable. Le principe de subsidiarité pouvant être perçu
+                            comme l’un des outils nécessaires à la mise en oeuvre d’un développement
+                            durable, il a été intégré à Loi sur le développement durable à titre de
+                            l’un des 16 principes devant guider « l’Administration » dans sa
+                            stratégie de mise en oeuvre du développement durable.</core:para>
+                        <fn:endnotes>
+                            <fn:endnote er="1">
+                                <fn:para>COMMISSION MONDIALE SUR L’ENVIRONNEMENT ET LE
+                                    DÉVELOPPEMENT, <core:emph typestyle="it">Notre avenir à
+                                        tous</core:emph>, Montréal, Éditions du fleuve,
+                                    1989.</fn:para>
+                            </fn:endnote>
+                        </fn:endnotes>
+                    </tr:secmain>
+                    <!--  -->
+                </tr:ch-ptsub3>
+                <!--  -->
+                <?textpage page-num="3-9" release-num="Février 2017"?>
+                <!--  -->
+                <?textpage page-num="3-11" release-num="Février 2017"?>
+                <!--  -->
+            </tr:ch-ptsub2>
+        </tr:ch-ptsub1>
+        <!--  -->
+        <?textpage page-num="3-13" release-num="Février 2017"?>
+        <!--  -->
+        <?textpage page-num="3-15" release-num="Février 2017"?>
+        <!--  -->
+        <?textpage page-num="3-17" release-num="Février 2017"?>
+        <!--  -->
+        <?textpage page-num="3-19" release-num="Février 2017"?>
+        <!--  -->
+    </tr:ch-pt>
+    <?textpage page-num="3-21" release-num="Février 2017"?>
+    <tr:ch-pt volnum="1">
+        <core:desig value="B">B.</core:desig>
+        <core:title>Délégation des pouvoirs aux instances municipales québécoises en matière de
+            protection de l’environnement</core:title>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="1">1.</core:desig>
+            <core:title>Pouvoirs délégués à la municipalité locale</core:title>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="a">a)</core:desig>
+                <core:title>Lois à vocation strictement municipale</core:title>
+                <tr:secmain volnum="1">
+                    <core:desig value="24"/>
+                    <core:title runin="1">Compétence générale en matière
+                        d’environnement</core:title>
+                    <core:para> – Les compétences générales qui sont attribuées aux municipalités
+                        locales par le législateur sont énumérées à l’article 4 de la <core:emph
+                            typestyle="it">Loi sur les compétences municipales</core:emph>
+                        :</core:para>
+                    <core:blockquote>
+                        <core:blockquote-para><core:emph typestyle="bf">4.</core:emph> En outre des
+                            compétences qui lui sont conférées par d’autres lois, toute municipalité
+                            locale a compétence dans les domaines suivants :<core:blockquote>
+                                <core:blockquote-para>1° la culture, les loisirs, les activités
+                                    communautaires et les parcs;</core:blockquote-para>
+                                <core:blockquote-para>2° le développement économique local, dans la
+                                    mesure prévue au chapitre III;</core:blockquote-para>
+                                <core:blockquote-para>3° la production d’énergie et les systèmes
+                                    communautaires de télécommunication;</core:blockquote-para>
+                                <core:blockquote-para>4° l’environnement;</core:blockquote-para>
+                                <core:blockquote-para>5° la salubrité;</core:blockquote-para>
+                                <core:blockquote-para>6° les nuisances;</core:blockquote-para>
+                                <core:blockquote-para>7° la sécurité;</core:blockquote-para>
+                                <core:blockquote-para>8° le transport.</core:blockquote-para>
+                            </core:blockquote></core:blockquote-para>
+                    </core:blockquote>
+                    <core:para>Outre la mention expresse de la compétence en matière d’environnement
+                        au quatrième paragraphe, il faut également souligner le caractère connexe au
+                        domaine de l’environnement que représente la compétence en matière de
+                        salubrité et de nuisances. Ensemble, ces éléments confèrent à la
+                        municipalité locale un large champ de compétence en matière de protection de
+                        l’environnement sur son territoire.</core:para>
+                </tr:secmain>
+                <!--  -->
+                <?textpage page-num="3-23" release-num="Février 2017"?>
+                <!--  -->
+                <?textpage page-num="3-25" release-num="Février 2017"?>
+                <!--  -->
+                <?textpage page-num="3-27" release-num="Février 2017"?>
+                <!--  -->
+                <?textpage page-num="3-29" release-num="Février 2017"?>
+                <!--  -->
+                <tr:secmain volnum="1">
+                    <core:desig value="35">35.</core:desig>
+                    <core:title runin="1">Eaux usées des résidences isolées</core:title>
+                    <core:para runin="1">– Au Québec, un nombre important d’habitations
+                        résidentielles ne sont pas reliées à un système d’égout municipal. Ainsi,
+                        afin de protéger l’environnement contre les dangers de contamination que
+                        représentent les eaux usées des résidences isolées et en assurer la gestion,
+                        le <core:emph typestyle="it">Règlement sur l’évacuation et le traitement des
+                            eaux usées des résidences isolées</core:emph><fn:endnote-id er="1"/> a
+                        été adopté en vertu de la <core:emph typestyle="it">Loi sur la qualité de
+                            l’environnement</core:emph>. Celui-ci prévoit que les municipalités sont
+                        chargées de son application<fn:endnote-id er="2"/>. Cette responsabilité
+                        comporte entre autres l’obligation d’assurer la gestion des permis de
+                        construction des résidences isolées sur son territoire, qui ne peuvent être
+                        délivrés que si le dispositif d’évacuation prévu est conforme au
+                            règlement<fn:endnote-id er="3"/>.</core:para>
+                    <!--  -->
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para>RLRQ, c. Q-2, r. 22.</fn:para>
+                        </fn:endnote>
+                        <!--  -->
+                        <?textpage page-num="3-31" release-num="Février 2017"?>
+                        <fn:endnote er="12">
+                            <fn:para><core:emph typestyle="it">Règlement sur l’évacuation et le
+                                    traitement des eaux usées des résidences isolées</core:emph>,
+                                RLRQ, c. Q-2, r. 22, art. 89.</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+                <tr:secmain-dummy volnum="1">
+                    <core:comment type="other" box="1">
+                        <core:para>Paragraphe suivant : 37</core:para>
+                    </core:comment>
+                </tr:secmain-dummy>
+                <tr:secmain volnum="1">
+                    <core:desig value="37">37.</core:desig>
+                    <core:title runin="1">Règlement sur l’évacuation et le traitement des eaux usées
+                        des résidences isolées, RLRQ, c. Q-2, r. 22, art. 89.</core:title>
+                    <core:para runin="1"> – Les eaux souterraines représentent la principale source
+                        d’alimentation en eau potable pour près de 21 % de la population
+                            québécoise<fn:endnote-id er="1"/>. Afin de protéger cette ressource, le
+                        nouveau <core:emph typestyle="it">Règlement sur le prélèvement des eaux et
+                            leur protection</core:emph><fn:endnote-id er="2"/>, présenté en juillet
+                        2014 et en partie en vigueur depuis août 2014, vient remplacer le <core:emph
+                            typestyle="it">Règlement sur le captage des eaux
+                            souterraines</core:emph><fn:endnote-id er="3"/>. Ce règlement vise non
+                        seulement les installations de prélèvement d’eau, mais aussi les activités
+                        susceptibles de porter atteinte à la qualité de l’eau pouvant être prélevée,
+                        à proximité, à des fins de consommation humaine ou de transformation
+                            alimentaire<fn:endnote-id er="4"/>. Depuis le 2 mars 2015, les
+                        municipalités sont responsables de l’application des normes d’aménagement et
+                        d’exploitation pour les installations de prélèvement d’eau (souterraine ou
+                        de surface) et les systèmes de géothermie prévues au chapitres III et IV de
+                        ce nouveau règlement<fn:endnote-id er="5"/>. Par contre, les municipalités
+                        ne sont pas chargées de l’application des normes applicables aux
+                        installations destinées à l’exploration et à l’exploitation du pétrole, du
+                        gaz naturel, de la saumure ou à un réservoir souterrain.</core:para>
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para>QUÉBEC (Ministère du Développement durable, de l’Environnement
+                                et des Parcs), <core:emph typestyle="it">Le puits</core:emph>,
+                                Montréal, Bibliothèque et Archives nationales du Québec, 2003, p.
+                                8.</fn:para>
+                        </fn:endnote>
+                        <!--  -->
+                        <fn:endnote er="5">
+                            <fn:para><core:emph typestyle="it">Règlement sur le prélèvement des eaux
+                                    et leur protection</core:emph>, RLRQ, c. Q-2, r. 35.2, art.
+                                11-30. Avant l’entrée en vigueur de ce nouveau règlement, certaines
+                                municipalités avaient établi par règlement municipal des distances
+                                séparatrices afin de protéger leur source d’eau potable. Par contre,
+                                la Cour supérieure, dans <core:emph typestyle="it">Pétrolia inc. c.
+                                    Gaspé (Ville de)</core:emph>, 2014 QCCS 360, a déclaré que ces
+                                normes étaient <core:emph typestyle="it">ultra vires</core:emph> des
+                                compétences déléguées aux municipalités. Le nouveau règlement
+                                prévoit une distance séparatrice de 500 m d’un site de prélèvement
+                                d’eau pour les sites de forage.</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+                <!--  -->
+                <?textpage page-num="3-33" release-num="Février 2017"?>
+                <!--  -->
+                <tr:secmain volnum="1">
+                    <core:desig value="39">39.</core:desig>
+                    <core:title runin="1">Certificat d’autorisation et attestation de
+                        conformité</core:title>
+                    <core:para runin="1"> – Un des principaux mécanismes de la <core:emph
+                            typestyle="it">Loi sur la qualité de l’environnement</core:emph> prévoit
+                        que toute activité susceptible de porter atteinte à la qualité de
+                        l’environnement doit faire l’objet d’une autorisation préalable
+                        :</core:para>
+                    <!--  -->
+                </tr:secmain>
+                <tr:secmain-dummy volnum="1">
+                    <core:comment type="other" box="1">
+                        <core:para>Paragraphe suivant : 60</core:para>
+                    </core:comment>
+                </tr:secmain-dummy>
+            </tr:ch-ptsub2>
+            <?textpage page-num="3-75" release-num="Février 2017"?>
+        </tr:ch-ptsub1>
+    </tr:ch-pt>
+    <!--  -->
+    <!--  -->
+    <?xpp XppPI nextpageref="4-1"?>
+</tr:ch>

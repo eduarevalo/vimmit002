@@ -11,14 +11,13 @@
 <!--<xsl:output indent="yes"></xsl:output>-->
 
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
-    <xsl:param name="volNum" select="'--volNum--'"/>
     <xsl:param name="tocNumber" select="'01a'"/>
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
     
     <xsl:template match="/">
         
-        <fm:vol-fm pub-num="{$pubNum}" volnum="{$volNum}">
+        <fm:vol-fm pub-num="{$pubNum}" volnum="">
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="concat('ch-num=ptoc', $tocNumber)"/>
             <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
@@ -34,6 +33,7 @@
             <core:title>
                 <fm:center>
                     <xsl:apply-templates select="part/toc/title"/>
+                    <core:nl/>
                     <core:nl/>
                     <xsl:value-of select="part/toc/title/following-sibling::*[1][contains(lower-case(@role), 'titre')]"/>
                  </fm:center>

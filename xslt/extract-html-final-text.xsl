@@ -9,4 +9,11 @@
     <xsl:strip-space elements="*" />
     <xsl:preserve-space elements="html:p html:span"/>
     
+    
+    <xsl:template match="html:p[starts-with(@class,'Markup')]"/>
+    <xsl:template match="html:head"/>
+    
+    <xsl:template match="html:p[@class='Ent-te']"/>
+    <xsl:template match="text()[contains(., 'Page suivante')]"/>
+    
 </xsl:stylesheet>

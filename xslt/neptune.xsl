@@ -15,7 +15,7 @@
         <xsl:choose>
             <xsl:when test="$typestyle != ''">
                 <xsl:choose>
-                    <xsl:when test="$labelToExtract != ''">
+                    <xsl:when test="$labelToExtract != '' and starts-with(normalize-space(.), $labelToExtract)">
                         <xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">
                             <core:emph>
                                 <xsl:attribute name="typestyle" select="$typestyle"/>
@@ -43,7 +43,7 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
-                    <xsl:when test="$labelToExtract">
+                    <xsl:when test="$labelToExtract!='' and starts-with(normalize-space(.), $labelToExtract)">
                         <xsl:value-of select="substring-after(., $labelToExtract)"/>
                     </xsl:when>
                     <xsl:otherwise>
@@ -102,7 +102,6 @@
         </xsl:call-template>
     </xsl:template>
     
-    
     <xsl:template name="getTypeStyle">
         <xsl:param name="node"/>
         <xsl:choose>
@@ -113,9 +112,18 @@
             <xsl:when test="contains($node/@role, 'Small-caps')">smcaps</xsl:when>
             <xsl:when test="contains($node/@role, 'Line-through')">strike</xsl:when>
             <xsl:when test="contains($node/@role, 'Super')">su</xsl:when>
-            <xsl:when test="contains($node/@role, 'SUb')">sb</xsl:when>
+            <xsl:when test="contains($node/@role, 'Sub')">sb</xsl:when>
+            <xsl:when test="contains($node/@role, 'Upper')">upper</xsl:when>
         </xsl:choose>
     </xsl:template>
+    
+    <xsl:template name="getBgColor">
+        <xsl:param name="node"/>
+        <xsl:if test="contains($node/@style, 'BgColor-#')">
+            <xsl:value-of select="substring(substring-after($node/@style, 'BgColor-'), 1,7)"/>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template name="printLastTextPagePI">
         <xsl:param name="scope"/>
         <xsl:variable name="lastPI" select="($scope//(*|text()|processing-instruction()))[last()]"/>
@@ -140,7 +148,7 @@
         <xsl:copy-of select="."></xsl:copy-of>
     </xsl:template>
     
-    <xsl:template match="para[markup]">
+    <xsl:template match="para[markup] | para[starts-with(@role, 'Markup')]">
         <xsl:apply-templates select=".//processing-instruction()"/>
     </xsl:template>
     
@@ -153,7 +161,8 @@
     </xsl:template>
     
     <xsl:template match="col">
-        <colspec colname="col{position()}" colnum="{position()}" colsep="0"/>
+        <xsl:variable name="width" select="replace(@style, 'Width-','')"/>
+        <colspec colname="col{position()}" colwidth="{$width}pt" colnum="{position()}" colsep="0" align="center"/>
     </xsl:template>
     
     <xsl:template match="thead">
@@ -163,10 +172,28 @@
     </xsl:template>
     
     <xsl:template match="thead/tr/td">
+        <xsl:variable name="bgColor">
+            <xsl:call-template name="getBgColor">
+                <xsl:with-param name="node" select="."/>
+            </xsl:call-template>
+        </xsl:variable>
+        <entry colname="col{position()}">
+            <!--namest="col{position()}" nameend="col{position()}" align="center"-->
+            <xsl:if test="$bgColor!=''">
+                <xsl:attribute name="grayshading">50</xsl:attribute>
+            </xsl:if>
+            <xsl:for-each select="para">
+                <xsl:apply-templates></xsl:apply-templates>
+                <xsl:if test="position()!=last()">
+                    <core:nl/>
+                </xsl:if>
+            </xsl:for-each>
+        </entry>
+    </xsl:template>
+    
+    <xsl:template match="thead/tr">
         <row rowsep="1">
-            <entry colname="col{position()}" namest="col{position()}" nameend="col{position()}" align="center">
-                <xsl:apply-templates/>
-            </entry>
+            <xsl:apply-templates/>
         </row>
     </xsl:template>
     
@@ -176,18 +203,38 @@
         </tbody>
     </xsl:template>
     
-    <xsl:template match="tbody/tr/td">
+    <xsl:template match="tbody/tr">
         <row rowsep="1">
-            <entry colname="col{position()}">
-                <xsl:apply-templates/>
-            </entry>
+            <xsl:apply-templates/>
         </row>
+    </xsl:template>
+    
+    <xsl:template match="tbody/tr/td">
+        <entry colname="col{position()}">
+            <xsl:for-each select="para">
+                <xsl:apply-templates></xsl:apply-templates>
+                <xsl:if test="position()!=last()">
+                    <core:nl/>
+                </xsl:if>
+            </xsl:for-each>
+        </entry>
     </xsl:template>
     
     <xsl:template name="extractLabel">
         <xsl:param name="text"/>
         <xsl:analyze-string select="normalize-space($text)" 
             regex="^\(?([0-9]*[a-z]*[A-Z]*){{1,2}}[\.|\)]">
+            <xsl:matching-substring>
+                <xsl:copy>
+                    <xsl:value-of select="regex-group(1)"/>
+                </xsl:copy>
+            </xsl:matching-substring>
+        </xsl:analyze-string>
+    </xsl:template>
+    
+    <xsl:template name="extractFootnoteLabel">
+        <xsl:param name="text"/>
+        <xsl:analyze-string select="normalize-space($text)" regex="^([0-9]{{1,2}})\.">
             <xsl:matching-substring>
                 <xsl:copy>
                     <xsl:value-of select="regex-group(1)"/>
