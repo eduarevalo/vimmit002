@@ -48,13 +48,13 @@ function unzipEpubFiles(path, collection, collectionPath){
         });
 }
 
-function unzipCollection(path, filter){
+function unzipCollection(path, collectionFilter, filter){
     return fsReadDir(path)
         .then(collections => {
             return Promise.all(
                 collections
                     .filter( filterInvalidFiles )
-                    .filter( createFilter(filter) )
+                    .filter( collection => collectionFilter.test(collection) )
                     .map( collection => {
 
                         return unzipEpubFiles(path, collection, [path, collection, 'temp'].join('/'));
@@ -64,13 +64,13 @@ function unzipCollection(path, filter){
         });
 }
 
-function unzipPackage(path, filter){
-    return unzipCollection(path, filter);
+function unzipPackage(path, collectionFilter, filter){
+    return unzipCollection(path, collectionFilter, filter);
 }
 
-function unzipPackages(paths, filter){
+function unzipPackages(paths, collectionFilter, filter){
     return Promise.all(paths.map( path  => {
-        return unzipPackage(path.replace('/in/', '/out/'), filter);
+        return unzipPackage(path.replace('/in/', '/out/'), collectionFilter, filter);
     }));
 }
 

@@ -16,4 +16,6 @@
     <xsl:template match="html:p[@class='Ent-te']"/>
     <xsl:template match="text()[contains(., 'Page suivante')]"/>
     
+    <xsl:template match="html:div[matches(normalize-space(.),'^\([0-9]+\).*[0-9]$')]"/>
+    
 </xsl:stylesheet>

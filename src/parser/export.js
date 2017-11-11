@@ -18,13 +18,13 @@ function filterInvalidFiles(input){
     return !createFilter('\.DS_Store$|.*\.json$')(input);
 }
 
-function exportCollection(path, filter){
+function exportCollection(path, collectionFilter, filter){
     var collectionsWithBatchFiles = fsReadDir(path)
             .then(collections => {
                 return Promise.all(
                     collections
                         .filter( filterInvalidFiles )
-                        .filter( createFilter(filter) )
+                        .filter( collection => collectionFilter.test(collection) )
                         .map( collection => {
 
                             var collectionPath = [path, collection, 'indd'].join('/');
@@ -32,6 +32,7 @@ function exportCollection(path, filter){
                                 .then(files => {
                                         return files
                                             .filter( file => !/Instructions/.test(file) )
+                                            .filter( file => filter.test(file) )
                                             .filter( createFilter('\.indd$') )
                                             .map( inddFile => {
                                                 return {
@@ -56,13 +57,13 @@ function exportCollection(path, filter){
 
 }
 
-function exportPackage(path, filter){
-    return exportCollection(path, filter);
+function exportPackage(path, collectionFilter, filter){
+    return exportCollection(path, collectionFilter, filter);
 }
 
-function exportPackages(paths, filter){
+function exportPackages(paths, collectionFilter, filter){
     return Promise.all(paths.map( path  => {
-        return exportPackage(path.replace('/in/', '/out/'), filter);
+        return exportPackage(path.replace('/in/', '/out/'), collectionFilter, filter);
     }));
 }
 

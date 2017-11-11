@@ -88,19 +88,27 @@
             <xsl:for-each select="/part/chapter/info/abstract/para">
                 <xsl:variable name="footNoteId" select="(*[not(preceding-sibling::text())])[1][contains(@role,'Super')]"/>
                 <xsl:choose>
+                    <xsl:when test="text()[1][starts-with(normalize-space(), '*')]">
+                        <fn:footnote fr="*">
+                            <fn:para>
+                                <xsl:value-of select="substring-after(text()[1], '*')"/>
+                                <xsl:apply-templates select="(* | text() | processing-instruction()) except text()[1]"/>
+                            </fn:para>
+                            <xsl:variable name="nextPara" select="./parent::abstract/following-sibling::abstract[1]/para[contains(@role,'VimmitIndent')]"/> 
+                            <xsl:if test="$nextPara">
+                                <xsl:apply-templates select="$nextPara"/>
+                            </xsl:if>
+                        </fn:footnote>
+                    </xsl:when>
                     <xsl:when test="$footNoteId">
                         <fn:footnote fr="{$footNoteId}">
                             <fn:para>
                                 <xsl:apply-templates select="(* | text() | processing-instruction()) except $footNoteId"/>
                             </fn:para>
-                        </fn:footnote>
-                    </xsl:when>
-                    <xsl:when test="text()[1][starts-with(normalize-space(), '*')]">
-                        <fn:footnote fr="*">
-                            <fn:para>
-                                <xsl:value-of select="substring-after(., '*')"/>
-                                <xsl:apply-templates select="(* | text() | processing-instruction()) except text()[1]"/>
-                            </fn:para>
+                            <xsl:variable name="nextPara" select="./parent::abstract/following-sibling::abstract[1]/para[contains(@role,'VimmitIndent')]"/> 
+                            <xsl:if test="$nextPara">
+                                <xsl:apply-templates select="$nextPara"/>
+                            </xsl:if>
                         </fn:footnote>
                     </xsl:when>
                 </xsl:choose>
@@ -116,6 +124,11 @@
     
     <xsl:template match="emphasis[contains(@role, 'Super')][parent::personname]">
         <fn:footnote-id fr="{.}"/>
+    </xsl:template>
+    
+    <xsl:template match="personname[not(child::emphasis)][ends-with(.,'*')]/text()">
+        <xsl:value-of select="substring-before(.,'*')"/>
+        <fn:footnote-id fr="*"/>
     </xsl:template>
     
     <xsl:template name="keyPoints">
@@ -171,6 +184,7 @@
     
     <xsl:template name="index">
         <xsl:if test="$indexNode">
+            <xsl:apply-templates select="$indexNode/(preceding-sibling::processing-instruction() | preceding-sibling::*)[position()=last()][self::processing-instruction()]"/>
             <tr:ch-pt-dummy volnum="">
                 <tr:secmain volnum="">
                     <core:no-desig/>
@@ -365,8 +379,9 @@
                 <xsl:variable name="nextXrefLabel" select="(following-sibling::para[emphasis[@role='label'][@xreflabel]])[1]"/>
                 <xsl:choose>
                     <xsl:when test="$nextXrefLabel">
-                        <xsl:variable name="nextNodes" select="$nextXrefLabel/(preceding-sibling::*|preceding-sibling::processing-instruction()) intersect (following-sibling::*|preceding-sibling::processing-instruction())"/>
-                        <xsl:apply-templates select="$nextNodes[not(footnote)][not(contains(., 'Paragraphe suivant'))]"/>
+                        <xsl:variable name="nextNodes" select="$nextXrefLabel/(preceding-sibling::*|preceding-sibling::processing-instruction()) intersect (following-sibling::*|following-sibling::processing-instruction())"/>
+                        <xsl:apply-templates select="$nextNodes"/>
+                        <!--<xsl:apply-templates select="$nextNodes[not(footnote)][not(contains(., 'Paragraphe suivant'))]"/>
                         <xsl:if test="$nextNodes[footnote]">
                             <xsl:call-template name="endNotes">
                                 <xsl:with-param name="set">
@@ -374,11 +389,12 @@
                                 </xsl:with-param>
                             </xsl:call-template>
                         </xsl:if>
-                        <xsl:apply-templates select="$nextNodes[(contains(., 'Paragraphe suivant'))]"/>
+                        <xsl:apply-templates select="$nextNodes[(contains(., 'Paragraphe suivant'))]"/>-->
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:variable name="nextNodes" select="following-sibling::* except following-sibling::sect1 except following-sibling::sect2 except following-sibling::sect3 except following-sibling::sect4 except following-sibling::sect5"/>
-                        <xsl:apply-templates select="$nextNodes[not(footnote)][not(contains(., 'Paragraphe suivant'))][not(contains(., 'Page suivant'))]"/>
+                        <xsl:apply-templates select="$nextNodes"/>
+                        <!--<xsl:apply-templates select="$nextNodes[not(footnote)][not(contains(., 'Paragraphe suivant'))][not(contains(., 'Page suivant'))]"/>
                         <xsl:if test="$nextNodes[footnote]">
                             <xsl:call-template name="endNotes">
                                 <xsl:with-param name="set">
@@ -386,7 +402,7 @@
                                 </xsl:with-param>
                             </xsl:call-template>
                         </xsl:if>
-                        <xsl:apply-templates select="$nextNodes[(contains(., 'Paragraphe suivant'))]"/>
+                        <xsl:apply-templates select="$nextNodes[(contains(., 'Paragraphe suivant'))]"/>-->
                     </xsl:otherwise>
                 </xsl:choose>
             </tr:secmain>
@@ -396,7 +412,7 @@
         </xsl:call-template>
     </xsl:template>
     
-    <xsl:template name="endNotes">
+    <!--<xsl:template name="endNotes">
         <xsl:param name="set"/>
         <fn:endnotes>
             <xsl:for-each select="$set/fn:endnote">
@@ -415,7 +431,7 @@
                 </xsl:copy>
             </xsl:for-each>
         </fn:endnotes>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="indexentry">
         <xsl:variable name="primary" select="primaryie"/>
@@ -423,7 +439,7 @@
             <core:para>
                 <xsl:apply-templates select="$primary"/>
             </core:para>
-            <xsl:apply-templates select="$primary/following-sibling::processing-instruction()[1][self::processing-instruction()/preceding-sibling::primaryie[1] = $primary]"/>
+            <!--<xsl:apply-templates select="$primary/following-sibling::processing-instruction()[1][self::processing-instruction()/preceding-sibling::primaryie[1] = $primary]"/>-->
             <xsl:variable name="nodes" select="secondaryie"/>
             <xsl:if test="$nodes">
                 <core:list>
@@ -518,6 +534,11 @@
                     <xsl:apply-templates select="$validNodes[position()>1]"/>
                 </core:para>
             </xsl:when>
+            <xsl:when test="ancestor::abstract">
+                <fn:para>
+                    <xsl:apply-templates select="$validNodes"/>
+                </fn:para>
+            </xsl:when>
             <xsl:otherwise>
                 <core:para>
                     <xsl:apply-templates select="$validNodes"/>
@@ -533,21 +554,57 @@
     </xsl:template>
     
     <xsl:template match="para[footnote]">
-        <xsl:call-template name="printFirstTextPagePI">
-            <xsl:with-param name="scope" select="."/>
-        </xsl:call-template>
-        <xsl:apply-templates select="*|text()|processing-instruction()"/>
-        <xsl:call-template name="printLastTextPagePI">
-            <xsl:with-param name="scope" select="."/>
-        </xsl:call-template>
+        <xsl:param name="controlledFlow" select="false()"/>
+        <xsl:variable name="hasPreviousFootnote" select="./preceding-sibling::para[1][footnote]"/>
+        
+        <xsl:choose>
+            <xsl:when test="$hasPreviousFootnote">
+                <xsl:if test="$controlledFlow">
+                    <xsl:call-template name="printFirstTextPagePI">
+                        <xsl:with-param name="scope" select="."/>
+                    </xsl:call-template>
+                    <xsl:apply-templates select="*|text()|processing-instruction()"/>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="printFirstTextPagePI">
+                    <xsl:with-param name="scope" select="."/>
+                </xsl:call-template>
+                <fn:endnotes>
+                    <xsl:apply-templates select="*|text()|processing-instruction()"/>
+                    <xsl:variable name="limit" select="following-sibling::para[not(footnote)][1]"/>
+                    <xsl:choose>
+                        <xsl:when test="$limit">
+                            <xsl:apply-templates select="./following-sibling::para[footnote] intersect $limit/preceding-sibling::para">
+                                <xsl:with-param name="controlledFlow" select="true()"/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="./following-sibling::para[footnote]">
+                                <xsl:with-param name="controlledFlow" select="true()"/>
+                            </xsl:apply-templates>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </fn:endnotes>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="para[parent::footnote]">
         <xsl:param name="labelToExtract"/>
         <xsl:variable name="nodes" select="*|text()|processing-instruction()"/>
-        <xsl:call-template name="printFirstTextPagePI">
-            <xsl:with-param name="scope" select="."/>
-        </xsl:call-template>
+        <xsl:choose>
+            <xsl:when test="$nodes[1][name()='emphasis']">
+                <xsl:call-template name="printFirstTextPagePI">
+                    <xsl:with-param name="scope" select="$nodes[1]"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="printFirstTextPagePI">
+                    <xsl:with-param name="scope" select="."/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:choose>
             <xsl:when test="$labelToExtract!=''">
                 <fn:para>
@@ -565,6 +622,7 @@
     </xsl:template>
     
     <xsl:template match="footnote">
+        <xsl:param name="controlledFlow" select="false()"/>
         <xsl:variable name="label">
             <xsl:call-template name="extractFootnoteLabel">
                 <xsl:with-param name="text" select="./para[1]"/>
@@ -573,6 +631,7 @@
         <xsl:choose>
             <xsl:when test="string-length(replace($label,'.','')) &lt; 3 and $label!=''">
                 <fn:endnote er="{substring-before($label, '.')}">
+                    <xsl:variable name="limit" select="(parent::para/following-sibling::para[footnote[matches(normalize-space(.),'^[0-9]{1,2}\.')] or not(footnote)])[1]"/>
                     <xsl:choose>
                         <xsl:when test="(./para[1]/text())[1] = substring-before($label, '.')">
                             <fn:para>
@@ -588,11 +647,23 @@
                             </xsl:apply-templates>
                         </xsl:otherwise>
                     </xsl:choose>
+                    <xsl:choose>
+                        <xsl:when test="$limit">
+                            <xsl:apply-templates select="(parent::para/following-sibling::para[footnote] intersect $limit/preceding-sibling::para)/footnote">
+                                <xsl:with-param name="controlledFlow" select="true()"/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="parent::para/following-sibling::para[footnote]/footnote">
+                                <xsl:with-param name="controlledFlow" select="true()"/>
+                            </xsl:apply-templates>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </fn:endnote>
             </xsl:when>
-            <xsl:otherwise>
+            <xsl:when test="$controlledFlow">
                 <xsl:apply-templates/>
-            </xsl:otherwise>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
     
@@ -636,9 +707,6 @@
             </core:entry-title>
             <xsl:apply-templates select="tocdiv"/>
         </core:toc-entry>
-        <xsl:if test="$lastPI = 'textpage'">
-            <xsl:apply-templates select="$nodes[last()]"/>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template match="tocdiv">
@@ -672,7 +740,7 @@
                 <xsl:choose>
                     <xsl:when test="$label != ''">
                         <xsl:choose>
-                            <xsl:when test="$firstPageNumberPI">
+                            <xsl:when test="$firstPageNumberPI and not($firstPageNumberPI[parent::emphasis])">
                                 <xsl:apply-templates select="substring-after($nodes[2], $label)"/>
                                 <xsl:apply-templates select="$nodes[position()>2]"/>
                             </xsl:when>
@@ -751,11 +819,20 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="para[not(contains(., 'Paragraphe suivant'))][contains(., 'Page suivant')]"/>
+    
     <xsl:template match="para[contains(., 'Paragraphe suivant')]">
         <tr:secmain-dummy volnum="1">
             <core:comment type="other" box="1">
                 <core:para>
-                    <xsl:value-of select="concat('Paragraphe suivant', substring-after(.,'Paragraphe suivant'))"/>
+                    <xsl:choose>
+                        <xsl:when test="contains(., '[Paragraphe suivant')">
+                            <xsl:value-of select="concat('[Paragraphe suivant', substring-after(.,'[Paragraphe suivant'))"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="concat('Paragraphe suivant', substring-after(.,'Paragraphe suivant'))"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </core:para>
             </core:comment>
         </tr:secmain-dummy>
@@ -764,11 +841,13 @@
     <xsl:template name="lastParagrapSuivanthReplace">
         <xsl:param name="secmain"/>
         <xsl:for-each select="$secmain/node()">
-            <xsl:variable name="lastParagrapheSuivant" select="./*[last()][self::tr:secmain-dummy][contains(., 'Paragraphe suivant')]"/>
+            <xsl:variable name="lastParagrapheSuivant" select="./*[not(contains(., 'Page suivante'))][last()][self::tr:secmain-dummy][contains(., 'Paragraphe suivant')]"/>
+            <xsl:variable name="lastPI" select="($lastParagrapheSuivant/following-sibling::processing-instruction() | $lastParagrapheSuivant/following-sibling::*)[1]"/>
             <xsl:element name="{name()}">
-                <xsl:copy-of select="(@* | node() | processing-instruction()) except $lastParagrapheSuivant"/>
+                <xsl:copy-of select="(@* | node() | processing-instruction()) except $lastParagrapheSuivant except $lastPI"/>
             </xsl:element>
             <xsl:copy-of select="$lastParagrapheSuivant"/>
+            <xsl:copy-of select="$lastPI"/>
         </xsl:for-each>
     </xsl:template>
     

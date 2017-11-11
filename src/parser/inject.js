@@ -263,14 +263,14 @@ function injectXhtmlFiles(path, resolve){
         });
 };
 
-function injectEpubFiles(path, collection, collectionPath){
+function injectEpubFiles(path, collection, collectionPath, filter){
     return fsReadDir(collectionPath)
         .then(files => {
 
             return _.reduce(
                 
                 files
-                    //.filter( file => /F17/.test(file) )
+                    .filter( file => filter.test(file) )
                     .filter( createFilter('^folder_') ), 
 
                 ( promise, epubFolder ) => {
@@ -398,7 +398,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             if(onTHead){
                 tHeadText += text;
             }
-
+            
             if(text.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '') == "" || error || _.get(currentContent, 'lastPage')){
                 iterators.out += encodeXmlEntities(text);
                 return;
@@ -617,29 +617,29 @@ function injectInlineHtml(collectionPath, fileName){
         });
 }
 
-function injectCollection(path, filter){
+function injectCollection(path, collectionFilter, filter){
     return fsReadDir(path)
         .then(collections => {
             return Promise.all(
                 collections
                     .filter( filterInvalidFiles )
-                    .filter( createFilter(filter) )
+                    .filter( collection => collectionFilter.test(collection) )
                     .map( collection => {
 
-                        return injectEpubFiles(path, collection, [path, collection, 'temp'].join('/'));
+                        return injectEpubFiles(path, collection, [path, collection, 'temp'].join('/'), filter);
 
                     })      
             );
         });
 }
 
-function injectPackage(path, filter){
-    return injectCollection(path, filter);
+function injectPackage(path, collectionFilter, filter){
+    return injectCollection(path, collectionFilter, filter);
 }
 
-function injectPackages(paths, filter){
+function injectPackages(paths, collectionFilter, filter){
     return Promise.all(paths.map( path  => {
-        return injectPackage(path.replace('/in/', '/out/'), filter);
+        return injectPackage(path.replace('/in/', '/out/'), collectionFilter, filter);
     }));
 }
 

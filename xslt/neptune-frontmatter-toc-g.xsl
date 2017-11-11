@@ -33,7 +33,7 @@
     <xsl:template name="toc">
         <fm:toc>
             <core:title>
-                <xsl:apply-templates select="upper-case(part/toc/title)"/>
+                <xsl:apply-templates select="part/toc/title"/>
             </core:title>
             <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
             <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
@@ -317,7 +317,7 @@
         <xsl:apply-templates select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv"/>
     </xsl:template>
     
-    <xsl:template match="processing-instruction('textpage')[1]"/>
+    <xsl:template match="(//processing-instruction('textpage'))[1]"/>
     
     
 </xsl:transform>

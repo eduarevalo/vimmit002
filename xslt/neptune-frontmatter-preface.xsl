@@ -108,6 +108,6 @@
     </xsl:template>
     
     
-    <xsl:template match="processing-instruction('textpage')[1]"/>
+    <xsl:template match="(//processing-instruction('textpage'))[1]"/>
     
 </xsl:transform>

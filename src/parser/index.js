@@ -21,34 +21,35 @@ const prepare = require('./prepare'),
         return basePath + id;
     });
 
-    var filter = new RegExp(args.filter || '.*');
+    var filter = new RegExp(args.filter || '.*'),
+        collectionFilter = new RegExp(args.collectionFilter || '.*');
     
     var preparePromise = args.prepare
-        ? prepare.preparePackages(packages, filter)
+        ? prepare.preparePackages(packages, collectionFilter, filter)
         : Promise.resolve();
     
     var exportAdobePromise = args.export
-        ? exportAdobe.exportPackages(packages, filter)
+        ? exportAdobe.exportPackages(packages, collectionFilter, filter)
         : Promise.resolve();
 
     var unzipPromise = args.unzip
-        ? unzip.unzipPackages(packages, filter)
+        ? unzip.unzipPackages(packages, collectionFilter, filter)
         : Promise.resolve();
 
     var injectPromise = args.inject
-        ? inject.injectPackages(packages, filter)
+        ? inject.injectPackages(packages, collectionFilter, filter)
         : Promise.resolve();
 
     var convertPromise = args.convert
-        ? convert.convertPackages(packages, filter)
+        ? convert.convertPackages(packages, collectionFilter, filter)
         : Promise.resolve();
 
     var neptunePromise = args.neptune
-        ? neptune.transformPackages(packages, filter)
+        ? neptune.transformPackages(packages, collectionFilter, filter)
         : Promise.resolve();
 
     var reportPromise = args.report
-        ? report.reportPackages(packages, filter)
+        ? report.reportPackages(packages, collectionFilter, filter)
         : Promise.resolve();
     
     

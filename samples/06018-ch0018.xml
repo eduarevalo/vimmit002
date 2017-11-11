@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="2">
+    <!-- pub-num=06081 -->
+    <!-- ch-num=ch0018 -->
+    <?textpage page-num="18-1" release-num="Septembre 2016"?>
+    <core:desig value="1">FASCICULE 18</core:desig>
+    <core:title><core:emph typestyle="it">Loi affirmant le caractère collectif des ressources en eau
+            et visant à renforcer leur protection</core:emph></core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 18 – <core:emph typestyle="it">Loi affirmant le
+            caractère collectif des ressources en eau</core:emph>...</core:title-alt>
+    <core:title-alt use4="l-running-hd">II. Aspects particuliers</core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="bf">Catherine CHOQUETTE</core:emph><fn:footnote
+                    fr="*">
+                    <fn:para>Les auteurs aimeraient remercier Marisol Guerrero Clusiau, Marie-Pier
+                        Goyette Noël et Charles Gauthier qui ont collaboré au présent
+                        fascicule.</fn:para>
+                </fn:footnote></core:name.text>
+            <core:name.detail>
+                <core:role>Biologiste, avocate et professeure titulaire, Faculté de droit,
+                    Université de Sherbrooke</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:byline><core:person>
+            <core:name.text>David GILLES<fn:footnote-id fr="*"/></core:name.text>
+            <core:name.detail>
+                <core:role>Professeur agrégé, Faculté de droit, Université de Sherbrooke</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <core:comment-prelim type="currentness">
+        <core:para>À jour au 1er mai 2016</core:para>
+    </core:comment-prelim>
+    <tr:ch-pt-dummy volnum="2">
+        <tr:secmain volnum="2">
+            <core:no-desig/>
+            <core:title>POINTS-CLÉS</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:enum>1.</core:enum>
+                    <core:para>L’eau conserve son statut de chose commune ne pouvant être
+                        appropriée. La Loi sur l’eau en fait également une ressource collective
+                        faisant partie du patrimoine commun de la nation québécoise (V. n<core:emph
+                            typestyle="su">os</core:emph> 18 à 23).</core:para>
+                </core:listitem>
+                <!--  -->
+            </core:list>
+            <!--  -->
+            <?textpage page-num="18-3" release-num="Septembre 2016"?>
+            <!--  -->
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <!--  -->
+    <tr:ch-pt volnum="2">
+        <core:no-desig/>
+        <core:title>INTRODUCTION</core:title>
+        <tr:secmain volnum="2">
+            <core:desig value="1">1.</core:desig>
+            <core:title runin="1">Adoption de la loi</core:title>
+            <core:para runin="1"> – En 2009, le Québec adoptait la <core:emph typestyle="it">Loi
+                    affirmant le caractère collectif des ressources en eau et visant à renforcer
+                    leur protection</core:emph><fn:endnote-id er="1"/> (ci-après « Loi sur l’eau »).
+                Cette loi n’est pas la Charte de l’eau que plusieurs espéraient et qui était
+                souhaitée dans le rapport de la commission sur la gestion de l’eau au
+                    Québec<fn:endnote-id er="2"/> de 2000. Outre le fait qu’elle réussisse à
+                intégrer des notions de droit commun, à mettre en oeuvre une entente internationale
+                et à introduire plusieurs concepts novateurs dont la portée reste à définir, la Loi
+                sur l’eau entrouvre surtout la porte à une nouvelle gouvernance de l’eau au Québec.
+                La Loi sur l’eau est encore jeune et son efficacité reste à démontrer mais pour
+                plusieurs scientifiques, « il ne fait aucun doute que de gérer les ressources en eau
+                de manière durable est l’enjeu-clé de ce début de XXI<core:emph typestyle="su"
+                    >e</core:emph> siècle. Travailler à mettre en place des mécanismes de
+                gouvernance favorisant le développement durable des ressources en eau fait partie
+                des nouvelles réalités. Pour y parvenir, le défi est de taille d’autant plus que les
+                changements globaux (dont climatiques) viennent complexifier la situation. Les
+                pistes de solution passent par une bonne compréhension du système complexe à gérer
+                et par la considération des dimensions économiques, environnementales et sociales
+                associées. »<fn:endnote-id er="3"/></core:para>
+            <fn:endnotes>
+                <fn:endnote er="1">
+                    <fn:para>RLRQ, c. C-6.2. Le préambule et les articles 1 à 17 sont entrés en
+                        vigueur le 18 juin 2009 par décret (141 G.O. II, 2819).</fn:para>
+                </fn:endnote>
+                <fn:endnote er="2">
+                    <fn:para>COMMISSION SUR LA GESTION DE L’EAU AU QUÉBEC, <core:emph typestyle="it"
+                            >L’eau, ressource à protéger, à partager et à mettre en
+                            valeur</core:emph>, t. 2, Bureau d’audiences publiques sur
+                        l’environnement, Gouvernement du Québec, 2000.</fn:para>
+                </fn:endnote>
+                <fn:endnote er="3">
+                    <fn:para>GOUVERNEMENT DU QUÉBEC, <core:emph typestyle="it">Gestion durable des
+                            ressources en eau au Québec : les défis de l’intégration et les enjeux
+                            de recherche associés</core:emph>, Rapport du Conseil de la science et
+                        de la technologie sur la Stratégie, 2010, p. 15.</fn:para>
+                </fn:endnote>
+            </fn:endnotes>
+        </tr:secmain>
+        <?textpage page-num="18-5" release-num="Septembre 2016"?>
+        <!--  -->
+        <?textpage page-num="18-7" release-num="Septembre 2016"?>
+        <!--  -->
+    </tr:ch-pt>
+    <tr:ch-pt volnum="2">
+        <core:desig value="I">I.</core:desig>
+        <core:title>PRINCIPES D’UTILISATION ET DE PROTECTION DE L’EAU</core:title>
+        <tr:ch-ptsub1-dummy volnum="2">
+            <tr:secmain volnum="2">
+                <core:desig value="4">4.</core:desig>
+                <core:title runin="1">Principes</core:title>
+                <core:para runin="1"> – La Loi sur l’eau énonce quatre principes d’utilisation et de
+                    protection de l’eau<fn:endnote-id er="1"/>. Elle renvoie également aux principes
+                    énoncés dans la <core:emph typestyle="it">Loi sur le développement
+                        durable</core:emph> de 2006<fn:endnote-id er="2"/>.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para><core:emph typestyle="it">Loi affirmant le caractère des ressources
+                                en eau et visant à renforcer leur protection</core:emph>, RLRQ, c.
+                            C-6.2, art. 4 à 7.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para><core:emph typestyle="it">Loi affirmant le caractère des ressources
+                                en eau et visant à renforcer leur protection, RLRQ, c. C-6.2, art.
+                                13; Loi sur le développement durable</core:emph>, RLRQ, c. D-8.1.1,
+                            art. 6.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+        </tr:ch-ptsub1-dummy>
+        <tr:ch-ptsub1 volnum="2">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Principe utilisateur-payeur</core:title>
+            <tr:secmain volnum="2">
+                <core:desig value="4.1">4.1.</core:desig>
+                <core:title runin="1">Énoncé</core:title>
+                <core:para> – – L’article 4 de la Loi sur l’eau prévoit que « les coûts liés à
+                    l’utilisation des ressources en eau, dont les coûts de protection, de
+                    restauration, de mise en valeur et de gestion, sont assumés par les utilisateurs
+                    dans les conditions définies par la loi et en tenant compte des conséquences
+                    environnementales, sociales et économiques ainsi que du principe pollueur-payeur
+                    ». Selon la loi, les coûts chargés aux utilisateurs doivent tenir compte des
+                    externalités environnementales, sociales et économiques de leur utilisation de
+                    l’eau et également du principe pollueur-payeur ce qui laisse entendre que les
+                    externalités environnementales inclues des impacts sur l’environnement autre que
+                    la pollution. On peut penser, par exemple, à l’assèchement de nappes
+                    phréatiques, de plans d’eau ou, au contraire, à l’immersion ou l’inondation
+                    d’habitats terrestres provoquant, dans certains cas, soit une perte de
+                    biodiversité ou l’érosion des sols et la sédimentation de plans d’eau, ou
+                    encore, à l’irrigation des terres agricoles qui amplifie la prolifération des
+                    cyanobactéries et accélère l’eutrophisation des plans d’eau. Le libellé de
+                    l’article 4 est des plus clairs : le coût de l’utilisation de l’eau doit
+                    refléter l’internalisation de tous les coûts reliés à l’utilisation et ne doit
+                    pas être assumé par la société québécoise en général, mais bien par
+                    l’utilisateur lui-même.</core:para>
+            </tr:secmain>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <!--  -->
+    </tr:ch-pt>
+    <!-- -->
+    <?textpage page-num="18-35" release-num="Septembre 2016"?>
+    <!--  -->
+    <tr:ch-pt volnum="2">
+        <core:desig value="IV">IV.</core:desig>
+        <core:title>GESTION INTÉGRÉE ET CONCERTÉE DE L’EAU PAR BASSIN VERSANT</core:title>
+        <tr:ch-ptsub1-dummy volnum="2">
+            <tr:secmain volnum="2">
+                <core:desig value="45">45.</core:desig>
+                <core:title runin="1">Introduction</core:title>
+                <core:para runin="1"> – La Loi sur l’eau énonce, à son article 13, que « La gestion
+                    des ressources en eau doit être réalisée de manière intégrée et concertée dans
+                    les unités hydrographiques désignées ». Cette gestion constitue non seulement
+                    les fondations de la nouvelle gouvernance de l’eau au Québec mais elle consolide
+                    également l’établissement d’une approche holistique ou écosystémique de la
+                    protection de l’environnement. Plusieurs nouvelles notions viennent s’imposer à
+                    la réalité québécoise : le bassin versant, l’intégration et la
+                    concertation.</core:para>
+            </tr:secmain>
+        </tr:ch-ptsub1-dummy>
+        <tr:ch-ptsub1 volnum="2">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Concept de bassin versant</core:title>
+            <tr:secmain volnum="2">
+                <core:desig value="46">46.</core:desig>
+                <core:title runin="1">Origine</core:title>
+                <core:para runin="1"> – La notion de « bassin versant » apparaît dans la seconde
+                    moitié du 20<core:emph typestyle="su">e</core:emph> siècle. Il est alors défini
+                    comme suit : « le bassin versant en un point ou plus précisément dans une
+                    section droite d’un cours d’eau, est défini comme la totalité de la surface
+                    topographique drainée par ce cours d’eau et ses affluents à l’amont de ladite
+                    section »<fn:endnote-id er="1"/>.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>Gaston RÉMÉNIÉRAS, <core:emph typestyle="it">L’hydrologie de
+                                l’ingénieur</core:emph>, 2<core:emph typestyle="su">e</core:emph>
+                            éd., Paris, Eyrolles, 1965, p. 161.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+            <tr:secmain volnum="2">
+                <core:desig value="47">47.</core:desig>
+                <core:title runin="1">Caractéristiques physiques</core:title>
+                <core:para runin="1"> – Le bassin versant peut être décrit comme étant « la surface
+                    réceptrice des eaux qui alimentent une nappe souterraine, un lac, une rivière ou
+                    un réseau hydrographique complexe; on le définit par sa morphométrie, ses
+                    caractères climatiques, sa géologie, sa végétation, ses sols »<fn:endnote-id
+                        er="1"/>. C’est, par conséquent, un territoire géographique qui est drainé
+                    vers un même cours d’eau ou un même lac tel que le montre la figure qui
+                        suit<fn:endnote-id er="2"/> :</core:para>
+                <!-- GRAPHIC ch0018_001 -->
+                <?textpage page-num="18-37" release-num="Septembre 2016"?>
+                <core:para>Pour comprendre le fonctionnement d’un bassin versant, plusieurs
+                    disciplines doivent être impliquées dont : l’hydrologie (débits, régimes,
+                    circulation, distribution, qualité physico-chimique et biologique), la
+                    limnologie (étude des lacs à la fois du point de vue hydrologique et
+                    biologique), la cryologie (étude de la neige et de la glace), la géomorphologie
+                    (étude de l’évolution du relief), la géopédologie (étude des sols),
+                        etc.<fn:endnote-id er="3"/>.</core:para>
+                <!--  -->
+            </tr:secmain>
+            <tr:secmain volnum="2">
+                <core:desig value="48">48.</core:desig>
+                <core:title runin="1">Évolution d’un bassin versant</core:title>
+                <core:para runin="1">Plusieurs facteurs, tant naturels qu’anthropiques, contribuent
+                    à l’évolution d’un bassin versant. Parmi ceux-ci, se trouve <core:emph
+                        typestyle="it">l’érosion</core:emph> de la surface terrestre qui modifie le
+                    relief et la surface du sol d’un bassin versant. Le phénomène de l’érosion se
+                    fait en plusieurs étapes. Premièrement, une désagrégation physique se fait sous
+                    l’action de la différence de température, de l’eau (infiltration et gel), de
+                    plantes (racines), d’animaux pour les sols (verre de terre, par exemple) ou du
+                    sel dans certains cas. Deuxièmement, une altération chimique transforme la
+                    structure des minéraux soit par hydrolyse, oxydation, hydratation,
+                    carbonatation, dissolution, ou sulfatation. Le transport de la matière peut se
+                    faire par l’eau, le vent, la glace ou les animaux. L’ampleur de l’érosion varie
+                    avec le climat, le type de roche ou de sol, l’imperméabilité de la surface du
+                    sol, la pente… Troisièmement, la matière commence à s’accumuler dès que l’agent
+                    de transport perd de son énergie en fonction de la topographie des lieux.
+                    Finalement, lorsque la matière n’est plus transportée (réduction de la pente,
+                    par exemple), la phase de la sédimentation commence. Les matériaux se déposent
+                    alors souvent au fond des plans d’eau. Les accumulations de fragments rocheux,
+                    de sable, de limon, d’argile, de chaux ou de vase se transforment éventuellement
+                    en roche solide (sédimentaire) par la pression des sédiments qui continuent de
+                    s’accumuler au-dessus<fn:endnote-id er="1"/>.</core:para>
+                <!-- -->
+                <?textpage page-num="18-39" release-num="Septembre 2016"?>
+                <!--  -->
+            </tr:secmain>
+            <tr:secmain volnum="2">
+                <core:desig value="49">49.</core:desig>
+                <core:title runin="1">Délimitation des bassins versants au Québec</core:title>
+                <core:para runin="1"> – La Loi sur l’eau précise à son article 14 que le ministre du
+                    MDDEFP peut « recenser et décrire, pour l’ensemble ou une partie du territoire
+                    du Québec, les unités hydrographiques, notamment les bassins, sous-bassins ou
+                    groupements de bassins hydrographiques, sur la base entre autres des critères
+                    suivants :</core:para>
+                <core:blockquote>
+                    <core:blockquote-para><core:emph typestyle="it">a)</core:emph> la superficie des
+                        unités hydrographiques;</core:blockquote-para>
+                    <core:blockquote-para><core:emph typestyle="it">b)</core:emph> les limites
+                        territoriales du Québec, des régions administratives ou des municipalités
+                        régionales de comté, selon le cas;</core:blockquote-para>
+                    <core:blockquote-para><core:emph typestyle="it">c)</core:emph> la densité
+                        d’occupation du territoire;</core:blockquote-para>
+                    <core:blockquote-para><core:emph typestyle="it">d)</core:emph> l’historique de
+                        la concertation, la cohésion et l’harmonie entre les divers utilisateurs ou
+                        milieux intéressés;</core:blockquote-para>
+                    <core:blockquote-para><core:emph typestyle="it">e)</core:emph> l’homogénéité des
+                        activités de développement dans leurs dimensions environnementale, sociale
+                        et économique;1</core:blockquote-para>
+                </core:blockquote>
+                <core:para>Le Québec méridional a donc été divisé en bassins versants prioritaires.
+                    Ces divisions peuvent regrouper plusieurs bassins versants selon les critères
+                    spécifiés à l’article 14. Lors de l’élaboration de sa Politique nationale de
+                    l’eau, en 2002, le gouvernement du Québec avait établi 33 bassins versants
+                        prioritaires<fn:endnote-id er="2"/>. Toutefois, à la suite de l’adoption du
+                    Plan d’intervention sur les algues bleu-vert 2007-2017<fn:endnote-id er="3"/>,
+                    le nombre de ces bassins est passé, en 2009, à 40 pour couvrir tout le
+                    territoire du Québec méridional comme le montre la figure suivante<fn:endnote-id
+                        er="4"/>. La délimitation des territoires des bassins versants ne prend pas
+                    en compte les structures administratives traditionnelles; ils sont par
+                    conséquent très différents. Un bassin versant peut contenir plusieurs régions
+                    administratives et une région administrative peut également contenir plusieurs
+                    bassins versants.</core:para>
+                <!-- GRAPHIC ch0018_002 -->
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para><core:emph typestyle="it">Loi affirmant le caractère collectif des
+                                ressources en eau et visant à renforcer leur protection</core:emph>,
+                            RLRQ, c. C-6.2, art. 14.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para>QUÉBEC (Ministère de l’Environnement), <core:emph typestyle="it"
+                                >L’eau. La vie. L’avenir. Politique nationale de l’eau</core:emph>,
+                            2002, en ligne :
+                            &lt;http://www.MDDEFP.gouv.qc.ca/eau/politique/politique-integral.
+                            pdf&gt; (16 juin 2008).</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="3">
+                        <fn:para>&lt;http://www.mddep.gouv.qc.ca/eau/algues-bv/plan_intervention_2007-2017.pdf#page=2&gt;.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="4">
+                        <fn:para>&lt;http://www.mddep.gouv.qc.ca/eau/bassinversant/zones-gire/inter.htm&gt;.</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+        </tr:ch-ptsub1>
+        <!-- -->
+    </tr:ch-pt>
+    <!--  -->
+    <?xpp XppPI nextpageref="19-1"?>
+</tr:ch>

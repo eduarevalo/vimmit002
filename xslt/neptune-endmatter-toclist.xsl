@@ -22,7 +22,11 @@
             <xsl:comment select="'ch-num=toclist'"/>
             <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
             <xsl:variable name="firstTitle" select="(part/partintro/para[contains(@role, 'texte-space-after')])[1]"/>
-            
+            <core:title>
+                <xsl:apply-templates select="part/partintro/title[1]/*"/>
+            </core:title>
+            <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
+            <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
             <xsl:apply-templates select="$firstTitle/preceding-sibling::para"/>
             <table typesize="small" colsep="0" frame="none" rowsep="0">
                 <tgroup cols="1">
@@ -81,7 +85,7 @@
         <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
     </xsl:template>
     
-    <xsl:template match="processing-instruction('textpage')[1]"/>
+    <xsl:template match="(//processing-instruction('textpage'))[1]"/>
     
     <xsl:template name="extractDate">
         <xsl:param name="text"/>

@@ -590,7 +590,7 @@ function transformCollection(collectionFolder, filter){
                             var xppContent;
 
                             if(sorted[index+1]){
-                                var match = sorted[index+1].content.match(/page-num=\"([A-Z\-0-9]+)"\srelease-num="/);
+                                var match = sorted[index+1].content.match(/page-num=\"([A-ZÉ\-0-9]+)"\srelease-num="/);
                                 if(match && match[1]){
                                     xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "<?xpp XppPI nextpageref=\"" + match[1] + "\"?>");
                                 }else{
@@ -658,7 +658,7 @@ function transformCollection(collectionFolder, filter){
     }
     
 
-function transformPackages(paths, filter){
+function transformPackages(paths, collectionFilter, filter){
     return Promise.all(paths
         .map( path => path.replace('/in/', '/out/') )
         .map( path => {
@@ -669,6 +669,7 @@ function transformPackages(paths, filter){
                     var collectionsResults = {};
 
                     return collections
+                        .filter( collection => collectionFilter.test(collection) )
                         .filter( collection => !_.includes(['.DS_Store', 'results.json', 'results.txt', 'paths.txt', 'emphasis.txt'], collection) )
                         .reduce( (promise, collection) => {
                                 var collectionPath = path + '/' + collection;

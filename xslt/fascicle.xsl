@@ -386,7 +386,7 @@
         <xsl:param name="section1Entry"/>
         <xsl:param name="section1Set"/>
         <xsl:variable name="section2Set" select="$section1Set[contains(@class, 'Titres_A--Titre') or contains(@class, 'Titres_Titre-de-section')]"/>
-        <xsl:apply-templates select="$section1Entry/html:*[1][self::node()/name()='br']"/>
+        <xsl:apply-templates select="$section1Entry/html:*[position() &lt; 3][name()='br'][@release-num!='undefined']"/>
         <sect1>
             <title>
                 <xsl:value-of select="$section1Entry"/>

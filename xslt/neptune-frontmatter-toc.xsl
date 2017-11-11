@@ -68,6 +68,10 @@
     </xsl:template>
     
     <xsl:template match="tocentry">
+        
+        <xsl:variable name="firstPI" select="(*|processing-instruction())[1][self::processing-instruction()]"/>
+        <xsl:copy-of select="$firstPI"/>
+        
         <xsl:variable name="level">
             <xsl:choose>
                 <xsl:when test="emphasis[contains(@role,'fascicule')]">ch</xsl:when>
@@ -189,7 +193,7 @@
         <xsl:apply-templates select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv"/>
     </xsl:template>
     
-    <xsl:template match="processing-instruction('textpage')[1]"/>
+    <xsl:template match="(//processing-instruction('textpage'))[1]"/>
     
     
 </xsl:transform>

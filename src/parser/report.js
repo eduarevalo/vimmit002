@@ -140,7 +140,7 @@ function createReport(results){
     });
 }
 
-function reportPackages(paths, filter){
+function reportPackages(paths, collectionFilter, filter){
     return Promise.all(paths
         .map( path => path.replace('/in/', '/out/') )
         .map( path => {

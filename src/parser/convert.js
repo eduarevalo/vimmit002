@@ -227,7 +227,7 @@ function processCollection(collectionFolder, filter){
         });    
 }
 
-function convertPackages(paths, filter){
+function convertPackages(paths, collectionFilter, filter){
     return Promise.all(paths
         .map( path => path.replace('/in/', '/out/') )
         .map( path => {
@@ -238,6 +238,7 @@ function convertPackages(paths, filter){
                     var collectionsResults = {};
 
                     return collections
+                        .filter( collection => collectionFilter.test(collection) )
                         .filter( collection => !_.includes(['.DS_Store', 'results.json', 'results.txt', 'paths.txt', 'emphasis.txt'], collection) )
                         .reduce( (promise, collection) => {
                                 var collectionPath = path + '/' + collection;

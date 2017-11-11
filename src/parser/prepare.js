@@ -75,13 +75,13 @@ function copySourceFiles(path, collectionPath, folderMapping){
         });
 }
 
-function prepareCollection(path, filter){
+function prepareCollection(path, collectionFilter, filter){
     return fsReadDir(path)
             .then(collections => {
                 return Promise.all(
                     collections
                         .filter( filterInvalidFiles )
-                        .filter( createFilter(filter) )
+                        .filter( collection => collectionFilter.test(collection) )
                         .map( collection => {
 
                             var collectionPath = [path.replace('/in/', '/out/'), collection].join('/');
@@ -93,13 +93,13 @@ function prepareCollection(path, filter){
             });
 }
 
-function preparePackage(path, filter){
-    return prepareCollection(path, filter);
+function preparePackage(path, collectionFilter, filter){
+    return prepareCollection(path, collectionFilter, filter);
 }
 
-function preparePackages(paths, filter){
+function preparePackages(paths, collectionFilter, filter){
     return Promise.all(paths.map( path  => {
-        return preparePackage(path, filter);
+        return preparePackage(path, collectionFilter, filter);
     }));
 }
 
