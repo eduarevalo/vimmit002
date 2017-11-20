@@ -822,15 +822,28 @@
     <xsl:template match="para[not(contains(., 'Paragraphe suivant'))][contains(., 'Page suivant')]"/>
     
     <xsl:template match="para[contains(., 'Paragraphe suivant')]">
+        <xsl:variable name="ParagrapheSuivantText">
+            <xsl:choose>
+                <xsl:when test="contains(., '[Paragraphe suivant')">
+                    <xsl:value-of select="concat('[Paragraphe suivant', substring-after(.,'[Paragraphe suivant'))"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat('Paragraphe suivant', substring-after(.,'Paragraphe suivant'))"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <tr:secmain-dummy volnum="1">
             <core:comment type="other" box="1">
                 <core:para>
                     <xsl:choose>
-                        <xsl:when test="contains(., '[Paragraphe suivant')">
-                            <xsl:value-of select="concat('[Paragraphe suivant', substring-after(.,'[Paragraphe suivant'))"/>
+                        <xsl:when test="contains($ParagrapheSuivantText, '[Page suivant')">
+                            <xsl:value-of select="substring-before($ParagrapheSuivantText,'[Page suivant')"/>
+                        </xsl:when>
+                        <xsl:when test="contains($ParagrapheSuivantText, 'Page suivant')">
+                            <xsl:value-of select="substring-before($ParagrapheSuivantText,'Page suivant')"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="concat('Paragraphe suivant', substring-after(.,'Paragraphe suivant'))"/>
+                            <xsl:value-of select="$ParagrapheSuivantText"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </core:para>
