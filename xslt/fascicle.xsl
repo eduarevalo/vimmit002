@@ -50,7 +50,7 @@
     <xsl:template name="mainContent">
         <xsl:param name="mainContainer"></xsl:param>
         
-        <xsl:variable name="lastUpdateDate" select="$mainContainer/html:*[contains(@class,'Date-de-mise---jour')]"/>
+        <xsl:variable name="lastUpdateDate" select="$mainContainer/html:*[contains(@class,'Date-de-mise---jour') ]"/>
         
         <xsl:variable name="keyPointsStart" select="$mainContainer/html:*[contains(@class,'Titres_Titre-de-section')][1]"/>
         <xsl:variable name="tocStart" select="$mainContainer/html:*[contains(@class, 'Titres_TdM') or contains(@class, 'TdM') or normalize-space()='TABLE DES MATIÈRES']"/>
@@ -342,7 +342,7 @@
             </index>
             <xsl:apply-templates select="$indexEntry/following-sibling::html:*[contains(@class, 'Texte ParaOverride-2') or contains(@class, 'Note-de-remerciements') ] intersect $startOfNextSection/preceding-sibling::html:*"/>      
             
-            <xsl:apply-templates select="$indexSet[last()]/following-sibling::html:* intersect $startOfNextSection/preceding-sibling::html:*"/>
+            <xsl:apply-templates select="$indexSet[last()]/following-sibling::html:* intersect $startOfNextSection/preceding-sibling::html:* except $indexEntry/following-sibling::html:*[contains(@class, 'Texte ParaOverride-2') or contains(@class, 'Note-de-remerciements') ] intersect $startOfNextSection/preceding-sibling::html:*"/>
                    </sect1>
     </xsl:template>
     
