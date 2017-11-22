@@ -13,7 +13,7 @@
         <xsl:apply-templates/>            
     </xsl:template>
     
-    <xsl:template match="html:span[contains(@class, 'locuspara')]">
+    <xsl:template match="html:span[contains(@class, 'locuspara')][not(preceding-sibling::html:span[contains(@class, 'locuspara')])]">
         <emphasis role="label" xreflabel="{.}">
             <xsl:apply-templates/>
             <xsl:variable name="punctuation" select="(following-sibling::*|following-sibling::text())[1][self::text()]"/>
@@ -21,12 +21,12 @@
         </emphasis>
     </xsl:template>
     
-    <xsl:template match="text()[preceding-sibling::*[1][contains(@class, 'locuspara')]]"/>
+    <xsl:template match="text()[preceding-sibling::*[1][not(preceding-sibling::html:span[contains(@class, 'locuspara')])][contains(@class, 'locuspara')]]"/>
     
     <xsl:template match="html:p">
         <xsl:variable name="indent" select="starts-with(., '&#9;')"/>
         <xsl:variable name="nodes" select="* | text()"/>
-        <xsl:variable name="firstTextNode" select="$nodes[not(self::html:br)][1][self::text()]"/>
+        <xsl:variable name="firstTextNode" select="($nodes[not(self::html:br)])[1][self::text() or self::html:span]"/>
         <para>
             <xsl:choose>
                 <xsl:when test="$indent">
@@ -48,7 +48,7 @@
             </xsl:variable>
             
             <xsl:choose>
-                <xsl:when test="$label!='' and contains(@class,'Texte') and ($nodes[3][starts-with(normalize-space(.),'–')] or $nodes[self::text()][2][starts-with(normalize-space(.),'–')]) and substring-before($label, '.')!=''">
+                <xsl:when test="$label!='' and contains(@class,'Texte') and ($nodes[not(self::html:br)][position()=3 or position()=4][starts-with(replace(normalize-space(.),' ',''),'–')] or $nodes[self::text()][2][starts-with(normalize-space(.),'–')]) and substring-before($label, '.')!=''">
                  <emphasis role="label" xreflabel="{substring-before($label, '.')}">
                      <xsl:apply-templates select="$firstTextNode"/>
                  </emphasis>
@@ -154,7 +154,7 @@
     <xsl:template name="extractLabel">
         <xsl:param name="text"/>
         <xsl:analyze-string select="normalize-space($text)" 
-            regex="^\(?([0-9]*[a-z]*[A-Z]*){{1,2}}[\.|\)]">
+            regex="^\(?([0-9]*[a-z]*[A-Z]*){{1,2}}[\.|\)]( |$)">
             <xsl:matching-substring>
                 <xsl:copy>
                     <xsl:value-of select="regex-group(1)"/>

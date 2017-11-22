@@ -93,7 +93,8 @@
         <xsl:for-each select="$set">
             <xsl:variable name="this" select="."/>
             <xsl:copy-of select="$this/processing-instruction()"/>
-            <xsl:variable name="set3" select="$this/following-sibling::index[contains(@role, 'N3')][preceding-sibling::index[contains(@role, 'N2')][1] = $this]"/>
+            <xsl:variable name="limit" select="($this/following-sibling::index[not(contains(@role, 'N3')) and not(contains(@role, 'N4')) and not(contains(@role, 'N5'))])[1]"/>
+            <xsl:variable name="set3" select="$this/following-sibling::index[contains(@role, 'N3')] intersect $limit/preceding-sibling::index"/>
             <xsl:variable name="typestyle">
                 <xsl:call-template name="getTypeStyle">
                     <xsl:with-param name="node" select="."/>
@@ -228,7 +229,7 @@
     
     <xsl:template match="title[parent::partintro or parent::toc]">
         <core:title>
-            <xsl:value-of select="upper-case(normalize-space())"/>
+            <xsl:value-of select="."/>
         </core:title>
         <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
         <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
@@ -242,7 +243,7 @@
     
     <xsl:template match="para[contains(@role,'Index_S-parateur')]">
         <in:alpha-letter>
-            <xsl:value-of select="normalize-space()"/>
+            <xsl:value-of select="."/>
         </in:alpha-letter>
     </xsl:template>
     

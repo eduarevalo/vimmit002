@@ -215,7 +215,7 @@ function inlineCssParser(html){
             var found = content.match(/-webkit-transform: translate\([0-9|\.]*px,([0-9|\.]*)px\)/);
             if(found){
                 var position = parseInt(found[1]), lastPosition;
-                if( position >= 650){
+                if( position >= 649){
                     lastPosition = 3;
                 }else if( position < 30){
                     lastPosition = 1;
@@ -271,6 +271,7 @@ function injectEpubFiles(path, collection, collectionPath, filter){
                 
                 files
                     .filter( file => filter.test(file) )
+                    .filter( file => !/Instructions/.test(file))
                     .filter( createFilter('^folder_') ), 
 
                 ( promise, epubFolder ) => {
@@ -300,12 +301,12 @@ function processFile(path, collection, epubFolderPath){
             .then( (content) => { 
                 return { content, epubFolderPath };
             });
-    }).then( (conversion) => {;
-        var fileName = _.last(conversion.epubFolderPath.split('/')).split('.')[0].replace('folder_', '');
-        
+    }).then( (conversion) => {
+        var fileName = _.last(conversion.epubFolderPath.split('/')).replace('folder_', '');
         return new Promise(function(resolve, reject){
 
             var htmlFilePath = [path, collection, 'html/'].join('/') + fileName + '.html';
+            
             injectInlineHtml([path, collection, 'html/'].join('/'), fileName + '.html')
                 .then( htmlData => {
                     
@@ -316,7 +317,7 @@ function processFile(path, collection, epubFolderPath){
 
         }).then( injectProcess => {
             var outFilePath = [path, collection, 'html', fileName + '.inline.html'].join('/');
-            var error = injectProcess.error ? 'Error: ' + injectProcess.error : '';
+            var error = injectProcess.error ? 'Error: ' + injectProcess.error + ' - ' + injectProcess.text : '';
             console.log('File:', _.last(outFilePath.split('/')), 'Pages:', injectProcess.pageCount, error);
             return fsWriteFile(outFilePath, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + injectProcess.content, 'utf8');
         });
@@ -376,7 +377,11 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
         currentContent,
         hasMoreContents,
         error = false,
+        errorText = '',
         insertFirst = true,
+        canExcludeText = false,
+        exclusions = 0,
+        textAlreadyExcluded = false,
         insertNextPageBreak = true;
 
     var parser = new htmlparser.Parser({
@@ -388,13 +393,21 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             }else if(name === "thead"){
                 onTHead = true;
             }
+
+            if(!textAlreadyExcluded && name === 'div'){
+                if(!/Page de titre/.test(fileName)){
+                    canExcludeText = true;
+                }
+            }
+
             iterators.out += `<${name}`;
             for(var key in attribs){
-                iterators.out += ` ${key}="${attribs[key]}"`;
+                iterators.out += ` ${key}="${encodeXmlEntities(attribs[key])}"`;
             }
             iterators.out += `>`;
         },
         ontext: function(text){
+
             if(onTHead){
                 tHeadText += text;
             }
@@ -402,6 +415,18 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             if(text.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '') == "" || error || _.get(currentContent, 'lastPage')){
                 iterators.out += encodeXmlEntities(text);
                 return;
+            }
+
+            //console.log('canExcludeText', canExcludeText, 'textAlreadyExcluded', textAlreadyExcluded, text);
+
+            if(canExcludeText){
+                if(/[0-9]{4}/.test(text) || (/[IVX]+\.\s/.test(text) || exclusions === 1) || /Suite: /.test(text) || /…/.test(text)){
+                    textAlreadyExcluded = true;
+                    exclusions++;
+                    return;
+                }else{
+                    canExcludeText = false;
+                }
             }
 
             var insertPageBreak = function(page){
@@ -476,6 +501,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                                     return _.startsWith(content.text, text.replace(/\x20|\x09|\xad|\x2d|\x0a|\xa0|\u2029|\x2e/g, '')); 
                                 });
                                 if(currentContent == undefined){
+                                    errorText = text;
                                     currentContent = {error: true, page: iterators.page, text: text};
                                     return;
                                 }
@@ -540,7 +566,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             iterators.out += `</${name}>`;
         },
         onend: function(){
-            resolve({ content: iterators.out, pageCount: iterators.page, error: error});
+            resolve({ content: iterators.out, pageCount: iterators.page, error: error, text: errorText});
         }
     }, { decodeEntities: true });
     parser.write(htmlData.replace(/&#173;/g, ''));

@@ -50,14 +50,14 @@
             <entry colname="col0">
                 <xsl:variable name="date">
                     <xsl:call-template name="extractDate">
-                        <xsl:with-param name="text" select="normalize-space()"/>
+                        <xsl:with-param name="text" select="."/>
                     </xsl:call-template>
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="$date != ''">
-                        <xsl:value-of select="normalize-space(substring-before(., $date))"/>
+                        <xsl:value-of select="substring-before(., $date)"/>
                         <core:leaders blank-leader="dot" blank-use="fill"/>
-                        <xsl:value-of select="$date"/>
+                        <xsl:value-of select="concat($date, substring-after(.,$date))"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:apply-templates/>

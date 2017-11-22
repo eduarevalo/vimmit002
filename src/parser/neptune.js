@@ -600,6 +600,37 @@ function transformCollection(collectionFolder, filter){
                                 xppContent = file.content.replace(/<\?xpp nextpageref=""\?>/, "");
                             }
 
+
+                            while(/<core:emph typestyle="bf">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="bf">([^<]*)<\/core:emph>/.test(xppContent)){
+                                xppContent = xppContent.replace(/<core:emph typestyle="bf">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="bf">([^<]*)<\/core:emph>/gm, function(match, p1, p2, p3){ 
+                                    return "<core:emph typestyle=\"bf\">" + p1 + p2 + p3 + "</core:emph>";
+                                });
+                            }
+
+                            while(/<core:emph typestyle="it">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="it">([^<]*)<\/core:emph>/.test(xppContent)){
+                                xppContent = xppContent.replace(/<core:emph typestyle="it">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="it">([^<]*)<\/core:emph>/gm, function(match, p1, p2, p3){ 
+                                    return "<core:emph typestyle=\"it\">" + p1 + p2 + p3 + "</core:emph>";
+                                });
+                            }
+
+                            while(/<core:emph typestyle="su">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="su">([^<]*)<\/core:emph>/.test(xppContent)){
+                                xppContent = xppContent.replace(/<core:emph typestyle="su">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="su">([^<]*)<\/core:emph>/gm, function(match, p1, p2, p3){ 
+                                    return "<core:emph typestyle=\"su\">" + p1 + p2 + p3 + "</core:emph>";
+                                });
+                            }
+
+                            while(/<core:emph typestyle="sb">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="sb">([^<]*)<\/core:emph>/.test(xppContent)){
+                                xppContent = xppContent.replace(/<core:emph typestyle="sb">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="sb">([^<]*)<\/core:emph>/gm, function(match, p1, p2, p3){ 
+                                    return "<core:emph typestyle=\"sb\">" + p1 + p2 + p3 + "</core:emph>";
+                                });
+                            }
+
+                            while(/<core:emph typestyle="ib">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="ib">([^<]*)<\/core:emph>/.test(xppContent)){
+                                xppContent = xppContent.replace(/<core:emph typestyle="ib">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="ib">([^<]*)<\/core:emph>/gm, function(match, p1, p2, p3){ 
+                                    return "<core:emph typestyle=\"ib\">" + p1 + p2 + p3 + "</core:emph>";
+                                });
+                            }
+
                             xppContent = xppContent.replace(/volnum=""/g, `volnum="${volnum}"`);
 
                             var htmlPath = file.xmlPath.replace('/xml/', '/html/').replace('.inline.html.db.xml', '.html'),
@@ -622,6 +653,39 @@ function transformCollection(collectionFolder, filter){
                                         }).then( () => {
                                             return neptuneLast(tempXml)
                                                 .then( (lastContent) => {
+
+                                                    lastContent = lastContent
+                                                        .replace('é́','é')
+                                                        .replace('<core:title>Index analytique</core:title>','<core:title>INDEX ANALYTIQUE</core:title>');
+                                                    
+                                                    lastContent = lastContent.replace(/([\s\t	]+)(<core:leaders)/g, function(match, p1, p2){ 
+                                                        return p2;
+                                                    });
+
+                                                    lastContent = lastContent.replace(/(<core:entry-title>)(\s+)/g, function(match, p1, p2){ 
+                                                        return p1;
+                                                    });
+
+                                                    lastContent = lastContent.replace(/(<core:entry-title>)([\s\t	]+)(<core:emph)/g, function(match, p1, p2, p3){ 
+                                                        return p1 + p3;
+                                                    });
+
+                                                    // Empty emphasis
+                                                    lastContent = lastContent.replace(/(<core:emph typestyle="[a-z]*">)\s+(<\/)/g, function(match, p1, p2){ 
+                                                        return p1 + p2;
+                                                    });
+
+                                                    // Empty emphasis in emphasis
+                                                    lastContent = lastContent.replace(/<core:emph typestyle="[a-z]*"\/>/g, '');
+                                                    lastContent = lastContent.replace(/(<core:emph typestyle="[a-z]*">)(\s+)/g, function(match, p1, p2){ 
+                                                        return p2 + p1;
+                                                    });
+
+                                                    // Leading spaces in paragraphs
+                                                    lastContent = lastContent.replace(/(<(?:fn|core):para[\sa-z1-9\=\"]*>)(\s+)/g, function(match, p1, p2){ 
+                                                        return p1;
+                                                    });
+                                                
                                                     return fsWriteFile(file.filePath, lastContent);
                                                 });
                                         });
