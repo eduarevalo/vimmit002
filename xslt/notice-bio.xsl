@@ -9,11 +9,12 @@
     exclude-result-prefixes="xs db html"
     version="2.0">
    
+   
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
   
     <xsl:variable name="firstTitle" select="(./html:html/html:body//html:p[contains(lower-case(@class), 'titre')])[1]"/>
-    <xsl:variable name="directors" select="$firstTitle/following-sibling::html:p[contains(upper-case(normalize-space(.)), 'DIRECTEURS DE COLLECTION')][1]"/>
+    <xsl:variable name="directors" select="$firstTitle/following-sibling::html:p[contains(upper-case(normalize-space(.)), 'DIRECTEURS DE COLLECTION') or contains(upper-case(normalize-space(.)), 'DIRECTEUR DE COLLECTION')][1]"/>
     <xsl:variable name="conseillers" select="$directors/following-sibling::html:p[contains(upper-case(normalize-space(.)), 'CONSEILLERS')][1]"/>
     <xsl:variable name="authors" select="$conseillers/following-sibling::html:p[contains(upper-case(normalize-space(.)), 'AUTEURS')][1]"/>
   

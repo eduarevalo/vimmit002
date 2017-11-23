@@ -10,8 +10,7 @@
     exclude-result-prefixes="xs db html"
     version="2.0">
     
-    
-    <xsl:include href="para.xsl"/>
+       <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
     <xsl:variable name="mainContainer" select="/html:html/html:body/html:div[.//html:*[contains(@class,'Fascicule')]][1]"/>
     

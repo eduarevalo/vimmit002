@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs db html"
     version="3.0">
     
-    <!--<xsl:output indent="yes"></xsl:output>-->
+    
     
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
@@ -22,10 +22,10 @@
                 <title><xsl:apply-templates select="./html:html/html:head/html:title" /></title>
             </info>
             <toc>
-                <xsl:variable name="parts" select=".//html:p[@class='Partie']"/>
+                <xsl:variable name="parts" select=".//html:p[contains(@class,'Partie')]"/>
                 <xsl:choose>
                     <xsl:when test="$parts">
-                        <xsl:apply-templates select="$parts[1]/preceding-sibling::html:p"/>
+                        <xsl:apply-templates select="$parts[1]/preceding-sibling::html:*"/>
                         <xsl:for-each select="$parts">
                             <xsl:variable name="i" select="position()" />
                             <xsl:call-template name="part">
@@ -36,7 +36,7 @@
                     </xsl:when>
                     <xsl:otherwise>
                         
-                        <xsl:variable name="firstTitle" select=".//html:p[contains(@class, '--Titre')][1]"/>
+                        <xsl:variable name="firstTitle" select=".//html:p[contains(@class, '--Titre') ][1]"/>
                         
                         <xsl:choose>
                             <xsl:when test="$firstTitle">
@@ -50,6 +50,7 @@
                                 
                                 <xsl:variable name="fascicles" select="$mainContainer//html:p[starts-with(@class,'no-fascicule') or starts-with(@class,'fascicule')]"/>
                                 <xsl:for-each select="$fascicles">
+                                    <xsl:apply-templates select="$fascicles[1]/preceding-sibling::html:*"/>
                                     <xsl:variable name="i" select="position()" />
                                     <xsl:call-template name="fascicle">
                                         <xsl:with-param name="fascicle" select="$fascicles[$i]"/>
@@ -73,7 +74,7 @@
             <title role="{$part/@style}">
                 <xsl:value-of select="$part"/>
             </title>
-            <xsl:variable name="titles" select="$partSet[contains(@class,'--Titre')]"/>
+            <xsl:variable name="titles" select="$partSet[contains(@class,'--Titre') or contains(@class,'-titre')]"/>
             <xsl:apply-templates select="$partSet except $titles[1]/following-sibling::* except $titles[1]"/>
             <xsl:call-template name="titles">
                 <xsl:with-param name="baseSet" select="$partSet"/>
@@ -83,7 +84,7 @@
     
     <xsl:template name="titles">
         <xsl:param name="baseSet"/>
-        <xsl:variable name="titles" select="$baseSet[contains(@class,'--Titre')]"/>
+        <xsl:variable name="titles" select="$baseSet[contains(@class,'--Titre') or contains(@class,'-titre')]"/>
         <xsl:for-each select="$titles">
             <xsl:variable name="i" select="position()" />
             <xsl:call-template name="title">
@@ -123,7 +124,7 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="html:p[starts-with(@class, 'no-fascicule') or starts-with(@class, 'fascicule') or contains(., 'TDMI')]">
+    <xsl:template match="html:p[starts-with(@class, 'no-fascicule') or starts-with(@class, 'fascicule')]">
         <xsl:apply-templates select=".//html:br"/>
         <tocentry>
             <emphasis role="{@class} {@style} {html:span/@style}">
@@ -142,6 +143,15 @@
                     <xsl:value-of select="$name"/>
                 </emphasis>
             </xsl:if>
+        </tocentry>
+    </xsl:template>
+    
+    <xsl:template match="html:p[contains(., 'TDM')]">
+        <xsl:apply-templates select=".//html:br"/>
+        <tocentry>
+            <emphasis role="{@class} {@style} {html:span/@style}">
+                <xsl:value-of select="."/>
+            </emphasis>
         </tocentry>
     </xsl:template>
     
