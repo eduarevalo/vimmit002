@@ -6,8 +6,6 @@
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
-    <xsl:output indent="yes"></xsl:output>
-    
     <xsl:include href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>

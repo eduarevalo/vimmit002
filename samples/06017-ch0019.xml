@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="4">
+    <!-- pub-num=06017 -->
+    <!-- ch-num=ch0019 -->
+    <?textpage page-num="19-1" release-num="Décembre 2012"?>
+    <core:desig value="18">FASCICULE 19</core:desig>
+    <core:title><core:emph typestyle="it">Marques de certification et appellations
+            d’origine</core:emph></core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 19 – Marques de certification et appellations
+        d’origine</core:title-alt>
+    <core:title-alt use4="l-running-hd">IV. Marques de commerce</core:title-alt>
+    <tr:secmain-dummy volnum="4">
+        <core:comment type="other" box="1">
+            <core:para>Le Fascicule 19 portant sur les marques de certification et les appellations
+                d’origine sera ajouté ultérieurement.</core:para>
+        </core:comment>
+    </tr:secmain-dummy>
+    <?xpp XppPI nextpageref="20-1"?>
+</tr:ch>

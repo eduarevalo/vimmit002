@@ -16,12 +16,12 @@
             <xsl:when test="$typestyle != ''">
                 <xsl:choose>
                     <xsl:when test="$labelToExtract != '' and starts-with(normalize-space(.), $labelToExtract)">
-                        <xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">
+                        <!--<xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">-->
                             <core:emph>
                                 <xsl:attribute name="typestyle" select="$typestyle"/>
                                 <xsl:value-of select="substring-after(., $labelToExtract)"/>
                             </core:emph>
-                        </xsl:if>
+                        <!--</xsl:if>-->
                     </xsl:when>
                     <xsl:otherwise>
                         <core:emph>
@@ -178,7 +178,6 @@
             </xsl:call-template>
         </xsl:variable>
         <entry colname="col{position()}">
-            <!--namest="col{position()}" nameend="col{position()}" align="center"-->
             <xsl:if test="$bgColor!=''">
                 <xsl:attribute name="grayshading">50</xsl:attribute>
             </xsl:if>

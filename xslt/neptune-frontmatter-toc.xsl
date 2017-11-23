@@ -8,10 +8,9 @@
     
     <xsl:include href="neptune-frontmatter.xsl"/>
 
-<!--<xsl:output indent="yes"></xsl:output>-->
-
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="tocNumber" select="'01a'"/>
+    <xsl:param name="nextPageRef"></xsl:param>
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
     
@@ -24,6 +23,9 @@
             <fm:pub-toc>
                 <xsl:call-template name="toc"/>
             </fm:pub-toc>
+            <xsl:processing-instruction name="xpp">
+                <xsl:value-of select="concat('nextpageref=&quot;', $nextPageRef, '&quot;')"/>
+            </xsl:processing-instruction>
         </fm:vol-fm>
         
     </xsl:template>

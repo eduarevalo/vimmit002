@@ -62,7 +62,6 @@
                 <colspec align="left" colname="col0" colnum="1" colwidth="336.00pt"/>
                 <tbody valign="top">
                     <xsl:for-each select="$set">
-                        <xsl:copy-of select=".//processing-instruction()"/>
                         <row>
                             <entry colname="col0">
                                 <xsl:apply-templates select="."/>
@@ -94,7 +93,7 @@
     
     <xsl:template match="para">
         <xsl:if test="contains(@role, 'Art-')">
-            <xsl:text>&#x2003;&#x2003;</xsl:text>            
+            <xsl:comment>VimmitArtIndent</xsl:comment>
         </xsl:if>
         <xsl:variable name="firstF" select="emphasis[starts-with(text(), 'F')][following-sibling::text()[1][starts-with(normalize-space(),':')]][1]"/>
         <xsl:choose>
