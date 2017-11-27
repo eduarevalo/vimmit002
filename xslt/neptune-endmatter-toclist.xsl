@@ -21,9 +21,10 @@
             <xsl:comment select="concat('pub-num=', $pubNum)"/>
             <xsl:comment select="'ch-num=toclist'"/>
             <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
-            <xsl:variable name="firstTitle" select="(part/partintro/para[contains(@role, 'texte-space-after')])[1]"/>
+            <xsl:variable name="etatPublicationTitle" select="part/partintro/title[1]"/>
+            <xsl:variable name="firstTitle" select="((part/partintro/para[contains(@role, 'texte-space-after')] | part/partintro/title) except $etatPublicationTitle)[1]"/>
             <core:title>
-                <xsl:apply-templates select="part/partintro/title[1]/*"/>
+                <xsl:value-of select="$etatPublicationTitle"/>
             </core:title>
             <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
             <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
@@ -32,7 +33,7 @@
                 <tgroup cols="1">
                     <colspec align="left" colname="col0" colnum="1" colwidth="162.00pt"/>
                     <tbody>
-                        <xsl:apply-templates select="$firstTitle | $firstTitle/following-sibling::para | $firstTitle/following-sibling::title"/>
+                        <xsl:apply-templates select="($firstTitle | $firstTitle/following-sibling::para | $firstTitle/following-sibling::title) except $etatPublicationTitle"/>
                     </tbody>
                 </tgroup>
             </table>
@@ -77,13 +78,13 @@
         </row>
     </xsl:template>
     
-    <xsl:template match="title[parent::partintro or parent::toc]">
+    <!--<xsl:template match="title[parent::partintro or parent::toc]">
         <core:title>
             <xsl:apply-templates/>
         </core:title>
         <core:title-alt use4="r-running-hd"><xsl:value-of select="$rightHeader"/></core:title-alt>
         <core:title-alt use4="l-running-hd"><xsl:value-of select="$leftHeader"/></core:title-alt>
-    </xsl:template>
+    </xsl:template>-->
     
     <xsl:template match="(//processing-instruction('textpage'))[1]"/>
     

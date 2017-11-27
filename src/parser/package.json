@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.5.0",
+    "chalk": "^2.3.0",
     "diff": "^3.4.0",
     "digest-stream": "^2.0.0",
     "grunt": "^1.0.1",
@@ -22,6 +23,7 @@
     "lodash": "^4.17.4",
     "mkdir-recursive": "^0.3.0",
     "mkdirp": "^0.5.1",
+    "moment": "^2.19.2",
     "saxon-stream": "^0.2.3",
     "tmp": "0.0.33",
     "unzip": "^0.1.11"

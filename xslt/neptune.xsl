@@ -11,11 +11,10 @@
             </xsl:call-template>
         </xsl:variable>
         <xsl:variable name="nodes" select="text()|processing-instruction()"/>
-        <xsl:variable name="righTrimmed" select="normalize-space($nodes[last()])"/>
         <xsl:choose>
             <xsl:when test="$typestyle != ''">
                 <xsl:choose>
-                    <xsl:when test="$labelToExtract != '' and starts-with(normalize-space(.), $labelToExtract)">
+                    <xsl:when test="$labelToExtract != '' and starts-with(normalize-space(.), $labelToExtract) and not(preceding-sibling::emphasis[starts-with(normalize-space(.), $labelToExtract)])">
                         <!--<xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">-->
                             <core:emph>
                                 <xsl:attribute name="typestyle" select="$typestyle"/>
@@ -26,24 +25,14 @@
                     <xsl:otherwise>
                         <core:emph>
                             <xsl:attribute name="typestyle" select="$typestyle"/>
-                            <xsl:for-each select="$nodes">
-                                <xsl:choose>
-                                    <xsl:when test="position()=last()">
-                                        <xsl:value-of select="concat(substring-before(., $righTrimmed), $righTrimmed)"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:apply-templates select="."/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:for-each>
+                            <xsl:apply-templates select="$nodes"/>
                         </core:emph>
-                        <xsl:value-of select="substring-after($nodes[last()], $righTrimmed)"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:choose>
-                    <xsl:when test="$labelToExtract!='' and starts-with(normalize-space(.), $labelToExtract)">
+                    <xsl:when test="$labelToExtract!='' and starts-with(normalize-space(.), $labelToExtract) and not(preceding-sibling::emphasis[starts-with(normalize-space(.), $labelToExtract)])">
                         <xsl:value-of select="substring-after(., $labelToExtract)"/>
                     </xsl:when>
                     <xsl:otherwise>

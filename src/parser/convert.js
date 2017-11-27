@@ -11,7 +11,8 @@ const fs = require('fs'),
     tmp = require('tmp'),
     htmlparser = require("htmlparser2"),
     inlineCss = require('inline-css'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    filterManualFixes = require('./manualFiles').filterManualFixes;
 
 
 const fxMkDir = util.promisify(fx.mkdir),
@@ -36,6 +37,7 @@ function processCollection(collectionFolder, filter){
         .then( files => {
             
             var htmlFiles = files
+                .filter( filterManualFixes )
                 .filter( file => /\.inline\.html$/.test(file) )
                 .filter( file => filter.test(file) );
             

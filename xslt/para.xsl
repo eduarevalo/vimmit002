@@ -16,17 +16,21 @@
     <xsl:template match="html:span[contains(@class, 'locuspara')][not(preceding-sibling::html:span[contains(@class, 'locuspara')])]">
         <emphasis role="label" xreflabel="{.}">
             <xsl:apply-templates/>
-            <xsl:variable name="punctuation" select="(following-sibling::*|following-sibling::text())[1][self::text()]"/>
-            <xsl:value-of select="$punctuation"/>
+            <xsl:variable name="punctuation" select="(following-sibling::*|following-sibling::text())[1][self::text()][starts-with(.,'.')]"/>
+            <xsl:if test="$punctuation">
+                <xsl:value-of select="'.'"/>
+            </xsl:if>
         </emphasis>
     </xsl:template>
     
-    <xsl:template match="text()[preceding-sibling::*[1][not(preceding-sibling::html:span[contains(@class, 'locuspara')])][contains(@class, 'locuspara')]]"/>
+    <xsl:template match="text()[preceding-sibling::*[1][not(preceding-sibling::html:span[contains(@class, 'locuspara')])][contains(@class, 'locuspara')]][starts-with(.,'.')]">
+        <xsl:value-of select="substring-after(.,'.')"/>
+    </xsl:template>
     
     <xsl:template match="html:p">
         <xsl:variable name="indent" select="starts-with(., '&#9;')"/>
         <xsl:variable name="nodes" select="* | text()"/>
-        <xsl:variable name="firstTextNode" select="($nodes[not(self::html:br)])[1][self::text() or self::html:span]"/>
+        <xsl:variable name="firstTextNode" select="($nodes[not(self::html:br)])[1][self::text() or self::html:span[not(contains(@class, 'locuspara'))]]"/>
         <para>
             <xsl:choose>
                 <xsl:when test="$indent">
@@ -48,8 +52,8 @@
             </xsl:variable>
             
             <xsl:choose>
-                <xsl:when test="$label!='' and contains(@class,'Texte') and ($nodes[not(self::html:br)][position()=3 or position()=4][starts-with(replace(normalize-space(.),' ',''),'–')] or $nodes[self::text()][2][starts-with(normalize-space(.),'–')]) and substring-before($label, '.')!=''">
-                 <emphasis role="label" xreflabel="{substring-before($label, '.')}">
+                <xsl:when test="$label!='' and contains(@class,'Texte') and ($nodes[not(self::html:br)][position()=3 or position()=4][starts-with(replace(normalize-space(.),' ',''),'–')] or $nodes[self::text()][2][starts-with(normalize-space(.),'–')])">
+                 <emphasis role="label" xreflabel="{$label}">
                      <xsl:apply-templates select="$firstTextNode"/>
                  </emphasis>
                  <xsl:apply-templates select="$nodes except $firstTextNode"/>
@@ -112,16 +116,19 @@
         <xsl:choose>
             <xsl:when test="string-length($role) > 0">
                 <xsl:variable name="reference" select="normalize-space()"/>
-                <xsl:variable name="referencedNode" select="./following::html:p[contains(@class, 'Notes')][starts-with(self::node(), $reference)][1]"/>
+                <xsl:variable name="notesStart" select="(./parent::html:p/following-sibling::html:p[contains(@class, 'Notes')])[1]"/>
+                <xsl:variable name="notesLimit" select="$notesStart/following-sibling::html:p[not(contains(@class, 'Notes'))][1]"/>
+                <xsl:variable name="notesSet" select="./parent::html:p/following-sibling::html:p[contains(@class, 'Notes')] except $notesLimit except $notesLimit/following-sibling::*"/>
+                <xsl:variable name="referencedNode" select="$notesSet[starts-with(., $reference)][1]"/>
                 <xsl:choose>
-                    <xsl:when test="$label!='' and parent::html:p[contains(@class,'Texte')] and (./following-sibling::html:span[2][contains(.,'–')] or ./following-sibling::text()[1][starts-with(replace(normalize-space(.),' ',''), '–')]) and substring-before($label, '.')!='' and not(./preceding-sibling::html:span[contains(@class, 'locuspara')])">
-                        <emphasis role="label" xreflabel="{substring-before($label, '.')}">
-                            <xsl:apply-templates/>
-                        </emphasis>
-                    </xsl:when>
                     <xsl:when test="contains($role, 'Super') and text() castable as xs:decimal and ./parent::html:p[not(contains(@class, 'Notes'))] and $reference and $referencedNode">
                         <emphasis role="footnoteref">
                             <footnoteref linkend='{generate-id($referencedNode)}'/>
+                            <xsl:apply-templates/>
+                        </emphasis>
+                    </xsl:when>
+                    <xsl:when test="$label!='' and parent::html:p[contains(@class,'Texte')] and (./following-sibling::html:span[2][contains(.,'–')] or ./following-sibling::text()[1][starts-with(replace(normalize-space(.),' ',''), '–')])  and not(./preceding-sibling::html:span[contains(@class, 'locuspara')])">
+                        <emphasis role="label" xreflabel="{$label}">
                             <xsl:apply-templates/>
                         </emphasis>
                     </xsl:when>
@@ -139,13 +146,16 @@
     </xsl:template>
     
     <xsl:template match="html:br[@injected]">
-        <xsl:if test="not(@left-header) and @release-num!='undefined'">
+        <xsl:if test="not(@left-header)">
+            <xsl:variable name="release">
+                <xsl:if test="@release-num!='undefined'"><xsl:value-of select="@release-num"/></xsl:if>
+            </xsl:variable>
             <xsl:choose>
-                <xsl:when test="@page-num ">
-                    <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+                <xsl:when test="@page-num">
+                    <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @page-num ,'&quot; release-num=&quot;', $release ,'&quot;')"/>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @extracted-page ,'&quot; release-num=&quot;', @release-num ,'&quot;')"/>
+                    <xsl:processing-instruction name="textpage" select="concat('page-num=&quot;', @extracted-page ,'&quot; release-num=&quot;', $release ,'&quot;')"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
@@ -153,14 +163,25 @@
     
     <xsl:template name="extractLabel">
         <xsl:param name="text"/>
-        <xsl:analyze-string select="normalize-space($text)" 
-            regex="^\(?([0-9]*[a-z]*[A-Z]*){{1,2}}[\.|\)]( |$)">
-            <xsl:matching-substring>
-                <xsl:copy>
+        <xsl:variable name="firstTry">
+            <xsl:analyze-string select="normalize-space($text)" regex="^([0-9]{{1,3}}\.?[0-9]?)\.?(?:\s+| |$)">
+                <xsl:matching-substring>
                     <xsl:value-of select="regex-group(1)"/>
-                </xsl:copy>
-            </xsl:matching-substring>
-        </xsl:analyze-string>
+                </xsl:matching-substring>
+            </xsl:analyze-string>
+        </xsl:variable>
+        <xsl:choose>
+            <xsl:when test="$firstTry!=''">
+                <xsl:value-of select="$firstTry"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:analyze-string select="normalize-space($text)" regex="^([a-zA-Z]{{1,2}})\)(?:\s+| |$)">
+                    <xsl:matching-substring>
+                        <xsl:value-of select="regex-group(1)"/>
+                    </xsl:matching-substring>
+                </xsl:analyze-string>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>

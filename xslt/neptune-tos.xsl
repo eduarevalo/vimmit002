@@ -6,7 +6,7 @@
     
     <!--<xsl:output indent="yes" doctype-public="-//LEXISNEXIS//DTD Endmatter v018//EN//XML" doctype-system="endmatterxV018-0000.dtd"/>-->
     
-    <xsl:include href="neptune.xsl"/>
+    <xsl:import href="neptune.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
     <xsl:param name="nextPageRef"></xsl:param>
@@ -95,7 +95,7 @@
         <xsl:if test="contains(@role, 'Art-')">
             <xsl:comment>VimmitArtIndent</xsl:comment>
         </xsl:if>
-        <xsl:variable name="firstF" select="emphasis[starts-with(text(), 'F')][following-sibling::text()[1][starts-with(normalize-space(),':')]][1]"/>
+        <xsl:variable name="firstF" select="emphasis[starts-with(normalize-space(), 'F')][following-sibling::text()[1][starts-with(normalize-space(),':')]][1]"/>
         <xsl:choose>
             <xsl:when test="$firstF">
                 <xsl:apply-templates select="$firstF/preceding-sibling::* | $firstF/preceding-sibling::text() | $firstF/preceding-sibling::processing-instruction()"/>

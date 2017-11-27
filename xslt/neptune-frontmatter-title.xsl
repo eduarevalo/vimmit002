@@ -9,10 +9,11 @@
     <xsl:import href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
-    <xsl:param name="collectionTitle" select="'DROIT DE L’ENVIRONNEMENT'"/>
+    <xsl:param name="collectionTitle" select="'BIENS ET PUBLICITÉ'"/>
     <xsl:param name="nextPageRef"></xsl:param>
     
-    <xsl:variable name="mediaobject" select="part/info/cover/mediaobject[1] "/>
+    <xsl:variable name="container" select="part/info/cover | part/partintro"/>
+    <xsl:variable name="mediaobject" select="$container/mediaobject[1] "/>
     <xsl:variable name="rightHeader" select="//processing-instruction('rightHeader')"/>
     <xsl:variable name="leftHeader" select="//processing-instruction('leftHeader')"/>
     
@@ -40,13 +41,16 @@
     </xsl:template>
     
     <xsl:template name="title" >
+        
+        
+        
         <xsl:variable name="firstPageMark" select="//mediaobject[1]"/>
-        <xsl:variable name="jurisClasseur" select="part/info/cover/para[contains(normalize-space(), 'JurisClasseur')] intersect $firstPageMark/preceding-sibling::para"/>
-        <xsl:variable name="collection" select="part/info/cover/para[contains(normalize-space(), 'collection droit')] intersect $firstPageMark/preceding-sibling::para"/>
-        <xsl:variable name="lastUpdate" select="part/info/cover/para[contains(normalize-space(), 'mise ')] intersect $firstPageMark/preceding-sibling::para"/>
-        <xsl:variable name="directors" select="part/info/cover/para[contains(normalize-space(), 'Directeurs')] intersect $firstPageMark/preceding-sibling::para"/>
-        <xsl:variable name="conseillers" select="part/info/cover/para[contains(normalize-space(), 'Conseillers')] intersect $firstPageMark/preceding-sibling::para"/>
-        <xsl:variable name="title" select="part/info/cover/para[contains(normalize-space(), $collectionTitle)]"/>       
+        <xsl:variable name="jurisClasseur" select="$container/para[contains(normalize-space(), 'JurisClasseur')] intersect $firstPageMark/preceding-sibling::para"/>
+        <xsl:variable name="collection" select="$container/para[contains(normalize-space(), 'collection droit')] intersect $firstPageMark/preceding-sibling::para"/>
+        <xsl:variable name="lastUpdate" select="$container/para[contains(normalize-space(), 'mise ')] intersect $firstPageMark/preceding-sibling::para"/>
+        <xsl:variable name="directors" select="$container/para[contains(normalize-space(), 'Directeur')] intersect $firstPageMark/preceding-sibling::para"/>
+        <xsl:variable name="conseillers" select="$container/para[contains(normalize-space(), 'Conseillers')] intersect $firstPageMark/preceding-sibling::para"/>
+        <xsl:variable name="title" select="$container/para[contains(normalize-space(), $collectionTitle)]"/>       
         <fm:title-pg>
             <fm:pub-series>
                 <xsl:apply-templates select="$jurisClasseur"/>
@@ -61,13 +65,26 @@
                     <core:role>
                         <xsl:apply-templates select="$directors/*"/>
                     </core:role>
-                    <xsl:for-each select="$directors[1]/following-sibling::para[contains(normalize-space(), 'Prof')] intersect $conseillers/preceding-sibling::para">
-                        <core:person>
-                            <core:name.text>
-                                <xsl:apply-templates select="*"/>
-                            </core:name.text>
-                        </core:person>
-                    </xsl:for-each>
+                    <xsl:choose>
+                        <xsl:when test="$conseillers">
+                            <xsl:for-each select="$directors[1]/following-sibling::para[contains(normalize-space(), 'Prof')] intersect $conseillers/preceding-sibling::para">
+                                <core:person>
+                                    <core:name.text>
+                                        <xsl:apply-templates select="*"/>
+                                    </core:name.text>
+                                </core:person>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:for-each select="$directors[1]/following-sibling::para[contains(normalize-space(), 'Prof')] intersect $lastUpdate/preceding-sibling::para">
+                                <core:person>
+                                    <core:name.text>
+                                        <xsl:apply-templates select="*"/>
+                                    </core:name.text>
+                                </core:person>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </fm:byline>
             </xsl:if>
             <xsl:if test="$conseillers">

@@ -4,8 +4,22 @@ const prepare = require('./prepare'),
     inject = require('./inject'),
     convert = require('./convert'),
     neptune = require('./neptune'),
+    validate = require('./validate'),
     report = require('./report'),
-    unzip = require('./unzip');
+    unzip = require('./unzip'),
+    chalk = require('chalk');
+
+var systemError = console.error;
+
+console.error = function(){
+    var args = Object.values(arguments).map( arg => chalk.red(arg) );
+    systemError.apply(null, args);
+};
+
+console.error = function(){
+    var args = Object.values(arguments).map( arg => chalk.red(arg) );
+    systemError.apply(null, args);
+};
 
 (function main(){
     
@@ -24,33 +38,68 @@ const prepare = require('./prepare'),
     var filter = new RegExp(args.filter || '.*'),
         collectionFilter = new RegExp(args.collectionFilter || '.*');
     
-    var preparePromise = args.prepare
-        ? prepare.preparePackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var preparePromise = function(){
+        return args.prepare
+            ? prepare.preparePackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
     
-    var exportAdobePromise = args.export
-        ? exportAdobe.exportPackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var exportAdobePromise = function(){
+        return args.export
+            ? exportAdobe.exportPackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
 
-    var unzipPromise = args.unzip
-        ? unzip.unzipPackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var unzipPromise =  function(){
+        return args.unzip
+            ? unzip.unzipPackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
 
-    var injectPromise = args.inject
-        ? inject.injectPackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var injectPromise =  function(){
+        return args.inject
+            ? inject.injectPackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
 
-    var convertPromise = args.convert
-        ? convert.convertPackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var convertPromise =  function(){
+        return args.convert
+            ? convert.convertPackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
 
-    var neptunePromise = args.neptune
-        ? neptune.transformPackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var neptunePromise =  function(){
+        return args.neptune
+            ? neptune.transformPackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
 
-    var reportPromise = args.report
-        ? report.reportPackages(packages, collectionFilter, filter)
-        : Promise.resolve();
+    var validatePromise =  function(){
+        return args.validate
+            ? validate.validatePackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
+
+    var reportPromise =  function(){
+        return args.report
+            ? report.reportPackages(packages, collectionFilter, filter)
+            : Promise.resolve('Omitted');
+    };
+
     
+    var processExecution = [preparePromise, exportAdobePromise, unzipPromise, injectPromise, convertPromise, neptunePromise, validatePromise, reportPromise]
+        .reduce( (promise, newPromise) => {
+            
+            return promise.then((operationResult) => {
+                    if(operationResult !== 'Omitted'){
+                        console.info('======================================================================');
+                    }
+                    return newPromise();
+                });
+            }, Promise.resolve()
+        );
+
+    console.time('Total time');
+    processExecution.then(() => { console.timeEnd('Total time'); })
     
 })();

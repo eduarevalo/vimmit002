@@ -125,11 +125,22 @@ function inlineHtmlParser(html){
         'border-style: [^;]*;': '',
         'border-width: ([0-9]*)(px|);': '',
         'background-color: ([^;]*);': function(match, p1, p2){ return `BgColor-${p1}`; },
+        'color: ([^;]*);': '',
         "font-family: [^;]*;": '',
-        'font-size: ([0-9]*)(px|%);': function(match, p1, p2){ return `FontSize-${p1}${p2}`; },
-        'font-style: (normal|italic|oblique);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'font-size: ([0-9]*)(px|%);': '',
+        'font-style: (normal|italic|oblique);': function(match, p1){ 
+            if(p1 === 'normal'){
+                return '';
+            }
+            return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); 
+        },
         'font-variant: ([^;]*);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
-        'font-weight: (bold|normal);': function(match, p1){ return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); },
+        'font-weight: (bold|normal);': function(match, p1){ 
+            if(p1 === 'normal'){
+                return '';
+            }
+            return p1.charAt(0).toUpperCase() + p1.slice(1).toLowerCase(); 
+        },
         'line-height: ([0-9]*)(\.[0-9]*)?;': function(match, p1, p2){ return `LineHeight-${p1}${p2}`; },
         'margin: ([0-9]*)(px|);': '',
         'margin-bottom: -?([0-9]*)(px|auto|);': '',
@@ -436,7 +447,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         pageNo,
                         ofPages,
                         release;
-                    var match = footer.match(/^\([0-9]*\)([A-ZÉ0-9\-]+)\s\/\s([0-9]*)(\D*\s[0-9]{4})$/);
+                    var match = footer.match(/^\([0-9]*\)([A-ZÉ0-9\-]+)\s\/\s([0-9]*)(\D*\s[0-9]{4})?$/);
                     //var match = release.match(/^[\r\n ]*\([0-9]*\)[A-Z0-9]*\s\/\s[0-9]*\s*(\D*\s[0-9]{4})[\r\n ]*$/);
                     if(match){
                         pageNo = match[1];
@@ -566,7 +577,12 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             iterators.out += `</${name}>`;
         },
         onend: function(){
-            resolve({ content: iterators.out, pageCount: iterators.page, error: error, text: errorText});
+            var finalContent = iterators.out
+                .replace(/(\<span\sclass\=\"\"\sstyle\=\"\s*Super\">)([0-9])\<\/span\>\<span\sclass\=\"\"\sstyle\=\"\s*Super\"\>([0-9])(\<\/span>)/g, function(match, p1, p2, p3, p4){ return p1 + p2 + p3 + p4; })
+                .replace(/(\<span\sclass\=\"Footnote\-reference\s*\"\sstyle\=\"[^"]*Super[^"]*\"\>)([0-9])\<\/span\>\<span\sclass\=\"\"\sstyle\=\"[^"]*Super[^"]*\">([0-9])\</g, function(match, p1, p2, p3){ return p1 + p2 + p3 + '<'; })
+                .replace(/(\<span\sclass\=\"Footnote\-reference\s*\"\sstyle\=\"[^"]*Super[^"]*\"\>)([0-9])\.(\<\/span\>)/g, function(match, p1, p2, p3){ return p1 + p2 + p3 + '.'; });
+
+            resolve({ content: finalContent, pageCount: iterators.page, error: error, text: errorText});
         }
     }, { decodeEntities: true });
     parser.write(htmlData.replace(/&#173;/g, ''));

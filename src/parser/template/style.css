@@ -20,6 +20,16 @@
         background: initial;
         page-break-after: always;
     }
+    body{
+      width: 100%;
+    }
+}
+
+@media screen{
+  body {
+    margin:20px;
+    padding:20px;
+  }
 }
 
 .clearfix:after {
@@ -35,7 +45,6 @@ a {
 
 body {
   position: relative;
-  width: 100%;  
   height: 29.7cm; 
   margin: 0 auto; 
   color: #555555;
@@ -120,6 +129,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   margin-bottom: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
 }
 
 table th,
@@ -135,10 +145,6 @@ table th {
   white-space: nowrap;        
   font-weight: normal;
   font-size: 10px;
-}
-
-table td {
-  text-align: right;
 }
 
 table td{

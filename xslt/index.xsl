@@ -37,4 +37,17 @@
         </index>            
     </xsl:template>
     
+    <xsl:template match="html:p[contains(@class,'Voir-aussi')]">
+        <index role="Index_N1 {@class} {@style}">
+            <xsl:apply-templates/>
+        </index>            
+    </xsl:template>
+    
+    <xsl:template match="html:p[normalize-space()='INDEX ANALYTIQUE']">
+        <xsl:apply-templates select=".//html:br"/>
+        <title>
+            <xsl:value-of select="."/>
+        </title>
+    </xsl:template>
+    
 </xsl:stylesheet>

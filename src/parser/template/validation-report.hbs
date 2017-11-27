@@ -1,0 +1,54 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css" media="all" />
+  </head>
+  <body>
+    <header class="clearfix">
+      <div id="logo">
+      </div>
+      <div id="company">
+        <h2 class="name">Technologie Vimmit</h2>
+        <div>841, Rue Cardinal, St-Eustache, J7R 6N6</div>
+        <div>+1 (438) 830-4556</div>
+        <div><a href="mailto:info@vimmit.com">info@vimmit.com</a></div>
+      </div>
+      </div>
+    </header>
+    <main>
+      <h1>Packages conversion report</h1>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th class="desc">Package</th>
+            <th class="desc">FileName</th>
+            <th class="desc">Source</th>
+            <th>Integrity valid</th>
+            <th>DTD valid</th>
+            <th>Page Numbers valid</th>
+            <th>Page count / splits </th>
+            <th>Page sequences</th>
+            <th>Page duplicated</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+            <tr>
+              <td class="">{{ package }}</td>
+              <td class="desc">{{@key}}</td>
+              <td class="desc">{{ sourceFile }}</td>
+              <td class="{{doneClass integrityValid}}">{{ integrityValid }}</td>
+              <td class="{{doneClass dtdValid}}">{{ dtdValid }}</td>
+              <td class="{{doneClass pageNumbersValid}}">{{ pageNumbersValid }}</td>
+              <td class="">{{ pageNumbersCount }} - {{ pageNumbersJumps }}</td>
+              <td class="">{{ pageNumbersSequences }}</td>
+              <td class="">{{ pageNumbersDuplicate }}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
+<!DOCTYPE html>

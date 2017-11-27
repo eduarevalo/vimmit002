@@ -25,7 +25,7 @@
             <xsl:apply-templates select="part/partintro/title"/>
             <xsl:apply-templates select="part/partintro/para[starts-with(normalize-space(),'Note explicative')][1]"/>
             <in:body>
-                <xsl:for-each select="part/partintro/para[contains(@role,'Index_S-parateur')]">
+                <xsl:for-each select="part/partintro/para[contains(@role,'Index_S-parateur') or contains(@role,'Lettre')]">
                     <xsl:variable name="this" select="."/>
                     <xsl:variable name="i" select="position()"/>
                     <in:alpha-breaker>
@@ -61,7 +61,9 @@
         <xsl:param name="set"/>
         <xsl:for-each select="$set">
             <xsl:variable name="this" select="."/>
-            <xsl:copy-of select="$this/processing-instruction()"/>
+            <xsl:if test="not(count(*)=0)">
+                <xsl:copy-of select="$this/processing-instruction()"/>
+            </xsl:if>
             <xsl:variable name="set2" select="$this/following-sibling::index[contains(@role, 'N2')][preceding-sibling::index[contains(@role, 'N1')][1] = $this]"/>
             <xsl:variable name="typestyle">
                 <xsl:call-template name="getTypeStyle">
@@ -92,7 +94,9 @@
         <xsl:param name="set"/>
         <xsl:for-each select="$set">
             <xsl:variable name="this" select="."/>
-            <xsl:copy-of select="$this/processing-instruction()"/>
+            <xsl:if test="not(count(*)=0)">
+                <xsl:copy-of select="$this/processing-instruction()"/>
+            </xsl:if>
             <xsl:variable name="limit" select="($this/following-sibling::index[not(contains(@role, 'N3')) and not(contains(@role, 'N4')) and not(contains(@role, 'N5'))])[1]"/>
             <xsl:variable name="set3" select="$this/following-sibling::index[contains(@role, 'N3')] intersect $limit/preceding-sibling::index"/>
             <xsl:variable name="typestyle">
@@ -148,7 +152,9 @@
         <xsl:param name="set"/>
         <xsl:for-each select="$set">
             <xsl:variable name="this" select="."/>
-            <xsl:copy-of select="$this/processing-instruction()"/>
+            <xsl:if test="not(count(*)=0)">
+                <xsl:copy-of select="$this/processing-instruction()"/>
+            </xsl:if>
             <xsl:variable name="set4" select="$this/following-sibling::index[contains(@role, 'N4')][preceding-sibling::index[contains(@role, 'N3')][1] = $this]"/>
             <xsl:variable name="typestyle">
                 <xsl:call-template name="getTypeStyle">
@@ -190,7 +196,9 @@
         <xsl:param name="set"/>
         <xsl:for-each select="$set">
             <xsl:variable name="this" select="."/>
-            <xsl:copy-of select="$this/processing-instruction()"/>
+            <xsl:if test="not(count(*)=0)">
+                <xsl:copy-of select="$this/processing-instruction()"/>
+            </xsl:if>
             <xsl:variable name="set4" select="$this/following-sibling::index[contains(@role, 'N5')][preceding-sibling::index[contains(@role, 'N3')][1] = $this]"/>
             <xsl:variable name="typestyle">
                 <xsl:call-template name="getTypeStyle">
@@ -241,7 +249,7 @@
         </core:legend>    
     </xsl:template>
     
-    <xsl:template match="para[contains(@role,'Index_S-parateur')]">
+    <xsl:template match="para[contains(@role,'Index_S-parateur') or contains(@role, 'Lettre')]">
         <in:alpha-letter>
             <xsl:value-of select="."/>
         </in:alpha-letter>

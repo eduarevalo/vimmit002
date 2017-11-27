@@ -7,8 +7,6 @@
     exclude-result-prefixes="xs db html"
     version="3.0">
     
-    
-    
     <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
     
@@ -24,7 +22,9 @@
             <toc>
                 <xsl:variable name="parts" select=".//html:p[contains(@class,'Partie')]"/>
                 <xsl:choose>
+                    
                     <xsl:when test="$parts">
+                        
                         <xsl:apply-templates select="$parts[1]/preceding-sibling::html:*"/>
                         <xsl:for-each select="$parts">
                             <xsl:variable name="i" select="position()" />
@@ -33,6 +33,7 @@
                                 <xsl:with-param name="partSet" select="$parts[$i]/following-sibling::html:p except $parts[$i+1]/following-sibling::html:p except $parts[$i+1]"/>
                             </xsl:call-template>
                         </xsl:for-each>
+                        
                     </xsl:when>
                     <xsl:otherwise>
                         
@@ -49,8 +50,8 @@
                             <xsl:otherwise>
                                 
                                 <xsl:variable name="fascicles" select="$mainContainer//html:p[starts-with(@class,'no-fascicule') or starts-with(@class,'fascicule')]"/>
+                                <xsl:apply-templates select="$fascicles[1]/preceding-sibling::html:*"/>
                                 <xsl:for-each select="$fascicles">
-                                    <xsl:apply-templates select="$fascicles[1]/preceding-sibling::html:*"/>
                                     <xsl:variable name="i" select="position()" />
                                     <xsl:call-template name="fascicle">
                                         <xsl:with-param name="fascicle" select="$fascicles[$i]"/>
@@ -75,10 +76,42 @@
                 <xsl:value-of select="$part"/>
             </title>
             <xsl:variable name="titles" select="$partSet[contains(@class,'--Titre') or contains(@class,'-titre')]"/>
-            <xsl:apply-templates select="$partSet except $titles[1]/following-sibling::* except $titles[1]"/>
-            <xsl:call-template name="titles">
-                <xsl:with-param name="baseSet" select="$partSet"/>
-            </xsl:call-template>
+            <xsl:choose>
+                <xsl:when test="$titles">
+                    <xsl:apply-templates select="$partSet except $titles[1]/following-sibling::* except $titles[1]"/>
+                    <xsl:call-template name="titles">
+                        <xsl:with-param name="baseSet" select="$partSet"/>
+                    </xsl:call-template>        
+                </xsl:when>
+                <xsl:otherwise>
+                    
+                    <xsl:variable name="fascicles" select="$partSet[starts-with(@class,'no-fascicule') or starts-with(@class,'fascicule')]"/>
+                    <xsl:choose>
+                        <xsl:when test="$fascicles">
+                            <xsl:apply-templates select="$fascicles[1]/preceding-sibling::html:* intersect $partSet"/>
+                            <xsl:for-each select="$fascicles">
+                                <xsl:variable name="i" select="position()" />
+                                <xsl:call-template name="fascicle">
+                                    <xsl:with-param name="fascicle" select="$fascicles[$i]"/>
+                                    <xsl:with-param name="fascicleSet" select="($fascicles[$i]/following-sibling::html:p except $fascicles[$i+1]/following-sibling::html:p except $fascicles[$i+1]) intersect $mainContainer//html:p[contains(@class, 'TM-')]"/>
+                                </xsl:call-template>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:variable name="fascicles2" select="$partSet[starts-with(@class,'nom-fascicule')]"/>
+                            <xsl:for-each select="$fascicles2">
+                                <xsl:variable name="i" select="position()" />
+                                <xsl:call-template name="fascicle">
+                                    <xsl:with-param name="fascicle" select="$fascicles2[$i]"/>
+                                    <xsl:with-param name="fascicleSet" select="($fascicles2[$i]/following-sibling::html:p except $fascicles2[$i+1]/following-sibling::html:p except $fascicles[$i+1]) intersect $mainContainer//html:p[contains(@class, 'TM-')]"/>
+                                </xsl:call-template>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    
+                </xsl:otherwise>
+            </xsl:choose>
+            
         </tocdiv>
     </xsl:template>
     
@@ -179,6 +212,13 @@
                 </para>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="html:p[normalize-space()='TABLE DES MATIÈRES GÉNÉRALE' or normalize-space()='TABLE DES MATIÈRES DÉTAILLÉE']">
+        <xsl:apply-templates select=".//html:br"/>
+        <title>
+            <xsl:value-of select="."/>
+        </title>
     </xsl:template>
     
     <xsl:template match="html:p[contains(@class, 'TM-')]" >

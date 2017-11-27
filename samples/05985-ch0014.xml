@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="1">
+    <!-- pub-num=05985 -->
+    <!-- ch-num=ch0014 -->
+    <?textpage page-num="14-1" release-num="Février 2017"?>
+    <core:desig value="3">FASCICULE 14</core:desig>
+    <core:title>Usufruit et usage</core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 14 – Usufruit et usage</core:title-alt>
+    <core:title-alt use4="l-running-hd">I. Biens</core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="bf">Thierry LAVOIE</core:emph></core:name.text>
+            <core:name.detail>
+                <core:role>Avocat</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <!--  -->
+    <?textpage page-num="14-5" release-num="Février 2017"?>
+    <!--  -->
+    <tr:ch-pt volnum="1">
+        <core:desig value="I">I.</core:desig>
+        <core:title>USUFRUIT</core:title>
+        <tr:ch-ptsub1-dummy volnum="1">
+            <tr:secmain volnum="1">
+                <core:desig value="1">1.</core:desig>
+                <core:title runin="1">Origines</core:title>
+                <core:para runin="1"> – Le droit d’usufruit se décline en deux types. Le premier,
+                    l’usufruit causal, sert à désigner le droit de jouir de sa propre
+                        chose<fn:endnote-id er="1"/> . Le deuxième, l’usufruit formel, qualifie le
+                    droit de jouissance exercé par une tierce personne<fn:endnote-id er="2"/> .
+                    Conséquemment, l’usufruit causal ne représente qu’un synonyme de la jouissance
+                    découlant de la pleine propriété d’un bien. Par jouissance, on entend le fait de
+                    pouvoir «se servir de la chose et d’en tirer les satisfactions et bénéfices
+                    qu’elle peut procurer»<fn:endnote-id er="3"/> . Quant à l’usufruit formel, il se
+                    rattache à celui dont traite le Code civil du Québec aux articles 1120 à
+                    1171.</core:para>
+                <fn:endnotes>
+                    <fn:endnote er="1">
+                        <fn:para>Pierre-Basile MIGNAULT, <core:emph typestyle="it">Le droit civil
+                                canadien</core:emph>, t. 2, Montréal, Théoret, 1896, p.
+                            532.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="2">
+                        <fn:para>Pierre-Basile MIGNAULT, <core:emph typestyle="it">Le droit civil
+                                canadien</core:emph>, t. 2, Montréal, Théoret, 1896, p.
+                            532.</fn:para>
+                    </fn:endnote>
+                    <fn:endnote er="3">
+                        <fn:para><core:emph typestyle="it">Jeanneau c. Bienvenu</core:emph>, 2010
+                            QCCS 747, par. 87</fn:para>
+                    </fn:endnote>
+                </fn:endnotes>
+            </tr:secmain>
+        </tr:ch-ptsub1-dummy>
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="A">A.</core:desig>
+            <core:title>Caractéristiques fondamentales du droit d’usufruit</core:title>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="1">1.</core:desig>
+                <core:title>Droit réel</core:title>
+                <tr:secmain volnum="1">
+                    <core:desig value="3">3.</core:desig>
+                    <core:title runin="1">Droit réel</core:title>
+                    <core:para runin="1"> – L’usufruit est un démembrement du droit de propriété et
+                        constitue un droit réel sur le bien qui y est soumis (art. 1119
+                            C.c.Q.)<fn:endnote-id er="1"/>. Ce droit réel diminué est parfois aussi
+                        qualifié de «relatif »<fn:endnote-id er="2"/>. Par cette scission du droit
+                        de propriété, le jus utendi (droit d’usage) et le jus fruendi (droit aux
+                        fruits) reviennent à un usufruitier tandis que le jus abudenti (droit de
+                        disposer) demeure sous le contrôle d’un nu-propriétaire<fn:endnote-id er="3"
+                        />. Ce droit exige donc impérativement l’existence de ces deux
+                            parties<fn:endnote-id er="4"/>.</core:para>
+                    <fn:endnotes>
+                        <fn:endnote er="1">
+                            <fn:para><core:emph typestyle="it">Droit de la famille –
+                                    071938</core:emph>, 2007 QCCS 3792, par. 74.</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="2">
+                            <fn:para>Pierre MARTINEAU, <core:emph typestyle="it">Les
+                                    biens</core:emph>, Montréal, Éditions Thémis, 1979, p.
+                                130.</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="3">
+                            <fn:para>Pierre-Basile MIGNAULT, <core:emph typestyle="it">Le droit
+                                    civil canadien</core:emph>, t. 2, Montréal, Théoret, 1896, p.
+                                529.</fn:para>
+                        </fn:endnote>
+                        <fn:endnote er="4">
+                            <fn:para>Madeleine CANTIN CUMYN, <core:emph typestyle="it">Les droits
+                                    des bénéficiaires d’un usufruit, d’une substitution et d’une
+                                    fiducie</core:emph>, Montréal, Wilson &amp; Lafleur, 1980, no 7,
+                                p. 6.</fn:para>
+                        </fn:endnote>
+                    </fn:endnotes>
+                </tr:secmain>
+            </tr:ch-ptsub2>
+            <!--  -->
+        </tr:ch-ptsub1>
+        <!-- -->
+        <?textpage page-num="14-21" release-num="Février 2017"?>
+        <!--  -->
+        <tr:ch-ptsub1 volnum="1">
+            <core:desig value="C">C.</core:desig>
+            <core:title>Droits et obligations de l’usufruitier et du nu-propriétaire</core:title>
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="1">1.</core:desig>
+                <core:title>Droits de l’usufruitier et du nu-propriétaire</core:title>
+                <tr:ch-ptsub3 volnum="1">
+                    <core:desig value="a">a)</core:desig>
+                    <core:title>Droits de l’usufruitier</core:title>
+                    <tr:secmain volnum="1">
+                        <core:desig value="54">54.</core:desig>
+                        <core:title runin="1">Fruits</core:title>
+                        <core:para runin="1"> – Fondamental à l’usufruit, le droit aux fruits se
+                            trouve consacré aux articles 1126 et 1129, al. 1 C.c.Q. L’usufruitier en
+                            dispose selon son bon vouloir<fn:endnote-id er="1"/>, dans le respect
+                            des droits du nu-propriétaire.</core:para>
+                        <fn:endnotes>
+                            <fn:endnote er="1">
+                                <fn:para>Pierre MARTINEAU, <core:emph typestyle="it">Les
+                                        biens</core:emph>, Montréal, Éditions Thémis, 1979, p.
+                                    139</fn:para>
+                            </fn:endnote>
+                        </fn:endnotes>
+                    </tr:secmain>
+                    <!--  -->
+                </tr:ch-ptsub3>
+                <!--  -->
+                <?textpage page-num="14-23" release-num="Février 2017"?>
+                <!--  -->
+            </tr:ch-ptsub2>
+            <!-- -->
+            <tr:ch-ptsub2 volnum="1">
+                <core:desig value="2">2.</core:desig>
+                <core:title>Obligations de l’usufruitier et du nu-propriétaire</core:title>
+                <tr:ch-ptsub3 volnum="1">
+                    <core:desig value="a">a)</core:desig>
+                    <core:title>Obligations de l’usufruitier </core:title>
+                    <tr:ch-ptsub4-dummy volnum="1">
+                        <tr:secmain volnum="1">
+                            <core:desig value="64">64.</core:desig>
+                            <core:title runin="1">Généralités</core:title>
+                            <core:para runin="1"> – Les diverses règles encadrant les obligations de
+                                l’usufruitier sont de nature supplétive<fn:endnote-id er="1"/>. Les
+                                parties peuvent en aménager l’exercice, particulièrement en matière
+                                de dispense d’assurance du bien. Les obligations inhérentes au
+                                statut d’usufruitier s’articulent en trois phases distinctes :
+                                avant, pendant et après l’exercice du droit d’usufruit<fn:endnote-id
+                                    er="2"/>.</core:para>
+                            <fn:endnotes>
+                                <fn:endnote er="1">
+                                    <fn:para>Pierre-Claude LAFOND, <core:emph typestyle="it">Précis
+                                            de droit des biens</core:emph>, 2<core:emph
+                                            typestyle="su">e</core:emph> éd., Montréal, Éditions
+                                        Thémis, 2007, n<core:emph typestyle="su">o</core:emph> 1789,
+                                        p. 796; Sylvio NORMAND, <core:emph typestyle="it"
+                                            >Introduction au droit des biens</core:emph>, Montréal,
+                                        Wilson &amp; Lafleur, 2000, p. 208.</fn:para>
+                                </fn:endnote>
+                                <fn:endnote er="2">
+                                    <fn:para>Pierre-Claude LAFOND, <core:emph typestyle="it">Précis
+                                            de droit des biens</core:emph>, 2<core:emph
+                                            typestyle="su">e</core:emph> éd., Montréal, Éditions
+                                        Thémis, 2007, n<core:emph typestyle="su">os</core:emph> 1789
+                                        et suiv., p. 796 et suiv.; Pierre-Basile MIGNAULT,
+                                            <core:emph typestyle="it">Le droit civil
+                                            canadien</core:emph>, t. 2, Montréal, Théoret, 1896, p.
+                                        584 et suiv.; François FRENETTE, <core:emph typestyle="it"
+                                            >De l’usufruit et de l’usage</core:emph>, dans Chambre
+                                        des notaires du Québec, <core:emph typestyle="it">Répertoire
+                                            de droit</core:emph>, «Biens», Doctrine – Document 10,
+                                        Montréal, 2005, n<core:emph typestyle="su">os</core:emph> 33
+                                        et suiv., p. 9 et suiv.; <core:emph typestyle="it">Traité de
+                                            droit civil du Québec</core:emph>, t. 3, par André
+                                        MONTPETIT et Gaston TAILLEFER, Montréal, Wilson &amp;
+                                        Lafleur, 1945, p. 255.</fn:para>
+                                </fn:endnote>
+                            </fn:endnotes>
+                        </tr:secmain>
+                    </tr:ch-ptsub4-dummy>
+                    <tr:ch-ptsub4 volnum="1">
+                        <core:desig value="i">(i)</core:desig>
+                        <core:title>Obligations de l’usufruitier avant la création de
+                            l’usufruit</core:title>
+                        <tr:ch-ptsub5 volnum="1">
+                            <core:desig value="–">–</core:desig>
+                            <core:title>Inventaire</core:title>
+                            <tr:secmain volnum="1">
+                                <core:desig value="64">65.</core:desig>
+                                <core:title runin="1">Généralités</core:title>
+                                <core:para runin="1"> – Sous l’ancien Code, l’inventaire comportait
+                                    deux documents distincts, l’un pour les biens meubles et l’autre
+                                    pour les immeubles<fn:endnote-id er="1"/>. La procédure est
+                                    maintenant allégée par le regroupement des deux actes en une
+                                    seule opération<fn:endnote-id er="2"/>. L’inventaire permet de
+                                    se ménager une « preuve nécessaire pour établir la
+                                    responsabilité éventuelle de l’usufruitier »<fn:endnote-id
+                                        er="3"/> et le droit d’usufruit n’en est aucunement
+                                    tributaire pour exister<fn:endnote-id er="4"/>.</core:para>
+                                <fn:endnotes>
+                                    <fn:endnote er="1">
+                                        <fn:para>Pierre-Basile MIGNAULT, <core:emph typestyle="it"
+                                                >Le droit civil canadien</core:emph>, t. 2,
+                                            Montréal, Théoret, 1896, p. 584- 585.</fn:para>
+                                    </fn:endnote>
+                                    <fn:endnote er="2">
+                                        <fn:para>François FRENETTE, «De l’usufruit », dans Barreau
+                                            du Québec et Chambre des notaires du Québec, <core:emph
+                                                typestyle="it">La réforme du Code civil</core:emph>,
+                                            t. 1, Québec, Presses de l’Université Laval, 1993, p.
+                                            679, à la page 689, n<core:emph typestyle="su"
+                                                >o</core:emph> 56.</fn:para>
+                                    </fn:endnote>
+                                    <fn:endnote er="3">
+                                        <fn:para>Denys-Claude LAMONTAGNE, <core:emph typestyle="it"
+                                                >Biens et propriété</core:emph>, 5<core:emph
+                                                typestyle="su">e</core:emph> éd., Cowansville,
+                                            Éditions Yvon Blais, 2005, n<core:emph typestyle="su"
+                                                >o</core:emph> 519, p. 346. </fn:para>
+                                    </fn:endnote>
+                                    <fn:endnote er="4">
+                                        <fn:para>Jacques SÉGUIN, «Obligations garantissant la
+                                            restitution et la conservation de la chose objet
+                                            d’usufruit », dans Philippe LANDRY (dir.), L’usufruit,
+                                            Ottawa, Université d’Ottawa, 1959, p. 95, à la page 98;
+                                                <core:emph typestyle="it">Traité de droit civil du
+                                                Québec</core:emph>, t. 3, par André MONTPETIT et
+                                            Gaston TAILLEFER, Montréal, Wilson &amp; Lafleur, 1945,
+                                            p. 257.</fn:para>
+                                    </fn:endnote>
+                                </fn:endnotes>
+                            </tr:secmain>
+                            <!--  -->
+                            <?textpage page-num="14-23" release-num="Février 2017"?>
+                            <!--  -->
+                        </tr:ch-ptsub5>
+                        <tr:ch-ptsub5 volnum="1">
+                            <core:desig value="–">–</core:desig>
+                            <core:title>Sûreté</core:title>
+                            <tr:secmain volnum="1">
+                                <core:desig value="69">69.</core:desig>
+                                <core:title>Sûreté</core:title>
+                                <core:para runin="1"> – Comme deuxième obligation, dans les 60 jours
+                                    suivant l’ouverture du droit d’usufruit, l’usufruitier doit
+                                    fournir au nu-propriétaire une sûreté afin de garantir
+                                    l’exécution de ses obligations (art. 1144, al. 1 C.c.Q.). À ce
+                                    titre, un gage (art. 2665 C.c.Q.) ou un cautionnement (art. 2333
+                                    C.c.Q.) forment des sûretés tout aussi valables<fn:endnote-id
+                                        er="1"/>. Si les responsabilités de l’usufruitier croissent
+                                    en cours de jouissance, il sera tenu de fournir une sûreté
+                                    additionnelle pour préserver son droit (art. 1144, al. 1
+                                        C.c.Q.)<fn:endnote-id er="2"/>.</core:para>
+                                <fn:endnotes>
+                                    <fn:endnote er="1">
+                                        <fn:para>Sylvio NORMAND, <core:emph typestyle="it"
+                                                >Introduction au droit des biens</core:emph>,
+                                            Montréal, Wilson &amp; Lafleur, 2000, p. 215.</fn:para>
+                                    </fn:endnote>
+                                    <fn:endnote er="2">
+                                        <fn:para>François FRENETTE, <core:emph typestyle="it">De
+                                                l’usufruit et de l’usage</core:emph>, dans Chambre
+                                            des notaires du Québec, Répertoire de droit, «Biens»,
+                                            Doctrine – Document 10, Montréal, 2005, n<core:emph
+                                                typestyle="su">o</core:emph> 35, p. 9.</fn:para>
+                                    </fn:endnote>
+                                </fn:endnotes>
+                            </tr:secmain>
+                            <!--  -->
+                        </tr:ch-ptsub5>
+                        <!--  -->
+                    </tr:ch-ptsub4>
+                    <!--  -->
+                    <?textpage page-num="14-23" release-num="Février 2017"?>
+                    <!--  -->
+                    <tr:ch-ptsub4 volnum="1">
+                        <core:desig value="ii">(ii)</core:desig>
+                        <core:title>Obligations de l’usufruitier pendant l’usufruit</core:title>
+                        <tr:ch-ptsub5 volnum="1">
+                            <core:desig value="–">–</core:desig>
+                            <core:title>Conservation de la substance du bien</core:title>
+                            <tr:secmain volnum="1">
+                                <core:desig value="76">76.</core:desig>
+                                <core:title>Conservation de la substance</core:title>
+                                <core:para runin="1"> – La plus fondamentale des obligations de
+                                    l’usufruitier, la conservation de la substance du bien, est
+                                    initialement consacrée à l’article 1120 C.c.Q.<fn:endnote-id
+                                        er="1"/>. Les réparations d’entretien à la charge de
+                                    l’usufruitier (art. 1151 C.c.Q.) découlent directement du
+                                    principe de l’article 1120 C.c.Q. Il doit impérativement
+                                    prévenir le nu-propriétaire de toute usurpation commise par les
+                                    tiers sur le bien et lui dénoncer toute autre atteinte à ses
+                                    droits (art. 1159 C.c.Q.). L’appréciation du délai raisonnable
+                                    d’avis appartient au tribunal<fn:endnote-id er="2"/>.
+                                    L’usufruitier manquant à cette fonction de « gardien » sera
+                                    responsable de tous les dommages résultant de ces dégradations
+                                    comme s’il les avait lui-même commises (art. 1159 C.c.Q.).
+                                    L’usufruitier peut aussi être déchu de son droit s’il «commet
+                                    des dégradations sur le bien ou le laisse dépérir» (art. 1168,
+                                    al. 1 C.c.Q.). Implicitement, l’usufruitier est soumis aux
+                                    règles de l’administration du bien d’autrui<fn:endnote-id er="3"
+                                    />, et la violation des devoirs d’administrateur lui sera
+                                    imputable.</core:para>
+                                <fn:endnotes>
+                                    <fn:endnote er="1">
+                                        <fn:para><core:emph typestyle="it">Dyelle c.
+                                                Armour</core:emph>, 2009 QCCQ 4497, par.
+                                            675.</fn:para>
+                                    </fn:endnote>
+                                    <fn:endnote er="2">
+                                        <fn:para><core:emph typestyle="it">Traité de droit civil du
+                                                Québec</core:emph>, t. 3, par André MONTPETIT et
+                                            Gaston TAILLEFER, Montréal, Wilson &amp; Lafleur, 1945,
+                                            p. 279.</fn:para>
+                                    </fn:endnote>
+                                    <fn:endnote er="3">
+                                        <fn:para>Sylvio NORMAND, <core:emph typestyle="it"
+                                                >Introduction au droit des biens</core:emph>,
+                                            Montréal, Wilson &amp; Lafleur, 2000, p.
+                                            211-212.</fn:para>
+                                    </fn:endnote>
+                                </fn:endnotes>
+                            </tr:secmain>
+                        </tr:ch-ptsub5>
+                        <!--  -->
+                        <?textpage page-num="14-31" release-num="Février 2017"?>
+                        <!--  -->
+                    </tr:ch-ptsub4>
+                </tr:ch-ptsub3>
+                <!-- -->
+                <?textpage page-num="14-33" release-num="Février 2017"?>
+                <!--  -->
+            </tr:ch-ptsub2>
+            <!--  -->
+            <?textpage page-num="14-39" release-num="Février 2017"?>
+            <!--  -->
+        </tr:ch-ptsub1>
+    </tr:ch-pt>
+    <!--  -->
+</tr:ch>

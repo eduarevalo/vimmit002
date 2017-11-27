@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tr:ch PUBLIC "-//LEXISNEXIS//DTD Treatise-pub v021//EN//XML" "treatiseV021-0000.dtd">
+<tr:ch volnum="1">
+    <!-- pub-num=05985 -->
+    <!-- ch-num=ch0008 -->
+    <?textpage page-num="8-1" release-num="Février 2016"?>
+    <core:desig value="3">FASCICULE 8</core:desig>
+    <core:title>Limitations à l’exercice du droit de propriété – Abus de droit et troubles de
+        voisinage</core:title>
+    <core:title-alt use4="r-running-hd">Fasc. 8 – Limitations à l’exercice du droit de propriété –
+        Abus de droit et troubles de voisinage</core:title-alt>
+    <core:title-alt use4="l-running-hd">I. Biens</core:title-alt>
+    <core:byline><core:person>
+            <core:name.text><core:emph typestyle="bf">Robert P. GODIN<fn:footnote fr="*">
+                        <fn:para>L’auteur tient à remercier très sincèrement M<core:emph
+                                typestyle="su">e</core:emph> Stéphany Laperrière, LL.B., B.C.L.
+                            (Université McGill), avocate, pour ses recherches lors de la quatrième
+                            et de la cinquième mise à jour, M<core:emph typestyle="su">e</core:emph>
+                            Alice Monet, LL.B., B.C.L. (Université McGill), avocate, pour sa
+                            contribution importante lors de la rédaction initiale de ce texte, ainsi
+                            que M<core:emph typestyle="su">e</core:emph> Jean Teboul, LL.B., B.C.L.,
+                            avocat, pour ses recherches lors de la troisième mise à jour.</fn:para>
+                    </fn:footnote></core:emph></core:name.text>
+            <core:name.detail>
+                <core:role>Avocat à la retraite et professeur auxiliaire, Faculté de droit,
+                    Université McGill</core:role>
+            </core:name.detail>
+        </core:person></core:byline>
+    <!--  -->
+    <?textpage page-num="8-3" release-num="Février 2016"?>
+    <!--  -->
+    <tr:ch-pt-dummy volnum="1">
+        <tr:secmain volnum="1">
+            <core:no-desig/>
+            <core:title>INDEX ANALYTIQUE</core:title>
+            <core:list>
+                <core:listitem>
+                    <core:para>Abus de droit, 23, 32</core:para>
+                    <core:list>
+                        <core:listitem>
+                            <core:para>Exercice anormal, 33, 34</core:para>
+                            <core:list>
+                                <core:listitem>
+                                    <core:para>Inconvénient anormal (et), 35</core:para>
+                                </core:listitem>
+                            </core:list>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Exercice malveillant, 33 </core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Faute, 34</core:para>
+                        </core:listitem>
+                        <core:listitem>
+                            <core:para>Troubles de voisinage (et), 23, 37</core:para>
+                        </core:listitem>
+                    </core:list>
+                </core:listitem>
+            </core:list>
+        </tr:secmain>
+    </tr:ch-pt-dummy>
+    <tr:ch-pt volnum="1">
+        <se:epigraph>
+            <core:para>« La vérité si proche nous la cherchons si loin. »<fn:footnote fr="**">
+                    <fn:para>Hakuin. Zenshi (1685-1768).</fn:para>
+                </fn:footnote></core:para>
+            <core:para>« Sic utere tuo ut alienum non laedas. »</core:para>
+            <core:para>« L’espace frontière entre deux propriétés est un lieu où le droit réel ne
+                peut fonctionner concrè- tement sans s’altérer d’obligations réciproques.
+                    »<fn:footnote fr="***">
+                    <fn:para>Anne-Marie PATAULT, <core:emph typestyle="it">Introduction historique
+                            au droit des biens</core:emph>, Paris, Presses universitaires de France,
+                        1989, p. 152.</fn:para>
+                </fn:footnote></core:para>
+        </se:epigraph>
+        <core:no-desig/>
+        <core:title>INTRODUCTION</core:title>
+        <tr:secmain volnum="1">
+            <core:desig value="1">1.</core:desig>
+            <core:title runin="1">Introduction</core:title>
+            <core:para runin="1"> – En 2008, la Cour suprême du Canada rendait une décision unanime
+                dans une affaire portant, entre autres, sur la qualification de la notion de
+                    <core:emph typestyle="bf">troubles de voisinage</core:emph>. Nous pourrions dire
+                que l’évolution de cette notion en droit québécois se situe dans le temps qui s’est
+                écoulé entre deux décisions importantes de la Cour suprême du Canada à un siècle
+                d’intervalle, soit la décision de cette Cour dans l’affaire <core:emph
+                    typestyle="it">Drysdale c. Dugas</core:emph><fn:endnote-id er="1"/>, rendue le
+                18 février 1896 et celle rendue le 20 novembre 2008, dans l’affaire <core:emph
+                    typestyle="it">Ciment du Saint-Laurent Inc. c.
+                    Barrette</core:emph><fn:endnote-id er="2"/>. Au cours de plus de 100 ans, le
+                parcours a été parfois difficile et il y a eu de nombreuses contradictions et
+                remises en questions, tant dans la doctrine que dans la jurisprudence, concernant
+                les fondements mêmes de la responsabilité découlant des troubles de voisinage.
+                Ainsi, plus récemment, durant la période de plus de 15 années au cours de laquelle
+                l’affaire <core:emph typestyle="it">Ciment du Saint-Laurent</core:emph> s’est
+                    déroulée<fn:endnote-id er="3"/>, il a fallu tenir compte d’une situation
+                jurisprudentielle et doctrinale qui changeait régulièrement. La décision de la Cour
+                supérieure du Québec dans cette affaire a été rendue par la juge Julie Dutil le 9
+                mai 2003<fn:endnote-id er="4"/>, pour être renversée le 31 octobre 2006 par une
+                décision de la Cour d’appel du Québec sous la plume du juge François
+                    Pelletier<fn:endnote-id er="5"/>. Cette décision modifiait les bases mêmes des
+                sources de la responsabilité et des recours pour <core:emph typestyle="bf">troubles
+                    de voisinage</core:emph>, qui avaient été retenues par la juge Julie Dutil en
+                Cour supérieure alors qu’elle s’inspirait d’un courant doctrinal et jurisprudentiel
+                très significatif, mais qui, malgré tout, était loin de faire l’unanimité. Le 20
+                novembre 2008, la Cour suprême du Canada, dans une décision unanime<fn:endnote-id
+                    er="6"/>, renversait la Cour d’appel du Québec et confirmait la plupart des
+                éléments essentiels du jugement rendu en Cour supérieure. Il est donc important de
+                garder à l’esprit cette évolution jurisprudentielle lors de la consultation des
+                décisions rendues et de la doctrine publiée au cours de la période entre la date de
+                la décision de la Cour d’appel et celle de la décision de la Cour
+                suprême.</core:para>
+            <fn:endnotes>
+                <fn:endnote er="1">
+                    <fn:para><core:emph typestyle="it">Drysdale c. Dugas</core:emph>, (1896) 26
+                        R.C.S. 20 (ci-après « <core:emph typestyle="it">Drysdale</core:emph>
+                        »).</fn:para>
+                </fn:endnote>
+                <fn:endnote er="2">
+                    <fn:para><core:emph typestyle="it">Ciment du Saint-Laurent Inc. c.
+                            Barrette</core:emph>, [2008] 3 R.C.S. 392, 2008 CSC 64, [2008] A.C.S. no
+                        65 (ci-après « <core:emph typestyle="it">Ciment du Saint-Laurent</core:emph>
+                        »).</fn:para>
+                </fn:endnote>
+                <fn:endnote er="3">
+                    <fn:para>La requête en autorisation d’exercer un recours collectif dans cette
+                        affaire a été déposée le 4 juin 1993.</fn:para>
+                </fn:endnote>
+                <?textpage page-num="8-5" release-num="Février 2016"?>
+                <fn:endnote er="4">
+                    <fn:para><core:emph typestyle="it">Barrette c. Ciment du Saint-Laurent
+                            inc.</core:emph>, [2003] J.Q. no 5273, [2003] R.J.Q. 1883, J.E.
+                        2003-1225 (C.S.).</fn:para>
+                </fn:endnote>
+                <fn:endnote er="5">
+                    <fn:para><core:emph typestyle="it">Ciment du Saint-Laurent inc. c.
+                            Barrette</core:emph>, [2006] J.Q. no 13603, 2006 QCCA 1437, [2006]
+                        R.J.Q. 2633, avec le concours des juges André Forget et Yves-Marie
+                        Morissette.</fn:para>
+                </fn:endnote>
+                <fn:endnote er="6">
+                    <fn:para>Les motifs du jugement ont été rédigés par les juges LeBel et
+                        Deschamps.</fn:para>
+                </fn:endnote>
+            </fn:endnotes>
+        </tr:secmain>
+        <!--  -->
+    </tr:ch-pt>
+    <!--  -->
+</tr:ch>

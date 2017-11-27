@@ -47,7 +47,7 @@
                     <xsl:apply-templates select="part/toc/title/following-sibling::*[contains(lower-case(@role), 'note-lecteur')]/(*|text()|processing-instruction())"/>
                 </core:para>
             </core:comment>
-            <xsl:apply-templates select="part/toc/tocdiv"/>
+            <xsl:apply-templates select="part/toc/tocdiv | part/toc/tocentry"/>
         </fm:toc>
     </xsl:template>
     
@@ -173,6 +173,11 @@
                             </xsl:otherwise>
                         </xsl:choose>
                         </core:entry-title>
+                    <xsl:if test="following-sibling::*[1][name() = 'tocentry'][contains(@role, $nextLevelIdentifier)]">
+                        <xsl:variable name="limit" select="following-sibling::*[contains(@role, $currentLevelIdentifier)][1]"/>
+                        <xsl:variable name="nextLevels" select="following-sibling::tocentry[contains(@role, $nextLevelIdentifier)] except $limit except $limit/following-sibling::*"/>
+                        <xsl:apply-templates select="$nextLevels"/>
+                    </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
         </fm:toc-entry>

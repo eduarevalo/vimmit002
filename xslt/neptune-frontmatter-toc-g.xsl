@@ -45,8 +45,7 @@
                     </core:para>
                 </core:comment>
             </xsl:if>
-            <xsl:apply-templates select="part/toc/tocdiv/preceding-sibling::tocentry"/>
-            <xsl:apply-templates select="part/toc/tocdiv"/>
+            <xsl:apply-templates select="part/toc/*[not(self::title)]"/>
         </fm:toc>
     </xsl:template>
     
@@ -314,7 +313,7 @@
                 </core:entry-title>
             </fm:toc-entry>
         </xsl:if>
-        <xsl:apply-templates select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv"/>
+        <xsl:apply-templates select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv|para"/>
     </xsl:template>
     
     <xsl:template match="(//processing-instruction('textpage'))[1]"/>

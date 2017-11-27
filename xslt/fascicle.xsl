@@ -124,7 +124,7 @@
         <xsl:param name="titleSet"/>
         <xsl:variable name="this" select="."/>
         <xsl:variable name="titleabbrev" select="$titleSet[contains(@class,'Fascicule')][1]"/>
-        <xsl:apply-templates select="$titleabbrev/html:br"/>
+        <xsl:apply-templates select="$titleabbrev//html:br"/>
         <titleabbrev>
             <xsl:value-of select="$titleabbrev"/>
         </titleabbrev>
@@ -387,9 +387,7 @@
         <xsl:variable name="section2Set" select="$section1Set[contains(@class, 'Titres_A--Titre') or contains(@class, 'Titres_Titre-de-section')]"/>
         <xsl:apply-templates select="$section1Entry/html:*[position() &lt; 3][name()='br'][@release-num!='undefined']"/>
         <sect1>
-            <title>
-                <xsl:value-of select="$section1Entry"/>
-            </title>
+            <xsl:apply-templates select="$section1Entry"/>
             <xsl:apply-templates select="$section1Set except $section2Set[1] except $section2Set[1]/following-sibling::html:*"/>
             <xsl:for-each select="$section2Set">
                 <xsl:variable name="i" select="position()"/>
@@ -417,9 +415,7 @@
         <xsl:variable name="section3Set" select="$section2Set[contains(@class, 'Titres_1--Titre')]"/>
         <xsl:apply-templates select="$section2Entry/child::*[self::node()/name()='br'][1]"/>
         <sect2>
-            <title>
-                <xsl:value-of select="$section2Entry"/>
-            </title>
+            <xsl:apply-templates select="$section2Entry"/>
             <xsl:apply-templates select="$section2Set except $section3Set[1] except $section3Set[1]/following-sibling::html:*"/>
             <xsl:for-each select="$section3Set">
                 <xsl:variable name="i" select="position()"/>
@@ -447,9 +443,7 @@
         <xsl:variable name="section4Set" select="$section3Set[contains(lower-case(@class), 'titres_a--titre')]"/>
         <xsl:apply-templates select="$section3Entry/child::*[self::node()/name()='br'][1]"/>
         <sect3>
-            <title>
-                <xsl:value-of select="$section3Entry"/>
-            </title>
+            <xsl:apply-templates select="$section3Entry"/>
             <xsl:apply-templates select="$section3Set except $section4Set[1] except $section4Set[1]/following-sibling::html:*"/>
             <xsl:for-each select="$section4Set">
                 <xsl:variable name="i" select="position()"/>
@@ -477,9 +471,7 @@
         <xsl:variable name="section5Set" select="$section4Set[contains(lower-case(@class), 'titres_-i--titre')]"/>
         <xsl:apply-templates select="$section4Entry/child::*[self::node()/name()='br'][1]"/>
         <sect4>
-            <title>
-                <xsl:value-of select="$section4Entry"/>
-            </title>
+            <xsl:apply-templates select="$section4Entry"/>
             <xsl:apply-templates select="$section4Set except $section5Set[1] except $section5Set[1]/following-sibling::html:*"/>
             <xsl:for-each select="$section5Set">
                 <xsl:variable name="i" select="position()"/>
@@ -504,13 +496,41 @@
     <xsl:template name="section5">
         <xsl:param name="section5Entry"/>
         <xsl:param name="section5Set"/>
+        <xsl:variable name="section6Set" select="$section5Set[contains(lower-case(@class), 'titres_--titre')]"/>
         <xsl:apply-templates select="$section5Entry/child::*[self::node()/name()='br'][1]"/>
         <sect5>
-            <title>
-                <xsl:value-of select="$section5Entry"/>
-            </title>
-            <xsl:apply-templates select="$section5Set"/>
+            <xsl:apply-templates select="$section5Entry"/>
+            <xsl:apply-templates select="$section5Set except $section6Set[1] except $section6Set[1]/following-sibling::html:*"/>
+            <xsl:for-each select="$section6Set">
+                <xsl:variable name="i" select="position()"/>
+                <xsl:choose>
+                    <xsl:when test="$i=last()">
+                        <xsl:call-template name="section6">
+                            <xsl:with-param name="section6Entry" select="$section6Set[$i]"/>
+                            <xsl:with-param name="section6Set" select="$section6Set[$i]/following-sibling::html:* intersect $section5Set"/>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="section6">
+                            <xsl:with-param name="section6Entry" select="$section6Set[$i]"/>
+                            <xsl:with-param name="section6Set" select="$section6Set[$i]/following-sibling::html:* intersect $section6Set[$i+1]/preceding-sibling::html:*"/>
+                        </xsl:call-template>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each>
         </sect5>
+    </xsl:template>
+    
+    <xsl:template name="section6">
+        <xsl:param name="section6Entry"/>
+        <xsl:param name="section6Set"/>
+        <xsl:apply-templates select="$section6Entry/child::*[self::node()/name()='br'][1]"/>
+        <sect6>
+            <title>
+                <xsl:value-of select="$section6Entry"/>
+            </title>
+            <xsl:apply-templates select="$section6Set"/>
+        </sect6>
     </xsl:template>
     
 </xsl:stylesheet>
