@@ -384,6 +384,7 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
     var onBody = false,
         onTable = false,
         onTHead = false,
+        onMarkup = false,
         tHeadText = "",
         currentContent,
         hasMoreContents,
@@ -397,12 +398,15 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
 
     var parser = new htmlparser.Parser({
         onopentag: function(name, attribs){
+            onMarkup = false;
             if(name === "body"){
                 onBody = true;
             }else if(name === "table"){
                 onTable = true;
             }else if(name === "thead"){
                 onTHead = true;
+            }else if(name === "p" && attribs["class"] === "Markup"){
+                onMarkup = true;
             }
 
             if(!textAlreadyExcluded && name === 'div'){
@@ -418,6 +422,11 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
             iterators.out += `>`;
         },
         ontext: function(text){
+
+            if(onMarkup && text === "JBPD-20.4"){
+                //return;
+                console.log('error');
+            }
 
             if(onTHead){
                 tHeadText += text;

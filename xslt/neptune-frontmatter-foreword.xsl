@@ -53,6 +53,9 @@
                         <core:nl/>
                         <xsl:for-each select="following-sibling::*[position() &lt; 5]">
                             <xsl:apply-templates/>
+                            <xsl:if test="position() = 3">
+                                <core:nl/>
+                            </xsl:if>
                             <xsl:if test="position() != last()">
                                 <core:nl/>
                             </xsl:if>

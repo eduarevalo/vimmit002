@@ -16,7 +16,7 @@
     <xsl:param name="leftHeader" select="//processing-instruction('leftHeader')"/>
     <xsl:param name="nextPageRef"/>
     
-    <xsl:variable name="keyPoints" select="/part/chapter/sect1[title/text() = 'POINTS-CLÉS']"/>
+    <xsl:variable name="keyPoints" select="/part/chapter/sect1[title/text() = 'POINTS-CLÉS' or title/text() = 'POINT-CLÉS']"/>
     <xsl:variable name="tocNode" select="/part/chapter/sect1[title/text() = 'TABLE DES MATIÈRES']"/>
     <xsl:variable name="indexNode" select="/part/chapter/sect1[title/text() = 'INDEX ANALYTIQUE']"/>
     <xsl:variable name="chapterNodes" select="/part/chapter/sect1 except $keyPoints except $tocNode except $indexNode"/>
@@ -192,7 +192,7 @@
                         <xsl:value-of select="$indexNode/title"/>
                     </core:title>
                     <core:list>
-                        <xsl:for-each select="$indexNode/index">
+                        <xsl:for-each select="$indexNode/*[not(self::title)]">
                             <xsl:apply-templates/>
                         </xsl:for-each>
                     </core:list>
@@ -245,8 +245,10 @@
                 <xsl:when test="name()='sect6'">tr:ch-ptsub5</xsl:when>
             </xsl:choose>
         </xsl:variable>
+        
         <xsl:variable name="previousPageNumber" select="(./(preceding-sibling::*|preceding-sibling::processing-instruction()))[last()][self::processing-instruction()]"/>
         <xsl:apply-templates select="$previousPageNumber"/>
+
         <xsl:variable name="firstNode" select="title[1]"/>
         <xsl:variable name="label">
             <xsl:call-template name="extractLabel">
@@ -277,9 +279,18 @@
                     </xsl:when>
                 </xsl:choose>
                 <core:title>
-                    <xsl:apply-templates select="$firstNode/* | $firstNode/text()">
-                        <xsl:with-param name="labelToExtract" select="$label"/>
-                    </xsl:apply-templates>
+                    <xsl:choose>
+                        <xsl:when test="$previousPageNumber">
+                            <xsl:apply-templates select="$firstNode/* | $firstNode/text()">
+                                <xsl:with-param name="labelToExtract" select="$label"/>
+                            </xsl:apply-templates>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="$firstNode/* | $firstNode/text() | $firstNode/processing-instruction()">
+                                <xsl:with-param name="labelToExtract" select="$label"/>
+                            </xsl:apply-templates>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </core:title>
             </xsl:if>
             <xsl:choose>
@@ -328,12 +339,17 @@
                     </xsl:if>
                     <xsl:apply-templates select="sect6"/>
                 </xsl:when>
+                <xsl:when test="self::sect4 and not(sect5) and not($runin)">
+                    <tr:secmain-dummy volnum="">
+                        <xsl:apply-templates select="para"/>
+                    </tr:secmain-dummy>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:choose>
                         <xsl:when test="$runin">
                             <xsl:variable name="dummy" select="$runin[1]/preceding-sibling::para"/>
                             <xsl:if test="$dummy">
-                                <tr:secmain-dummy volnum="1">
+                                <tr:secmain-dummy volnum="">
                                     <xsl:apply-templates select="$dummy"/>
                                 </tr:secmain-dummy>
                             </xsl:if>
@@ -353,7 +369,7 @@
                                       </xsl:otherwise>
                                   </xsl:choose>
                                   <core:title>
-                                      <xsl:apply-templates select="$firstNode/* | $firstNode/text()">
+                                      <xsl:apply-templates select="$firstNode/* | $firstNode/text() | $firstNode/processing-instruction()">
                                           <xsl:with-param name="labelToExtract" select="$label"/>
                                       </xsl:apply-templates>
                                   </core:title>
@@ -599,7 +615,11 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="para[markup] | para[starts-with(@role, 'Markup')]">
+    <xsl:template match="para[markup] | para[starts-with(@role, 'Markup')]" priority="100">
+        <xsl:apply-templates select=".//processing-instruction()"/>
+    </xsl:template>
+    
+    <xsl:template match="markup" priority="100">
         <xsl:apply-templates select=".//processing-instruction()"/>
     </xsl:template>
     
@@ -632,16 +652,29 @@
                         </xsl:if>
                     </core:blockquote-para>
                     <xsl:variable name="limit" select="(following-sibling::*[not(contains(@role, 'Citation'))])[1]"/>
-                    <xsl:for-each select="$limit/preceding-sibling::para[not(contains(@role, 'Citation2'))] intersect ./following-sibling::para[contains(@role,'Citation')]">
-                        <core:blockquote-para>
-                            <xsl:apply-templates/>
-                            <xsl:if test="./following-sibling::para[1][contains(@role, 'Citation2')]">
-                                <xsl:apply-templates select="./following-sibling::para[1][contains(@role, 'Citation2')]">
-                                    <xsl:with-param name="controlledFlow" select="true()"/>
-                                </xsl:apply-templates>
-                            </xsl:if>
-                        </core:blockquote-para>
-                    </xsl:for-each>
+                    <xsl:choose>
+                        <xsl:when test="$limit">
+                            <xsl:for-each select="$limit/preceding-sibling::para[not(contains(@role, 'Citation2'))] intersect ./following-sibling::para[contains(@role,'Citation')]">
+                                <core:blockquote-para>
+                                    <xsl:apply-templates/>
+                                    <xsl:if test="./following-sibling::para[1][contains(@role, 'Citation2')]">
+                                        <xsl:apply-templates select="./following-sibling::para[1][contains(@role, 'Citation2')]">
+                                            <xsl:with-param name="controlledFlow" select="true()"/>
+                                        </xsl:apply-templates>
+                                    </xsl:if>
+                                </core:blockquote-para>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:for-each select="following-sibling::*">
+                                <core:blockquote-para>
+                                    <xsl:apply-templates>
+                                        <xsl:with-param name="controlledFlow" select="true()"/>
+                                    </xsl:apply-templates>
+                                </core:blockquote-para>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </core:blockquote>
             </xsl:when>
             <xsl:when test="$labelToExtract != ''">
@@ -961,7 +994,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <tr:secmain-dummy volnum="1">
+        <tr:secmain-dummy volnum="">
             <core:comment type="other" box="1">
                 <core:para>
                     <xsl:choose>

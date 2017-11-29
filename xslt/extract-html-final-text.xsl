@@ -24,6 +24,7 @@
     <xsl:template match="html:div[matches(normalize-space(.),'^[IVX\.]+[\sa-zA-Zé]+$')]"/>
     <xsl:template match="html:div[matches(normalize-space(.),'^[0-9]{4}[IVX\.]+[\sa-zA-Zé]+Suite:\s…$')]"/>
     <xsl:template match="html:div[matches(replace(normalize-space(.),' ',''),'^[0-9]+/$')]"/>
+    <xsl:template match="html:div[matches(normalize-space(.),'^Page suivante.*Paragraphe suivant.*[0-9]+$')]"/>
     <xsl:template match="html:div[matches(normalize-space(.),'^Paragraphe suivant.*[0-9]+$')]"/>
     
 </xsl:stylesheet>

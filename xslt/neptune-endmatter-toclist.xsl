@@ -40,6 +40,8 @@
         </em:table>
     </xsl:template>
     
+    <xsl:template match="para[normalize-space()='']"/>
+    
     <xsl:template match="para">
         <core:comment type="other">
             <xsl:apply-imports/>

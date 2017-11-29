@@ -279,10 +279,13 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
                     
                     if(xmlFileName.match(/0([0-9]{4})\-tos001\.xml$/)){
                         exp = collection + '_JCQ_[0-9]+\\-Index de la.*\\.html$';
+                        docType = '<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">';
                     }else if(xmlFileName.match(/0([0-9]{4})\-index\.xml$/)){
                         exp = collection + '_JCQ_[0-9]+\\-Index a.*\\.html$';
+                        docType = '<!DOCTYPE em:index PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">';
                     }else if(xmlFileName.match(/0([0-9]{4})\-toclist\.xml$/)){
                         exp = collection + '_JCQ_[0-9]+\\-État de la';
+                        docType = '<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">';
                     }
 
                     var regExp = new RegExp(exp);
@@ -292,7 +295,6 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
                     });
         
                     dtd = './../../neptune/endmatterxV018-0000.dtd';
-                    docType = '<!DOCTYPE em:table PUBLIC "-//LEXISNEXIS//DTD Endmatter v018//EN//XML" "endmatterxV018-0000.dtd">';
                 }
             }
 
@@ -400,7 +402,15 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
                             return p1;
                         });
 
+                        lastContent = lastContent.replace(/(<fn:endnote er="[0-9]*">)(<\?textpage page-num=".*" release-num=".*"\?>)/gmi, function(match, p1, p2){ 
+                            return p2 + p1;
+                        });
+                        
+
                         lastContent = lastContent.replace(/(<core:title>)(\s+)/g, function(match, p1, p2){ 
+                            return p1;
+                        });
+                        lastContent = lastContent.replace(/(<core:title>)<\?.*\?>(\s+)/g, function(match, p1, p2){ 
                             return p1;
                         });
 

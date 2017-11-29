@@ -372,6 +372,7 @@
         <xsl:param name="bibliographySet"/>
         <xsl:if test="$bibliographyEntry">
             <xsl:apply-templates select="$bibliographyEntry/html:*[1][self::node()/name()='br']"/>
+            <xsl:apply-templates select="$bibliographyEntry/html:span/html:br"/>
             <sect1>
                 <title>
                     <xsl:value-of select="$bibliographyEntry"/>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fm:vol-fm PUBLIC "-//LEXISNEXIS//DTD Front Matter v015//EN//XML" "frontmatterV015-0000.dtd">
+<fm:vol-fm pub-num="06014" volnum="1">
+    <!-- pub-num=06014 -->
+    <!-- ch-num=fmvol001intro -->
+    <?textpage page-num="I-1" release-num="Mai 2017"?>
+    <fm:body>
+        <fm:no-title-pg/>
+        <fm:intro>
+            <core:title>INTRODUCTION</core:title>
+            <core:title-alt use4="l-running-hd">Droit constitutionnel</core:title-alt>
+            <core:title-alt use4="r-running-hd">Introduction</core:title-alt>
+            <core:generic-hd align="center" typestyle="bf">I.</core:generic-hd>
+            <core:para>La métaphore de « l’arbre vivant », qui assimile la Constitution à un «
+                living tree capable of growth and expansion within its natural limits », constitue
+                peut-être l’allégorie la plus significative qui existe dans le droit
+                constitutionnel, voire dans le droit public, du Canada et du Québec. Bien
+                qu’exprimée à l’origine dans l’affaire <core:emph typestyle="it">Edwards</core:emph>
+                (1930) pour affirmer le principe de l’interprétation dynamique des textes
+                constitutionnels, cette idée saisit l’essence même de ce qui, aujourd’hui, distingue
+                sans doute le plus notre droit public, à savoir son caractère évolutif et adaptable
+                aux besoins d’une société en constante transformation. La diversification
+                ethnoculturelle de cette société, liée au multiculturalisme et à l’immigration, la
+                régulation efficiente des marchés financiers en contexte de gouvernance à paliers
+                multiples ou l’identification de stratégies permettant de mieux saisir juridiquement
+                la complexité des enjeux environnementaux contemporains ne sont que des exemples
+                parmi les plus évidents de défis qui doivent être relevés. Pour demeurer vivant et
+                surtout en prise avec la société au sein de laquelle il s’inscrit, le droit public
+                au Canada et au Québec doit continuer de s’adapter et de se remettre en
+                question.</core:para>
+            <core:para>Peut-on à cet égard imaginer meilleur véhicule que celui du <core:emph
+                    typestyle="it">JurisClasseur</core:emph> pour permettre aux membres de la
+                communauté juridique de suivre les développements dans des domaines du droit public
+                en continuelle mouvance ? Cette formule, qui a fait ses preuves en France et qui
+                existe au Québec depuis un certain temps, convient en effet autant à la praticienne
+                (avocate, notaire) qui souhaite être au fait des plus récents développements dans sa
+                spécialisation qu’au professeur de droit ou d’une discipline connexe (en sciences
+                politiques, par exemple) qui désire avoir des instruments didactiques à la fine
+                pointe du droit contemporain.</core:para>
+            <core:para>Les <core:emph typestyle="it">JurisClasseurs</core:emph> ont été conçus afin
+                de faciliter l’identification rapide et efficace des questions juridiques,
+                lesquelles sont traitées de la manière la plus claire possible, en en faisant
+                ressortir les points importants. Dans cette optique, depuis le découpage des Droit
+                de l’environnement (6018) P / 2 Août 2017 différentes matières jusqu’au traitement
+                des thèmes composant chacun des fascicules des divers volumes de la collection, le
+                    <core:emph typestyle="it">JurisClasseur Québec – Droit</core:emph> public veut
+                innover et, surtout, faire preuve de rigueur dans l’analyse du droit substantiel
+                pour que, rapidement, il se taille une place de choix parmi les références
+                incontournables en langue française dans ce champ du droit.</core:para>
+            <core:generic-hd align="center" typestyle="bf">II.</core:generic-hd>
+            <core:para>Il convient d’ajouter quelques brèves observations intéressant plus
+                particulièrement le <core:emph typestyle="it">JurisClasseur Québec – Droit
+                    constitutionnel</core:emph>, qui ont trait à la fois au découpage de ce
+                    <core:emph typestyle="it">JurisClasseur</core:emph> et aux auteurs qui y
+                participent.</core:para>
+            <!--  -->
+            <?textpage page-num="I-3" release-num="Mai 2017"?>
+            <!--  -->
+            <fm:signed>
+                <fm:signed-line><fm:right><core:emph typestyle="bf">Stéphane
+                        Beaulac</core:emph><core:nl/>Codirecteur de collection – Droit
+                            public<core:nl/><core:emph typestyle="it">JurisClasseur
+                            Québec</core:emph><core:nl/><core:nl/>Professeur titulaire et
+                        spécialiste de droit public national et comparé<core:nl/>Faculté de droit,
+                        Université de Montréal</fm:right></fm:signed-line>
+                <fm:signed-line><fm:right><core:emph typestyle="bf">Jean-François
+                            Gaudreault-DesBiens</core:emph><core:nl/>Codirecteur de collection –
+                        Droit public<core:nl/><core:emph typestyle="it">JurisClasseur
+                            Québec</core:emph><core:nl/><core:nl/>Professeur titulaire et
+                        doyen<core:nl/>Faculté de droit, Université de
+                    Montréal</fm:right></fm:signed-line>
+            </fm:signed>
+        </fm:intro>
+    </fm:body>
+    <?xpp XppPI nextpageref="NB-1"?>
+</fm:vol-fm>

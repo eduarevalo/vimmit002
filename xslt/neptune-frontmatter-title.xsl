@@ -49,7 +49,7 @@
         <xsl:variable name="collection" select="$container/para[contains(normalize-space(), 'collection droit')] intersect $firstPageMark/preceding-sibling::para"/>
         <xsl:variable name="lastUpdate" select="$container/para[contains(normalize-space(), 'mise ')] intersect $firstPageMark/preceding-sibling::para"/>
         <xsl:variable name="directors" select="$container/para[contains(normalize-space(), 'Directeur')] intersect $firstPageMark/preceding-sibling::para"/>
-        <xsl:variable name="conseillers" select="$container/para[contains(normalize-space(), 'Conseillers')] intersect $firstPageMark/preceding-sibling::para"/>
+        <xsl:variable name="conseillers" select="$container/para[contains(normalize-space(), 'Conseiller')] intersect $firstPageMark/preceding-sibling::para"/>
         <xsl:variable name="title" select="$container/para[contains(normalize-space(), $collectionTitle)]"/>       
         <fm:title-pg>
             <fm:pub-series>
@@ -63,7 +63,7 @@
             <xsl:if test="$directors">
                 <fm:byline>
                     <core:role>
-                        <xsl:apply-templates select="$directors/*"/>
+                        <xsl:apply-templates select="$directors/* | $directors/text()"/>
                     </core:role>
                     <xsl:choose>
                         <xsl:when test="$conseillers">
@@ -90,9 +90,9 @@
             <xsl:if test="$conseillers">
                 <fm:byline>
                     <core:role>
-                        <xsl:apply-templates select="$conseillers/*"/>
+                        <xsl:apply-templates select="$conseillers/* | $conseillers/text()"/>
                     </core:role>
-                    <xsl:for-each select="$conseillers[1]/following-sibling::para[contains(normalize-space(), 'Prof')] intersect $mediaobject/preceding-sibling::para">
+                    <xsl:for-each select="$conseillers[1]/following-sibling::para[contains(normalize-space(), 'Prof') or contains(normalize-space(), 'Me')] intersect $mediaobject/preceding-sibling::para">
                         <core:person>
                             <core:name.text>
                                 <xsl:apply-templates select="*"/>

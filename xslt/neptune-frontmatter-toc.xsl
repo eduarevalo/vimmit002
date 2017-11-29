@@ -71,8 +71,14 @@
     
     <xsl:template match="tocentry">
         
-        <xsl:variable name="firstPI" select="(*|processing-instruction())[1][self::processing-instruction()]"/>
-        <xsl:copy-of select="$firstPI"/>
+        <xsl:variable name="this" select="."/>
+        <xsl:variable name="previousPI" select="(preceding-sibling::*|preceding-sibling::processing-instruction())[following-sibling::*[1] = $this][self::processing-instruction()][not(parent::emphasis)]"/>
+        <xsl:copy-of select="$previousPI"/>
+        
+        <xsl:if test="not($previousPI)">
+            <xsl:variable name="firstPI" select="(*|processing-instruction())[1][self::processing-instruction()]"/>
+            <xsl:copy-of select="$firstPI"/>
+        </xsl:if>
         
         <xsl:variable name="level">
             <xsl:choose>
@@ -191,6 +197,7 @@
                     <xsl:when test="parent::tocdiv/parent::toc">ch-pt</xsl:when>
                 </xsl:choose>
             </xsl:variable>
+            <xsl:copy-of select="title[1]/preceding-sibling::processing-instruction()"/>
             <fm:toc-entry lev="{$level}">
                 <core:entry-title>
                     <xsl:apply-templates select="title[1]"/>

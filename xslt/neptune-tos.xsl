@@ -19,7 +19,7 @@
         <xsl:comment select="'ch-num=tos001'"/>
         <xsl:copy-of select="(//processing-instruction('textpage'))[1]"/>
         <em:table>
-            <xsl:variable name="title" select="part/partintro/para[contains(upper-case(normalize-space(.)), 'INDEX DE LA LÉGISLATION')]"/>
+            <xsl:variable name="title" select="part/partintro/*[self::para or self::title][contains(upper-case(normalize-space(.)), 'INDEX DE LA LÉGISLATION')]"/>
             <xsl:variable name="noteExplicative" select="$title/following-sibling::*[starts-with(lower-case(normalize-space(.)), 'note explicative')]"/>
             <xsl:call-template name="title">
                 <xsl:with-param name="titleNode" select="$title"/>
@@ -49,7 +49,7 @@
         <xsl:param name="noteExplicativeNode"/>
         <core:comment type="other">
             <core:para>
-                <xsl:apply-templates select="$noteExplicativeNode/*"/>
+                <xsl:apply-templates select="$noteExplicativeNode/* | $noteExplicativeNode/text()"/>
             </core:para>
         </core:comment>
     </xsl:template>

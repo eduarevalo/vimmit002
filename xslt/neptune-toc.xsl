@@ -43,7 +43,18 @@
     </xsl:template>
     
     <xsl:template match="tocentry">
-        <fm:toc-entry lev="unclassified">
+        <xsl:variable name="level">
+            <xsl:choose>
+                <xsl:when test="emphasis[contains(@role,'fascicule')]">ch</xsl:when>
+                <xsl:when test="contains(@role, '-I-')">ch-pt</xsl:when>
+                <xsl:when test="contains(@role, '-A-')">ch-ptsub1</xsl:when>
+                <xsl:when test="contains(@role, '-1-')">ch-ptsub2</xsl:when>
+                <xsl:when test="contains(@role, '-a-')">ch-ptsub3</xsl:when>
+                <xsl:when test="contains(@role, '-i-')">ch-ptsub4</xsl:when>
+                <xsl:otherwise>unclassified</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <fm:toc-entry lev="{$level}">
             <core:entry-title>
                 <xsl:apply-templates select="emphasis"/>
                 <core:leaders blank-leader="dot" blank-use="fill"/>

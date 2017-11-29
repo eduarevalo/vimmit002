@@ -61,9 +61,9 @@
         <xsl:param name="set"/>
         <xsl:for-each select="$set">
             <xsl:variable name="this" select="."/>
-            <xsl:if test="not(count(*)=0)">
+            <!--<xsl:if test="not(count(*)=0)">
                 <xsl:copy-of select="$this/processing-instruction()"/>
-            </xsl:if>
+            </xsl:if>-->
             <xsl:variable name="set2" select="$this/following-sibling::index[contains(@role, 'N2')][preceding-sibling::index[contains(@role, 'N1')][1] = $this]"/>
             <xsl:variable name="typestyle">
                 <xsl:call-template name="getTypeStyle">

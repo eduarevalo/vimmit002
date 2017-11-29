@@ -30,6 +30,7 @@ const fxMkDir = util.promisify(fx.mkdir),
 var titles = {
     '06018': 'DROIT DE L’ENVIRONNEMENT',
     '05985': 'BIENS ET PUBLICITÉ',
+    '06020': 'BANCAIRE'
 }
 
 function transformFile(file, path, filter){
@@ -245,6 +246,10 @@ function transformCollection(collectionFolder, filter){
                                     xppContent = xppContent.replace(/(<fn:endnote-id er=")([0-9])"\/>[\r\n]*<fn:endnote-id er="([0-9])("\/>)/gim, function(match, p1, p2, p3, p4){ return p1+p2+p3+p4;});
 
                                     xppContent = xppContent.replace(/(<[a-z])/g,function(match, p1){ return "\r\n"+p1; });
+
+                                    xppContent = xppContent.replace(/<core:emph typestyle="smcaps-su">([^<]*)<\/core:emph>/gim,function(match, p1, p2, p3){ 
+                                        return '<core:emph typestyle="smcaps"><core:emph typestyle="su">' + p1 + '</core:emph></core:emph>';
+                                    });
 
                                     while(/<core:emph typestyle="bf">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="bf">([^<]*)<\/core:emph>/.test(xppContent)){
                                         xppContent = xppContent.replace(/<core:emph typestyle="bf">([^<]*)<\/core:emph>(\s*)<core:emph typestyle="bf">([^<]*)<\/core:emph>/gm, function(match, p1, p2, p3){ 

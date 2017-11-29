@@ -6,6 +6,7 @@
     xmlns:core="http://www.lexisnexis.com/namespace/sslrp/core"
     xpath-default-namespace="http://docbook.org/ns/docbook">
     
+    
     <xsl:import href="neptune-frontmatter.xsl"/>
     
     <xsl:param name="pubNum" select="'--PUB-NUM--'"/>
@@ -55,6 +56,23 @@
         </fm:center>
     </xsl:template>
     
+    <xsl:template match="para[matches(normalize-space(.),'^Partie *[IVX]+ –')]">
+        <fm:toc-entry lev="pub-pt">
+            <core:entry-title>
+                <xsl:choose>
+                    <xsl:when test="contains(@role, 'Align-center')">
+                        <fm:center>
+                            <xsl:apply-templates/>
+                        </fm:center>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </core:entry-title>
+        </fm:toc-entry>
+    </xsl:template>
+    
     <!--<xsl:template match="para[starts-with(normalize-space(.), 'ISBN')]">
         <fm:isbn>
             <xsl:value-of select="normalize-space()"/>
@@ -67,7 +85,7 @@
         </core:para>
     </xsl:template>-->
     
-    <xsl:template match="para[contains(@role, 'nom-fascicule')]">
+    <xsl:template match="para[contains(@role, 'nom-fascicule')] | para[matches(normalize-space(.),'[A-Z]+ +/ +[0-1]$')]">
         <xsl:variable name="typestyle1">
             <xsl:call-template name="getTypeStyle">
                 <xsl:with-param name="node" select="."/>
@@ -118,6 +136,7 @@
                 <xsl:when test="contains(@role, '-1-')">ch-ptsub2</xsl:when>
                 <xsl:when test="contains(@role, '-a-')">ch-ptsub3</xsl:when>
                 <xsl:when test="contains(@role, '-i-')">ch-ptsub4</xsl:when>
+                <xsl:otherwise>unclassified</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         
@@ -313,7 +332,16 @@
                 </core:entry-title>
             </fm:toc-entry>
         </xsl:if>
-        <xsl:apply-templates select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv|para"/>
+        <xsl:variable name="tocEntries" select="tocentry[contains(@role,'-I-') or emphasis[contains(@role,'fascicule')]]|tocdiv|para"/>
+        <xsl:choose>
+            <xsl:when test="$tocEntries">
+                <xsl:apply-templates select="$tocEntries"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:variable name="tocEntries2" select="tocentry[emphasis[contains(@role,'auteur')]]"/>
+                <xsl:apply-templates select="$tocEntries2"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="(//processing-instruction('textpage'))[1]"/>

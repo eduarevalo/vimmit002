@@ -16,6 +16,7 @@
                 <xsl:choose>
                     <xsl:when test="$labelToExtract != '' and starts-with(normalize-space(.), $labelToExtract) and not(preceding-sibling::emphasis[starts-with(normalize-space(.), $labelToExtract)])">
                         <!--<xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">-->
+                            <!--<xsl:apply-templates select="$nodes[self::processing-instruction()]"/>-->
                             <core:emph>
                                 <xsl:attribute name="typestyle" select="$typestyle"/>
                                 <xsl:value-of select="substring-after(., $labelToExtract)"/>
@@ -98,9 +99,10 @@
             <xsl:when test="contains($node/@role, 'Bold')">bf</xsl:when>
             <xsl:when test="contains($node/@role, 'Italic')">it</xsl:when>
             <xsl:when test="contains($node/@role, 'Underline')">un</xsl:when>
-            <xsl:when test="contains($node/@role, 'Small-caps')">smcaps</xsl:when>
             <xsl:when test="contains($node/@role, 'Line-through')">strike</xsl:when>
+            <xsl:when test="contains($node/@role, 'Small-caps') and contains($node/@role, 'Super')">smcaps-su</xsl:when>
             <xsl:when test="contains($node/@role, 'Super')">su</xsl:when>
+            <xsl:when test="contains($node/@role, 'Small-caps')">smcaps</xsl:when>
             <xsl:when test="contains($node/@role, 'Sub')">sb</xsl:when>
             <xsl:when test="contains($node/@role, 'Upper')">upper</xsl:when>
         </xsl:choose>

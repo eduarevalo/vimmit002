@@ -99,13 +99,27 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:variable name="fascicles2" select="$partSet[starts-with(@class,'nom-fascicule')]"/>
-                            <xsl:for-each select="$fascicles2">
-                                <xsl:variable name="i" select="position()" />
-                                <xsl:call-template name="fascicle">
-                                    <xsl:with-param name="fascicle" select="$fascicles2[$i]"/>
-                                    <xsl:with-param name="fascicleSet" select="($fascicles2[$i]/following-sibling::html:p except $fascicles2[$i+1]/following-sibling::html:p except $fascicles[$i+1]) intersect $mainContainer//html:p[contains(@class, 'TM-')]"/>
-                                </xsl:call-template>
-                            </xsl:for-each>
+                            <xsl:choose>
+                                <xsl:when test="$fascicles2">
+                                    <xsl:for-each select="$fascicles2">
+                                        <xsl:variable name="i" select="position()" />
+                                        <xsl:call-template name="fascicle">
+                                            <xsl:with-param name="fascicle" select="$fascicles2[$i]"/>
+                                            <xsl:with-param name="fascicleSet" select="($fascicles2[$i]/following-sibling::html:p except $fascicles2[$i+1]/following-sibling::html:p except $fascicles[$i+1]) intersect $mainContainer//html:p[contains(@class, 'TM-')]"/>
+                                        </xsl:call-template>
+                                    </xsl:for-each>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:variable name="fascicles3" select="$partSet[starts-with(@class,'auteur')]"/>
+                                    <xsl:for-each select="$fascicles3">
+                                        <tocentry>
+                                            <emphasis role="{./@class} {./@style} {html:span/@style}">
+                                                <xsl:value-of select="."/>
+                                            </emphasis>
+                                        </tocentry>
+                                    </xsl:for-each>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:otherwise>
                     </xsl:choose>
                     
