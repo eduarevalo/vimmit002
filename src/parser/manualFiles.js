@@ -2,7 +2,6 @@ var filterManualFixes = function(file){
     return !/^6020_JCQ_15-F08/.test(file) 
         && !/^6020_JCQ_19-F11/.test(file)
         
-        && !/^6025_JCQ_24-F18/.test(file)
         && !/^6025_JCQ_14-F08/.test(file)
         && !/^6025_JCQ_16-F10/.test(file)
         && !/^6025_JCQ_21-F15/.test(file)

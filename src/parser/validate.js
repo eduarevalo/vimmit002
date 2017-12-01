@@ -212,7 +212,7 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
 
         var collection = matchFascicle[1],
             fascicle = matchFascicle[2],
-            exp = collection + '_JCQ_[0-9]+\\-F0*' + fascicle +'(?:_MJ[0-9]+)?\\.html$',
+            exp = collection + '_JCQ_[0-9]+\\-F0*' + fascicle +'.*\\.html$',
             regExp = new RegExp(exp);
             
         fileName = htmlFiles.find(function(file){
@@ -357,6 +357,9 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
                 
                 return neptuneLast(filePath)
                     .then( (lastContent) => {
+                        lastContent = lastContent
+                            .replace(/<\?textpage page-num=".*[02468]" release\-num=".*"\?>/g, '');
+
                         var pageNumbers = {};
                         var matches = lastContent.match(/<\?textpage page\-num="[A-Z0-9É\-]+\-([0-9]+)" release\-num="[^"]*"\?>/g);
                         try{
@@ -390,7 +393,10 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
 
                         lastContent = lastContent
                             .replace('é́','é')
-                            .replace('<core:title>Index analytique</core:title>','<core:title>INDEX ANALYTIQUE</core:title>');
+                            .replace('<core:title>Index analytique</core:title>','<core:title>INDEX ANALYTIQUE</core:title>')
+                            .replace(/(&#x2003;&#x2003;)(<\?textpage page-num=".*" release\-num=".*"\?>)/g, function(match, p1, p2){
+                                return p2+p1;
+                            });
 
                         lastContent = lastContent.replace(/\<core\:emph typestyle\=\"upper\"\>([^<]*)\<\/core\:emph\>/g, function(match, p1){ return p1.toUpperCase();});
                         
@@ -406,6 +412,9 @@ function validateFile(collectionFolder, xmlFileName, htmlFiles){
                             return p2 + p1;
                         });
                         
+                        lastContent = lastContent.replace(/(<core:title runin=".+">)[\t\s	]+(<core:emph)/gm, function(match, p1, p2){
+                            return p1 + p2;
+                        });
 
                         lastContent = lastContent.replace(/(<core:title>)(\s+)/g, function(match, p1, p2){ 
                             return p1;

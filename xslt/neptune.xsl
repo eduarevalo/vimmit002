@@ -10,13 +10,17 @@
                 <xsl:with-param name="node" select="."/>
             </xsl:call-template>
         </xsl:variable>
-        <xsl:variable name="nodes" select="text()|processing-instruction()"/>
+        <xsl:variable name="nodes" select="text()|processing-instruction()|*"/>
         <xsl:choose>
             <xsl:when test="$typestyle != ''">
                 <xsl:choose>
                     <xsl:when test="$labelToExtract != '' and starts-with(normalize-space(.), $labelToExtract) and not(preceding-sibling::emphasis[starts-with(normalize-space(.), $labelToExtract)])">
                         <!--<xsl:if test="normalize-space(substring-after(., $labelToExtract))!=''">-->
-                            <!--<xsl:apply-templates select="$nodes[self::processing-instruction()]"/>-->
+                            <xsl:variable name="p1"><xsl:value-of select="parent::tocentry/preceding-sibling::processing-instruction()[1]"/></xsl:variable>
+                            <xsl:variable name="p2"><xsl:value-of select="$nodes[1][self::processing-instruction()]"/></xsl:variable>
+                            <xsl:if test="$p1 != $p2">
+                                <xsl:apply-templates select="$nodes[1][self::processing-instruction()]"/>
+                            </xsl:if>
                             <core:emph>
                                 <xsl:attribute name="typestyle" select="$typestyle"/>
                                 <xsl:value-of select="substring-after(., $labelToExtract)"/>

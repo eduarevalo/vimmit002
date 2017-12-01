@@ -30,7 +30,8 @@ const fxMkDir = util.promisify(fx.mkdir),
 var titles = {
     '06018': 'DROIT DE L’ENVIRONNEMENT',
     '05985': 'BIENS ET PUBLICITÉ',
-    '06020': 'BANCAIRE'
+    '06020': 'BANCAIRE',
+    '06025': 'DE LA CONCURRENCE'
 }
 
 function transformFile(file, path, filter){

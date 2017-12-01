@@ -12,6 +12,7 @@
     
     
     <xsl:template match="html:p[starts-with(@class,'Markup')]"/>
+    <xsl:template match="html:p[matches(normalize-space(.),'^JDCC-[0-9]*\.[0-9]*$')]"/>
     <xsl:template match="html:head"/>
     
     <xsl:template match="html:p[@class='Ent-te']"/>

@@ -250,6 +250,7 @@
     </xsl:template>
     
     <xsl:template match="para[contains(@role,'Index_S-parateur') or contains(@role, 'Lettre')]">
+        <xsl:copy-of select=".//processing-instruction()[1]"/>
         <in:alpha-letter>
             <xsl:value-of select="."/>
         </in:alpha-letter>

@@ -167,6 +167,7 @@
     
     <xsl:template name="toc">
         <xsl:if test="$tocNode">
+            <xsl:apply-templates select="$tocNode/(preceding-sibling::processing-instruction() | preceding-sibling::*)[position()=last()][self::processing-instruction()]"/>
             <tr:ch-pt-dummy volnum="">
                 <tr:secmain volnum="">
                     <core:no-desig/>
@@ -386,11 +387,14 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="title[matches(normalize-space(.),'^JDCC-[0-9]*\.[0-9]*$')]" priority="200"/>
+    <xsl:template match="para[matches(normalize-space(.),'^JDCC-[0-9]*\.[0-9]*$')]" priority="200"/>
+    
     <xsl:template match="para[emphasis[@role='label'and @xreflabel] or (contains(@role, 'Texte---apr-s-notes') and not(.//footnoteref) and .[matches(normalize-space(.),'^[0-9]{1,3}\.')] and not(./following-sibling::*[1][footnote])) or (contains(@role, 'Conseil-pratique') and ./preceding-sibling::para[1][footnote])]">
         <xsl:variable name="thisPara" select="."/>
         <xsl:variable name="emphasisLabel" select="$thisPara/emphasis[@role='label']"/>
         <xsl:variable name="label" select="$emphasisLabel/@xreflabel"/>
-        <xsl:variable name="title" select="($emphasisLabel/following-sibling::emphasis[(following-sibling::*|following-sibling::text())[1][contains(.,'–')]])[1]"/>
+        <xsl:variable name="title" select="($emphasisLabel/following-sibling::emphasis[(ends-with(replace(normalize-space(.),' ',''), '–') and not(following-sibling::*[1][starts-with(replace(normalize-space(),' ',''), '–')]) and not(following-sibling::text()[1][starts-with(replace(normalize-space(),' ',''), '–')]) ) or (following-sibling::*|following-sibling::text())[1][starts-with(replace(normalize-space(),' ',''), '–')]])[1]"/>
         <xsl:variable name="titleSet" select="($title | $title/preceding-sibling::* | $title/preceding-sibling::text()) except $emphasisLabel"/>
         <xsl:apply-templates select="($emphasisLabel/* | $emphasisLabel/processing-instruction())[1][self::processing-instruction()][1]"/>
         <xsl:variable name="firstPunctuation" select="$titleSet[1][replace(.,' ','')='.' or replace(.,' ','')=')']"/>
@@ -493,17 +497,17 @@
                         <xsl:with-param name="labelToExtract" select="concat(substring-before(.,$label), $label)"/>
                     </xsl:apply-templates>
                 </core:para>
-                <xsl:if test="./following-sibling::*[1][contains(@role,'Texte--num-ration2')]">
+                <xsl:if test="./following-sibling::*[1][contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')]">
                     <core:list>
-                        <xsl:variable name="limit" select="(./following-sibling::*[not(contains(@role,'Texte--num-ration2'))])[1]"/>
+                        <xsl:variable name="limit" select="(./following-sibling::*[not(contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2'))])[1]"/>
                         <xsl:choose>
                             <xsl:when test="$limit">
-                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2')] intersect $limit/preceding-sibling::para">
+                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')] intersect $limit/preceding-sibling::para">
                                     <xsl:with-param name="controlledFlow" select="true()"/>
                                 </xsl:apply-templates>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2')]">
+                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')]">
                                     <xsl:with-param name="controlledFlow" select="true()"/>
                                 </xsl:apply-templates>
                             </xsl:otherwise>
@@ -514,12 +518,12 @@
             <xsl:variable name="limit" select="(./following-sibling::*[not(contains(@role,'Texte--num-ration'))])[1]"/>
             <xsl:choose>
                 <xsl:when test="$limit">
-                    <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration') and not(contains(@role,'Texte--num-ration2'))] intersect $limit/preceding-sibling::para">
+                    <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration') and not(contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2'))] intersect $limit/preceding-sibling::para">
                         <xsl:with-param name="controlledFlow" select="true()"/>
                     </xsl:apply-templates>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration') and not(contains(@role,'Texte--num-ration2'))]">
+                    <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration') and not(contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2'))]">
                         <xsl:with-param name="controlledFlow" select="true()"/>
                     </xsl:apply-templates>
                 </xsl:otherwise>
@@ -568,23 +572,26 @@
             <core:listitem>
                 <core:enum>
                     <xsl:value-of select="concat(substring-before(.,$label), $label)"/>
+                    <xsl:apply-templates select="mediaobject">
+                        <xsl:with-param name="controlledFlow" select="true()"/>
+                    </xsl:apply-templates>
                 </core:enum>
                 <core:para>
                     <xsl:apply-templates>
                         <xsl:with-param name="labelToExtract" select="concat(substring-before(.,$label), $label)"/>
                     </xsl:apply-templates>
                 </core:para>
-                <xsl:if test="not(contains(@role, 'Texte--num-ration2')) and ./following-sibling::*[1][contains(@role, 'Texte--num-ration2')]">
+                <xsl:if test="not(contains(@role, 'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')) and ./following-sibling::*[1][contains(@role, 'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')]">
                     <core:list>
-                        <xsl:variable name="limit" select="(./following-sibling::*[not(contains(@role,'Texte--num-ration2'))])[1]"/>
+                        <xsl:variable name="limit" select="(./following-sibling::*[not(contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2'))])[1]"/>
                         <xsl:choose>
                             <xsl:when test="$limit">
-                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2')] intersect $limit/preceding-sibling::para">
+                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')] intersect $limit/preceding-sibling::para">
                                     <xsl:with-param name="controlledFlow" select="true()"/>
                                 </xsl:apply-templates>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2')]">
+                                <xsl:apply-templates select="./following-sibling::para[contains(@role,'Texte--num-ration2') or contains(@role,'Texte--num-ration-2')]">
                                     <xsl:with-param name="controlledFlow" select="true()"/>
                                 </xsl:apply-templates>
                             </xsl:otherwise>
@@ -941,7 +948,7 @@
         <xsl:apply-templates select=".//processing-instruction()"/>
     </xsl:template>
     
-    <xsl:template match="para[mediaobject]">
+    <xsl:template match="para[mediaobject][normalize-space()='']">
         <xsl:variable name="path" select="mediaobject/imageobject/imagedata/@fileref"/>
         <xsl:choose>
             <xsl:when test="$path = '6018_JCQ_26-F18_MJ7-web-resources/image/Bassin.jpg'">
@@ -953,8 +960,14 @@
             <xsl:when test="$path = '6018_JCQ_26-F18_MJ7-web-resources/image/ENV_F18_Par53.png'">
                 <xsl:comment select="'GRAPHIC ch0018_003'"></xsl:comment>
             </xsl:when>
-            <xsl:otherwise></xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="mediaobject[imageobject/imagedata/@fileref='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAABcRAAAXEQHKJvM/AAAAZklEQVQYV2P4//8/AxA0APEHIP4PxQeA2AAqx1CAJHEBSSGIFmBAEgiA6hCAmvAfqhmiEyQJwyDFUPENMAVg45AUwKydwIBk3AGozgIkax1ACgwYUH0AwwvApiE5rABqJ8hYB5h1AFVdR9wY8U/TAAAAAElFTkSuQmCC']">
+        <xsl:param name="controlledFlow" select="false()"/>
+        <xsl:if test="$controlledFlow">
+            <xsl:text>&#9702;</xsl:text>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="extractEpigraphText">

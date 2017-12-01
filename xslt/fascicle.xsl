@@ -8,7 +8,7 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     exclude-result-prefixes="xs db html"
-    version="2.0">
+    version="3.0">
     
        <xsl:include href="para.xsl"/>
     <xsl:include href="html.xsl"/>
@@ -341,8 +341,8 @@
             </index>
             <xsl:apply-templates select="$indexEntry/following-sibling::html:*[contains(@class, 'Texte ParaOverride-2') or contains(@class, 'Note-de-remerciements') ] intersect $startOfNextSection/preceding-sibling::html:*"/>      
             
-            <xsl:apply-templates select="$indexSet[last()]/following-sibling::html:* intersect $startOfNextSection/preceding-sibling::html:* except $indexEntry/following-sibling::html:*[contains(@class, 'Texte ParaOverride-2') or contains(@class, 'Note-de-remerciements') ] intersect $startOfNextSection/preceding-sibling::html:*"/>
-                   </sect1>
+            <xsl:apply-templates select="($indexSet[last()]/following-sibling::html:* intersect $startOfNextSection/preceding-sibling::html:* except $indexEntry/following-sibling::html:*[contains(@class, 'Texte ParaOverride-2') or contains(@class, 'Note-de-remerciements')  or starts-with(@class, 'Titres_Markup')]) intersect $startOfNextSection/preceding-sibling::html:*"/>
+        </sect1>
     </xsl:template>
     
     <xsl:template name="body">
@@ -469,7 +469,7 @@
     <xsl:template name="section4">
         <xsl:param name="section4Entry"/>
         <xsl:param name="section4Set"/>
-        <xsl:variable name="section5Set" select="$section4Set[contains(lower-case(@class), 'titres_-i--titre')]"/>
+        <xsl:variable name="section5Set" select="$section4Set[contains(lower-case(@class), 'titres_-i--titre') or contains(lower-case(@class), 'titres_i--titre')]"/>
         <xsl:apply-templates select="$section4Entry/child::*[self::node()/name()='br'][1]"/>
         <sect4>
             <xsl:apply-templates select="$section4Entry"/>

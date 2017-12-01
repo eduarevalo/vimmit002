@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/src/parser/index.js",
-            "args": ["packages=2", "inject", "filter=F20"],
+            "args": ["packages=2", "inject", "collectionFilter=concurrence", "filter=F11"],
             "cwd": "${workspaceFolder}/src/parser"
         }
     ]

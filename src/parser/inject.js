@@ -462,6 +462,13 @@ function injectPageNumbers(htmlData, pages, fileName, resolve){
                         pageNo = match[1];
                         ofPages = match[2];
                         release = match[3];
+                    }else{
+                        match = footer.match(/^([A-ZÉ0-9\-]+)\s\/\s([0-9]*)\([0-9]*\)(\D*\s[0-9]{4})?$/);
+                        if(match){
+                            pageNo = match[1];
+                            ofPages = match[2];
+                            release = match[3];
+                        }
                     }
                     //console.log('----------------------------------->', pageNo, ofPages, release, pages[iterators.page].footer);
                     //if(page % 2 === 1){

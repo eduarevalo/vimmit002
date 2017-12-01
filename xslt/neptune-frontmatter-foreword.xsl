@@ -45,25 +45,27 @@
     <xsl:template name="signed">
         <xsl:param name="set"/>
         <xsl:variable name="names" select="$set[(position() mod 5) = 1]"/>
-        <fm:signed>
-            <xsl:for-each select="$names">
-                <fm:signed-line>
-                    <fm:right>
-                        <xsl:apply-templates/>
-                        <core:nl/>
-                        <xsl:for-each select="following-sibling::*[position() &lt; 5]">
+        <xsl:if test="$names">
+            <fm:signed>
+                <xsl:for-each select="$names">
+                    <fm:signed-line>
+                        <fm:right>
                             <xsl:apply-templates/>
-                            <xsl:if test="position() = 3">
-                                <core:nl/>
-                            </xsl:if>
-                            <xsl:if test="position() != last()">
-                                <core:nl/>
-                            </xsl:if>
-                        </xsl:for-each>
-                    </fm:right>
-                </fm:signed-line>
-            </xsl:for-each>
-        </fm:signed>
+                            <core:nl/>
+                            <xsl:for-each select="following-sibling::*[position() &lt; 5]">
+                                <xsl:apply-templates/>
+                                <xsl:if test="position() = 3">
+                                    <core:nl/>
+                                </xsl:if>
+                                <xsl:if test="position() != last()">
+                                    <core:nl/>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </fm:right>
+                    </fm:signed-line>
+                </xsl:for-each>
+            </fm:signed>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="para[contains(@role, 'Align-center')]">
